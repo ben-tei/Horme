@@ -1,9 +1,13 @@
-package UI;
+package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+
+import core.PersonFacade;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,9 +24,11 @@ public class LoginView extends JFrame implements ActionListener
 	private int width = 800;
 	private JPasswordField passwordField;
 	private JTextField loginField;
+	private PersonFacade personFacade;
 
 	public LoginView()
 	{
+		this.personFacade = new PersonFacade("user");
 		// Definit un titre pour notre fenetre
 		this.setTitle("Login - Horme");
 
@@ -83,6 +89,7 @@ public class LoginView extends JFrame implements ActionListener
 		btnBack.addActionListener(this);
 		btnBack.setActionCommand("back");
 		container.add(btnBack);
+
 		// Et enfin, la rendre visible 
 		this.setVisible(true);
 	}
@@ -105,11 +112,14 @@ public class LoginView extends JFrame implements ActionListener
 		{
 			if((!this.getLoginText().equals("")) && (!this.getPasswdText().equals("")))
 			{
-				System.out.println("ok !");
-			}
-			else
-			{
-				System.out.println("pas ok !");
+				if (this.personFacade.login(this.getLoginText(), this.getPasswdText()) == null)
+				{
+					JOptionPane.showMessageDialog(null, "Wrong login and/or password", "Failure", JOptionPane.ERROR_MESSAGE);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		}		
 	}
