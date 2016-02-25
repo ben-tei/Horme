@@ -1,6 +1,6 @@
-package b;
+package horme;
 
-import a.LoginView;
+import ui.LoginView;
 
 public class Main {
 
