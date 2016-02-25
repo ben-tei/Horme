@@ -1,5 +1,8 @@
 package core;
+
 import java.util.HashSet;
+
+import persist.Trader;
 
 /*******************************************************************************
  * 2016, All rights reserved.

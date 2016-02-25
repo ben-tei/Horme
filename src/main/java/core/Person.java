@@ -1,4 +1,5 @@
 package core;
+
 import java.util.HashSet;
 
 /*******************************************************************************
@@ -18,7 +19,7 @@ public abstract class Person {
 	/**
 	 * Description of the property firstName.
 	 */
-	private String firstName = "";
+	private String firstName;
 
 	/**
 	 * Description of the property comments.
@@ -33,42 +34,42 @@ public abstract class Person {
 	/**
 	 * Description of the property password.
 	 */
-	private String password = "";
+	private String password;
 
 	/**
 	 * Description of the property name.
 	 */
-	private String name = "";
+	private String name;
 
 	/**
 	 * Description of the property zipCode.
 	 */
-	private String zipCode = "";
+	private String zipCode;
 
 	/**
 	 * Description of the property phone.
 	 */
-	private String phone = "";
+	private String phone;
 
 	/**
 	 * Description of the property city.
 	 */
-	private String city = "";
+	private String city;
 
 	/**
 	 * Description of the property email.
 	 */
-	private String email = "";
+	private String email;
 
 	/**
 	 * Description of the property login.
 	 */
-	private String login = "";
+	private String login;
 
 	/**
 	 * Description of the property street.
 	 */
-	private String street = "";
+	private String street;
 
 	// Start of user code (user defined attributes for Person)
 
@@ -245,5 +246,20 @@ public abstract class Person {
 	public void setStreet(String newStreet) {
 		this.street = newStreet;
 	}
+
+	public Person login(String log, String pswd)
+	{
+		this.setPerson(log, pswd);
+		if((this.getLogin() != null) && (this.getPassword() != null))
+		{
+			return this;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public abstract void setPerson(String log, String pswd);
 
 }
