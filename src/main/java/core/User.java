@@ -1,13 +1,6 @@
-package persist;
-import java.util.HashSet;
+package core;
 
-import core.Activity;
-import core.DiaryEntry;
-import core.Estimate;
-import core.Order;
-import core.Person;
-import core.ShoppingCart;
-import core.WhishList;
+import java.util.HashSet;
 
 /*******************************************************************************
  * 2016, All rights reserved.
@@ -115,12 +108,6 @@ public class User extends Person {
 	 */
 	public HashSet<Activity> getProposedActivities() {
 		return this.proposedActivities;
-	}
-
-	@Override
-	public void setPerson(String log, String pswd) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

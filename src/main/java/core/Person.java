@@ -247,19 +247,4 @@ public abstract class Person {
 		this.street = newStreet;
 	}
 
-	public Person login(String log, String pswd)
-	{
-		this.setPerson(log, pswd);
-		if((this.getLogin() != null) && (this.getPassword() != null))
-		{
-			return this;
-		}
-		else
-		{
-			return null;
-		}
-	}
-
-	public abstract void setPerson(String log, String pswd);
-
 }

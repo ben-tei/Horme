@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
-import core.PersonFacade;
+import dao.UserJDBC;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -24,11 +24,11 @@ public class LoginView extends JFrame implements ActionListener
 	private int width = 800;
 	private JPasswordField passwordField;
 	private JTextField loginField;
-	private PersonFacade personFacade;
+	private UserJDBC userJdbc;
 
 	public LoginView()
 	{
-		this.personFacade = new PersonFacade("user");
+		this.userJdbc = new UserJDBC();
 		// Definit un titre pour notre fenetre
 		this.setTitle("Login - Horme");
 
@@ -112,7 +112,7 @@ public class LoginView extends JFrame implements ActionListener
 		{
 			if((!this.getLoginText().equals("")) && (!this.getPasswdText().equals("")))
 			{
-				if (this.personFacade.login(this.getLoginText(), this.getPasswdText()) == null)
+				if (this.userJdbc.login(this.getLoginText(), this.getPasswdText()) == null)
 				{
 					JOptionPane.showMessageDialog(null, "Wrong login and/or password", "Failure", JOptionPane.ERROR_MESSAGE);
 				}

@@ -1,11 +1,11 @@
-package persist;
+package dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import core.Person;
+import core.User;
 
-public class UserJDBC extends Person
+public class UserJDBC
 {
 
 	private MySQLAccess dbconnect = null;
@@ -15,29 +15,27 @@ public class UserJDBC extends Person
 		this.dbconnect = new MySQLAccess();
 	}
 
-	@Override
-	public void setPerson(String log, String pswd)
+	public User login(String log, String pswd)
 	{
 		this.dbconnect.openConnection();
 		ResultSet rs = null;
+		User user = null;
 
 		try {
 			String query = "SELECT username, password FROM person WHERE username ='" + log + "' AND password ='" + pswd + "'";
 			this.dbconnect.executeRequest(query);
 			while ((rs = this.dbconnect.fetchArray()) != null) {
-				this.setLogin(rs.getString("username"));
-				this.setPassword(rs.getString("password"));
-			}
-			if(this.dbconnect.count() == 0)
-			{
-				this.setLogin(null);
-				this.setPassword(null);
+				user = new User();
+				user.setLogin(rs.getString("username"));
+				user.setPassword(rs.getString("password"));
 			}
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
 		this.dbconnect.close();
+		
+		return user;
 	}
 
 }
