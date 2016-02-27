@@ -17,7 +17,7 @@ public class LoginController
 
 	private String loginText, passwdText;
 
-	public LoginController( )
+	public LoginController()
 	{
 
 	} 
@@ -54,7 +54,7 @@ public class LoginController
 		});
 	}
 
-	public void setView( LoginView loginView )
+	public void setView(LoginView loginView)
 	{
 		this.loginView = loginView;
 		this.initLoginPanel();

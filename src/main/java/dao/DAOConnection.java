@@ -15,7 +15,7 @@ public class DAOConnection implements IDAOConstants
 	{
 		try {
 
-			Class.forName( DRIVER ).newInstance();
+			Class.forName(DRIVER).newInstance();
 
 		} catch (Exception e) {
 
