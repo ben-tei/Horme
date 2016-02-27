@@ -2,11 +2,13 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.NoSuchAlgorithmException;
 
 import javax.swing.JOptionPane;
 
 import core.User;
 import dao.DAOUser;
+import util.HashText;
 import view.LoginView;
 
 public class LoginController
@@ -28,6 +30,13 @@ public class LoginController
 
 				loginText = loginView.getLoginText();
 				passwdText = loginView.getPasswdText();
+				
+				try {
+					passwdText = HashText.sha1(passwdText);
+				} catch (NoSuchAlgorithmException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 
 				DAOUser userDAO = new DAOUser();
 
