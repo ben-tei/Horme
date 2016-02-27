@@ -110,4 +110,9 @@ public class User extends Person {
 		return this.proposedActivities;
 	}
 
+	public boolean isPasswordOK(String password)
+	{
+		return this.getPassword().equals(password);
+	}
+
 }
