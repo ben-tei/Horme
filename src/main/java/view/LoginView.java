@@ -16,6 +16,10 @@ import controller.LoginController;
 public class LoginView extends JFrame
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel container = new JPanel();
 	private int height = 600;
 	private int width = 800;
@@ -31,7 +35,7 @@ public class LoginView extends JFrame
 
 	public LoginView(LoginController loginController)
 	{
-		this.loginController = loginController;
+		this.setLoginController(loginController);
 
 		this.setTitle("Login - Horme");
 
@@ -115,6 +119,14 @@ public class LoginView extends JFrame
 	public String getPasswdText()
 	{
 		return new String( this.passwordField.getPassword() );
+	}
+
+	public LoginController getLoginController() {
+		return loginController;
+	}
+
+	public void setLoginController(LoginController loginController) {
+		this.loginController = loginController;
 	}
 
 }
