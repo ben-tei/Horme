@@ -48,7 +48,7 @@ public class LoginController
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(loginView, "Wrong login and/or password", "Success", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(loginView, "Wrong login and/or password", "Failure", JOptionPane.WARNING_MESSAGE);
 				}
 			}
 		});
