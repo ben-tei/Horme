@@ -16,9 +16,6 @@ import controller.LoginController;
 public class LoginView extends JFrame
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel container = new JPanel();
 	private int height = 600;
