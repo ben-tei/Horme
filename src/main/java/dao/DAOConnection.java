@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.*;
 
-public class DAOConnection implements IDAOConstants
+import static dao.DAOConstants.*;
+
+public class DAOConnection
 {
 	private Connection conn;
 
