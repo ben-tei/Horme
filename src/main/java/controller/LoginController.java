@@ -42,7 +42,7 @@ public class LoginController
 
 				User user = userDAO.getUser(loginText, passwdText);
 
-				if(user != null && user.isPasswordOK(passwdText))
+				if(user != null)
 				{
 					JOptionPane.showMessageDialog(loginView, "Welcome on Horme, " + loginText + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
 				}

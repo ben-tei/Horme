@@ -8,7 +8,7 @@ public class FrontController {
 
 		LoginController loginController = new LoginController();
 
-		LoginView loginView = new LoginView(loginController);
+		LoginView loginView = new LoginView();
 
 		loginController.setView(loginView); 
 

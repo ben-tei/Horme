@@ -11,8 +11,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-import controller.LoginController;
-
 public class LoginView extends JFrame
 {
 
@@ -22,7 +20,6 @@ public class LoginView extends JFrame
 	private int width = 800;
 	private JPasswordField passwordField;
 	private JTextField loginField;
-	private LoginController loginController;
 	private JLabel lblConnexion;
 	private JLabel lblLogin;
 	private JLabel lblPassword;
@@ -30,10 +27,8 @@ public class LoginView extends JFrame
 	private JButton btnBack;
 	private SpringLayout sl_container;
 
-	public LoginView(LoginController loginController)
+	public LoginView()
 	{
-		this.setLoginController(loginController);
-
 		this.setTitle("Login - Horme");
 
 		this.setSize(width, height);
@@ -116,14 +111,6 @@ public class LoginView extends JFrame
 	public String getPasswdText()
 	{
 		return new String( this.passwordField.getPassword() );
-	}
-
-	public LoginController getLoginController() {
-		return loginController;
-	}
-
-	public void setLoginController(LoginController loginController) {
-		this.loginController = loginController;
 	}
 
 }

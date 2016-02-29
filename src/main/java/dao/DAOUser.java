@@ -21,7 +21,7 @@ public class DAOUser extends DAOConnection
 
 			conn = openConnection();
 
-			pstmt= conn.prepareStatement("SELECT * FROM person WHERE username=? AND password=?");
+			pstmt= conn.prepareStatement("SELECT * FROM user WHERE username=? AND password=?");
 
 			pstmt.setString(1, login);
 			pstmt.setString(2, password);
