@@ -8,8 +8,8 @@ public class FactoryJDBC extends Factory {
 	public FactoryJDBC() { }
 
 	@Override
-	public User createUser(String login, String password) throws WrongLoginException {
-		return new UserJDBC(login, password);
+	public User findUser(String login, String password) throws WrongLoginException {
+		return UserJDBC.findUser(login, password);
 	}
 
 }

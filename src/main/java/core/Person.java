@@ -84,6 +84,11 @@ public abstract class Person {
 		// End of user code
 	}
 
+	public Person(String login, String password) {
+		this.login = login;
+		this.password = password;
+	}
+
 	// Start of user code (user defined methods for Person)
 
 	// End of user code

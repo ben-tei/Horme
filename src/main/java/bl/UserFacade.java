@@ -13,7 +13,7 @@ public class UserFacade {
 
 	public User login(String login, String password) throws WrongLoginException
 	{
-		return this.usermanager.createUser(login, password);
+		return this.usermanager.findUser(login, password);
 	}
 
 }

@@ -6,5 +6,5 @@ import exceptions.WrongLoginException;
 
 public abstract class Factory {
 
-	public abstract User createUser(String login, String password) throws WrongLoginException;
+	public abstract User findUser(String login, String password) throws WrongLoginException;
 }

@@ -67,6 +67,10 @@ public abstract class User extends Person {
 		// End of user code
 	}
 
+	public User(String login, String password) {
+		super(login, password);
+	}
+
 	// Start of user code (user defined methods for User)
 
 	// End of user code
