@@ -9,8 +9,13 @@ public class FactoryJDBC extends Factory {
 
 	@Override
 	public User findUser(String login, String password) throws WrongLoginException {
-		UserJDBC userjdbc = new UserJDBC();
-		userjdbc.findUser(login, password);
+		UserJDBC userjdbc = null;
+		try {
+			userjdbc = new UserJDBC();
+			userjdbc.findUser(login, password);
+		} catch (WrongLoginException e) {
+			throw e;
+		}
 		return userjdbc;
 	}
 
