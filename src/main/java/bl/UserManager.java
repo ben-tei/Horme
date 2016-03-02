@@ -1,6 +1,6 @@
 package bl;
 
-import java.security.NoSuchAlgorithmException;
+import exceptions.WrongLoginException;
 
 import persist.*;
 
@@ -9,26 +9,17 @@ import util.HashText;
 public class UserManager {
 
 	private Factory factory;
-	private UserJDBC u;
+	private User u;
 
 	public UserManager()
 	{
 		this.factory = new FactoryJDBC();
 	}
 
-	public User createUser(String login, String password)
+	public User createUser(String login, String password) throws WrongLoginException
 	{
-		u = this.factory.createUser();
-		try {
-			u.setUserJDBC(login, HashText.sha1(password));
-		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		if(u.getLogin() == null)
-		{
-			u = null;
-		}
+		u = this.factory.createUser(login, HashText.sha1(password));
+
 		return u;
 	}
 

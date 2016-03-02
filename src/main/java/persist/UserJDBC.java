@@ -4,18 +4,15 @@ import java.sql.*;
 
 import bl.User;
 
+import exceptions.WrongLoginException;
+
 public class UserJDBC extends User
 {
 
-	private JDBCConnection jdbcconnection;
-
-	public UserJDBC()
+	public UserJDBC(String login, String password) throws WrongLoginException
 	{
-		jdbcconnection = new JDBCConnection();
-	}
+		JDBCConnection jdbcconnection = new JDBCConnection();
 
-	public void setUserJDBC(String login, String password)
-	{
 		Connection conn = null;
 
 		PreparedStatement pstmt = null;
@@ -26,7 +23,7 @@ public class UserJDBC extends User
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT * FROM user WHERE username=? and password=?");
+			pstmt = conn.prepareStatement("SELECT * FROM user WHERE username=? AND password=?");
 
 			pstmt.setString(1, login);
 			pstmt.setString(2, password);
@@ -37,6 +34,10 @@ public class UserJDBC extends User
 			{
 				this.setLogin(rset.getString("username"));
 				this.setPassword(rset.getString("password"));
+			}
+			else
+			{
+				throw new WrongLoginException("Wrong login/password");
 			}
 		}
 

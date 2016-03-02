@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="javadoc">
     <target name="javadoc">
-        <javadoc access="private" author="true" classpath="jgoodies-forms-1.8.0.jar;lib/mysql-connector-java-5.1.38-bin.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="bl,persist,ui,horme,util,core" source="1.7" sourcepath="src/main/java" splitindex="true" use="true" version="true"/>
+        <javadoc access="private" author="true" classpath="jgoodies-forms-1.8.0.jar;lib/mysql-connector-java-5.1.38-bin.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="bl,persist,ui,horme,util,core,exceptions" source="1.7" sourcepath="src/main/java" splitindex="true" use="true" version="true"/>
     </target>
 </project>

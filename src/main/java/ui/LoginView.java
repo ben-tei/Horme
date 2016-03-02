@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 import bl.UserFacade;
+import exceptions.WrongLoginException;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -93,7 +94,7 @@ public class LoginView extends JFrame implements ActionListener
 		this.sl_container.putConstraint(SpringLayout.NORTH, btnBack, 0, SpringLayout.NORTH, btnLogin);
 		this.sl_container.putConstraint(SpringLayout.EAST, btnBack, 0, SpringLayout.EAST, passwordField);
 		this.container.add(btnBack);
-		
+
 		this.setVisible(true);
 
 		this.getLoginField().requestFocusInWindow();
@@ -122,7 +123,7 @@ public class LoginView extends JFrame implements ActionListener
 
 	public String getPasswdText()
 	{
-		return new String( this.passwordField.getPassword() );
+		return new String(this.passwordField.getPassword());
 	}
 
 	public void actionPerformed(ActionEvent e)
@@ -132,16 +133,17 @@ public class LoginView extends JFrame implements ActionListener
 		{
 			if((!getLoginText().equals("")) && (!getPasswdText().equals("")))
 			{
-				if (userFacade.login(getLoginText(), getPasswdText()) == null)
-				{
-					JOptionPane.showMessageDialog(null, "Wrong login and/or password", "Failure", JOptionPane.WARNING_MESSAGE);
-				}
-				else
-				{
+				try {
+					userFacade.login(getLoginText(), getPasswdText());
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
-				}
-			}			
+				} catch (WrongLoginException e1) {
+					// TODO Auto-generated catch block
+					//e2.printStackTrace();
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
+				}			
+			}
 		}
+
 	}
 
 }
