@@ -9,12 +9,17 @@ import exceptions.WrongLoginException;
 public class UserJDBC extends User
 {
 
+	public UserJDBC()
+	{
+		super();
+	}
+
 	public UserJDBC(String login, String password)
 	{
 		super(login, password);
 	}
 
-	public static User findUser(String login, String password) throws WrongLoginException
+	public void findUser(String login, String password) throws WrongLoginException
 	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -23,8 +28,6 @@ public class UserJDBC extends User
 		PreparedStatement pstmt = null;
 
 		ResultSet rset = null;
-
-		UserJDBC userjdbc = null;
 
 		try {
 
@@ -39,7 +42,8 @@ public class UserJDBC extends User
 
 			if (rset.next())
 			{
-				userjdbc = new UserJDBC(rset.getString("username"), rset.getString("password"));
+				this.setLogin(rset.getString("username"));
+				this.setPassword(rset.getString("password"));
 			}
 			else
 			{
@@ -58,8 +62,6 @@ public class UserJDBC extends User
 			jdbcconnection.closeConnection();
 
 		}
-
-		return userjdbc;
 	}
 
 }
