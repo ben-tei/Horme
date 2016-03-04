@@ -21,7 +21,7 @@ public class Order {
 	/**
 	 * Description of the property traders.
 	 */
-	public HashSet<Trader> traders = new HashSet<Trader>();
+	public Trader trader = null;
 
 	/**
 	 * Description of the property date.
@@ -63,8 +63,8 @@ public class Order {
 	 * Returns traders.
 	 * @return traders 
 	 */
-	public HashSet<Trader> getTraders() {
-		return this.traders;
+	public Trader getTrader() {
+		return this.trader;
 	}
 
 	/**
