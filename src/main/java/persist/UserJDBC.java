@@ -33,7 +33,7 @@ public class UserJDBC extends User
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT * FROM user WHERE username=? AND password=?");
+			pstmt = conn.prepareStatement("SELECT * FROM Person WHERE login=? AND password=?");
 
 			pstmt.setString(1, login);
 			pstmt.setString(2, password);
@@ -42,7 +42,7 @@ public class UserJDBC extends User
 
 			if (rset.next())
 			{
-				this.setLogin(rset.getString("username"));
+				this.setLogin(rset.getString("login"));
 				this.setPassword(rset.getString("password"));
 			}
 			else

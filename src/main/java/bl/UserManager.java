@@ -9,6 +9,7 @@ import util.HashText;
 public class UserManager {
 
 	private Factory factory;
+	private User user;
 
 	public UserManager()
 	{
@@ -17,7 +18,8 @@ public class UserManager {
 
 	public User findUser(String login, String password) throws WrongLoginException
 	{
-		return this.factory.findUser(login, HashText.sha1(password));
+		user = this.factory.findUser(login, HashText.sha1(password));
+		return user;
 	}
 
 }
