@@ -1,6 +1,7 @@
 package bl;
 
 import exceptions.WrongLoginException;
+import exceptions.WrongPasswordException;
 
 public class UserFacade {
 
@@ -11,7 +12,7 @@ public class UserFacade {
 		this.usermanager = new UserManager();
 	}
 
-	public User login(String login, String password) throws WrongLoginException
+	public User login(String login, String password) throws WrongLoginException, WrongPasswordException
 	{
 		return this.usermanager.findUser(login, password);
 	}

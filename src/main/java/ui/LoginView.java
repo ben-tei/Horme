@@ -8,6 +8,7 @@ import javax.swing.SpringLayout;
 
 import bl.UserFacade;
 import exceptions.WrongLoginException;
+import exceptions.WrongPasswordException;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -136,9 +137,9 @@ public class LoginView extends JFrame implements ActionListener
 				try {
 					userFacade.login(getLoginText(), getPasswdText());
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
-				} catch (WrongLoginException e1) {
+				} catch (WrongLoginException | WrongPasswordException e1) {
 					// TODO Auto-generated catch block
-					//e2.printStackTrace();
+					//e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 				}			
 			}

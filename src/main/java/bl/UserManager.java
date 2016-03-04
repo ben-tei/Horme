@@ -1,7 +1,7 @@
 package bl;
 
 import exceptions.WrongLoginException;
-
+import exceptions.WrongPasswordException;
 import persist.*;
 
 import util.HashText;
@@ -16,10 +16,15 @@ public class UserManager {
 		this.factory = new FactoryJDBC();
 	}
 
-	public User findUser(String login, String password) throws WrongLoginException
+	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException
 	{
-		user = this.factory.findUser(login, HashText.sha1(password));
-		return user;
+		try {
+			user = this.factory.findUser(login);
+			user.isPasswordOK(HashText.sha1(password));
+			return user;
+		} catch (WrongLoginException | WrongPasswordException e) {
+			throw e;
+		}
 	}
 
 }

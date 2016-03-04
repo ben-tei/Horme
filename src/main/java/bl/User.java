@@ -9,6 +9,7 @@ import core.Order;
 import core.Person;
 import core.ShoppingCart;
 import core.WhishList;
+import exceptions.WrongPasswordException;
 
 /*******************************************************************************
  * 2016, All rights reserved.
@@ -122,9 +123,16 @@ public abstract class User extends Person {
 		return this.proposedActivities;
 	}
 
-	public boolean isPasswordOK(String password)
+	public boolean isPasswordOK(String password) throws WrongPasswordException
 	{
-		return this.getPassword().equals(password);
+		if(this.getPassword().equals(password))
+		{
+			return true;
+		}
+		else
+		{
+			throw new WrongPasswordException("Wrong password !");
+		}
 	}
 
 }

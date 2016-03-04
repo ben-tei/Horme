@@ -9,17 +9,7 @@ import exceptions.WrongLoginException;
 public class UserJDBC extends User
 {
 
-	public UserJDBC()
-	{
-		super();
-	}
-
-	public UserJDBC(String login, String password)
-	{
-		super(login, password);
-	}
-
-	public void findUser(String login, String password) throws WrongLoginException
+	public UserJDBC(String login) throws WrongLoginException
 	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -33,10 +23,9 @@ public class UserJDBC extends User
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT * FROM Person WHERE login=? AND password=?");
+			pstmt = conn.prepareStatement("SELECT * FROM Person WHERE login=?");
 
 			pstmt.setString(1, login);
-			pstmt.setString(2, password);
 
 			rset = pstmt.executeQuery();
 
@@ -47,7 +36,7 @@ public class UserJDBC extends User
 			}
 			else
 			{
-				throw new WrongLoginException("Wrong login/password");
+				throw new WrongLoginException("Wrong login !");
 			}
 		}
 
