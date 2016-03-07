@@ -7,24 +7,24 @@ import javax.swing.JPanel;
 
 public class ViewController {
 
-	private JFrame mafenetre;
-	private JPanel monjpanel;
+	private JFrame myWindow;
+	private JPanel myJPanel;
 
 	public ViewController()
 	{
-		this.mafenetre = new Window(600, 800);
-		this.monjpanel = new LoginView(this);
-		this.mafenetre.setContentPane(monjpanel);
-		this.mafenetre.setVisible(true);
+		this.myWindow = new Window(600, 800);
+		this.myJPanel = new LoginView(this);
+		this.myWindow.setContentPane(myJPanel);
+		this.myWindow.setVisible(true);
 	}
 
 	public void doAfterLogin()
 	{
 		JPanel pan = new JPanel();
 		pan.setBackground(Color.ORANGE);        
-		this.mafenetre.setContentPane(pan);
-		this.mafenetre.getContentPane().revalidate();
-		this.mafenetre.getContentPane().repaint();
+		this.myWindow.setContentPane(pan);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
 	}
 
 }
