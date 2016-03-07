@@ -5,16 +5,16 @@ import exceptions.WrongPasswordException;
 
 public class UserFacade {
 
-	private UserManager usermanager;
+	private UserManager userManager;
 
 	public UserFacade()
 	{
-		this.usermanager = new UserManager();
+		this.userManager = new UserManager();
 	}
 
 	public User login(String login, String password) throws WrongLoginException, WrongPasswordException
 	{
-		return this.usermanager.findUser(login, password);
+		return this.userManager.findUser(login, password);
 	}
 
 }
