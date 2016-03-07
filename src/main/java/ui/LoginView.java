@@ -1,6 +1,5 @@
 package ui;
 
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -18,13 +17,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class LoginView extends JFrame implements ActionListener
+public class LoginView extends JPanel implements ActionListener
 {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel container = new JPanel();
-	private int height = 600;
-	private int width = 800;
 	private JPasswordField passwordField;
 	private JTextField loginField;
 	private JLabel lblConnexion;
@@ -34,69 +30,60 @@ public class LoginView extends JFrame implements ActionListener
 	private JButton btnBack;
 	private SpringLayout sl_container;
 	private UserFacade userFacade;
+	private ViewController viewController;
 
-	public LoginView()
+	public LoginView(ViewController vc)
 	{
 		this.userFacade = new UserFacade();
+		
+		this.viewController = vc;
 
-		this.setTitle("Login - Horme");
-
-		this.setSize(width, height);
-
-		this.setLocationRelativeTo(null);
-
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);
-
-		this.setContentPane(container);
 		this.sl_container = new SpringLayout();
-		this.container.setLayout(sl_container);
+		this.setLayout(sl_container);
 
 		this.lblConnexion = new JLabel("Connexion");
-		this.sl_container.putConstraint(SpringLayout.NORTH, lblConnexion, 10, SpringLayout.NORTH, container);
-		this.sl_container.putConstraint(SpringLayout.WEST, lblConnexion, 345, SpringLayout.WEST, container);
+		this.sl_container.putConstraint(SpringLayout.NORTH, lblConnexion, 10, SpringLayout.NORTH, this);
+		this.sl_container.putConstraint(SpringLayout.WEST, lblConnexion, 345, SpringLayout.WEST, this);
 		this.lblConnexion.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		this.container.add(lblConnexion);
+		this.add(lblConnexion);
 
 		this.lblLogin = new JLabel("Login");
 		this.sl_container.putConstraint(SpringLayout.NORTH, lblLogin, 103, SpringLayout.SOUTH, lblConnexion);
-		this.sl_container.putConstraint(SpringLayout.WEST, lblLogin, 139, SpringLayout.WEST, container);
+		this.sl_container.putConstraint(SpringLayout.WEST, lblLogin, 139, SpringLayout.WEST, this);
 		this.lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.container.add(lblLogin);
+		this.add(lblLogin);
 
 		this.lblPassword = new JLabel("Password");
 		this.sl_container.putConstraint(SpringLayout.NORTH, lblPassword, 167, SpringLayout.SOUTH, lblConnexion);
-		this.sl_container.putConstraint(SpringLayout.WEST, lblPassword, 139, SpringLayout.WEST, container);
+		this.sl_container.putConstraint(SpringLayout.WEST, lblPassword, 139, SpringLayout.WEST, this);
 		this.sl_container.putConstraint(SpringLayout.SOUTH, lblLogin, -44, SpringLayout.NORTH, lblPassword);
 		this.lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.container.add(lblPassword);
+		this.add(lblPassword);
 
 		this.passwordField = new JPasswordField();
 		this.sl_container.putConstraint(SpringLayout.NORTH, passwordField, 167, SpringLayout.SOUTH, lblConnexion);
 		this.sl_container.putConstraint(SpringLayout.WEST, passwordField, 27, SpringLayout.EAST, lblPassword);
 		this.sl_container.putConstraint(SpringLayout.SOUTH, passwordField, 0, SpringLayout.SOUTH, lblPassword);
-		this.sl_container.putConstraint(SpringLayout.EAST, passwordField, -363, SpringLayout.EAST, container);
-		this.container.add(passwordField);
+		this.sl_container.putConstraint(SpringLayout.EAST, passwordField, -363, SpringLayout.EAST, this);
+		this.add(passwordField);
 
 		this.loginField = new JTextField();
 		this.sl_container.putConstraint(SpringLayout.NORTH, loginField, 2, SpringLayout.NORTH, lblLogin);
 		this.sl_container.putConstraint(SpringLayout.WEST, loginField, 55, SpringLayout.EAST, lblLogin);
-		this.sl_container.putConstraint(SpringLayout.EAST, loginField, -363, SpringLayout.EAST, container);
-		this.container.add(loginField);
+		this.sl_container.putConstraint(SpringLayout.EAST, loginField, -363, SpringLayout.EAST, this);
+		this.add(loginField);
 
 		this.btnLogin = new JButton("Login");
 		this.btnLogin.addActionListener(this);
 		this.btnLogin.setActionCommand("login");
 		this.sl_container.putConstraint(SpringLayout.NORTH, btnLogin, 51, SpringLayout.SOUTH, lblPassword);
 		this.sl_container.putConstraint(SpringLayout.WEST, btnLogin, 0, SpringLayout.WEST, lblLogin);
-		this.container.add(btnLogin);
+		this.add(btnLogin);
 
 		this.btnBack = new JButton("Back");
 		this.sl_container.putConstraint(SpringLayout.NORTH, btnBack, 0, SpringLayout.NORTH, btnLogin);
 		this.sl_container.putConstraint(SpringLayout.EAST, btnBack, 0, SpringLayout.EAST, passwordField);
-		this.container.add(btnBack);
-
-		this.setVisible(true);
+		this.add(btnBack);
 
 		this.getLoginField().requestFocusInWindow();
 
@@ -137,6 +124,7 @@ public class LoginView extends JFrame implements ActionListener
 				try {
 					userFacade.login(getLoginText(), getPasswdText());
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+					this.viewController.doAfterLogin();
 				} catch (WrongLoginException | WrongPasswordException e1) {
 					// TODO Auto-generated catch block
 					//e1.printStackTrace();

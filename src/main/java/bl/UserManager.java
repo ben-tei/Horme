@@ -18,13 +18,9 @@ public class UserManager {
 
 	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException
 	{
-		try {
-			user = this.factory.findUser(login);
-			user.isPasswordOK(HashText.sha1(password));
-			return user;
-		} catch (WrongLoginException | WrongPasswordException e) {
-			throw e;
-		}
+		user = this.factory.findUser(login);
+		user.isPasswordOK(HashText.sha1(password));
+		return user;
 	}
 
 }
