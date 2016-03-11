@@ -142,6 +142,8 @@ public class SignUpView extends JPanel implements ActionListener {
 		this.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(this);
+		btnNewButton_1.setActionCommand("back");
 		sl_container.putConstraint(SpringLayout.EAST, btnNewButton_1, -102, SpringLayout.EAST, this);
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		sl_container.putConstraint(SpringLayout.SOUTH, btnNewButton_1, -24, SpringLayout.SOUTH, this);
@@ -244,8 +246,13 @@ public class SignUpView extends JPanel implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		String cmd = e.getActionCommand();
+		if(cmd.equals("back"))
+		{
+			this.viewController.showLoginPanel();
+		}
 	}
+	
 }

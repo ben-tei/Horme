@@ -13,9 +13,8 @@ public class ViewController {
 	public ViewController()
 	{
 		this.myWindow = new Window(600, 800);
-		this.myJPanel = new LoginView(this);
-		this.myWindow.setContentPane(myJPanel);
 		this.myWindow.setVisible(true);
+		this.showLoginPanel();
 	}
 
 	public void doAfterLogin()
@@ -26,12 +25,21 @@ public class ViewController {
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
 	}
+	
+	public void showLoginPanel()
+	{
+		this.myWindow.setTitle("Horme - Login");
+		this.myJPanel = new LoginView(this);        
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+	}
 
-	public void showSignUp()
+	public void showSignUpPanel()
 	{
 		this.myWindow.setTitle("Horme - Sign Up");
-		SignUpView suv = new SignUpView(this);        
-		this.myWindow.setContentPane(suv);
+		this.myJPanel = new SignUpView(this);        
+		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
 	}

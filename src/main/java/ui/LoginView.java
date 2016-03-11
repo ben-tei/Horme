@@ -138,7 +138,7 @@ public class LoginView extends JPanel implements ActionListener
 		}
 		else if(cmd.equals("signup"))
 		{
-			this.viewController.showSignUp();
+			this.viewController.showSignUpPanel();
 		}
 
 	}
