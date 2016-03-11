@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -26,13 +25,13 @@ public class SignUpView extends JPanel implements ActionListener {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JTextField textField_5;
+	private JPasswordField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
 	private JTextField textField_10;
-	private JTextField textField_11;
+	private JPasswordField textField_11;
 	private JTextField textField_12;
 
 	public SignUpView(ViewController vc)
@@ -184,7 +183,7 @@ public class SignUpView extends JPanel implements ActionListener {
 		this.add(textField_4);
 		textField_4.setColumns(10);
 		
-		textField_5 = new JTextField();
+		textField_5 = new JPasswordField();
 		sl_container.putConstraint(SpringLayout.NORTH, textField_5, 0, SpringLayout.NORTH, lblNewLabel_4);
 		sl_container.putConstraint(SpringLayout.WEST, textField_5, 20, SpringLayout.EAST, lblNewLabel_4);
 		sl_container.putConstraint(SpringLayout.EAST, textField_5, 0, SpringLayout.EAST, lblNewLabel_13);
@@ -226,7 +225,7 @@ public class SignUpView extends JPanel implements ActionListener {
 		this.add(textField_10);
 		textField_10.setColumns(10);
 		
-		textField_11 = new JTextField();
+		textField_11 = new JPasswordField();
 		sl_container.putConstraint(SpringLayout.NORTH, textField_11, 0, SpringLayout.NORTH, lblNewLabel_4);
 		sl_container.putConstraint(SpringLayout.WEST, textField_11, 40, SpringLayout.EAST, lblNewLabel_11);
 		sl_container.putConstraint(SpringLayout.EAST, textField_11, 0, SpringLayout.EAST, textField_7);
