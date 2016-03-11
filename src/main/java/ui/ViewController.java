@@ -27,4 +27,13 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 	}
 
+	public void showSignUp()
+	{
+		this.myWindow.setTitle("Horme - Sign Up");
+		SignUpView suv = new SignUpView(this);        
+		this.myWindow.setContentPane(suv);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+	}
+
 }
