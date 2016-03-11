@@ -1,7 +1,6 @@
 package bl;
 
-import exceptions.WrongLoginException;
-import exceptions.WrongPasswordException;
+import exceptions.*;
 
 public class UserFacade {
 
@@ -15,6 +14,12 @@ public class UserFacade {
 	public User login(String login, String password) throws WrongLoginException, WrongPasswordException
 	{
 		return this.userManager.findUser(login, password);
+	}
+
+	public User signUp(String name, String firstname, String street, String zipCode, String city, String phone,
+			String email, String login, String password) throws AlreadyExistsException
+	{
+		return this.userManager.createUser(name, firstname, street, zipCode, city, phone, email, login, password);
 	}
 
 }

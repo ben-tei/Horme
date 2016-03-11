@@ -25,7 +25,7 @@ public class ViewController {
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
 	}
-	
+
 	public void showLoginPanel()
 	{
 		this.myWindow.setTitle("Horme - Login");
@@ -33,6 +33,7 @@ public class ViewController {
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
+		((LoginView) this.myJPanel).getLoginField().requestFocusInWindow();
 	}
 
 	public void showSignUpPanel()
@@ -42,6 +43,7 @@ public class ViewController {
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
+		((SignUpView) this.myJPanel).getNameField().requestFocusInWindow();
 	}
 
 }

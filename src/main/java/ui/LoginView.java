@@ -89,8 +89,6 @@ public class LoginView extends JPanel implements ActionListener
 		this.sl_container.putConstraint(SpringLayout.EAST, btnSignUp, 2, SpringLayout.EAST, passwordField);
 		this.add(btnSignUp);
 
-		this.getLoginField().requestFocusInWindow();
-
 	}
 
 	public JTextField getLoginField()

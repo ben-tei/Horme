@@ -3,15 +3,20 @@ package ui;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 import bl.UserFacade;
+import exceptions.AlreadyExistsException;
+import util.EmailValidator;
+
 import java.awt.Color;
 
 public class SignUpView extends JPanel implements ActionListener {
@@ -20,19 +25,19 @@ public class SignUpView extends JPanel implements ActionListener {
 	private SpringLayout sl_container;
 	private UserFacade userFacade;
 	private ViewController viewController;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JPasswordField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JPasswordField textField_11;
-	private JTextField textField_12;
+	private JTextField nameField;
+	private JTextField streetField;
+	private JTextField cityField;
+	private JTextField emailField;
+	private JTextField loginField;
+	private JPasswordField pswdField;
+	private JTextField siretField;
+	private JTextField firstnameField;
+	private JTextField zipField;
+	private JTextField phoneField;
+	private JPasswordField pswdConfirmField;
+	private JTextField emailConfirmField;
+	private JTextField websiteField;
 
 	public SignUpView(ViewController vc)
 	{
@@ -42,206 +47,253 @@ public class SignUpView extends JPanel implements ActionListener {
 
 		this.sl_container = new SpringLayout();
 		this.setLayout(sl_container);
-		
+
 		JLabel lblSignUp = new JLabel("Sign Up");
 		sl_container.putConstraint(SpringLayout.NORTH, lblSignUp, 10, SpringLayout.NORTH, this);
 		sl_container.putConstraint(SpringLayout.WEST, lblSignUp, 363, SpringLayout.WEST, this);
 		lblSignUp.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		this.add(lblSignUp);
-		
-		JLabel lblNewLabel = new JLabel("Name *");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel, 106, SpringLayout.NORTH, this);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel, 52, SpringLayout.WEST, this);
-		this.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Street *");
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_1, 0, SpringLayout.WEST, lblNewLabel);
-		sl_container.putConstraint(SpringLayout.SOUTH, lblNewLabel_1, -390, SpringLayout.SOUTH, this);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Email *");
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_2, 0, SpringLayout.WEST, lblNewLabel);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Login");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_3, 40, SpringLayout.SOUTH, lblNewLabel_2);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_3, 0, SpringLayout.WEST, lblNewLabel);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("Password");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_4, 38, SpringLayout.SOUTH, lblNewLabel_3);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_4, 0, SpringLayout.WEST, lblNewLabel);
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_4);
-		
-		JLabel lblNewLabel_5 = new JLabel("City");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_2, 33, SpringLayout.SOUTH, lblNewLabel_5);
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_5, 43, SpringLayout.SOUTH, lblNewLabel_1);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_5, 0, SpringLayout.WEST, lblNewLabel);
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_5);
-		
-		JLabel lblNewLabel_6 = new JLabel("SIRET");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_6, 34, SpringLayout.SOUTH, lblNewLabel_4);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_6, 0, SpringLayout.WEST, lblNewLabel);
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_6);
-		
-		JLabel lblNewLabel_7 = new JLabel("Firstname *");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_7, 0, SpringLayout.NORTH, lblNewLabel);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_7, 281, SpringLayout.EAST, lblNewLabel);
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_7);
-		
-		JLabel lblNewLabel_8 = new JLabel("Zip Code *");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_8, 0, SpringLayout.NORTH, lblNewLabel_1);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_8, 0, SpringLayout.WEST, lblNewLabel_7);
-		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_8);
-		
-		JLabel lblNewLabel_9 = new JLabel("Phone *");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_9, 0, SpringLayout.NORTH, lblNewLabel_5);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_9, 0, SpringLayout.WEST, lblNewLabel_7);
-		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_9);
-		
-		JLabel lblNewLabel_10 = new JLabel("Email confirmation *");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_10, 0, SpringLayout.NORTH, lblNewLabel_2);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_10, 0, SpringLayout.WEST, lblNewLabel_7);
-		lblNewLabel_10.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_10);
-		
-		JLabel lblNewLabel_11 = new JLabel("Password Confirmation *");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_11, 0, SpringLayout.NORTH, lblNewLabel_4);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_11, 0, SpringLayout.WEST, lblNewLabel_7);
-		lblNewLabel_11.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_11);
-		
-		JLabel lblNewLabel_12 = new JLabel("Website");
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_12, 0, SpringLayout.NORTH, lblNewLabel_6);
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_12, 0, SpringLayout.WEST, lblNewLabel_7);
-		lblNewLabel_12.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblNewLabel_12);
-		
-		JLabel lblNewLabel_13 = new JLabel("All fields with a * are mandatory fields");
-		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel_13, 0, SpringLayout.WEST, lblNewLabel);
-		lblNewLabel_13.setForeground(new Color(255, 0, 0));
-		lblNewLabel_13.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		this.add(lblNewLabel_13);
-		
-		JButton btnNewButton = new JButton("Confirm");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		sl_container.putConstraint(SpringLayout.SOUTH, btnNewButton, -24, SpringLayout.SOUTH, this);
-		sl_container.putConstraint(SpringLayout.NORTH, lblNewLabel_13, -1, SpringLayout.NORTH, btnNewButton);
-		sl_container.putConstraint(SpringLayout.WEST, btnNewButton, 0, SpringLayout.WEST, lblNewLabel_7);
-		this.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Back");
-		btnNewButton_1.addActionListener(this);
-		btnNewButton_1.setActionCommand("back");
-		sl_container.putConstraint(SpringLayout.EAST, btnNewButton_1, -102, SpringLayout.EAST, this);
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		sl_container.putConstraint(SpringLayout.SOUTH, btnNewButton_1, -24, SpringLayout.SOUTH, this);
-		this.add(btnNewButton_1);
-		
-		textField = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, textField, 32, SpringLayout.EAST, lblNewLabel);
-		sl_container.putConstraint(SpringLayout.EAST, textField, -130, SpringLayout.WEST, lblNewLabel_7);
-		this.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		sl_container.putConstraint(SpringLayout.SOUTH, textField, -36, SpringLayout.NORTH, textField_1);
-		sl_container.putConstraint(SpringLayout.EAST, textField_1, 0, SpringLayout.EAST, lblNewLabel_13);
-		sl_container.putConstraint(SpringLayout.WEST, textField_1, 32, SpringLayout.EAST, lblNewLabel_1);
-		sl_container.putConstraint(SpringLayout.NORTH, textField_1, 0, SpringLayout.NORTH, lblNewLabel_1);
-		this.add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		sl_container.putConstraint(SpringLayout.NORTH, textField_2, 0, SpringLayout.NORTH, lblNewLabel_5);
-		sl_container.putConstraint(SpringLayout.WEST, textField_2, 60, SpringLayout.EAST, lblNewLabel_5);
-		sl_container.putConstraint(SpringLayout.EAST, textField_2, 0, SpringLayout.EAST, lblNewLabel_13);
-		this.add(textField_2);
-		textField_2.setColumns(10);
-		
-		textField_3 = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, textField_3, 34, SpringLayout.EAST, lblNewLabel_2);
-		sl_container.putConstraint(SpringLayout.SOUTH, textField_3, 0, SpringLayout.SOUTH, lblNewLabel_2);
-		sl_container.putConstraint(SpringLayout.EAST, textField_3, 0, SpringLayout.EAST, lblNewLabel_13);
-		this.add(textField_3);
-		textField_3.setColumns(10);
-		
-		textField_4 = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, textField_4, 48, SpringLayout.EAST, lblNewLabel_3);
-		sl_container.putConstraint(SpringLayout.SOUTH, textField_4, 0, SpringLayout.SOUTH, lblNewLabel_3);
-		sl_container.putConstraint(SpringLayout.EAST, textField_4, 0, SpringLayout.EAST, lblNewLabel_13);
-		this.add(textField_4);
-		textField_4.setColumns(10);
-		
-		textField_5 = new JPasswordField();
-		sl_container.putConstraint(SpringLayout.NORTH, textField_5, 0, SpringLayout.NORTH, lblNewLabel_4);
-		sl_container.putConstraint(SpringLayout.WEST, textField_5, 20, SpringLayout.EAST, lblNewLabel_4);
-		sl_container.putConstraint(SpringLayout.EAST, textField_5, 0, SpringLayout.EAST, lblNewLabel_13);
-		this.add(textField_5);
-		textField_5.setColumns(10);
-		
-		textField_6 = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, textField_6, 43, SpringLayout.EAST, lblNewLabel_6);
-		sl_container.putConstraint(SpringLayout.SOUTH, textField_6, 0, SpringLayout.SOUTH, lblNewLabel_6);
-		sl_container.putConstraint(SpringLayout.EAST, textField_6, 0, SpringLayout.EAST, lblNewLabel_13);
-		this.add(textField_6);
-		textField_6.setColumns(10);
-		
-		textField_7 = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, textField_7, -188, SpringLayout.EAST, this);
-		sl_container.putConstraint(SpringLayout.EAST, textField_7, -69, SpringLayout.EAST, this);
-		sl_container.putConstraint(SpringLayout.SOUTH, textField_7, 0, SpringLayout.SOUTH, lblNewLabel);
-		this.add(textField_7);
-		textField_7.setColumns(10);
-		
-		textField_8 = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, textField_8, 0, SpringLayout.WEST, textField_7);
-		sl_container.putConstraint(SpringLayout.SOUTH, textField_8, 0, SpringLayout.SOUTH, lblNewLabel_1);
-		sl_container.putConstraint(SpringLayout.EAST, textField_8, 0, SpringLayout.EAST, textField_7);
-		this.add(textField_8);
-		textField_8.setColumns(10);
-		
-		textField_9 = new JTextField();
-		sl_container.putConstraint(SpringLayout.NORTH, textField_9, 0, SpringLayout.NORTH, lblNewLabel_5);
-		sl_container.putConstraint(SpringLayout.WEST, textField_9, 0, SpringLayout.WEST, textField_7);
-		sl_container.putConstraint(SpringLayout.EAST, textField_9, 0, SpringLayout.EAST, textField_7);
-		this.add(textField_9);
-		textField_9.setColumns(10);
-		
-		textField_10 = new JTextField();
-		sl_container.putConstraint(SpringLayout.NORTH, textField_10, 0, SpringLayout.NORTH, lblNewLabel_2);
-		sl_container.putConstraint(SpringLayout.WEST, textField_10, 0, SpringLayout.WEST, textField_7);
-		sl_container.putConstraint(SpringLayout.EAST, textField_10, 0, SpringLayout.EAST, textField_7);
-		this.add(textField_10);
-		textField_10.setColumns(10);
-		
-		textField_11 = new JPasswordField();
-		sl_container.putConstraint(SpringLayout.NORTH, textField_11, 0, SpringLayout.NORTH, lblNewLabel_4);
-		sl_container.putConstraint(SpringLayout.WEST, textField_11, 40, SpringLayout.EAST, lblNewLabel_11);
-		sl_container.putConstraint(SpringLayout.EAST, textField_11, 0, SpringLayout.EAST, textField_7);
-		this.add(textField_11);
-		textField_11.setColumns(10);
-		
-		textField_12 = new JTextField();
-		sl_container.putConstraint(SpringLayout.NORTH, textField_12, 0, SpringLayout.NORTH, lblNewLabel_6);
-		sl_container.putConstraint(SpringLayout.WEST, textField_12, 0, SpringLayout.WEST, textField_7);
-		sl_container.putConstraint(SpringLayout.EAST, textField_12, 0, SpringLayout.EAST, textField_7);
-		this.add(textField_12);
-		textField_12.setColumns(10);
 
-		
+		JLabel lblName = new JLabel("Name *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblName, 106, SpringLayout.NORTH, this);
+		sl_container.putConstraint(SpringLayout.WEST, lblName, 25, SpringLayout.WEST, this);
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblName);
 
+		JLabel lblStreet = new JLabel("Street *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblStreet, 36, SpringLayout.SOUTH, lblName);
+		sl_container.putConstraint(SpringLayout.WEST, lblStreet, 0, SpringLayout.WEST, lblName);
+		lblStreet.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblStreet);
 
+		JLabel lblEmail = new JLabel("Email *");
+		sl_container.putConstraint(SpringLayout.WEST, lblEmail, 0, SpringLayout.WEST, lblName);
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblEmail);
+
+		JLabel lblLogin = new JLabel("Login *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblLogin, 38, SpringLayout.SOUTH, lblEmail);
+		sl_container.putConstraint(SpringLayout.WEST, lblLogin, 0, SpringLayout.WEST, lblName);
+		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblLogin);
+
+		JLabel lblPswd = new JLabel("Password *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblPswd, 40, SpringLayout.SOUTH, lblLogin);
+		sl_container.putConstraint(SpringLayout.WEST, lblPswd, 0, SpringLayout.WEST, lblName);
+		lblPswd.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblPswd);
+
+		JLabel lblCity = new JLabel("City *");
+		sl_container.putConstraint(SpringLayout.SOUTH, lblCity, -327, SpringLayout.SOUTH, this);
+		sl_container.putConstraint(SpringLayout.NORTH, lblEmail, 33, SpringLayout.SOUTH, lblCity);
+		sl_container.putConstraint(SpringLayout.WEST, lblCity, 0, SpringLayout.WEST, lblName);
+		lblCity.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblCity);
+
+		/*JLabel lblSiret = new JLabel("SIRET");
+		sl_container.putConstraint(SpringLayout.NORTH, lblSiret, 34, SpringLayout.SOUTH, lblPswd);
+		sl_container.putConstraint(SpringLayout.WEST, lblSiret, 0, SpringLayout.WEST, lblName);
+		lblSiret.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblSiret);*/
+
+		JLabel lblFirstname = new JLabel("Firstname *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblFirstname, 0, SpringLayout.NORTH, lblName);
+		lblFirstname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblFirstname);
+
+		JLabel lblZip = new JLabel("Zip Code *");
+		sl_container.putConstraint(SpringLayout.WEST, lblZip, 400, SpringLayout.WEST, this);
+		sl_container.putConstraint(SpringLayout.WEST, lblFirstname, 0, SpringLayout.WEST, lblZip);
+		sl_container.putConstraint(SpringLayout.NORTH, lblZip, 0, SpringLayout.NORTH, lblStreet);
+		lblZip.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblZip);
+
+		JLabel lblPhone = new JLabel("Phone *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblPhone, 0, SpringLayout.NORTH, lblCity);
+		sl_container.putConstraint(SpringLayout.WEST, lblPhone, 400, SpringLayout.WEST, this);
+		lblPhone.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblPhone);
+
+		JLabel lblEmailConfirm = new JLabel("Confirm Email *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblEmailConfirm, 0, SpringLayout.NORTH, lblEmail);
+		sl_container.putConstraint(SpringLayout.WEST, lblEmailConfirm, 400, SpringLayout.WEST, this);
+		lblEmailConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblEmailConfirm);
+
+		JLabel lblPswdConfirm = new JLabel("Confirm Password *");
+		sl_container.putConstraint(SpringLayout.NORTH, lblPswdConfirm, 0, SpringLayout.NORTH, lblPswd);
+		sl_container.putConstraint(SpringLayout.WEST, lblPswdConfirm, 0, SpringLayout.WEST, lblFirstname);
+		lblPswdConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblPswdConfirm);
+
+		/*JLabel lblWebsite = new JLabel("Website");
+		sl_container.putConstraint(SpringLayout.NORTH, lblWebsite, 0, SpringLayout.NORTH, lblSiret);
+		sl_container.putConstraint(SpringLayout.WEST, lblWebsite, 0, SpringLayout.WEST, lblFirstname);
+		lblWebsite.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(lblWebsite);*/
+
+		JLabel lblFields = new JLabel("All fields with a * are mandatory fields");
+		sl_container.putConstraint(SpringLayout.WEST, lblFields, 0, SpringLayout.WEST, lblName);
+		lblFields.setForeground(new Color(255, 0, 0));
+		lblFields.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.add(lblFields);
+
+		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addActionListener(this);
+		btnConfirm.setActionCommand("confirm");
+		sl_container.putConstraint(SpringLayout.WEST, btnConfirm, 157, SpringLayout.EAST, lblFields);
+		sl_container.putConstraint(SpringLayout.SOUTH, btnConfirm, -54, SpringLayout.SOUTH, this);
+		sl_container.putConstraint(SpringLayout.NORTH, lblFields, 4, SpringLayout.NORTH, btnConfirm);
+		btnConfirm.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.add(btnConfirm);
+
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(this);
+		btnBack.setActionCommand("back");
+		sl_container.putConstraint(SpringLayout.SOUTH, btnBack, -54, SpringLayout.SOUTH, this);
+		sl_container.putConstraint(SpringLayout.EAST, btnBack, -95, SpringLayout.EAST, this);
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.add(btnBack);
+
+		nameField = new JTextField();
+		sl_container.putConstraint(SpringLayout.WEST, nameField, 45, SpringLayout.EAST, lblName);
+		sl_container.putConstraint(SpringLayout.NORTH, nameField, 106, SpringLayout.NORTH, this);
+		sl_container.putConstraint(SpringLayout.EAST, nameField, -469, SpringLayout.EAST, this);
+		this.add(nameField);
+
+		streetField = new JTextField();
+		sl_container.putConstraint(SpringLayout.NORTH, streetField, 36, SpringLayout.SOUTH, nameField);
+		sl_container.putConstraint(SpringLayout.WEST, streetField, 45, SpringLayout.EAST, lblStreet);
+		sl_container.putConstraint(SpringLayout.EAST, streetField, -75, SpringLayout.WEST, lblZip);
+		this.add(streetField);
+
+		cityField = new JTextField();
+		sl_container.putConstraint(SpringLayout.WEST, cityField, 59, SpringLayout.EAST, lblCity);
+		sl_container.putConstraint(SpringLayout.EAST, cityField, -75, SpringLayout.WEST, lblPhone);
+		this.add(cityField);
+
+		emailField = new JTextField();
+		sl_container.putConstraint(SpringLayout.WEST, emailField, 47, SpringLayout.EAST, lblEmail);
+		sl_container.putConstraint(SpringLayout.EAST, emailField, -75, SpringLayout.WEST, lblEmailConfirm);
+		sl_container.putConstraint(SpringLayout.SOUTH, cityField, -33, SpringLayout.NORTH, emailField);
+		sl_container.putConstraint(SpringLayout.NORTH, emailField, 278, SpringLayout.NORTH, this);
+		this.add(emailField);
+
+		loginField = new JTextField();
+		sl_container.putConstraint(SpringLayout.NORTH, loginField, 40, SpringLayout.SOUTH, emailField);
+		sl_container.putConstraint(SpringLayout.WEST, loginField, 0, SpringLayout.WEST, nameField);
+		sl_container.putConstraint(SpringLayout.EAST, loginField, -469, SpringLayout.EAST, this);
+		this.add(loginField);
+
+		pswdField = new JPasswordField();
+		sl_container.putConstraint(SpringLayout.WEST, pswdField, 19, SpringLayout.EAST, lblPswd);
+		sl_container.putConstraint(SpringLayout.NORTH, pswdField, 38, SpringLayout.SOUTH, loginField);
+		sl_container.putConstraint(SpringLayout.EAST, pswdField, -75, SpringLayout.WEST, lblPswdConfirm);
+		this.add(pswdField);
+
+		/*siretField = new JTextField();
+		sl_container.putConstraint(SpringLayout.WEST, siretField, 43, SpringLayout.EAST, lblSiret);
+		sl_container.putConstraint(SpringLayout.SOUTH, siretField, 0, SpringLayout.SOUTH, lblSiret);
+		sl_container.putConstraint(SpringLayout.EAST, siretField, 0, SpringLayout.EAST, lblFields);
+		this.add(siretField);*/
+
+		firstnameField = new JTextField();
+		sl_container.putConstraint(SpringLayout.NORTH, firstnameField, 106, SpringLayout.NORTH, this);
+		sl_container.putConstraint(SpringLayout.WEST, firstnameField, 563, SpringLayout.WEST, this);
+		sl_container.putConstraint(SpringLayout.EAST, firstnameField, -31, SpringLayout.EAST, this);
+		this.add(firstnameField);
+
+		zipField = new JTextField();
+		sl_container.putConstraint(SpringLayout.NORTH, zipField, 162, SpringLayout.NORTH, this);
+		sl_container.putConstraint(SpringLayout.SOUTH, firstnameField, -36, SpringLayout.NORTH, zipField);
+		sl_container.putConstraint(SpringLayout.WEST, zipField, 0, SpringLayout.WEST, firstnameField);
+		sl_container.putConstraint(SpringLayout.EAST, zipField, -31, SpringLayout.EAST, this);
+		this.add(zipField);
+
+		phoneField = new JTextField();
+		sl_container.putConstraint(SpringLayout.WEST, phoneField, 0, SpringLayout.WEST, firstnameField);
+		sl_container.putConstraint(SpringLayout.EAST, phoneField, -31, SpringLayout.EAST, this);
+		this.add(phoneField);
+
+		emailConfirmField = new JTextField();
+		sl_container.putConstraint(SpringLayout.SOUTH, phoneField, -33, SpringLayout.NORTH, emailConfirmField);
+		sl_container.putConstraint(SpringLayout.NORTH, emailConfirmField, 278, SpringLayout.NORTH, this);
+		sl_container.putConstraint(SpringLayout.WEST, emailConfirmField, 0, SpringLayout.WEST, firstnameField);
+		sl_container.putConstraint(SpringLayout.EAST, emailConfirmField, -31, SpringLayout.EAST, this);
+		this.add(emailConfirmField);
+
+		pswdConfirmField = new JPasswordField();
+		sl_container.putConstraint(SpringLayout.WEST, pswdConfirmField, 563, SpringLayout.WEST, this);
+		sl_container.putConstraint(SpringLayout.NORTH, pswdConfirmField, 0, SpringLayout.NORTH, lblPswd);
+		sl_container.putConstraint(SpringLayout.EAST, pswdConfirmField, 0, SpringLayout.EAST, firstnameField);
+		this.add(pswdConfirmField);
+
+		/*websiteField = new JTextField();
+		sl_container.putConstraint(SpringLayout.NORTH, websiteField, 0, SpringLayout.NORTH, lblSiret);
+		sl_container.putConstraint(SpringLayout.WEST, websiteField, 0, SpringLayout.WEST, firstnameField);
+		sl_container.putConstraint(SpringLayout.EAST, websiteField, 0, SpringLayout.EAST, firstnameField);
+		this.add(websiteField);*/
+
+	}
+
+	public JTextField getNameField() {
+		return nameField;
+	}
+
+	public JTextField getStreetField() {
+		return streetField;
+	}
+
+	public JTextField getCityField() {
+		return cityField;
+	}
+
+	public JTextField getEmailField() {
+		return emailField;
+	}
+
+	public JTextField getLoginField() {
+		return loginField;
+	}
+
+	public JPasswordField getPswdField() {
+		return pswdField;
+	}
+
+	public JTextField getSiretField() {
+		return siretField;
+	}
+
+	public JTextField getFirstnameField() {
+		return firstnameField;
+	}
+
+	public JTextField getZipField() {
+		return zipField;
+	}
+
+	public JTextField getPhoneField() {
+		return phoneField;
+	}
+
+	public JPasswordField getPswdConfirm() {
+		return pswdConfirmField;
+	}
+
+	public JTextField getEmailConfirm() {
+		return emailConfirmField;
+	}
+
+	public JTextField getWebsiteField() {
+		return websiteField;
+	}
+
+	public boolean fieldsAreEmpty()
+	{
+		return getNameField().getText().equals("") && getStreetField().getText().equals("") && getCityField().getText().equals("")
+				&& getEmailField().getText().equals("") && getLoginField().getText().equals("") && new String(getPswdField().getPassword()).equals("")
+				&& getFirstnameField().getText().equals("") && getZipField().getText().equals("") && getPhoneField().getText().equals("")
+				&& new String(getPswdConfirm().getPassword()).equals("") && getEmailConfirm().getText().equals("");
 	}
 
 	@Override
@@ -252,6 +304,40 @@ public class SignUpView extends JPanel implements ActionListener {
 		{
 			this.viewController.showLoginPanel();
 		}
+		else if(cmd.equals("confirm"))
+		{
+			if(fieldsAreEmpty())
+			{
+				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+			else if(!Arrays.equals(getPswdField().getPassword(), getPswdConfirm().getPassword()))
+			{
+				JOptionPane.showMessageDialog(null, "The two passwords do not match !", "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+			else if(!getEmailConfirm().getText().equals(getEmailField().getText()))
+			{
+				JOptionPane.showMessageDialog(null, "The two email address do not match !", "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+			else if(!EmailValidator.validate(getEmailConfirm().getText()) || !EmailValidator.validate(getEmailField().getText()))
+			{
+				JOptionPane.showMessageDialog(null, "Email address not valid !", "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+			else
+			{
+				try {
+					userFacade.signUp(getNameField().getText(), getFirstnameField().getText(), getStreetField().getText(), 
+							getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText(), 
+							getLoginField().getText(), new String(getPswdField().getPassword()));
+					System.out.println(new String(getPswdField().getPassword()));
+					JOptionPane.showMessageDialog(null, "You are now registered " + getLoginField().getText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				} catch (AlreadyExistsException e1) {
+					// TODO Auto-generated catch block
+					//e1.printStackTrace();
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
+				}
+
+			}
+		}
 	}
-	
+
 }
