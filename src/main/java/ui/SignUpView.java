@@ -134,6 +134,7 @@ public class SignUpView extends JPanel implements ActionListener {
 
 		JLabel lblFields = new JLabel("All fields with a * are mandatory fields");
 		sl_container.putConstraint(SpringLayout.WEST, lblFields, 0, SpringLayout.WEST, lblName);
+		sl_container.putConstraint(SpringLayout.SOUTH, lblFields, -58, SpringLayout.SOUTH, this);
 		lblFields.setForeground(new Color(255, 0, 0));
 		lblFields.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(lblFields);
@@ -141,28 +142,26 @@ public class SignUpView extends JPanel implements ActionListener {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(this);
 		btnConfirm.setActionCommand("confirm");
-		sl_container.putConstraint(SpringLayout.WEST, btnConfirm, 157, SpringLayout.EAST, lblFields);
-		sl_container.putConstraint(SpringLayout.SOUTH, btnConfirm, -54, SpringLayout.SOUTH, this);
-		sl_container.putConstraint(SpringLayout.NORTH, lblFields, 4, SpringLayout.NORTH, btnConfirm);
+		sl_container.putConstraint(SpringLayout.NORTH, btnConfirm, -4, SpringLayout.NORTH, lblFields);
+		sl_container.putConstraint(SpringLayout.WEST, btnConfirm, 0, SpringLayout.WEST, lblFirstname);
 		btnConfirm.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnConfirm);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this);
 		btnBack.setActionCommand("back");
-		sl_container.putConstraint(SpringLayout.SOUTH, btnBack, -54, SpringLayout.SOUTH, this);
-		sl_container.putConstraint(SpringLayout.EAST, btnBack, -95, SpringLayout.EAST, this);
+		sl_container.putConstraint(SpringLayout.NORTH, btnBack, -4, SpringLayout.NORTH, lblFields);
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnBack);
 
 		nameField = new JTextField();
 		sl_container.putConstraint(SpringLayout.WEST, nameField, 45, SpringLayout.EAST, lblName);
 		sl_container.putConstraint(SpringLayout.NORTH, nameField, 106, SpringLayout.NORTH, this);
-		sl_container.putConstraint(SpringLayout.EAST, nameField, -469, SpringLayout.EAST, this);
 		this.add(nameField);
 
 		streetField = new JTextField();
 		sl_container.putConstraint(SpringLayout.NORTH, streetField, 36, SpringLayout.SOUTH, nameField);
+		sl_container.putConstraint(SpringLayout.EAST, nameField, 0, SpringLayout.EAST, streetField);
 		sl_container.putConstraint(SpringLayout.WEST, streetField, 45, SpringLayout.EAST, lblStreet);
 		sl_container.putConstraint(SpringLayout.EAST, streetField, -75, SpringLayout.WEST, lblZip);
 		this.add(streetField);
@@ -181,13 +180,13 @@ public class SignUpView extends JPanel implements ActionListener {
 
 		loginField = new JTextField();
 		sl_container.putConstraint(SpringLayout.NORTH, loginField, 40, SpringLayout.SOUTH, emailField);
-		sl_container.putConstraint(SpringLayout.WEST, loginField, 0, SpringLayout.WEST, nameField);
-		sl_container.putConstraint(SpringLayout.EAST, loginField, -469, SpringLayout.EAST, this);
+		sl_container.putConstraint(SpringLayout.WEST, loginField, 47, SpringLayout.EAST, lblLogin);
+		sl_container.putConstraint(SpringLayout.EAST, loginField, -589, SpringLayout.EAST, this);
 		this.add(loginField);
 
 		pswdField = new JPasswordField();
-		sl_container.putConstraint(SpringLayout.WEST, pswdField, 19, SpringLayout.EAST, lblPswd);
 		sl_container.putConstraint(SpringLayout.NORTH, pswdField, 38, SpringLayout.SOUTH, loginField);
+		sl_container.putConstraint(SpringLayout.WEST, pswdField, 19, SpringLayout.EAST, lblPswd);
 		sl_container.putConstraint(SpringLayout.EAST, pswdField, -75, SpringLayout.WEST, lblPswdConfirm);
 		this.add(pswdField);
 
@@ -198,34 +197,35 @@ public class SignUpView extends JPanel implements ActionListener {
 		this.add(siretField);*/
 
 		firstnameField = new JTextField();
+		sl_container.putConstraint(SpringLayout.EAST, btnBack, 0, SpringLayout.EAST, firstnameField);
 		sl_container.putConstraint(SpringLayout.NORTH, firstnameField, 106, SpringLayout.NORTH, this);
 		sl_container.putConstraint(SpringLayout.WEST, firstnameField, 563, SpringLayout.WEST, this);
-		sl_container.putConstraint(SpringLayout.EAST, firstnameField, -31, SpringLayout.EAST, this);
+		sl_container.putConstraint(SpringLayout.EAST, firstnameField, -151, SpringLayout.EAST, this);
 		this.add(firstnameField);
 
 		zipField = new JTextField();
-		sl_container.putConstraint(SpringLayout.NORTH, zipField, 162, SpringLayout.NORTH, this);
 		sl_container.putConstraint(SpringLayout.SOUTH, firstnameField, -36, SpringLayout.NORTH, zipField);
-		sl_container.putConstraint(SpringLayout.WEST, zipField, 0, SpringLayout.WEST, firstnameField);
-		sl_container.putConstraint(SpringLayout.EAST, zipField, -31, SpringLayout.EAST, this);
+		sl_container.putConstraint(SpringLayout.NORTH, zipField, 162, SpringLayout.NORTH, this);
+		sl_container.putConstraint(SpringLayout.WEST, zipField, 86, SpringLayout.EAST, lblZip);
+		sl_container.putConstraint(SpringLayout.EAST, zipField, -151, SpringLayout.EAST, this);
 		this.add(zipField);
 
 		phoneField = new JTextField();
-		sl_container.putConstraint(SpringLayout.WEST, phoneField, 0, SpringLayout.WEST, firstnameField);
-		sl_container.putConstraint(SpringLayout.EAST, phoneField, -31, SpringLayout.EAST, this);
+		sl_container.putConstraint(SpringLayout.WEST, phoneField, 105, SpringLayout.EAST, lblPhone);
+		sl_container.putConstraint(SpringLayout.EAST, phoneField, -151, SpringLayout.EAST, this);
 		this.add(phoneField);
 
 		emailConfirmField = new JTextField();
 		sl_container.putConstraint(SpringLayout.SOUTH, phoneField, -33, SpringLayout.NORTH, emailConfirmField);
+		sl_container.putConstraint(SpringLayout.WEST, emailConfirmField, 48, SpringLayout.EAST, lblEmailConfirm);
+		sl_container.putConstraint(SpringLayout.EAST, emailConfirmField, -151, SpringLayout.EAST, this);
 		sl_container.putConstraint(SpringLayout.NORTH, emailConfirmField, 278, SpringLayout.NORTH, this);
-		sl_container.putConstraint(SpringLayout.WEST, emailConfirmField, 0, SpringLayout.WEST, firstnameField);
-		sl_container.putConstraint(SpringLayout.EAST, emailConfirmField, -31, SpringLayout.EAST, this);
 		this.add(emailConfirmField);
 
 		pswdConfirmField = new JPasswordField();
-		sl_container.putConstraint(SpringLayout.WEST, pswdConfirmField, 563, SpringLayout.WEST, this);
 		sl_container.putConstraint(SpringLayout.NORTH, pswdConfirmField, 0, SpringLayout.NORTH, lblPswd);
-		sl_container.putConstraint(SpringLayout.EAST, pswdConfirmField, 0, SpringLayout.EAST, firstnameField);
+		sl_container.putConstraint(SpringLayout.WEST, pswdConfirmField, 20, SpringLayout.EAST, lblPswdConfirm);
+		sl_container.putConstraint(SpringLayout.EAST, pswdConfirmField, -151, SpringLayout.EAST, this);
 		this.add(pswdConfirmField);
 
 		/*websiteField = new JTextField();

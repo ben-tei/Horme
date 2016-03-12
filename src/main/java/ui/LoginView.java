@@ -48,36 +48,34 @@ public class LoginView extends JPanel implements ActionListener
 		this.add(lblConnexion);
 
 		this.lblLogin = new JLabel("Login");
-		this.sl_container.putConstraint(SpringLayout.NORTH, lblLogin, 103, SpringLayout.SOUTH, lblConnexion);
-		this.sl_container.putConstraint(SpringLayout.EAST, lblLogin, -526, SpringLayout.EAST, this);
+		this.sl_container.putConstraint(SpringLayout.NORTH, lblLogin, 138, SpringLayout.NORTH, this);
 		this.lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblLogin);
 
 		this.lblPassword = new JLabel("Password");
-		this.sl_container.putConstraint(SpringLayout.NORTH, lblPassword, 167, SpringLayout.SOUTH, lblConnexion);
-		this.sl_container.putConstraint(SpringLayout.EAST, lblPassword, -498, SpringLayout.EAST, this);
-		this.sl_container.putConstraint(SpringLayout.SOUTH, lblLogin, -44, SpringLayout.NORTH, lblPassword);
+		this.sl_container.putConstraint(SpringLayout.NORTH, lblPassword, 42, SpringLayout.SOUTH, lblLogin);
+		this.sl_container.putConstraint(SpringLayout.WEST, lblPassword, 0, SpringLayout.WEST, lblLogin);
 		this.lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblPassword);
 
 		this.passwordField = new JPasswordField();
-		this.sl_container.putConstraint(SpringLayout.NORTH, passwordField, 167, SpringLayout.SOUTH, lblConnexion);
-		this.sl_container.putConstraint(SpringLayout.WEST, passwordField, 33, SpringLayout.EAST, lblPassword);
-		this.sl_container.putConstraint(SpringLayout.SOUTH, passwordField, 0, SpringLayout.SOUTH, lblPassword);
-		this.sl_container.putConstraint(SpringLayout.EAST, passwordField, -273, SpringLayout.EAST, this);
+		this.sl_container.putConstraint(SpringLayout.WEST, passwordField, 0, SpringLayout.WEST, lblConnexion);
+		this.sl_container.putConstraint(SpringLayout.EAST, passwordField, -359, SpringLayout.EAST, this);
 		this.add(passwordField);
 
 		this.loginField = new JTextField();
-		this.sl_container.putConstraint(SpringLayout.NORTH, loginField, 2, SpringLayout.NORTH, lblLogin);
-		this.sl_container.putConstraint(SpringLayout.WEST, loginField, 61, SpringLayout.EAST, lblLogin);
-		sl_container.putConstraint(SpringLayout.EAST, loginField, -273, SpringLayout.EAST, this);
+		this.sl_container.putConstraint(SpringLayout.NORTH, passwordField, 42, SpringLayout.SOUTH, loginField);
+		this.sl_container.putConstraint(SpringLayout.EAST, lblLogin, -89, SpringLayout.WEST, loginField);
+		this.sl_container.putConstraint(SpringLayout.NORTH, loginField, 0, SpringLayout.NORTH, lblLogin);
+		this.sl_container.putConstraint(SpringLayout.WEST, loginField, 0, SpringLayout.WEST, lblConnexion);
+		this.sl_container.putConstraint(SpringLayout.EAST, loginField, -359, SpringLayout.EAST, this);
 		this.add(loginField);
 
 		this.btnLogin = new JButton("Login");
 		this.btnLogin.addActionListener(this);
 		this.btnLogin.setActionCommand("login");
 		this.btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		this.sl_container.putConstraint(SpringLayout.NORTH, btnLogin, 51, SpringLayout.SOUTH, lblPassword);
+		this.sl_container.putConstraint(SpringLayout.NORTH, btnLogin, 53, SpringLayout.SOUTH, lblPassword);
 		this.sl_container.putConstraint(SpringLayout.WEST, btnLogin, 0, SpringLayout.WEST, lblLogin);
 		this.add(btnLogin);
 
@@ -85,8 +83,9 @@ public class LoginView extends JPanel implements ActionListener
 		this.btnSignUp.addActionListener(this);
 		this.btnSignUp.setActionCommand("signup");
 		this.btnSignUp.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.sl_container.putConstraint(SpringLayout.SOUTH, passwordField, -53, SpringLayout.NORTH, btnSignUp);
 		this.sl_container.putConstraint(SpringLayout.NORTH, btnSignUp, 0, SpringLayout.NORTH, btnLogin);
-		this.sl_container.putConstraint(SpringLayout.EAST, btnSignUp, 2, SpringLayout.EAST, passwordField);
+		this.sl_container.putConstraint(SpringLayout.EAST, btnSignUp, 0, SpringLayout.EAST, passwordField);
 		this.add(btnSignUp);
 
 	}
