@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Dimension;
 
-public class IndexView extends JPanel implements ActionListener{
+public class IndexView extends JPanel implements ActionListener {
 	
 	private SpringLayout sl_container;
 	private JTextField search;
@@ -86,14 +86,15 @@ public class IndexView extends JPanel implements ActionListener{
 		this.search.setColumns(10);
 		
 		JLabel lblSearch = new JLabel("Search");
-		sl_container.putConstraint(SpringLayout.WEST, lblSearch, -39, SpringLayout.WEST, search);
+		sl_container.putConstraint(SpringLayout.WEST, lblSearch, -50, SpringLayout.WEST, search);
 		sl_container.putConstraint(SpringLayout.SOUTH, lblSearch, -25, SpringLayout.NORTH, btnMyOrders);
 		sl_container.putConstraint(SpringLayout.EAST, lblSearch, -6, SpringLayout.WEST, search);
 		this.add(lblSearch);
 		
 		JLabel lblHorme = new JLabel("HORME");
-		sl_container.putConstraint(SpringLayout.NORTH, lblHorme, 3, SpringLayout.NORTH, search);
-		sl_container.putConstraint(SpringLayout.EAST, lblHorme, -236, SpringLayout.WEST, lblSearch);
+		this.sl_container.putConstraint(SpringLayout.NORTH, lblHorme, 10, SpringLayout.NORTH, this);
+		this.sl_container.putConstraint(SpringLayout.WEST, lblHorme, 400, SpringLayout.WEST, this);
+		lblHorme.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		this.add(lblHorme);
 	}
 	

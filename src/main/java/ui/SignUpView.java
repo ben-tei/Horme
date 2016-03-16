@@ -50,7 +50,7 @@ public class SignUpView extends JPanel implements ActionListener {
 
 		JLabel lblSignUp = new JLabel("Sign Up");
 		sl_container.putConstraint(SpringLayout.NORTH, lblSignUp, 10, SpringLayout.NORTH, this);
-		sl_container.putConstraint(SpringLayout.WEST, lblSignUp, 363, SpringLayout.WEST, this);
+		sl_container.putConstraint(SpringLayout.WEST, lblSignUp, 400, SpringLayout.WEST, this);
 		lblSignUp.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		this.add(lblSignUp);
 

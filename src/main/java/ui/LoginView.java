@@ -43,7 +43,7 @@ public class LoginView extends JPanel implements ActionListener
 
 		this.lblConnexion = new JLabel("Connexion");
 		this.sl_container.putConstraint(SpringLayout.NORTH, lblConnexion, 10, SpringLayout.NORTH, this);
-		this.sl_container.putConstraint(SpringLayout.WEST, lblConnexion, 363, SpringLayout.WEST, this);
+		this.sl_container.putConstraint(SpringLayout.WEST, lblConnexion, 400, SpringLayout.WEST, this);
 		this.lblConnexion.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		this.add(lblConnexion);
 
