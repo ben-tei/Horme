@@ -15,7 +15,7 @@ public class NotificationView extends JPanel implements ActionListener {
 	private SpringLayout sl_container;
 	private ViewController viewController;
 
-	public NotificationView (ViewController vc) {
+	public NotificationView (ViewController vc, String loginText) {
 
 		this.notificationFacade = new NotificationFacade();
 
@@ -24,7 +24,7 @@ public class NotificationView extends JPanel implements ActionListener {
 		this.sl_container = new SpringLayout();
 		this.setLayout(sl_container);
 
-		new Menu(this.sl_container, this);
+		new Menu(this.sl_container, this, loginText);
 
 
 	}

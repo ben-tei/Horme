@@ -15,10 +15,10 @@ public class ViewController {
 		this.showLoginPanel();
 	}
 
-	public void showIndexPanel()
+	public void showIndexPanel(String loginText)
 	{
 		this.myWindow.setTitle("Horme - Welcome");
-		this.myJPanel = new IndexView(this);      
+		this.myJPanel = new IndexView(this, loginText);      
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();

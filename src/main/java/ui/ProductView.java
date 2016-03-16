@@ -1,8 +1,11 @@
 package ui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
@@ -12,8 +15,8 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class IndexView extends JPanel implements ActionListener {
-
+public class ProductView extends JPanel implements ActionListener{
+	
 	private static final long serialVersionUID = 1L;
 	private SpringLayout sl_container;
 	private JTextField search;
@@ -21,7 +24,7 @@ public class IndexView extends JPanel implements ActionListener {
 	private UserFacade userFacade;
 	private Menu menu;
 
-	public IndexView (ViewController vc, String loginText)
+	public ProductView (ViewController vc, String loginText)
 	{
 		this.userFacade = new UserFacade();
 
@@ -101,17 +104,16 @@ public class IndexView extends JPanel implements ActionListener {
 		this.add(lblHorme);
 
 	}
-
+	
+	
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String cmd = e.getActionCommand();
-		if(cmd.equals("Products"))
-		{
-			
-		}
-
+		
+		
+		
 	}
 
 }

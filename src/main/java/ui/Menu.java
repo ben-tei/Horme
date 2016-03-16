@@ -8,13 +8,22 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import bl.UserFacade;
+
 public class Menu {
 
 	private JTextField search;
+	private UserFacade userfacade;
+	private JLabel lblUser;
 
-	public Menu(SpringLayout sl_container, JPanel jp)
+	public Menu(SpringLayout sl_container, JPanel jp, String loginText)
 	{		
-		JLabel lblNewLabel = new JLabel("UserLoged");
+		JLabel lblUser = new JLabel("Connected as : " + loginText);
+		sl_container.putConstraint(SpringLayout.NORTH, lblUser, 15, SpringLayout.NORTH, jp);
+		sl_container.putConstraint(SpringLayout.WEST, lblUser, 10, SpringLayout.WEST, jp);
+		jp.add(lblUser);
+
+		JLabel lblNewLabel = new JLabel("Bienvenue");
 		sl_container.putConstraint(SpringLayout.WEST, lblNewLabel, 10, SpringLayout.WEST, jp);
 		jp.add(lblNewLabel);
 
@@ -76,6 +85,11 @@ public class Menu {
 		sl_container.putConstraint(SpringLayout.WEST, lblHorme, 400, SpringLayout.WEST, jp);
 		lblHorme.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		jp.add(lblHorme);
+	}
+	
+	
+	public void setUserLoged(String loginText){
+		lblUser.setText(loginText); 
 	}
 
 }

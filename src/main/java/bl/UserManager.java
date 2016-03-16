@@ -30,5 +30,6 @@ public class UserManager {
 		user = this.factory.createUser(name, firstname, street, zipCode, city, phone, email, login, HashText.sha1(password));
 		return user;
 	}
+	
 
 }
