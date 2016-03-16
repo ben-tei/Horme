@@ -23,10 +23,11 @@ public class IndexView extends JPanel implements ActionListener {
 	private SpringLayout sl_container;
 	private JTextField search;
 	private ViewController viewController;
+	private UserFacade userFacade;
 
-	public IndexView (ViewController vc){
-		setSize(new Dimension(600, 800));
-		
+	public IndexView (ViewController vc)
+	{
+		this.userFacade = new UserFacade();
 		
 		this.viewController = vc;
 	
