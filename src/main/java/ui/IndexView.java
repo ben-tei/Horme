@@ -28,7 +28,7 @@ public class IndexView extends JPanel implements ActionListener {
 	public IndexView (ViewController vc)
 	{
 		this.userFacade = new UserFacade();
-		
+		//tamere benj
 		this.viewController = vc;
 	
 		this.sl_container = new SpringLayout();
