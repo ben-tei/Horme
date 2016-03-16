@@ -22,7 +22,7 @@ public class ViewController {
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
-		
+
 	}
 
 	public void showLoginPanel()
