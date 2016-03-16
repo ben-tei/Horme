@@ -12,18 +12,19 @@ public class ViewController {
 
 	public ViewController()
 	{
-		this.myWindow = new Window(600, 800);
+		this.myWindow = new Window(600, 920);
 		this.myWindow.setVisible(true);
 		this.showLoginPanel();
 	}
 
-	public void doAfterLogin()
+	public void showIndexPanel()
 	{
-		JPanel pan = new JPanel();
-		pan.setBackground(Color.ORANGE);        
-		this.myWindow.setContentPane(pan);
+		this.myWindow.setTitle("Horme - Welcome");
+		this.myJPanel = new IndexView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
+		
 	}
 
 	public void showLoginPanel()
