@@ -13,7 +13,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-import bl.UserFacade;
 import exceptions.AlreadyExistsException;
 import util.EmailValidator;
 
@@ -23,7 +22,6 @@ public class SignUpView extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private SpringLayout sl_container;
-	private UserFacade userFacade;
 	private ViewController viewController;
 	private JTextField nameField;
 	private JTextField streetField;
@@ -41,8 +39,6 @@ public class SignUpView extends JPanel implements ActionListener {
 
 	public SignUpView(ViewController vc)
 	{
-		this.userFacade = new UserFacade();
-
 		this.viewController = vc;
 
 		this.sl_container = new SpringLayout();
@@ -325,7 +321,7 @@ public class SignUpView extends JPanel implements ActionListener {
 			else
 			{
 				try {
-					userFacade.signUp(getNameField().getText(), getFirstnameField().getText(), getStreetField().getText(), 
+					this.viewController.getUserFacade().signUp(getNameField().getText(), getFirstnameField().getText(), getStreetField().getText(), 
 							getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText(), 
 							getLoginField().getText(), new String(getPswdField().getPassword()));
 					System.out.println(new String(getPswdField().getPassword()));

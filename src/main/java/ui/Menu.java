@@ -13,12 +13,11 @@ import bl.UserFacade;
 public class Menu {
 
 	private JTextField search;
-	private UserFacade userfacade;
 	private JLabel lblUser;
 
-	public Menu(SpringLayout sl_container, JPanel jp, String loginText)
+	public Menu(SpringLayout sl_container, JPanel jp, UserFacade userFacade)
 	{		
-		JLabel lblUser = new JLabel("Connected as : " + loginText);
+		JLabel lblUser = new JLabel("Connected as : " + userFacade.getUser().getFirstName() + " " + userFacade.getUser().getName());
 		sl_container.putConstraint(SpringLayout.NORTH, lblUser, 15, SpringLayout.NORTH, jp);
 		sl_container.putConstraint(SpringLayout.WEST, lblUser, 10, SpringLayout.WEST, jp);
 		jp.add(lblUser);
@@ -86,8 +85,8 @@ public class Menu {
 		lblHorme.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		jp.add(lblHorme);
 	}
-	
-	
+
+
 	public void setUserLoged(String loginText){
 		lblUser.setText(loginText); 
 	}

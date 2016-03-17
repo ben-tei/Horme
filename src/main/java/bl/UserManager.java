@@ -31,5 +31,9 @@ public class UserManager {
 		return user;
 	}
 	
-
+	public User getUser()
+	{
+		return this.user;
+	}
+	
 }

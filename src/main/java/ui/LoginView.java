@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
-import bl.UserFacade;
 import exceptions.WrongLoginException;
 import exceptions.WrongPasswordException;
 
@@ -29,13 +28,10 @@ public class LoginView extends JPanel implements ActionListener
 	private JButton btnLogin;
 	private JButton btnSignUp;
 	private SpringLayout sl_container;
-	private UserFacade userFacade;
 	private ViewController viewController;
 
 	public LoginView(ViewController vc)
 	{
-		this.userFacade = new UserFacade();
-
 		this.viewController = vc;
 
 		this.sl_container = new SpringLayout();
@@ -123,7 +119,7 @@ public class LoginView extends JPanel implements ActionListener
 			if((!getLoginText().equals("")) && (!getPasswdText().equals("")))
 			{
 				try {
-					userFacade.login(getLoginText(), getPasswdText());
+					this.viewController.getUserFacade().login(getLoginText(), getPasswdText());
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showIndexPanel(this.getLoginText());
 				} catch (WrongLoginException | WrongPasswordException e1) {

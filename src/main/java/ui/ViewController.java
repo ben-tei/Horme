@@ -3,16 +3,25 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import bl.UserFacade;
+
 public class ViewController {
 
 	private JFrame myWindow;
 	private JPanel myJPanel;
+	private UserFacade userFacade;
 
 	public ViewController()
 	{
 		this.myWindow = new Window(600, 920);
 		this.myWindow.setVisible(true);
 		this.showLoginPanel();
+		this.userFacade = new UserFacade();
+	}
+
+	public UserFacade getUserFacade()
+	{
+		return this.userFacade;
 	}
 
 	public void showIndexPanel(String loginText)
