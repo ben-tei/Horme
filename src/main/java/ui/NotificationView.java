@@ -24,7 +24,7 @@ public class NotificationView extends JPanel implements ActionListener {
 		this.sl_container = new SpringLayout();
 		this.setLayout(sl_container);
 
-		new Menu(this.sl_container, this, this.viewController.getUserFacade());
+		new Menu(this.sl_container, this, this.viewController.getUserFacade(), this.viewController);
 
 
 	}

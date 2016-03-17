@@ -1,6 +1,7 @@
 package persist;
 
 import bl.User;
+import core.*;
 import exceptions.*;
 
 public class FactoryJDBC extends Factory
@@ -25,6 +26,13 @@ public class FactoryJDBC extends Factory
 	public void getNotifications() 
 	{
 		NotificationJDBC notifjdbc = new NotificationJDBC();
+	}
+	
+	
+	@Override
+	public Product readProducts() 
+	{
+		return new ProductJDBC();
 	}
 
 }

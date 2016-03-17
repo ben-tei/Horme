@@ -24,10 +24,10 @@ public class ViewController {
 		return this.userFacade;
 	}
 
-	public void showIndexPanel(String loginText)
+	public void showIndexPanel()
 	{
 		this.myWindow.setTitle("Horme - Welcome");
-		this.myJPanel = new IndexView(this, loginText);      
+		this.myJPanel = new IndexView(this);      
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -52,6 +52,15 @@ public class ViewController {
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
 		((SignUpView) this.myJPanel).getNameField().requestFocusInWindow();
+	}
+	
+	public void showProductsPanel()
+	{
+		this.myWindow.setTitle("Horme - Products");
+		this.myJPanel = new ProductView(this);        
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
 	}
 
 }

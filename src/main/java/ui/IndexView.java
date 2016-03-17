@@ -12,14 +12,14 @@ public class IndexView extends JPanel implements ActionListener {
 	private SpringLayout sl_container;
 	private ViewController viewController;
 
-	public IndexView (ViewController vc, String loginText)
+	public IndexView (ViewController vc)
 	{
 		this.viewController = vc;
 
 		this.sl_container = new SpringLayout();
 		this.setLayout(sl_container);
 
-		new Menu(this.sl_container, this, this.viewController.getUserFacade());
+		new Menu(this.sl_container, this, this.viewController.getUserFacade(), this.viewController);
 
 	}
 
@@ -27,12 +27,7 @@ public class IndexView extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String cmd = e.getActionCommand();
-		if(cmd.equals("Products"))
-		{
-
-		}
-
+		
 	}
 
 }
