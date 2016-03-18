@@ -7,7 +7,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 import bl.ProductFacade;
-import core.Product;
 
 public class ProductView extends JPanel implements ActionListener{
 
@@ -24,7 +23,7 @@ public class ProductView extends JPanel implements ActionListener{
 		this.sl_container = new SpringLayout();
 		this.setLayout(sl_container);
 
-		new Menu(this.sl_container, this, this.viewController.getUserFacade(), this.viewController);
+		new Menu(this.sl_container, this, this.viewController);
 		
 		JLabel name = new JLabel("Name");
 		this.sl_container.putConstraint(SpringLayout.WEST, name, 100, SpringLayout.WEST, this);

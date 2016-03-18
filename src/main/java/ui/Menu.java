@@ -10,19 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-import bl.UserFacade;
-
 public class Menu implements ActionListener {
 
 	private JTextField search;
-	private JLabel lblUser;
 	private ViewController viewController;
 
-	public Menu(SpringLayout sl_container, JPanel jp, UserFacade userFacade, ViewController vc)
+	public Menu(SpringLayout sl_container, JPanel jp, ViewController vc)
 	{	
 		this.viewController = vc;
 		
-		JLabel lblUser = new JLabel("Connected as : " + userFacade.getUser().getFirstName() + " " + userFacade.getUser().getName());
+		JLabel lblUser = new JLabel("Connected as : " + this.viewController.getUserFacade().getUser().getFirstName() + " " + this.viewController.getUserFacade().getUser().getName());
 		sl_container.putConstraint(SpringLayout.NORTH, lblUser, 15, SpringLayout.NORTH, jp);
 		sl_container.putConstraint(SpringLayout.WEST, lblUser, 10, SpringLayout.WEST, jp);
 		jp.add(lblUser);
