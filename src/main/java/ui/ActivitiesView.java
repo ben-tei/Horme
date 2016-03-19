@@ -3,22 +3,19 @@ package ui;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
-import bl.NotificationFacade;
+import bl.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class NotificationView extends JPanel implements ActionListener {
+public class ActivitiesView extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private NotificationFacade notificationFacade;
 	private SpringLayout sl_container;
 	private ViewController viewController;
-
-	public NotificationView (ViewController vc) {
-
-		this.notificationFacade = new NotificationFacade();
-
+	
+	public ActivitiesView (ViewController vc) {
+		
 		this.viewController = vc;
 
 		this.sl_container = new SpringLayout();
@@ -26,17 +23,12 @@ public class NotificationView extends JPanel implements ActionListener {
 
 		new Menu(this.sl_container, this, this.viewController);
 		
-
 	}
-
-	public void getNotifications() {
-		this.notificationFacade.getNotifications();
-	}
-
+	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

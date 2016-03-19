@@ -109,6 +109,15 @@ public class Menu implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
+		
+		if(cmd.equals("notification")) {
+			this.viewController.showNotificationPanel();
+		}
+		
+		if(cmd.equals("profil")) {
+			this.viewController.showProfilPanel();
+		}
+		
 		if(cmd.equals("products"))
 		{
 			try {
@@ -117,6 +126,26 @@ public class Menu implements ActionListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+		}
+		
+		if(cmd.equals("activities")) {
+			this.viewController.showActivitiesPanel();
+		}
+		
+		if(cmd.equals("diary")) {
+			this.viewController.showDiaryPanel();
+		}
+		
+		if(cmd.equals("wishlist")) {
+			this.viewController.showWishlistPanel();
+		}
+		
+		if(cmd.equals("orders")) {
+			this.viewController.showOrdersPanel();
+		}
+		
+		if(cmd.equals("cart")) {
+			this.viewController.showShopCartPanel();
 		}
 	}
 

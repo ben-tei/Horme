@@ -35,6 +35,76 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
+	
+	public void showNotificationPanel()
+	{
+		this.myWindow.setTitle("Horme - Notifications");
+		this.myJPanel = new NotificationView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
+	public void showProfilPanel()
+	{
+		this.myWindow.setTitle("Horme - Profil");
+		this.myJPanel = new ProfilView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
+	public void showActivitiesPanel()
+	{
+		this.myWindow.setTitle("Horme - Activities");
+		this.myJPanel = new ActivitiesView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
+	public void showDiaryPanel()
+	{
+		this.myWindow.setTitle("Horme - Diary");
+		this.myJPanel = new DiaryView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
+	public void showWishlistPanel()
+	{
+		this.myWindow.setTitle("Horme - Wishlist");
+		this.myJPanel = new WishlistView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
+	public void showOrdersPanel()
+	{
+		this.myWindow.setTitle("Horme - Orders");
+		this.myJPanel = new OrdersView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
+	public void showShopCartPanel()
+	{
+		this.myWindow.setTitle("Horme - Shopping Cart");
+		this.myJPanel = new ShopCartView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
 
 	public void showLoginPanel()
 	{
