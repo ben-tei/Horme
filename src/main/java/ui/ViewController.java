@@ -1,5 +1,7 @@
 package ui;
 
+import java.sql.SQLException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -54,7 +56,7 @@ public class ViewController {
 		((SignUpView) this.myJPanel).getNameField().requestFocusInWindow();
 	}
 	
-	public void showProductsPanel()
+	public void showProductsPanel() throws SQLException
 	{
 		this.myWindow.setTitle("Horme - Products");
 		this.myJPanel = new ProductView(this);        

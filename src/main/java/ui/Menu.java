@@ -3,6 +3,7 @@ package ui;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -110,7 +111,12 @@ public class Menu implements ActionListener {
 		String cmd = e.getActionCommand();
 		if(cmd.equals("products"))
 		{
-			this.viewController.showProductsPanel();
+			try {
+				this.viewController.showProductsPanel();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 

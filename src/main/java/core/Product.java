@@ -59,7 +59,8 @@ public class Product {
 	// Start of user code (user defined attributes for Product)
 
 	// End of user code
-
+	
+	
 	/**
 	 * The constructor.
 	 */
@@ -140,8 +141,8 @@ public class Product {
 	 * Returns stockQuantity.
 	 * @return stockQuantity 
 	 */
-	public Integer getStockQuantity() {
-		return this.stockQuantity;
+	public String getStockQuantity() {
+		return Integer.toString(this.stockQuantity);
 	}
 
 	/**
@@ -167,5 +168,4 @@ public class Product {
 	public void setCategory(Category newCategory) {
 		this.category = newCategory;
 	}
-
 }

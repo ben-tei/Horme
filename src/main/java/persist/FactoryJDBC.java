@@ -30,9 +30,9 @@ public class FactoryJDBC extends Factory
 	
 	
 	@Override
-	public Product readProducts() 
+	public ProductSet readProducts() 
 	{
-		return new ProductJDBC();
+		return new ProductSetJDBC();
 	}
 
 }

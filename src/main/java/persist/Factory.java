@@ -13,5 +13,5 @@ public abstract class Factory {
 
 	public abstract void getNotifications();
 	
-	public abstract Product readProducts();
+	public abstract ProductSet readProducts();
 }

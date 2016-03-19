@@ -1,22 +1,22 @@
 package bl;
 
-import core.Product;
+import core.ProductSet;
 import persist.*;
 
 public class ProductManager {
 	
 	private Factory factory;
-	private Product product;
+	private ProductSet products;
 	
 	public ProductManager()
 	{
 		this.factory = new FactoryJDBC();
 	}
 	
-	public Product readProducts()
+	public ProductSet readProducts()
 	{
-		product = factory.readProducts();
-		return product;
+		products = factory.readProducts();
+		return products;
 	}
 
 }

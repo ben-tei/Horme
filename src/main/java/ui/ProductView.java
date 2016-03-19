@@ -2,6 +2,7 @@ package ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,7 +16,7 @@ public class ProductView extends JPanel implements ActionListener{
 	private ViewController viewController;
 	private ProductFacade productFacade;
 
-	public ProductView (ViewController vc)
+	public ProductView (ViewController vc) throws SQLException
 	{
 		this.viewController = vc;
 		this.productFacade = new ProductFacade();
@@ -45,34 +46,40 @@ public class ProductView extends JPanel implements ActionListener{
 		this.sl_container.putConstraint(SpringLayout.NORTH, quantity, 180, SpringLayout.NORTH, this);
 		this.add(quantity);
 		
-		JLabel Pname = new JLabel(productFacade.readProducts().getName());
-		this.sl_container.putConstraint(SpringLayout.WEST, Pname, 100, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, Pname, 210, SpringLayout.NORTH, this);
-		this.add(Pname);
 		
-		JLabel Preference = new JLabel(productFacade.readProducts().getReference());
-		this.sl_container.putConstraint(SpringLayout.WEST, Preference, 250, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, Preference, 210, SpringLayout.NORTH, this);
-		this.add(Preference);
+		int placement = 210;
 		
-		JLabel Pprice = new JLabel("null");
-		this.sl_container.putConstraint(SpringLayout.WEST, Pprice, 400, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, Pprice, 210, SpringLayout.NORTH, this);
-		this.add(Pprice);
 		
-		JLabel Pquantity = new JLabel("null");
-		this.sl_container.putConstraint(SpringLayout.WEST, Pquantity, 550, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, Pquantity, 210, SpringLayout.NORTH, this);
-		this.add(Pquantity);
-		
+		for(int i = 0; i <= productFacade.readProducts().size() - 1; i++) {
+			
+			
+			JLabel Pname = new JLabel(productFacade.readProducts().getProductByIndex(i).getName());
+			this.sl_container.putConstraint(SpringLayout.WEST, Pname, 100, SpringLayout.WEST, this);
+			this.sl_container.putConstraint(SpringLayout.NORTH, Pname, placement, SpringLayout.NORTH, this);
+			this.add(Pname);
+			
+			JLabel Preference = new JLabel(productFacade.readProducts().getProductByIndex(i).getReference());
+			this.sl_container.putConstraint(SpringLayout.WEST, Preference, 250, SpringLayout.WEST, this);
+			this.sl_container.putConstraint(SpringLayout.NORTH, Preference, placement, SpringLayout.NORTH, this);
+			this.add(Preference);
+			
+			JLabel Pprice = new JLabel("null");
+			this.sl_container.putConstraint(SpringLayout.WEST, Pprice, 400, SpringLayout.WEST, this);
+			this.sl_container.putConstraint(SpringLayout.NORTH, Pprice, placement, SpringLayout.NORTH, this);
+			this.add(Pprice);
+			
+			JLabel Pquantity = new JLabel(productFacade.readProducts().getProductByIndex(i).getStockQuantity());
+			this.sl_container.putConstraint(SpringLayout.WEST, Pquantity, 550, SpringLayout.WEST, this);
+			this.sl_container.putConstraint(SpringLayout.NORTH, Pquantity, placement, SpringLayout.NORTH, this);
+			this.add(Pquantity);
+			
+			placement = placement + 20;
+		}
+			
 
 	}
 	
-	
-	/*public Product readProducts()
-	{
-		return this.productFacade.readProducts();
-	}*/
+
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

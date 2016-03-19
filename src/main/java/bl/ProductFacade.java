@@ -1,6 +1,6 @@
 package bl;
 
-import core.Product;
+import core.ProductSet;
 
 public class ProductFacade {
 	
@@ -11,7 +11,7 @@ public class ProductFacade {
 		this.productManager = new ProductManager();
 	}
 	
-	public Product readProducts()
+	public ProductSet readProducts()
 	{
 		return this.productManager.readProducts();
 	}
