@@ -30,6 +30,7 @@ public class UserJDBC extends User
 
 			if (rset.next())
 			{
+				this.setId(rset.getString("idPerson"));
 				this.setLogin(rset.getString("login"));
 				this.setPassword(rset.getString("password"));
 			}

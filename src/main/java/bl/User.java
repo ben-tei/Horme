@@ -26,6 +26,10 @@ import exceptions.WrongPasswordException;
  */
 public abstract class User extends Person {
 	/**
+	 * Description of the property id.
+	 */
+	public String id = "";
+	/**
 	 * Description of the property whishLists.
 	 */
 	public HashSet<WhishList> whishLists = new HashSet<WhishList>();
@@ -121,6 +125,14 @@ public abstract class User extends Person {
 	 */
 	public HashSet<Activity> getProposedActivities() {
 		return this.proposedActivities;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public boolean isPasswordOK(String password) throws WrongPasswordException
