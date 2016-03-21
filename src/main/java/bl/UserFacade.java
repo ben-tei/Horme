@@ -21,16 +21,16 @@ public class UserFacade {
 	{
 		return this.userManager.createUser(name, firstname, street, zipCode, city, phone, email, login, password);
 	}
-	
+
 	public User editProfile(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password)
+			String email)
 	{
-		return this.userManager.updateUser(name, firstname, street, zipCode, city, phone, email, login, password);
+		return this.userManager.updateUser(name, firstname, street, zipCode, city, phone, email);
 	}
-	
+
 	public User getUser()
 	{
 		return this.userManager.getUser();
 	}
-	
+
 }

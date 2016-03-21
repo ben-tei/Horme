@@ -31,6 +31,13 @@ public class UserJDBC extends User
 			if (rset.next())
 			{
 				this.setId(rset.getString("idPerson"));
+				this.setName(rset.getString("name"));
+				this.setFirstName(rset.getString("firstname"));
+				this.setStreet(rset.getString("street"));
+				this.setZipCode(rset.getString("zipCode"));
+				this.setCity(rset.getString("city"));
+				this.setPhone(rset.getString("phone"));
+				this.setEmail(rset.getString("email"));
 				this.setLogin(rset.getString("login"));
 				this.setPassword(rset.getString("password"));
 			}
@@ -108,6 +115,55 @@ public class UserJDBC extends User
 			jdbcconnection.close(pstmt);
 
 			jdbcconnection.close(pstmt2);
+
+			jdbcconnection.closeConnection();
+
+		}
+	}
+
+	public void updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
+			String email)
+	{
+		JDBCConnection jdbcconnection = new JDBCConnection();
+
+		Connection conn = null;
+
+		PreparedStatement pstmt = null;
+
+		try {
+
+			conn = jdbcconnection.openConnection();
+
+			pstmt = conn.prepareStatement("UPDATE Person SET name = ?, firstname = ?, street = ?, "
+					+ "zipCode = ?, city = ?, phone = ?, email = ? WHERE idPerson = ?");
+
+			pstmt.setString(1, name);
+			pstmt.setString(2, firstname);
+			pstmt.setString(3, street);
+			pstmt.setString(4, zipCode);
+			pstmt.setString(5, city);
+			pstmt.setString(6, phone);
+			pstmt.setString(7, email);
+			pstmt.setString(8, this.getId());
+
+			pstmt.executeUpdate();
+
+			this.setName(name);
+			this.setFirstName(firstname);
+			this.setStreet(street);
+			this.setZipCode(zipCode);
+			this.setCity(city);
+			this.setPhone(phone);
+			this.setEmail(email);
+		}
+
+		catch (SQLException e) {
+
+			JDBCConnection.ProcessSQLException(e);
+
+		} finally {
+
+			jdbcconnection.close(pstmt);
 
 			jdbcconnection.closeConnection();
 

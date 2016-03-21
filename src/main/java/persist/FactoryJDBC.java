@@ -35,11 +35,4 @@ public class FactoryJDBC extends Factory
 		return new ProductSetJDBC();
 	}
 
-	@Override
-	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) {
-		//return this.factory.updateUser(name, firstname, street, zipCode, city, phone, email, login, password);
-		return null;
-	}
-
 }
