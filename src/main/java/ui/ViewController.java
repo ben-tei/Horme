@@ -46,10 +46,10 @@ public class ViewController {
 
 	}
 	
-	public void showProfilPanel()
+	public void showProfilePanel()
 	{
 		this.myWindow.setTitle("Horme - Profil");
-		this.myJPanel = new ProfilView(this);      
+		this.myJPanel = new ProfileView(this);      
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();

@@ -17,7 +17,7 @@ import util.EmailValidator;
 
 import java.awt.Color;
 
-public class SignUpView extends JPanel implements ActionListener {
+public class ProfileView extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private ViewController viewController;
@@ -35,44 +35,36 @@ public class SignUpView extends JPanel implements ActionListener {
 	private JTextField emailConfirmField;
 	private JTextField websiteField;
 
-	public SignUpView(ViewController vc)
+	public ProfileView(ViewController vc)
 	{
 		this.viewController = vc;
 
 		this.setLayout(null);
 
-		JLabel lblSignUp = new JLabel("Sign Up");
-		lblSignUp.setBounds(413, 11, 68, 25);
-		lblSignUp.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		this.add(lblSignUp);
+		new Menu(this, this.viewController);
 
 		JLabel lblName = new JLabel("Name *");
-		lblName.setBounds(75, 106, 55, 20);
+		lblName.setBounds(75, 140, 55, 20);
 		lblName.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblName);
 
 		JLabel lblStreet = new JLabel("Street *");
-		lblStreet.setBounds(75, 162, 55, 20);
+		lblStreet.setBounds(75, 196, 55, 20);
 		lblStreet.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblStreet);
 
 		JLabel lblEmail = new JLabel("Email *");
-		lblEmail.setBounds(75, 278, 53, 20);
+		lblEmail.setBounds(75, 312, 53, 20);
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblEmail);
 
-		JLabel lblLogin = new JLabel("Login *");
-		lblLogin.setBounds(75, 336, 53, 20);
-		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblLogin);
-
 		JLabel lblPswd = new JLabel("Password *");
-		lblPswd.setBounds(75, 396, 81, 20);
+		lblPswd.setBounds(75, 430, 81, 20);
 		lblPswd.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblPswd);
 
 		JLabel lblCity = new JLabel("City *");
-		lblCity.setBounds(75, 225, 41, 20);
+		lblCity.setBounds(75, 259, 41, 20);
 		lblCity.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblCity);
 
@@ -83,27 +75,27 @@ public class SignUpView extends JPanel implements ActionListener {
 		this.add(lblSiret);*/
 
 		JLabel lblFirstname = new JLabel("Firstname *");
-		lblFirstname.setBounds(450, 106, 83, 20);
+		lblFirstname.setBounds(450, 140, 83, 20);
 		lblFirstname.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblFirstname);
 
 		JLabel lblZip = new JLabel("Zip Code *");
-		lblZip.setBounds(450, 162, 77, 20);
+		lblZip.setBounds(450, 196, 77, 20);
 		lblZip.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblZip);
 
 		JLabel lblPhone = new JLabel("Phone *");
-		lblPhone.setBounds(450, 225, 58, 20);
+		lblPhone.setBounds(450, 259, 58, 20);
 		lblPhone.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblPhone);
 
 		JLabel lblEmailConfirm = new JLabel("Confirm Email *");
-		lblEmailConfirm.setBounds(450, 278, 115, 20);
+		lblEmailConfirm.setBounds(450, 312, 115, 20);
 		lblEmailConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblEmailConfirm);
 
 		JLabel lblPswdConfirm = new JLabel("Confirm Password *");
-		lblPswdConfirm.setBounds(450, 396, 143, 20);
+		lblPswdConfirm.setBounds(450, 430, 143, 20);
 		lblPswdConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblPswdConfirm);
 
@@ -114,7 +106,7 @@ public class SignUpView extends JPanel implements ActionListener {
 		this.add(lblWebsite);*/
 
 		JLabel lblFields = new JLabel("All fields with a * are mandatory fields");
-		lblFields.setBounds(75, 499, 206, 15);
+		lblFields.setBounds(75, 513, 206, 15);
 		lblFields.setForeground(new Color(255, 0, 0));
 		lblFields.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(lblFields);
@@ -122,39 +114,35 @@ public class SignUpView extends JPanel implements ActionListener {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(this);
 		btnConfirm.setActionCommand("confirm");
-		btnConfirm.setBounds(438, 495, 83, 23);
+		btnConfirm.setBounds(438, 510, 83, 23);
 		btnConfirm.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnConfirm);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this);
 		btnBack.setActionCommand("back");
-		btnBack.setBounds(692, 495, 68, 23);
+		btnBack.setBounds(692, 510, 68, 23);
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnBack);
 
-		nameField = new JTextField();
-		nameField.setBounds(175, 106, 200, 20);
+		nameField = new JTextField(this.viewController.getUserFacade().getUser().getName());
+		nameField.setBounds(175, 140, 200, 20);
 		this.add(nameField);
 
-		streetField = new JTextField();
-		streetField.setBounds(175, 162, 200, 20);
+		streetField = new JTextField(this.viewController.getUserFacade().getUser().getStreet());
+		streetField.setBounds(175, 196, 200, 20);
 		this.add(streetField);
 
-		cityField = new JTextField();
-		cityField.setBounds(175, 225, 200, 20);
+		cityField = new JTextField(this.viewController.getUserFacade().getUser().getCity());
+		cityField.setBounds(175, 259, 200, 20);
 		this.add(cityField);
 
-		emailField = new JTextField();
-		emailField.setBounds(175, 278, 200, 20);
+		emailField = new JTextField(this.viewController.getUserFacade().getUser().getEmail());
+		emailField.setBounds(175, 312, 200, 20);
 		this.add(emailField);
 
-		loginField = new JTextField();
-		loginField.setBounds(175, 338, 200, 20);
-		this.add(loginField);
-
 		pswdField = new JPasswordField();
-		pswdField.setBounds(175, 396, 200, 20);
+		pswdField.setBounds(175, 430, 200, 20);
 		this.add(pswdField);
 
 		/*siretField = new JTextField();
@@ -163,24 +151,24 @@ public class SignUpView extends JPanel implements ActionListener {
 		sl_container.putConstraint(SpringLayout.EAST, siretField, 0, SpringLayout.EAST, lblFields);
 		this.add(siretField);*/
 
-		firstnameField = new JTextField();
-		firstnameField.setBounds(613, 106, 200, 20);
+		firstnameField = new JTextField(this.viewController.getUserFacade().getUser().getFirstName());
+		firstnameField.setBounds(613, 140, 200, 20);
 		this.add(firstnameField);
 
-		zipField = new JTextField();
-		zipField.setBounds(613, 162, 200, 20);
+		zipField = new JTextField(this.viewController.getUserFacade().getUser().getZipCode());
+		zipField.setBounds(613, 196, 200, 20);
 		this.add(zipField);
 
-		phoneField = new JTextField();
-		phoneField.setBounds(613, 225, 200, 20);
+		phoneField = new JTextField(this.viewController.getUserFacade().getUser().getPhone());
+		phoneField.setBounds(613, 259, 200, 20);
 		this.add(phoneField);
 
-		emailConfirmField = new JTextField();
-		emailConfirmField.setBounds(613, 278, 200, 20);
+		emailConfirmField = new JTextField(this.viewController.getUserFacade().getUser().getEmail());
+		emailConfirmField.setBounds(613, 312, 200, 20);
 		this.add(emailConfirmField);
 
 		pswdConfirmField = new JPasswordField();
-		pswdConfirmField.setBounds(613, 396, 200, 20);
+		pswdConfirmField.setBounds(613, 430, 200, 20);
 		this.add(pswdConfirmField);
 
 		/*websiteField = new JTextField();
@@ -246,9 +234,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	public boolean fieldsAreEmpty()
 	{
 		return getNameField().getText().equals("") && getStreetField().getText().equals("") && getCityField().getText().equals("")
-				&& getEmailField().getText().equals("") && getLoginField().getText().equals("") && new String(getPswdField().getPassword()).equals("")
-				&& getFirstnameField().getText().equals("") && getZipField().getText().equals("") && getPhoneField().getText().equals("")
-				&& new String(getPswdConfirm().getPassword()).equals("") && getEmailConfirm().getText().equals("");
+				&& getEmailField().getText().equals("") && getLoginField().getText().equals("") && getFirstnameField().getText().equals("") && 
+				getZipField().getText().equals("") && getPhoneField().getText().equals("") && getEmailConfirm().getText().equals("");
 	}
 
 	@Override
@@ -257,7 +244,7 @@ public class SignUpView extends JPanel implements ActionListener {
 		String cmd = e.getActionCommand();
 		if(cmd.equals("back"))
 		{
-			this.viewController.showLoginPanel();
+			this.viewController.showIndexPanel();
 		}
 		else if(cmd.equals("confirm"))
 		{
@@ -279,17 +266,9 @@ public class SignUpView extends JPanel implements ActionListener {
 			}
 			else
 			{
-				try {
-					this.viewController.getUserFacade().signUp(getNameField().getText(), getFirstnameField().getText(), getStreetField().getText(), 
-							getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText(), 
-							getLoginField().getText(), new String(getPswdField().getPassword()));
-
-					JOptionPane.showMessageDialog(null, "You are now registered " + getLoginField().getText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
-				} catch (AlreadyExistsException e1) {
-					// TODO Auto-generated catch block
-					//e1.printStackTrace();
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
-				}
+				this.viewController.getUserFacade().editProfile(getNameField().getText(), getFirstnameField().getText(), getStreetField().getText(), 
+						getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText(), 
+						getLoginField().getText(), new String(getPswdField().getPassword()));
 
 			}
 		}

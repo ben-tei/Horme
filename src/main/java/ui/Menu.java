@@ -18,7 +18,7 @@ public class Menu implements ActionListener {
 	public Menu(JPanel jp, ViewController vc)
 	{	
 		this.viewController = vc;
-		
+
 		JLabel lblUser = new JLabel("Connected as : " + this.viewController.getUserFacade().getUser().getFirstName() + " " + this.viewController.getUserFacade().getUser().getName());
 		lblUser.setBounds(15, 31, 309, 14);
 		jp.add(lblUser);
@@ -29,8 +29,8 @@ public class Menu implements ActionListener {
 		btnNotifications.setActionCommand("notification");
 		jp.add(btnNotifications);
 
-		JButton btnProfil = new JButton("My profil");
-		btnProfil.setBounds(140, 70, 83, 23);
+		JButton btnProfil = new JButton("My profile");
+		btnProfil.setBounds(140, 70, 89, 23);
 		btnProfil.addActionListener(this);
 		btnProfil.setActionCommand("profil");
 		jp.add(btnProfil);
@@ -89,15 +89,15 @@ public class Menu implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		
+
 		if(cmd.equals("notification")) {
 			this.viewController.showNotificationPanel();
 		}
-		
+
 		if(cmd.equals("profil")) {
-			this.viewController.showProfilPanel();
+			this.viewController.showProfilePanel();
 		}
-		
+
 		if(cmd.equals("products"))
 		{
 			try {
@@ -107,23 +107,23 @@ public class Menu implements ActionListener {
 				e1.printStackTrace();
 			}
 		}
-		
+
 		if(cmd.equals("activities")) {
 			this.viewController.showActivitiesPanel();
 		}
-		
+
 		if(cmd.equals("diary")) {
 			this.viewController.showDiaryPanel();
 		}
-		
+
 		if(cmd.equals("wishlist")) {
 			this.viewController.showWishlistPanel();
 		}
-		
+
 		if(cmd.equals("orders")) {
 			this.viewController.showOrdersPanel();
 		}
-		
+
 		if(cmd.equals("cart")) {
 			this.viewController.showShopCartPanel();
 		}
