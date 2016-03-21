@@ -42,4 +42,10 @@ public class FactoryJDBC extends Factory
 		return null;
 	}
 
+	@Override
+	public ActivitySet readActivities() {
+		// TODO Auto-generated method stub
+		return new ActivitySetJDBC(null);
+	}
+
 }
