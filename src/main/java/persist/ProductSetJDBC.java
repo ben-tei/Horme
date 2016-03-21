@@ -31,6 +31,7 @@ public class ProductSetJDBC extends ProductSet {
 				product = new Product();
 				product.setName(rset.getString("name"));
 				product.setReference(rset.getString("reference"));
+				product.setPrice(rset.getInt("price"));
 				product.setStockQuantity(rset.getInt("stockQuantity"));
 				this.AddProduct(product);
 			}
@@ -42,7 +43,6 @@ public class ProductSetJDBC extends ProductSet {
 
 		} finally {
 
-			
 			jdbcconnection.closeConnection();
 
 		}

@@ -63,7 +63,7 @@ public class ProductView extends JPanel implements ActionListener{
 			this.sl_container.putConstraint(SpringLayout.NORTH, Preference, placement, SpringLayout.NORTH, this);
 			this.add(Preference);
 			
-			JLabel Pprice = new JLabel("null");
+			JLabel Pprice = new JLabel(productFacade.readProducts().getProductByIndex(i).getPrice());
 			this.sl_container.putConstraint(SpringLayout.WEST, Pprice, 400, SpringLayout.WEST, this);
 			this.sl_container.putConstraint(SpringLayout.NORTH, Pprice, placement, SpringLayout.NORTH, this);
 			this.add(Pprice);

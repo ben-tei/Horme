@@ -50,6 +50,11 @@ public class Product {
 	 * Description of the property stockQuantity.
 	 */
 	private Integer stockQuantity = Integer.valueOf(0);
+	
+	/**
+	 * Description of the property stockQuantity.
+	 */
+	private Integer price = Integer.valueOf(0);
 
 	/**
 	 * Description of the property category.
@@ -168,4 +173,21 @@ public class Product {
 	public void setCategory(Category newCategory) {
 		this.category = newCategory;
 	}
+	
+	/**
+	 * Returns price.
+	 * @return price 
+	 */
+	public String getPrice() {
+		return Integer.toString(this.price);
+	}
+
+	/**
+	 * Sets a value to attribute category. 
+	 * @param newCategory 
+	 */
+	public void setPrice(Integer newPrice) {
+		this.price = newPrice;
+	}
+	
 }
