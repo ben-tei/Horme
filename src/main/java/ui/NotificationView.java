@@ -1,7 +1,6 @@
 package ui;
 
 import javax.swing.JPanel;
-import javax.swing.SpringLayout;
 
 import bl.NotificationFacade;
 
@@ -12,7 +11,6 @@ public class NotificationView extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private NotificationFacade notificationFacade;
-	private SpringLayout sl_container;
 	private ViewController viewController;
 
 	public NotificationView (ViewController vc) {
@@ -21,10 +19,9 @@ public class NotificationView extends JPanel implements ActionListener {
 
 		this.viewController = vc;
 
-		this.sl_container = new SpringLayout();
-		this.setLayout(sl_container);
+		this.setLayout(null);
 
-		new Menu(this.sl_container, this, this.viewController);
+		new Menu(this, this.viewController);
 		
 
 	}

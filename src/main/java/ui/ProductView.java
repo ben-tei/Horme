@@ -24,7 +24,7 @@ public class ProductView extends JPanel implements ActionListener{
 		this.sl_container = new SpringLayout();
 		this.setLayout(sl_container);
 
-		new Menu(this.sl_container, this, this.viewController);
+		new Menu(this, this.viewController);
 		
 		JLabel name = new JLabel("Name");
 		this.sl_container.putConstraint(SpringLayout.WEST, name, 100, SpringLayout.WEST, this);

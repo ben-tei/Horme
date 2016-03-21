@@ -32,6 +32,11 @@ public class Activity {
 	 * Description of the property name.
 	 */
 	private String name = "";
+	
+	/**
+	 * Description of the property description.
+	 */
+	private String description = "";
 
 	/**
 	 * Description of the property category.
@@ -134,6 +139,14 @@ public class Activity {
 	 */
 	public HashSet<Objective> getObjectives() {
 		return this.objectives;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }
