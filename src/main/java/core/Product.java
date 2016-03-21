@@ -183,8 +183,8 @@ public class Product {
 	}
 
 	/**
-	 * Sets a value to attribute category. 
-	 * @param newCategory 
+	 * Sets a value to attribute price. 
+	 * @param newPrice 
 	 */
 	public void setPrice(Integer newPrice) {
 		this.price = newPrice;
