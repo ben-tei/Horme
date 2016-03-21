@@ -6,13 +6,11 @@ import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SpringLayout;
 import bl.ProductFacade;
 
 public class ProductView extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
-	private SpringLayout sl_container;
 	private ViewController viewController;
 	private ProductFacade productFacade;
 
@@ -21,59 +19,49 @@ public class ProductView extends JPanel implements ActionListener{
 		this.viewController = vc;
 		this.productFacade = new ProductFacade();
 
-		this.sl_container = new SpringLayout();
-		this.setLayout(sl_container);
+		this.setLayout(null);
 
 		new Menu(this, this.viewController);
 		
 		JLabel name = new JLabel("Name");
-		this.sl_container.putConstraint(SpringLayout.WEST, name, 100, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, name, 180, SpringLayout.NORTH, this);
+		name.setBounds(140, 175, 46, 14);
 		this.add(name);
 		
 		JLabel reference = new JLabel("Reference");
-		this.sl_container.putConstraint(SpringLayout.WEST, reference, 250, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, reference, 180, SpringLayout.NORTH, this);
+		reference.setBounds(334, 175, 60, 14);
 		this.add(reference);
 		
 		JLabel price = new JLabel("Price");
-		this.sl_container.putConstraint(SpringLayout.WEST, price, 400, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, price, 180, SpringLayout.NORTH, this);
+		price.setBounds(519, 175, 46, 14);
 		this.add(price);
 		
 		JLabel quantity = new JLabel("Quantity");
-		this.sl_container.putConstraint(SpringLayout.WEST, quantity, 550, SpringLayout.WEST, this);
-		this.sl_container.putConstraint(SpringLayout.NORTH, quantity, 180, SpringLayout.NORTH, this);
+		quantity.setBounds(695, 175, 52, 14);
 		this.add(quantity);
 		
 		
-		int placement = 210;
+		int placement = 231;
 		
 		
 		for(int i = 0; i <= productFacade.readProducts().size() - 1; i++) {
 			
-			
 			JLabel Pname = new JLabel(productFacade.readProducts().getProductByIndex(i).getName());
-			this.sl_container.putConstraint(SpringLayout.WEST, Pname, 100, SpringLayout.WEST, this);
-			this.sl_container.putConstraint(SpringLayout.NORTH, Pname, placement, SpringLayout.NORTH, this);
+			Pname.setBounds(140, placement, 120, 14);
 			this.add(Pname);
 			
 			JLabel Preference = new JLabel(productFacade.readProducts().getProductByIndex(i).getReference());
-			this.sl_container.putConstraint(SpringLayout.WEST, Preference, 250, SpringLayout.WEST, this);
-			this.sl_container.putConstraint(SpringLayout.NORTH, Preference, placement, SpringLayout.NORTH, this);
+			Preference.setBounds(334, placement, 120, 14);
 			this.add(Preference);
 			
 			JLabel Pprice = new JLabel(productFacade.readProducts().getProductByIndex(i).getPrice());
-			this.sl_container.putConstraint(SpringLayout.WEST, Pprice, 400, SpringLayout.WEST, this);
-			this.sl_container.putConstraint(SpringLayout.NORTH, Pprice, placement, SpringLayout.NORTH, this);
+			Pprice.setBounds(519, placement, 120, 14);
 			this.add(Pprice);
 			
 			JLabel Pquantity = new JLabel(productFacade.readProducts().getProductByIndex(i).getStockQuantity());
-			this.sl_container.putConstraint(SpringLayout.WEST, Pquantity, 550, SpringLayout.WEST, this);
-			this.sl_container.putConstraint(SpringLayout.NORTH, Pquantity, placement, SpringLayout.NORTH, this);
+			Pquantity.setBounds(695, placement, 120, 14);
 			this.add(Pquantity);
 			
-			placement = placement + 20;
+			placement = placement + 32;
 		}
 			
 
