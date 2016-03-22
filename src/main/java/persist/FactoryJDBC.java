@@ -40,7 +40,7 @@ public class FactoryJDBC extends Factory
 	{
 		return new ShopCartRowSetJDBC();
 	}
-
+	
 	@Override
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
 			String email, String login, String password) {

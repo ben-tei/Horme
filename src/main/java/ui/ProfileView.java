@@ -3,7 +3,6 @@ package ui;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -12,7 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import exceptions.AlreadyExistsException;
 import util.EmailValidator;
 
 import java.awt.Color;
@@ -58,10 +56,10 @@ public class ProfileView extends JPanel implements ActionListener {
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblEmail);
 
-		JLabel lblPswd = new JLabel("Password *");
+		/*JLabel lblPswd = new JLabel("Password");
 		lblPswd.setBounds(75, 430, 81, 20);
 		lblPswd.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblPswd);
+		this.add(lblPswd);*/
 
 		JLabel lblCity = new JLabel("City *");
 		lblCity.setBounds(75, 259, 41, 20);
@@ -94,10 +92,10 @@ public class ProfileView extends JPanel implements ActionListener {
 		lblEmailConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblEmailConfirm);
 
-		JLabel lblPswdConfirm = new JLabel("Confirm Password *");
+		/*JLabel lblPswdConfirm = new JLabel("Confirm Password");
 		lblPswdConfirm.setBounds(450, 430, 143, 20);
 		lblPswdConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		this.add(lblPswdConfirm);
+		this.add(lblPswdConfirm);*/
 
 		/*JLabel lblWebsite = new JLabel("Website");
 		sl_container.putConstraint(SpringLayout.NORTH, lblWebsite, 0, SpringLayout.NORTH, lblSiret);
@@ -106,7 +104,7 @@ public class ProfileView extends JPanel implements ActionListener {
 		this.add(lblWebsite);*/
 
 		JLabel lblFields = new JLabel("All fields with a * are mandatory fields");
-		lblFields.setBounds(75, 513, 206, 15);
+		lblFields.setBounds(75, 400, 206, 15);
 		lblFields.setForeground(new Color(255, 0, 0));
 		lblFields.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(lblFields);
@@ -114,14 +112,14 @@ public class ProfileView extends JPanel implements ActionListener {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(this);
 		btnConfirm.setActionCommand("confirm");
-		btnConfirm.setBounds(438, 510, 83, 23);
+		btnConfirm.setBounds(438, 400, 83, 23);
 		btnConfirm.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnConfirm);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this);
 		btnBack.setActionCommand("back");
-		btnBack.setBounds(692, 510, 68, 23);
+		btnBack.setBounds(692, 400, 68, 23);
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnBack);
 
@@ -141,9 +139,9 @@ public class ProfileView extends JPanel implements ActionListener {
 		emailField.setBounds(175, 312, 200, 20);
 		this.add(emailField);
 
-		pswdField = new JPasswordField();
+		/*pswdField = new JPasswordField();
 		pswdField.setBounds(175, 430, 200, 20);
-		this.add(pswdField);
+		this.add(pswdField);*/
 
 		/*siretField = new JTextField();
 		sl_container.putConstraint(SpringLayout.WEST, siretField, 43, SpringLayout.EAST, lblSiret);
@@ -167,9 +165,9 @@ public class ProfileView extends JPanel implements ActionListener {
 		emailConfirmField.setBounds(613, 312, 200, 20);
 		this.add(emailConfirmField);
 
-		pswdConfirmField = new JPasswordField();
+		/*pswdConfirmField = new JPasswordField();
 		pswdConfirmField.setBounds(613, 430, 200, 20);
-		this.add(pswdConfirmField);
+		this.add(pswdConfirmField);*/
 
 		/*websiteField = new JTextField();
 		sl_container.putConstraint(SpringLayout.NORTH, websiteField, 0, SpringLayout.NORTH, lblSiret);
@@ -252,10 +250,6 @@ public class ProfileView extends JPanel implements ActionListener {
 			{
 				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure", JOptionPane.WARNING_MESSAGE);
 			}
-			else if(!Arrays.equals(getPswdField().getPassword(), getPswdConfirm().getPassword()))
-			{
-				JOptionPane.showMessageDialog(null, "The two passwords do not match !", "Failure", JOptionPane.WARNING_MESSAGE);
-			}
 			else if(!getEmailConfirm().getText().equals(getEmailField().getText()))
 			{
 				JOptionPane.showMessageDialog(null, "The two email address do not match !", "Failure", JOptionPane.WARNING_MESSAGE);
@@ -267,8 +261,9 @@ public class ProfileView extends JPanel implements ActionListener {
 			else
 			{
 				this.viewController.getUserFacade().editProfile(getNameField().getText(), getFirstnameField().getText(), getStreetField().getText(), 
-						getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText(), 
-						getLoginField().getText(), new String(getPswdField().getPassword()));
+						getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText());
+
+				JOptionPane.showMessageDialog(null, "Your profile has been updated !", "Success", JOptionPane.INFORMATION_MESSAGE);
 
 			}
 		}

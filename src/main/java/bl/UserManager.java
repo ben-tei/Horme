@@ -30,16 +30,17 @@ public class UserManager {
 		user = this.factory.createUser(name, firstname, street, zipCode, city, phone, email, login, HashText.sha1(password));
 		return user;
 	}
-	
+
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password)
+			String email)
 	{
-		return this.factory.updateUser(name, firstname, street, zipCode, city, phone, email, login, password);
+		((UserJDBC) this.user).updateUser(name, firstname, street, zipCode, city, phone, email);
+		return this.user;
 	}
-	
+
 	public User getUser()
 	{
 		return this.user;
 	}
-	
+
 }
