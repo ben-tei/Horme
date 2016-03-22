@@ -34,6 +34,12 @@ public class FactoryJDBC extends Factory
 	{
 		return new ProductSetJDBC();
 	}
+	
+	@Override
+	public ShopCartRowSet readShopCart() 
+	{
+		return new ShopCartRowSetJDBC();
+	}
 
 	@Override
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
