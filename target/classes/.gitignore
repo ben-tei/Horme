@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /bl/
 /core/
 /exceptions/
@@ -5,3 +6,8 @@
 /persist/
 /ui/
 /util/
+=======
+/persist/
+/bl/
+/core/
+>>>>>>> origin/master

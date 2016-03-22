@@ -18,5 +18,9 @@ public abstract class Factory {
 	
 	public abstract ProductSet readProducts();
 	
+<<<<<<< HEAD
 	public abstract ActivitySet readActivities();
+=======
+	public abstract ShopCartRowSet readShopCart();
+>>>>>>> origin/master
 }

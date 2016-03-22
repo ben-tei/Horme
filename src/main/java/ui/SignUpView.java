@@ -285,6 +285,7 @@ public class SignUpView extends JPanel implements ActionListener {
 							getLoginField().getText(), new String(getPswdField().getPassword()));
 
 					JOptionPane.showMessageDialog(null, "You are now registered " + getLoginField().getText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+					this.viewController.showLoginPanel();
 				} catch (AlreadyExistsException e1) {
 					// TODO Auto-generated catch block
 					//e1.printStackTrace();
