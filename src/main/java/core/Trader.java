@@ -17,6 +17,10 @@ import java.util.HashSet;
  */
 public class Trader extends Person {
 	/**
+	 * Description of the property id.
+	 */
+	private String id = "";
+	/**
 	 * Description of the property SIRET.
 	 */
 	private String SIRET = "";
@@ -52,6 +56,10 @@ public class Trader extends Person {
 		// Start of user code constructor for Trader)
 		super();
 		// End of user code
+	}
+	
+	public Trader(String id) {
+		this.id = id;
 	}
 
 	// Start of user code (user defined methods for Trader)
@@ -112,5 +120,14 @@ public class Trader extends Person {
 	public HashSet<Estimate> getEstimates() {
 		return this.estimates;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 
 }

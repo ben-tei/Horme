@@ -27,14 +27,15 @@ public class OrderSetJDBC extends OrderSet {
 
 			Statement state = conn.createStatement();
 			
-			rset = state.executeQuery("SELECT `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson` AND `numero`='9873567'");
+			rset = state.executeQuery("SELECT `idPerson`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson` AND `numero`='9873567'");
 			
 			
 			while(rset.next()){
 				order = new Order();
 				order.setDate(rset.getString("date"));
 				order.setNumero(rset.getString("numero"));
-				order.setTrader(rset.getString("website"));
+				trader = new Trader(rset.getString("idPerson"));
+				order.setTrader(trader);
 				this.AddOrder(order);
 			}
 		}
