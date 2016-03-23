@@ -231,9 +231,9 @@ public class ProfileView extends JPanel implements ActionListener {
 
 	public boolean fieldsAreEmpty()
 	{
-		return getNameField().getText().equals("") && getStreetField().getText().equals("") && getCityField().getText().equals("")
-				&& getEmailField().getText().equals("") && getLoginField().getText().equals("") && getFirstnameField().getText().equals("") && 
-				getZipField().getText().equals("") && getPhoneField().getText().equals("") && getEmailConfirm().getText().equals("");
+		return getNameField().getText().equals("") || getStreetField().getText().equals("") || getCityField().getText().equals("")
+				|| getEmailField().getText().equals("") || getFirstnameField().getText().equals("") || getZipField().getText().equals("")
+				|| getPhoneField().getText().equals("") || getEmailConfirm().getText().equals("");
 	}
 
 	@Override

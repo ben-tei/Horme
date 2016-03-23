@@ -14,9 +14,9 @@ public class ActivityManager {
 		this.factory = new FactoryJDBC();
 	}
 	
-	public ActivitySet readActivities()
+	public ActivitySet readActivities(User user)
 	{
-		activities = factory.readActivities();
+		activities = factory.readActivities(user);
 		return activities;
 	}
 

@@ -8,39 +8,33 @@ import core.ActivitySet;
 import core.Category;
 
 public class ActivitySetJDBC extends ActivitySet  {
-	
+
 	public ActivitySetJDBC(User user) 
 	{
-		
+
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
 
-		ResultSet rsetId= null;
-		
 		ResultSet rsetActivity= null;
-		
+
 		PreparedStatement pstmt = null;
-		
+
 		Activity activity = null;
-		
+
 		Category category;
-		
+
 		try{
 			conn = jdbcconnection.openConnection();
-			
-			pstmt = conn.prepareStatement("SELECT idUser FROM Person WHERE login=?");
 
-			pstmt.setString(1, user.getLogin());
+			pstmt = conn.prepareStatement("SELECT a.name, a.description, c.name FROM Activity a, Category c WHERE a.idCategory = c.idCategory"
+					+ "AND a.idUser = ?");
 
-			rsetId = pstmt.executeQuery();
+			pstmt.setString(1, user.getId());
 
-			Statement state = conn.createStatement();
-			
-			rsetActivity = state.executeQuery("SELECT a.name, a.description, c.name FROM Activity a, Category c WHERE a.idCategory = c.idCategory");
-		
-			
-			while(rsetActivity.next()){
+			rsetActivity = pstmt.executeQuery();
+
+			while(rsetActivity.next()) {
 				activity = new Activity();
 				category = new Category();
 				category.setName(rsetActivity.getString("c.name"));
@@ -50,14 +44,14 @@ public class ActivitySetJDBC extends ActivitySet  {
 				this.AddActivity(activity);
 			}
 		}
-		
+
 		catch (SQLException e) {
 
 			JDBCConnection.ProcessSQLException(e);
 
 		} finally {
 
-			
+
 			jdbcconnection.closeConnection();
 
 		}

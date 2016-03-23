@@ -10,7 +10,7 @@ public class ShopCartFacade {
 		this.shopCartManager = new ShopCartManager();
 	}
 	
-    public ShopCartRowSet ReadShopCart() {
-    	return this.shopCartManager.ReadShopCart();
+    public ShopCartRowSet readShopCart(User user) {
+    	return this.shopCartManager.readShopCart(user);
     }
 }

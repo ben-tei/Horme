@@ -36,22 +36,15 @@ public class FactoryJDBC extends Factory
 	}
 	
 	@Override
-	public ShopCartRowSet readShopCart() 
+	public ShopCartRowSet readShopCart(User user) 
 	{
-		return new ShopCartRowSetJDBC();
-	}
-	
-	@Override
-	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) {
-		//return this.factory.updateUser(name, firstname, street, zipCode, city, phone, email, login, password);
-		return null;
+		return new ShopCartRowSetJDBC(user);
 	}
 
 	@Override
-	public ActivitySet readActivities() {
+	public ActivitySet readActivities(User user) {
 		// TODO Auto-generated method stub
-		return new ActivitySetJDBC(null);
+		return new ActivitySetJDBC(user);
 	}
 
 }

@@ -2,6 +2,7 @@ package persist;
 
 import java.sql.*;
 
+import bl.User;
 import core.Product;
 import core.ShopCartRow;
 import core.ShopCartRowSet;
@@ -10,7 +11,7 @@ import exceptions.*;
 public class ShopCartRowSetJDBC extends ShopCartRowSet {
 	
 	
-	public ShopCartRowSetJDBC () 
+	public ShopCartRowSetJDBC (User user) 
 	{
 		
 		JDBCConnection jdbcconnection = new JDBCConnection();
@@ -19,17 +20,20 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 		ResultSet rset = null;
 		
+		PreparedStatement pstmt = null;
+		
 		Product product = null;
 		
-		try{
+		try {
 			conn = jdbcconnection.openConnection();
 
-			Statement state = conn.createStatement();
+			pstmt = conn.prepareStatement("SELECT * FROM Product"); // where idUser = ? ; pstmt.setString(1, user.getId());
+
+			//pstmt.setString(1, user.getId());
+
+			rset = pstmt.executeQuery();
 			
-			rset = state.executeQuery("SELECT * FROM Product");
-		
-			
-			while(rset.next()){
+			while(rset.next()) {
 				product = new Product();
 				product.setName(rset.getString("name"));
 				product.setReference(rset.getString("reference"));

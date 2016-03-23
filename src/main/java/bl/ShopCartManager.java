@@ -14,9 +14,9 @@ public class ShopCartManager {
 		this.factory = new FactoryJDBC();
 	}
 	
-	public ShopCartRowSet readShopCart()
+	public ShopCartRowSet readShopCart(User user)
 	{
-		shopCartRows = factory.readShopCart();
+		shopCartRows = factory.readShopCart(user);
 		return shopCartRows;
 	}
 	

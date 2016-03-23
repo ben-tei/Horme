@@ -12,8 +12,8 @@ private ActivityManager activityManager;
 		this.activityManager = new ActivityManager();
 	}
 	
-	public ActivitySet readActivities()
+	public ActivitySet readActivities(User user)
 	{
-		return this.activityManager.readActivities();
+		return this.activityManager.readActivities(user);
 	}
 }
