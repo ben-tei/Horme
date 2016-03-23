@@ -123,4 +123,9 @@ public class Order {
 		this.user = newUser;
 	}
 
+	public void setTrader(Trader newTrader) {
+		this.trader = newTrader;
+		
+	}
+
 }
