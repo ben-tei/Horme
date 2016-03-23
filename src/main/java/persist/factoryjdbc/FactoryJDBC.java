@@ -44,9 +44,9 @@ public class FactoryJDBC extends Factory
 	}
 
 	@Override
-	public ProductSet searchProducts(String productName)
+	public ProductSet searchProducts(String searchString)
 	{
-		return new ProductSetJDBC(productName);
+		return new ProductSetJDBC(searchString);
 	}
 
 	@Override

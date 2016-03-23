@@ -47,7 +47,7 @@ public class ProductSetJDBC extends ProductSet {
 		}
 	}
 
-	public ProductSetJDBC (String productName) 
+	public ProductSetJDBC (String searchString) 
 	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
@@ -63,9 +63,10 @@ public class ProductSetJDBC extends ProductSet {
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT * FROM Product WHERE name LIKE ?");
+			pstmt = conn.prepareStatement("SELECT * FROM Product WHERE name LIKE ? OR reference LIKE ?");
 
-			pstmt.setString(1, "%"+ productName + "%");
+			pstmt.setString(1, "%"+ searchString + "%");
+			pstmt.setString(2, "%"+ searchString + "%");
 
 			rset = pstmt.executeQuery();
 

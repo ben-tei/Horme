@@ -17,7 +17,7 @@ public abstract class Factory {
 
 	public abstract ProductSet readProducts();
 	
-	public abstract ProductSet searchProducts(String productName);
+	public abstract ProductSet searchProducts(String searchString);
 
 	public abstract ActivitySet readActivities(User user);
 

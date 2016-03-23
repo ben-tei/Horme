@@ -20,9 +20,9 @@ public class ProductManager {
 		return products;
 	}
 
-	public ProductSet searchProducts(String productName)
+	public ProductSet searchProducts(String searchString)
 	{
-		products = factory.searchProducts(productName);
+		products = factory.searchProducts(searchString);
 		return products;
 	}
 

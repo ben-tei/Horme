@@ -15,8 +15,8 @@ public class ViewController {
 	{
 		this.myWindow = new Window(600, 920);
 		this.myWindow.setVisible(true);
-		this.showLoginPanel();
 		this.userFacade = new UserFacade();
+		this.showLoginPanel();
 	}
 
 	public UserFacade getUserFacade()
@@ -133,10 +133,10 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 	}
 
-	public void showSearchPanel(String productName)
+	public void showSearchPanel(String searchString)
 	{
 		this.myWindow.setTitle("Horme - Search");
-		this.myJPanel = new SearchView(this, productName);        
+		this.myJPanel = new SearchView(this, searchString);        
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
