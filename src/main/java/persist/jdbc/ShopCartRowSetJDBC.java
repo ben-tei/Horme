@@ -3,10 +3,8 @@ package persist.jdbc;
 import java.sql.*;
 
 import bl.core.Product;
-import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
-import exceptions.*;
 
 public class ShopCartRowSetJDBC extends ShopCartRowSet {
 

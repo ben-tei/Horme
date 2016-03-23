@@ -1,10 +1,8 @@
 package bl.manager;
 
-import bl.core.ProductSet;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
 import bl.factory.Factory;
-import persist.*;
 import persist.factoryjdbc.FactoryJDBC;
 
 public class ShopCartManager {

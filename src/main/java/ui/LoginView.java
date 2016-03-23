@@ -51,10 +51,14 @@ public class LoginView extends JPanel implements ActionListener
 
 		this.passwordField = new JPasswordField();
 		passwordField.setBounds(418, 212, 155, 20);
+		this.passwordField.addActionListener(this);
+		this.passwordField.setActionCommand("login");
 		this.add(passwordField);
 
 		this.loginField = new JTextField();
 		loginField.setBounds(418, 150, 155, 20);
+		this.loginField.addActionListener(this);
+		this.loginField.setActionCommand("login");
 		this.add(loginField);
 
 		this.btnLogin = new JButton("Login");

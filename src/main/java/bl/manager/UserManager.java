@@ -5,7 +5,6 @@ import bl.factory.Factory;
 import exceptions.AlreadyExistsException;
 import exceptions.WrongLoginException;
 import exceptions.WrongPasswordException;
-import persist.*;
 import persist.factoryjdbc.FactoryJDBC;
 import persist.jdbc.UserJDBC;
 import util.HashText;

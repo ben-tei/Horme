@@ -1,7 +1,5 @@
 package ui;
 
-import java.sql.SQLException;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -35,7 +33,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showNotificationPanel()
 	{
 		this.myWindow.setTitle("Horme - Notifications");
@@ -45,7 +43,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showProfilePanel()
 	{
 		this.myWindow.setTitle("Horme - Profil");
@@ -55,7 +53,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showActivitiesPanel()
 	{
 		this.myWindow.setTitle("Horme - Activities");
@@ -65,7 +63,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showDiaryPanel()
 	{
 		this.myWindow.setTitle("Horme - Diary");
@@ -75,7 +73,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showWishlistPanel()
 	{
 		this.myWindow.setTitle("Horme - Wishlist");
@@ -85,7 +83,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showOrdersPanel()
 	{
 		this.myWindow.setTitle("Horme - Orders");
@@ -95,7 +93,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	public void showShopCartPanel()
 	{
 		this.myWindow.setTitle("Horme - Shopping Cart");
@@ -125,11 +123,20 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 		((SignUpView) this.myJPanel).getNameField().requestFocusInWindow();
 	}
-	
-	public void showProductsPanel() throws SQLException
+
+	public void showProductsPanel()
 	{
 		this.myWindow.setTitle("Horme - Products");
 		this.myJPanel = new ProductView(this);        
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+	}
+
+	public void showSearchPanel(String productName)
+	{
+		this.myWindow.setTitle("Horme - Search");
+		this.myJPanel = new SearchView(this, productName);        
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();

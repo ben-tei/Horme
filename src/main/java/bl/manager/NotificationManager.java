@@ -1,7 +1,6 @@
 package bl.manager;
 
 import bl.factory.Factory;
-import persist.*;
 import persist.factoryjdbc.FactoryJDBC;
 
 public class NotificationManager 

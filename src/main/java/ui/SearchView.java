@@ -8,13 +8,13 @@ import javax.swing.JPanel;
 
 import bl.facade.ProductFacade;
 
-public class ProductView extends JPanel implements ActionListener{
+public class SearchView extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	private ViewController viewController;
 	private ProductFacade productFacade;
 
-	public ProductView (ViewController vc)
+	public SearchView (ViewController vc, String productName)
 	{
 		this.viewController = vc;
 		this.productFacade = new ProductFacade();
@@ -43,21 +43,21 @@ public class ProductView extends JPanel implements ActionListener{
 		int placement = 231;
 
 
-		for(int i = 0; i <= productFacade.readProducts().size() - 1; i++) {
+		for(int i = 0; i <= productFacade.searchProducts(productName).size() - 1; i++) {
 
-			JLabel Pname = new JLabel(productFacade.readProducts().getProductByIndex(i).getName());
+			JLabel Pname = new JLabel(productFacade.searchProducts(productName).getProductByIndex(i).getName());
 			Pname.setBounds(140, placement, 120, 14);
 			this.add(Pname);
 
-			JLabel Preference = new JLabel(productFacade.readProducts().getProductByIndex(i).getReference());
+			JLabel Preference = new JLabel(productFacade.searchProducts(productName).getProductByIndex(i).getReference());
 			Preference.setBounds(334, placement, 120, 14);
 			this.add(Preference);
 
-			JLabel Pprice = new JLabel(productFacade.readProducts().getProductByIndex(i).getPrice());
+			JLabel Pprice = new JLabel(productFacade.searchProducts(productName).getProductByIndex(i).getPrice());
 			Pprice.setBounds(519, placement, 120, 14);
 			this.add(Pprice);
 
-			JLabel Pquantity = new JLabel(productFacade.readProducts().getProductByIndex(i).getStockQuantity());
+			JLabel Pquantity = new JLabel(productFacade.searchProducts(productName).getProductByIndex(i).getStockQuantity());
 			Pquantity.setBounds(695, placement, 120, 14);
 			this.add(Pquantity);
 

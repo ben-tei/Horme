@@ -1,7 +1,6 @@
 package bl.facade;
 
 import bl.core.ActivitySet;
-import bl.core.ProductSet;
 import bl.core.User;
 import bl.manager.ActivityManager;
 

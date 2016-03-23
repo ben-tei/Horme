@@ -17,4 +17,9 @@ public class ProductFacade {
 		return this.productManager.readProducts();
 	}
 
+	public ProductSet searchProducts(String productName)
+	{
+		return this.productManager.searchProducts(productName);
+	}
+
 }
