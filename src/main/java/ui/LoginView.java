@@ -15,19 +15,44 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+/**
+ * The Class LoginView.
+ */
 public class LoginView extends JPanel implements ActionListener
 {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The password field. */
 	private JPasswordField passwordField;
+	
+	/** The login field. */
 	private JTextField loginField;
+	
+	/** The lbl connexion. */
 	private JLabel lblConnexion;
+	
+	/** The lbl login. */
 	private JLabel lblLogin;
+	
+	/** The lbl password. */
 	private JLabel lblPassword;
+	
+	/** The btn login. */
 	private JButton btnLogin;
+	
+	/** The btn sign up. */
 	private JButton btnSignUp;
+	
+	/** The view controller. */
 	private ViewController viewController;
 
+	/**
+	 * Instantiates a new login view.
+	 *
+	 * @param vc the vc
+	 */
 	public LoginView(ViewController vc)
 	{
 		this.viewController = vc;
@@ -77,31 +102,59 @@ public class LoginView extends JPanel implements ActionListener
 
 	}
 
+	/**
+	 * Gets the login field.
+	 *
+	 * @return the login field
+	 */
 	public JTextField getLoginField()
 	{
 		return this.loginField;
 	}
 
+	/**
+	 * Gets the password field.
+	 *
+	 * @return the password field
+	 */
 	public JPasswordField getPasswordField()
 	{
 		return this.passwordField;
 	}
 
+	/**
+	 * Gets the btn login.
+	 *
+	 * @return the btn login
+	 */
 	public JButton getBtnLogin()
 	{
 		return this.btnLogin;
 	}
 
+	/**
+	 * Gets the login text.
+	 *
+	 * @return the login text
+	 */
 	public String getLoginText()
 	{
 		return this.loginField.getText(); 
 	}
 
+	/**
+	 * Gets the passwd text.
+	 *
+	 * @return the passwd text
+	 */
 	public String getPasswdText()
 	{
 		return new String(this.passwordField.getPassword());
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e)
 	{
 		String cmd = e.getActionCommand();

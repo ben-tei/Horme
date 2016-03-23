@@ -55,7 +55,8 @@ public class Comment {
 
 	/**
 	 * Sets a value to attribute person. 
-	 * @param newPerson 
+	 *
+	 * @param newPerson the new person
 	 */
 	public void setPerson(Person newPerson) {
 		this.person = newPerson;
@@ -71,7 +72,8 @@ public class Comment {
 
 	/**
 	 * Sets a value to attribute content. 
-	 * @param newContent 
+	 *
+	 * @param newContent the new content
 	 */
 	public void setContent(String newContent) {
 		this.content = newContent;
@@ -87,7 +89,8 @@ public class Comment {
 
 	/**
 	 * Sets a value to attribute diaryEntry. 
-	 * @param newDiaryEntry 
+	 *
+	 * @param newDiaryEntry the new diary entry
 	 */
 	public void setDiaryEntry(DiaryEntry newDiaryEntry) {
 		this.diaryEntry = newDiaryEntry;

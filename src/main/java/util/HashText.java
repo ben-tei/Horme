@@ -3,8 +3,17 @@ package util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * The Class HashText.
+ */
 public class HashText {
 
+	/**
+	 * Sha1.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String sha1(String input)
 	{
 		MessageDigest mDigest = null;

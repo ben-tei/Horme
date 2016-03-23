@@ -5,12 +5,23 @@ import javax.swing.JPanel;
 
 import bl.facade.UserFacade;
 
+/**
+ * The Class ViewController.
+ */
 public class ViewController {
 
+	/** The my window. */
 	private JFrame myWindow;
+	
+	/** The my j panel. */
 	private JPanel myJPanel;
+	
+	/** The user facade. */
 	private UserFacade userFacade;
 
+	/**
+	 * Instantiates a new view controller.
+	 */
 	public ViewController()
 	{
 		this.myWindow = new Window(600, 920);
@@ -19,11 +30,19 @@ public class ViewController {
 		this.showLoginPanel();
 	}
 
+	/**
+	 * Gets the user facade.
+	 *
+	 * @return the user facade
+	 */
 	public UserFacade getUserFacade()
 	{
 		return this.userFacade;
 	}
 
+	/**
+	 * Show index panel.
+	 */
 	public void showIndexPanel()
 	{
 		this.myWindow.setTitle("Horme - Welcome");
@@ -34,6 +53,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show notification panel.
+	 */
 	public void showNotificationPanel()
 	{
 		this.myWindow.setTitle("Horme - Notifications");
@@ -44,6 +66,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show profile panel.
+	 */
 	public void showProfilePanel()
 	{
 		this.myWindow.setTitle("Horme - Profil");
@@ -54,6 +79,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show activities panel.
+	 */
 	public void showActivitiesPanel()
 	{
 		this.myWindow.setTitle("Horme - Activities");
@@ -64,6 +92,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show diary panel.
+	 */
 	public void showDiaryPanel()
 	{
 		this.myWindow.setTitle("Horme - Diary");
@@ -74,6 +105,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show wishlist panel.
+	 */
 	public void showWishlistPanel()
 	{
 		this.myWindow.setTitle("Horme - Wishlist");
@@ -84,6 +118,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show orders panel.
+	 */
 	public void showOrdersPanel()
 	{
 		this.myWindow.setTitle("Horme - Orders");
@@ -94,6 +131,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show shop cart panel.
+	 */
 	public void showShopCartPanel()
 	{
 		this.myWindow.setTitle("Horme - Shopping Cart");
@@ -104,6 +144,9 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show login panel.
+	 */
 	public void showLoginPanel()
 	{
 		this.myWindow.setTitle("Horme - Login");
@@ -114,6 +157,9 @@ public class ViewController {
 		((LoginView) this.myJPanel).getLoginField().requestFocusInWindow();
 	}
 
+	/**
+	 * Show sign up panel.
+	 */
 	public void showSignUpPanel()
 	{
 		this.myWindow.setTitle("Horme - Sign Up");
@@ -124,6 +170,9 @@ public class ViewController {
 		((SignUpView) this.myJPanel).getNameField().requestFocusInWindow();
 	}
 
+	/**
+	 * Show products panel.
+	 */
 	public void showProductsPanel()
 	{
 		this.myWindow.setTitle("Horme - Products");
@@ -133,6 +182,11 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 	}
 
+	/**
+	 * Show search panel.
+	 *
+	 * @param searchString the search string
+	 */
 	public void showSearchPanel(String searchString)
 	{
 		this.myWindow.setTitle("Horme - Search");

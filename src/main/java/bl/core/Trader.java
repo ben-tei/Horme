@@ -58,6 +58,11 @@ public class Trader extends Person {
 		// End of user code
 	}
 	
+	/**
+	 * Instantiates a new trader.
+	 *
+	 * @param id the id
+	 */
 	public Trader(String id) {
 		this.id = id;
 	}
@@ -75,7 +80,8 @@ public class Trader extends Person {
 
 	/**
 	 * Sets a value to attribute SIRET. 
-	 * @param newSIRET 
+	 *
+	 * @param newSIRET the new siret
 	 */
 	public void setSIRET(String newSIRET) {
 		this.SIRET = newSIRET;
@@ -99,7 +105,8 @@ public class Trader extends Person {
 
 	/**
 	 * Sets a value to attribute website. 
-	 * @param newWebsite 
+	 *
+	 * @param newWebsite the new website
 	 */
 	public void setWebsite(String newWebsite) {
 		this.website = newWebsite;
@@ -121,10 +128,20 @@ public class Trader extends Person {
 		return this.estimates;
 	}
 
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	public String getId() {
 		return id;
 	}
 
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
 	public void setId(String id) {
 		this.id = id;
 	}

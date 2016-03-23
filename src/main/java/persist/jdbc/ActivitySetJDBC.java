@@ -7,8 +7,16 @@ import bl.core.ActivitySet;
 import bl.core.Category;
 import bl.core.User;
 
+/**
+ * The Class ActivitySetJDBC.
+ */
 public class ActivitySetJDBC extends ActivitySet  {
 
+	/**
+	 * Instantiates a new activity set jdbc.
+	 *
+	 * @param user the user
+	 */
 	public ActivitySetJDBC(User user) 
 	{
 

@@ -84,6 +84,12 @@ public abstract class Person {
 		// End of user code
 	}
 
+	/**
+	 * Instantiates a new person.
+	 *
+	 * @param login the login
+	 * @param password the password
+	 */
 	public Person(String login, String password) {
 		this.login = login;
 		this.password = password;
@@ -102,7 +108,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute firstName. 
-	 * @param newFirstName 
+	 *
+	 * @param newFirstName the new first name
 	 */
 	public void setFirstName(String newFirstName) {
 		this.firstName = newFirstName;
@@ -134,7 +141,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute password. 
-	 * @param newPassword 
+	 *
+	 * @param newPassword the new password
 	 */
 	public void setPassword(String newPassword) {
 		this.password = newPassword;
@@ -150,7 +158,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -166,7 +175,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute zipCode. 
-	 * @param newZipCode 
+	 *
+	 * @param newZipCode the new zip code
 	 */
 	public void setZipCode(String newZipCode) {
 		this.zipCode = newZipCode;
@@ -182,7 +192,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute phone. 
-	 * @param newPhone 
+	 *
+	 * @param newPhone the new phone
 	 */
 	public void setPhone(String newPhone) {
 		this.phone = newPhone;
@@ -198,7 +209,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute city. 
-	 * @param newCity 
+	 *
+	 * @param newCity the new city
 	 */
 	public void setCity(String newCity) {
 		this.city = newCity;
@@ -214,7 +226,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute email. 
-	 * @param newEmail 
+	 *
+	 * @param newEmail the new email
 	 */
 	public void setEmail(String newEmail) {
 		this.email = newEmail;
@@ -230,7 +243,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute login. 
-	 * @param newLogin 
+	 *
+	 * @param newLogin the new login
 	 */
 	public void setLogin(String newLogin) {
 		this.login = newLogin;
@@ -246,7 +260,8 @@ public abstract class Person {
 
 	/**
 	 * Sets a value to attribute street. 
-	 * @param newStreet 
+	 *
+	 * @param newStreet the new street
 	 */
 	public void setStreet(String newStreet) {
 		this.street = newStreet;

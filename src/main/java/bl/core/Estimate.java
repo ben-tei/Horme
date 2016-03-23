@@ -65,7 +65,8 @@ public class Estimate {
 
 	/**
 	 * Sets a value to attribute trader. 
-	 * @param newTrader 
+	 *
+	 * @param newTrader the new trader
 	 */
 	public void setTrader(Trader newTrader) {
 		this.trader = newTrader;
@@ -81,7 +82,8 @@ public class Estimate {
 
 	/**
 	 * Sets a value to attribute user. 
-	 * @param newUser 
+	 *
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;

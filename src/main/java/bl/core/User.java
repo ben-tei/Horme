@@ -65,6 +65,12 @@ public abstract class User extends Person {
 		// End of user code
 	}
 
+	/**
+	 * Instantiates a new user.
+	 *
+	 * @param login the login
+	 * @param password the password
+	 */
 	public User(String login, String password) {
 		super(login, password);
 	}
@@ -120,14 +126,31 @@ public abstract class User extends Person {
 		return this.proposedActivities;
 	}
 
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	public String getId() {
 		return id;
 	}
 
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
 	public void setId(String id) {
 		this.id = id;
 	}
 
+	/**
+	 * Checks if is password ok.
+	 *
+	 * @param password the password
+	 * @return true, if is password ok
+	 * @throws WrongPasswordException the wrong password exception
+	 */
 	public boolean isPasswordOK(String password) throws WrongPasswordException
 	{
 		if(this.getPassword().equals(password))

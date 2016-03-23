@@ -5,8 +5,14 @@ import java.sql.*;
 import bl.core.Product;
 import bl.core.ProductSet;
 
+/**
+ * The Class ProductSetJDBC.
+ */
 public class ProductSetJDBC extends ProductSet {
 
+	/**
+	 * Instantiates a new product set jdbc.
+	 */
 	public ProductSetJDBC () 
 	{
 
@@ -47,6 +53,11 @@ public class ProductSetJDBC extends ProductSet {
 		}
 	}
 
+	/**
+	 * Instantiates a new product set jdbc.
+	 *
+	 * @param searchString the search string
+	 */
 	public ProductSetJDBC (String searchString) 
 	{
 

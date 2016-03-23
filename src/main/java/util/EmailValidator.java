@@ -3,8 +3,17 @@ package util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The Class EmailValidator.
+ */
 public class EmailValidator {
 
+	/**
+	 * Validate.
+	 *
+	 * @param email the email
+	 * @return true, if successful
+	 */
 	public static boolean validate(String email)
 	{
 		String EMAIL_PATTERN = 

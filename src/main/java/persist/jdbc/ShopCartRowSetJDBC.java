@@ -6,9 +6,17 @@ import bl.core.Product;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
 
+/**
+ * The Class ShopCartRowSetJDBC.
+ */
 public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 
+	/**
+	 * Instantiates a new shop cart row set jdbc.
+	 *
+	 * @param user the user
+	 */
 	public ShopCartRowSetJDBC (User user) 
 	{
 

@@ -5,11 +5,22 @@ import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The Class DiaryView.
+ */
 public class DiaryView extends JPanel implements ActionListener {
 	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The view controller. */
 	private ViewController viewController;
 	
+	/**
+	 * Instantiates a new diary view.
+	 *
+	 * @param vc the vc
+	 */
 	public DiaryView(ViewController vc) {
 		
 		this.viewController = vc;
@@ -20,6 +31,9 @@ public class DiaryView extends JPanel implements ActionListener {
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

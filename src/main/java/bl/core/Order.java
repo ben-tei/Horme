@@ -75,7 +75,8 @@ public class Order {
 
 	/**
 	 * Sets a value to attribute date. 
-	 * @param newDate 
+	 *
+	 * @param newDate the new date
 	 */
 	public void setDate(String newDate) {
 		this.date = newDate;
@@ -91,7 +92,8 @@ public class Order {
 
 	/**
 	 * Sets a value to attribute numero. 
-	 * @param newNumero 
+	 *
+	 * @param newNumero the new numero
 	 */
 	public void setNumero(String newNumero) {
 		this.numero = newNumero;
@@ -115,12 +117,18 @@ public class Order {
 
 	/**
 	 * Sets a value to attribute user. 
-	 * @param newUser 
+	 *
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
 	}
 
+	/**
+	 * Sets the trader.
+	 *
+	 * @param newTrader the new trader
+	 */
 	public void setTrader(Trader newTrader) {
 		this.trader = newTrader;
 		

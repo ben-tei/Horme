@@ -70,7 +70,8 @@ public class WhishList {
 
 	/**
 	 * Sets a value to attribute user. 
-	 * @param newUser 
+	 *
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -86,7 +87,8 @@ public class WhishList {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;

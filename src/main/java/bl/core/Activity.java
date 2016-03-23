@@ -77,7 +77,8 @@ public class Activity {
 
 	/**
 	 * Sets a value to attribute user. 
-	 * @param newUser 
+	 *
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -101,7 +102,8 @@ public class Activity {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -117,7 +119,8 @@ public class Activity {
 
 	/**
 	 * Sets a value to attribute category. 
-	 * @param newCategory 
+	 *
+	 * @param newCategory the new category
 	 */
 	public void setCategory(Category newCategory) {
 		this.category = newCategory;
@@ -139,10 +142,20 @@ public class Activity {
 		return this.objectives;
 	}
 
+	/**
+	 * Gets the description.
+	 *
+	 * @return the description
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * Sets the description.
+	 *
+	 * @param description the new description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}

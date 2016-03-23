@@ -60,7 +60,8 @@ public class Objective {
 
 	/**
 	 * Sets a value to attribute deadline. 
-	 * @param newDeadline 
+	 *
+	 * @param newDeadline the new deadline
 	 */
 	public void setDeadline(String newDeadline) {
 		this.deadline = newDeadline;
@@ -76,7 +77,8 @@ public class Objective {
 
 	/**
 	 * Sets a value to attribute description. 
-	 * @param newDescription 
+	 *
+	 * @param newDescription the new description
 	 */
 	public void setDescription(String newDescription) {
 		this.description = newDescription;
@@ -92,7 +94,8 @@ public class Objective {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -108,7 +111,8 @@ public class Objective {
 
 	/**
 	 * Sets a value to attribute activity. 
-	 * @param newActivity 
+	 *
+	 * @param newActivity the new activity
 	 */
 	public void setActivity(Activity newActivity) {
 		this.activity = newActivity;

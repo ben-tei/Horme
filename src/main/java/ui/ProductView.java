@@ -8,12 +8,25 @@ import javax.swing.JPanel;
 
 import bl.facade.ProductFacade;
 
+/**
+ * The Class ProductView.
+ */
 public class ProductView extends JPanel implements ActionListener{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The view controller. */
 	private ViewController viewController;
+	
+	/** The product facade. */
 	private ProductFacade productFacade;
 
+	/**
+	 * Instantiates a new product view.
+	 *
+	 * @param vc the vc
+	 */
 	public ProductView (ViewController vc)
 	{
 		this.viewController = vc;
@@ -69,6 +82,9 @@ public class ProductView extends JPanel implements ActionListener{
 
 
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

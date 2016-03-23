@@ -17,24 +17,61 @@ import util.EmailValidator;
 
 import java.awt.Color;
 
+/**
+ * The Class SignUpView.
+ */
 public class SignUpView extends JPanel implements ActionListener {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The view controller. */
 	private ViewController viewController;
+	
+	/** The name field. */
 	private JTextField nameField;
+	
+	/** The street field. */
 	private JTextField streetField;
+	
+	/** The city field. */
 	private JTextField cityField;
+	
+	/** The email field. */
 	private JTextField emailField;
+	
+	/** The login field. */
 	private JTextField loginField;
+	
+	/** The pswd field. */
 	private JPasswordField pswdField;
+	
+	/** The siret field. */
 	private JTextField siretField;
+	
+	/** The firstname field. */
 	private JTextField firstnameField;
+	
+	/** The zip field. */
 	private JTextField zipField;
+	
+	/** The phone field. */
 	private JTextField phoneField;
+	
+	/** The pswd confirm field. */
 	private JPasswordField pswdConfirmField;
+	
+	/** The email confirm field. */
 	private JTextField emailConfirmField;
+	
+	/** The website field. */
 	private JTextField websiteField;
 
+	/**
+	 * Instantiates a new sign up view.
+	 *
+	 * @param vc the vc
+	 */
 	public SignUpView(ViewController vc)
 	{
 		this.viewController = vc;
@@ -191,58 +228,128 @@ public class SignUpView extends JPanel implements ActionListener {
 
 	}
 
+	/**
+	 * Gets the name field.
+	 *
+	 * @return the name field
+	 */
 	public JTextField getNameField() {
 		return nameField;
 	}
 
+	/**
+	 * Gets the street field.
+	 *
+	 * @return the street field
+	 */
 	public JTextField getStreetField() {
 		return streetField;
 	}
 
+	/**
+	 * Gets the city field.
+	 *
+	 * @return the city field
+	 */
 	public JTextField getCityField() {
 		return cityField;
 	}
 
+	/**
+	 * Gets the email field.
+	 *
+	 * @return the email field
+	 */
 	public JTextField getEmailField() {
 		return emailField;
 	}
 
+	/**
+	 * Gets the login field.
+	 *
+	 * @return the login field
+	 */
 	public JTextField getLoginField() {
 		return loginField;
 	}
 
+	/**
+	 * Gets the pswd field.
+	 *
+	 * @return the pswd field
+	 */
 	public JPasswordField getPswdField() {
 		return pswdField;
 	}
 
+	/**
+	 * Gets the siret field.
+	 *
+	 * @return the siret field
+	 */
 	public JTextField getSiretField() {
 		return siretField;
 	}
 
+	/**
+	 * Gets the firstname field.
+	 *
+	 * @return the firstname field
+	 */
 	public JTextField getFirstnameField() {
 		return firstnameField;
 	}
 
+	/**
+	 * Gets the zip field.
+	 *
+	 * @return the zip field
+	 */
 	public JTextField getZipField() {
 		return zipField;
 	}
 
+	/**
+	 * Gets the phone field.
+	 *
+	 * @return the phone field
+	 */
 	public JTextField getPhoneField() {
 		return phoneField;
 	}
 
+	/**
+	 * Gets the pswd confirm.
+	 *
+	 * @return the pswd confirm
+	 */
 	public JPasswordField getPswdConfirm() {
 		return pswdConfirmField;
 	}
 
+	/**
+	 * Gets the email confirm.
+	 *
+	 * @return the email confirm
+	 */
 	public JTextField getEmailConfirm() {
 		return emailConfirmField;
 	}
 
+	/**
+	 * Gets the website field.
+	 *
+	 * @return the website field
+	 */
 	public JTextField getWebsiteField() {
 		return websiteField;
 	}
 
+	/**
+	 * Fields are empty.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean fieldsAreEmpty()
 	{
 		return getNameField().getText().equals("") || getStreetField().getText().equals("") || getCityField().getText().equals("")
@@ -251,6 +358,9 @@ public class SignUpView extends JPanel implements ActionListener {
 				|| new String(getPswdConfirm().getPassword()).equals("") || getEmailConfirm().getText().equals("");
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

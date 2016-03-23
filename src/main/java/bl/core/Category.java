@@ -77,7 +77,8 @@ public class Category {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -93,7 +94,8 @@ public class Category {
 
 	/**
 	 * Sets a value to attribute shortDescription. 
-	 * @param newShortDescription 
+	 *
+	 * @param newShortDescription the new short description
 	 */
 	public void setShortDescription(String newShortDescription) {
 		this.shortDescription = newShortDescription;
@@ -109,7 +111,8 @@ public class Category {
 
 	/**
 	 * Sets a value to attribute longDescription. 
-	 * @param newLongDescription 
+	 *
+	 * @param newLongDescription the new long description
 	 */
 	public void setLongDescription(String newLongDescription) {
 		this.longDescription = newLongDescription;

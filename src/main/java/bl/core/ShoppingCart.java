@@ -65,7 +65,8 @@ public class ShoppingCart {
 
 	/**
 	 * Sets a value to attribute user. 
-	 * @param newUser 
+	 *
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;

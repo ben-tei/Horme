@@ -6,8 +6,14 @@ import bl.core.Order;
 import bl.core.OrderSet;
 import bl.core.Trader;
 
+/**
+ * The Class OrderSetJDBC.
+ */
 public class OrderSetJDBC extends OrderSet {
 
+	/**
+	 * Instantiates a new order set jdbc.
+	 */
 	public OrderSetJDBC () 
 	{
 

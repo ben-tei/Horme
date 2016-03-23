@@ -112,7 +112,8 @@ public class Product {
 
 	/**
 	 * Sets a value to attribute reference. 
-	 * @param newReference 
+	 *
+	 * @param newReference the new reference
 	 */
 	public void setReference(String newReference) {
 		this.reference = newReference;
@@ -136,7 +137,8 @@ public class Product {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -152,7 +154,8 @@ public class Product {
 
 	/**
 	 * Sets a value to attribute stockQuantity. 
-	 * @param newStockQuantity 
+	 *
+	 * @param newStockQuantity the new stock quantity
 	 */
 	public void setStockQuantity(Integer newStockQuantity) {
 		this.stockQuantity = newStockQuantity;
@@ -168,7 +171,8 @@ public class Product {
 
 	/**
 	 * Sets a value to attribute category. 
-	 * @param newCategory 
+	 *
+	 * @param newCategory the new category
 	 */
 	public void setCategory(Category newCategory) {
 		this.category = newCategory;
@@ -184,7 +188,8 @@ public class Product {
 
 	/**
 	 * Sets a value to attribute price. 
-	 * @param newPrice 
+	 *
+	 * @param newPrice the new price
 	 */
 	public void setPrice(Integer newPrice) {
 		this.price = newPrice;

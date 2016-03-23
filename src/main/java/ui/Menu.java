@@ -9,22 +9,56 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * The Class Menu.
+ */
 public class Menu implements ActionListener {
 
+	/** The search. */
 	private JTextField search;
+	
+	/** The view controller. */
 	private ViewController viewController;
+	
+	/** The lbl user. */
 	private JLabel lblUser;
+	
+	/** The btn notifications. */
 	private JButton btnNotifications;
+	
+	/** The btn profile. */
 	private JButton btnProfile;
+	
+	/** The btn products. */
 	private JButton btnProducts;
+	
+	/** The btn my activities. */
 	private JButton btnMyActivities;
+	
+	/** The btn my diary. */
 	private JButton btnMyDiary;
+	
+	/** The btn my wishlist. */
 	private JButton btnMyWishlist;
+	
+	/** The btn my orders. */
 	private JButton btnMyOrders;
+	
+	/** The btn shopping cart. */
 	private JButton btnShoppingCart;
+	
+	/** The lbl search. */
 	private JLabel lblSearch;
+	
+	/** The lbl horme. */
 	private JLabel lblHorme;
 
+	/**
+	 * Instantiates a new menu.
+	 *
+	 * @param jp the jp
+	 * @param vc the vc
+	 */
 	public Menu(JPanel jp, ViewController vc)
 	{	
 		this.viewController = vc;
@@ -97,6 +131,9 @@ public class Menu implements ActionListener {
 		jp.add(lblHorme);
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

@@ -57,7 +57,8 @@ public class Ressource {
 
 	/**
 	 * Sets a value to attribute nom. 
-	 * @param newNom 
+	 *
+	 * @param newNom the new nom
 	 */
 	public void setNom(String newNom) {
 		this.nom = newNom;

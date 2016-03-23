@@ -4,15 +4,29 @@ import static persist.jdbc.JDBCConstants.*;
 
 import java.sql.*;
 
+/**
+ * The Class JDBCConnection.
+ */
 public class JDBCConnection
 {
+	
+	/** The conn. */
 	private Connection conn;
 
+	/**
+	 * Instantiates a new JDBC connection.
+	 */
 	public JDBCConnection()
 	{
 
 	}
 
+	/**
+	 * Open connection.
+	 *
+	 * @return the connection
+	 * @throws SQLException the SQL exception
+	 */
 	public Connection openConnection() throws SQLException
 	{
 		try {
@@ -32,6 +46,9 @@ public class JDBCConnection
 		return this.conn; 
 	}
 
+	/**
+	 * Close connection.
+	 */
 	public void closeConnection()
 	{
 		if(this.conn != null)
@@ -42,11 +59,21 @@ public class JDBCConnection
 		}
 	}
 
+	/**
+	 * Gets the connection.
+	 *
+	 * @return the connection
+	 */
 	public Connection getConnection()
 	{
 		return this.conn;
 	}
 
+	/**
+	 * Process sql exception.
+	 *
+	 * @param e the e
+	 */
 	public static void ProcessSQLException(SQLException e)
 	{
 		while (e != null) {
@@ -59,6 +86,11 @@ public class JDBCConnection
 		}
 	} 
 
+	/**
+	 * Close.
+	 *
+	 * @param pstmt the pstmt
+	 */
 	public void close(PreparedStatement pstmt)
 	{
 		if(pstmt != null)

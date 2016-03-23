@@ -77,7 +77,8 @@ public class DiaryEntry {
 
 	/**
 	 * Sets a value to attribute position. 
-	 * @param newPosition 
+	 *
+	 * @param newPosition the new position
 	 */
 	public void setPosition(String newPosition) {
 		this.position = newPosition;
@@ -93,7 +94,8 @@ public class DiaryEntry {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -109,7 +111,8 @@ public class DiaryEntry {
 
 	/**
 	 * Sets a value to attribute date. 
-	 * @param newDate 
+	 *
+	 * @param newDate the new date
 	 */
 	public void setDate(String newDate) {
 		this.date = newDate;
@@ -125,7 +128,8 @@ public class DiaryEntry {
 
 	/**
 	 * Sets a value to attribute user. 
-	 * @param newUser 
+	 *
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -141,7 +145,8 @@ public class DiaryEntry {
 
 	/**
 	 * Sets a value to attribute activity. 
-	 * @param newActivity 
+	 *
+	 * @param newActivity the new activity
 	 */
 	public void setActivity(Activity newActivity) {
 		this.activity = newActivity;
@@ -157,7 +162,8 @@ public class DiaryEntry {
 
 	/**
 	 * Sets a value to attribute content. 
-	 * @param newContent 
+	 *
+	 * @param newContent the new content
 	 */
 	public void setContent(String newContent) {
 		this.content = newContent;

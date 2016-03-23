@@ -62,7 +62,8 @@ public class Notification {
 
 	/**
 	 * Sets a value to attribute name. 
-	 * @param newName 
+	 *
+	 * @param newName the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -86,7 +87,8 @@ public class Notification {
 
 	/**
 	 * Sets a value to attribute content. 
-	 * @param newContent 
+	 *
+	 * @param newContent the new content
 	 */
 	public void setContent(String newContent) {
 		this.content = newContent;
@@ -102,7 +104,8 @@ public class Notification {
 
 	/**
 	 * Sets a value to attribute date. 
-	 * @param newDate 
+	 *
+	 * @param newDate the new date
 	 */
 	public void setDate(String newDate) {
 		this.date = newDate;
