@@ -9,21 +9,21 @@ import core.ShopCartRowSet;
 import exceptions.*;
 
 public class ShopCartRowSetJDBC extends ShopCartRowSet {
-	
-	
+
+
 	public ShopCartRowSetJDBC (User user) 
 	{
-		
+
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
 
 		ResultSet rset = null;
-		
+
 		PreparedStatement pstmt = null;
-		
+
 		Product product = null;
-		
+
 		try {
 			conn = jdbcconnection.openConnection();
 
@@ -32,7 +32,7 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 			//pstmt.setString(1, user.getId());
 
 			rset = pstmt.executeQuery();
-			
+
 			while(rset.next()) {
 				product = new Product();
 				product.setName(rset.getString("name"));
@@ -42,7 +42,7 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 				this.AddProduct(product);
 			}
 		}
-		
+
 		catch (SQLException e) {
 
 			JDBCConnection.ProcessSQLException(e);

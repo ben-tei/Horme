@@ -27,14 +27,14 @@ public class FactoryJDBC extends Factory
 	{
 		NotificationJDBC notifjdbc = new NotificationJDBC();
 	}
-	
-	
+
+
 	@Override
 	public ProductSet readProducts() 
 	{
 		return new ProductSetJDBC();
 	}
-	
+
 	@Override
 	public ShopCartRowSet readShopCart(User user) 
 	{

@@ -12,9 +12,9 @@ public abstract class Factory {
 			String phone, String email, String login, String password) throws AlreadyExistsException;
 
 	public abstract void getNotifications();
-	
+
 	public abstract ProductSet readProducts();
-	
+
 	public abstract ActivitySet readActivities(User user);
 
 	public abstract ShopCartRowSet readShopCart(User user);

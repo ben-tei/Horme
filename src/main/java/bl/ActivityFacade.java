@@ -4,14 +4,14 @@ import core.ActivitySet;
 import core.ProductSet;
 
 public class ActivityFacade {
-	
-private ActivityManager activityManager;
-	
+
+	private ActivityManager activityManager;
+
 	public ActivityFacade ()
 	{
 		this.activityManager = new ActivityManager();
 	}
-	
+
 	public ActivitySet readActivities(User user)
 	{
 		return this.activityManager.readActivities(user);
