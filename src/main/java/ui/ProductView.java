@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import bl.ProductFacade;
+
+import bl.facade.ProductFacade;
 
 public class ProductView extends JPanel implements ActionListener{
 

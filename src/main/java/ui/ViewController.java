@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import bl.UserFacade;
+import bl.facade.UserFacade;
 
 public class ViewController {
 

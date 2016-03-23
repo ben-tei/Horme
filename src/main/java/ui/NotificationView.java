@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.JPanel;
 
-import bl.NotificationFacade;
+import bl.facade.NotificationFacade;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
