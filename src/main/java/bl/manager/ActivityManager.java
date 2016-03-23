@@ -1,7 +1,7 @@
 package bl.manager;
 
-import bl.business.ActivitySet;
-import bl.business.User;
+import bl.core.ActivitySet;
+import bl.core.User;
 import bl.factory.Factory;
 import persist.factoryjdbc.FactoryJDBC;
 

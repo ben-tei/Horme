@@ -2,8 +2,8 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.business.Product;
-import bl.business.ProductSet;
+import bl.core.Product;
+import bl.core.ProductSet;
 import exceptions.*;
 
 public class ProductSetJDBC extends ProductSet {

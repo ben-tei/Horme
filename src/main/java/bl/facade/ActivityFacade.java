@@ -1,8 +1,8 @@
 package bl.facade;
 
-import bl.business.ActivitySet;
-import bl.business.ProductSet;
-import bl.business.User;
+import bl.core.ActivitySet;
+import bl.core.ProductSet;
+import bl.core.User;
 import bl.manager.ActivityManager;
 
 public class ActivityFacade {

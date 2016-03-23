@@ -1,6 +1,6 @@
 package bl.facade;
 
-import bl.business.ProductSet;
+import bl.core.ProductSet;
 import bl.manager.ProductManager;
 
 public class ProductFacade {

@@ -1,6 +1,6 @@
 package bl.manager;
 
-import bl.business.User;
+import bl.core.User;
 import bl.factory.Factory;
 import exceptions.AlreadyExistsException;
 import exceptions.WrongLoginException;

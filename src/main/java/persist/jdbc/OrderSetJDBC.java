@@ -2,9 +2,9 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.business.Order;
-import bl.business.OrderSet;
-import bl.business.Trader;
+import bl.core.Order;
+import bl.core.OrderSet;
+import bl.core.Trader;
 import exceptions.*;
 
 public class OrderSetJDBC extends OrderSet {

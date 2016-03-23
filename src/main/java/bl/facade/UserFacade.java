@@ -1,6 +1,6 @@
 package bl.facade;
 
-import bl.business.User;
+import bl.core.User;
 import bl.manager.UserManager;
 import exceptions.*;
 

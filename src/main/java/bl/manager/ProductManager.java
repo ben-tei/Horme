@@ -1,6 +1,6 @@
 package bl.manager;
 
-import bl.business.ProductSet;
+import bl.core.ProductSet;
 import bl.factory.Factory;
 import persist.*;
 import persist.factoryjdbc.FactoryJDBC;

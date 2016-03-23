@@ -1,9 +1,9 @@
 package bl.factory;
 
-import bl.business.ActivitySet;
-import bl.business.ProductSet;
-import bl.business.ShopCartRowSet;
-import bl.business.User;
+import bl.core.ActivitySet;
+import bl.core.ProductSet;
+import bl.core.ShopCartRowSet;
+import bl.core.User;
 import exceptions.*;
 
 public abstract class Factory {

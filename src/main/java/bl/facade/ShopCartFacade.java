@@ -1,7 +1,7 @@
 package bl.facade;
 
-import bl.business.ShopCartRowSet;
-import bl.business.User;
+import bl.core.ShopCartRowSet;
+import bl.core.User;
 import bl.manager.ShopCartManager;
 
 public class ShopCartFacade {

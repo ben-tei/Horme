@@ -1,8 +1,8 @@
 package bl.manager;
 
-import bl.business.ProductSet;
-import bl.business.ShopCartRowSet;
-import bl.business.User;
+import bl.core.ProductSet;
+import bl.core.ShopCartRowSet;
+import bl.core.User;
 import bl.factory.Factory;
 import persist.*;
 import persist.factoryjdbc.FactoryJDBC;

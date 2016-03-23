@@ -2,7 +2,7 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.business.User;
+import bl.core.User;
 import exceptions.*;
 
 public class UserJDBC extends User

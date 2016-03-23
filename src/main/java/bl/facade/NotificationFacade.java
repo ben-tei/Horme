@@ -1,6 +1,6 @@
 package bl.facade;
 
-import bl.business.Notification;
+import bl.core.Notification;
 import bl.manager.NotificationManager;
 
 public class NotificationFacade {

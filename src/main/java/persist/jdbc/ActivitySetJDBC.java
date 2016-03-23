@@ -2,10 +2,10 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.business.Activity;
-import bl.business.ActivitySet;
-import bl.business.Category;
-import bl.business.User;
+import bl.core.Activity;
+import bl.core.ActivitySet;
+import bl.core.Category;
+import bl.core.User;
 
 public class ActivitySetJDBC extends ActivitySet  {
 
