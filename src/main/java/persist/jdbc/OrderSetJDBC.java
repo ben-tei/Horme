@@ -34,7 +34,7 @@ public class OrderSetJDBC extends OrderSet {
 			conn = jdbcconnection.openConnection();
 
 			//revoir requete
-			pstmt = conn.prepareStatement("SELECT `idPerson`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson`" + "AND `Order`.`idPerson`= ?");
+			pstmt = conn.prepareStatement("SELECT `Order`.`idTrader`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson`" + "AND `Order`.`idPerson`= ?");
 			
 			pstmt.setString(1, user.getId());
 			
@@ -44,7 +44,7 @@ public class OrderSetJDBC extends OrderSet {
 				order = new Order();
 				order.setDate(rset.getString("date"));
 				order.setNumero(rset.getString("numero"));
-				trader = new Trader(rset.getString("idPerson"));
+				trader = new Trader(rset.getString("idTrader"));
 				order.setTrader(trader);
 				this.AddOrder(order);
 			}

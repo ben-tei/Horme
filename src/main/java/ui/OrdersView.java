@@ -43,17 +43,18 @@ public class OrdersView extends JPanel implements ActionListener {
 		date.setBounds(140, 175, 46, 14);
 		this.add(date);
 
-		JLabel numero = new JLabel("Numero");
+		JLabel numero = new JLabel("Number");
 		numero.setBounds(334, 175, 60, 14);
 		this.add(numero);
 
 		JLabel website = new JLabel("Website");
-		website.setBounds(519, 175, 46, 14);
+		website.setBounds(519, 175, 80, 14);
 		this.add(website);
 		
 		int placement = 231;
 		
-		User user = null; //comment on récupère le numero du user ??
+		User user = this.viewController.getUserFacade().getUser();
+		
 		for(int i = 0; i <= orderFacade.readOrders(user).size() - 1; i++) {
 
 			JLabel Pdate = new JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getDate());
@@ -65,7 +66,7 @@ public class OrdersView extends JPanel implements ActionListener {
 			this.add(Pnumero);
 
 			JLabel Pwebsite = new JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getTrader().getWebsite());
-			Pwebsite.setBounds(519, placement, 120, 14);
+			Pwebsite.setBounds(519, placement, 300, 14);
 			this.add(Pwebsite);
 
 			placement = placement + 32;
