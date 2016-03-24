@@ -84,7 +84,6 @@ public class FactoryJDBC extends Factory
 	/* (non-Javadoc)
 	 * @see bl.factory.Factory#readActivities(bl.core.User)
 	 */
-	@Override
 	public ActivitySet readActivities(User user) {
 		// TODO Auto-generated method stub
 		return new ActivitySetJDBC(user);
