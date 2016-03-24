@@ -45,6 +45,7 @@ public class OrderSetJDBC extends OrderSet {
 				order.setDate(rset.getString("date"));
 				order.setNumero(rset.getString("numero"));
 				trader = new Trader(rset.getString("idTrader"));
+				trader.setWebsite(rset.getString("website"));
 				order.setTrader(trader);
 				this.AddOrder(order);
 			}
