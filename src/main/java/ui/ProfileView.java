@@ -22,46 +22,46 @@ public class ProfileView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The view controller. */
 	private ViewController viewController;
-	
+
 	/** The name field. */
 	private JTextField nameField;
-	
+
 	/** The street field. */
 	private JTextField streetField;
-	
+
 	/** The city field. */
 	private JTextField cityField;
-	
+
 	/** The email field. */
 	private JTextField emailField;
-	
+
 	/** The login field. */
 	private JTextField loginField;
-	
+
 	/** The pswd field. */
 	private JPasswordField pswdField;
-	
+
 	/** The siret field. */
 	private JTextField siretField;
-	
+
 	/** The firstname field. */
 	private JTextField firstnameField;
-	
+
 	/** The zip field. */
 	private JTextField zipField;
-	
+
 	/** The phone field. */
 	private JTextField phoneField;
-	
+
 	/** The pswd confirm field. */
 	private JPasswordField pswdConfirmField;
-	
+
 	/** The email confirm field. */
 	private JTextField emailConfirmField;
-	
+
 	/** The website field. */
 	private JTextField websiteField;
 

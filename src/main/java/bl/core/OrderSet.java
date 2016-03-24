@@ -6,17 +6,17 @@ import java.util.ArrayList;
  * The Class OrderSet.
  */
 public class OrderSet {
-	
+
 	/** The tab orders. */
 	public ArrayList<Order> tabOrders;
-	
+
 	/**
 	 * Instantiates a new order set.
 	 */
 	public OrderSet (){
 		this.tabOrders = new ArrayList<Order>();
 	}
-	
+
 	/**
 	 * Adds the order.
 	 *
@@ -25,7 +25,7 @@ public class OrderSet {
 	public void AddOrder(Order order){
 		this.tabOrders.add(order);
 	}
-	
+
 	/**
 	 * Gets the order by index.
 	 *
@@ -35,7 +35,7 @@ public class OrderSet {
 	public Order getOrderByIndex(int index){
 		return this.tabOrders.get(index);
 	}
-	
+
 	/**
 	 * Size.
 	 *
@@ -44,5 +44,5 @@ public class OrderSet {
 	public int size(){
 		return this.tabOrders.size();
 	}
-	
+
 }

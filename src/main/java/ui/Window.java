@@ -7,10 +7,10 @@ import javax.swing.JFrame;
  */
 public class Window extends JFrame
 {
-	
+
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Instantiates a new window.
 	 *
@@ -26,8 +26,8 @@ public class Window extends JFrame
 		this.setLocationRelativeTo(null);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		this.setResizable(false);
 	}
-		
+
 }

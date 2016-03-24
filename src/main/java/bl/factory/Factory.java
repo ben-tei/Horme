@@ -52,7 +52,7 @@ public abstract class Factory {
 	 * @return the product set
 	 */
 	public abstract ProductSet readProducts();
-	
+
 	/**
 	 * Search products.
 	 *

@@ -23,7 +23,7 @@ public class OrderSetJDBC extends OrderSet {
 		Connection conn = null;
 
 		ResultSet rset = null;
-		
+
 		PreparedStatement pstmt = null;
 
 		Order order = null;
@@ -35,9 +35,9 @@ public class OrderSetJDBC extends OrderSet {
 
 			//revoir requete
 			pstmt = conn.prepareStatement("SELECT `Order`.`idTrader`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson`" + "AND `Order`.`idPerson`= ?");
-			
+
 			pstmt.setString(1, user.getId());
-			
+
 			rset = pstmt.executeQuery();
 
 			while(rset.next()){

@@ -14,10 +14,10 @@ public class NotificationView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The notification facade. */
 	private NotificationFacade notificationFacade;
-	
+
 	/** The view controller. */
 	private ViewController viewController;
 
@@ -35,7 +35,7 @@ public class NotificationView extends JPanel implements ActionListener {
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
-		
+
 
 	}
 

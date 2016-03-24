@@ -9,35 +9,35 @@ import java.awt.event.ActionListener;
  * The Class DiaryView.
  */
 public class DiaryView extends JPanel implements ActionListener {
-	
+
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The view controller. */
 	private ViewController viewController;
-	
+
 	/**
 	 * Instantiates a new diary view.
 	 *
 	 * @param vc the vc
 	 */
 	public DiaryView(ViewController vc) {
-		
+
 		this.viewController = vc;
 
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
-		
+
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

@@ -12,7 +12,7 @@ public class IndexView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The view controller. */
 	private ViewController viewController;
 

@@ -15,10 +15,10 @@ public class ProductView extends JPanel implements ActionListener{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The view controller. */
 	private ViewController viewController;
-	
+
 	/** The product facade. */
 	private ProductFacade productFacade;
 

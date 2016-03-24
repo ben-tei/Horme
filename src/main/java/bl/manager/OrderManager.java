@@ -12,7 +12,7 @@ public class OrderManager {
 
 	/** The factory. */
 	private Factory factory;
-	
+
 	/** The orders. */
 	private OrderSet orders;
 

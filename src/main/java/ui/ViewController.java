@@ -12,10 +12,10 @@ public class ViewController {
 
 	/** The my window. */
 	private JFrame myWindow;
-	
+
 	/** The my j panel. */
 	private JPanel myJPanel;
-	
+
 	/** The user facade. */
 	private UserFacade userFacade;
 

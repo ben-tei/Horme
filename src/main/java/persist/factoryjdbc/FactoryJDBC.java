@@ -89,7 +89,7 @@ public class FactoryJDBC extends Factory
 		// TODO Auto-generated method stub
 		return new ActivitySetJDBC(user);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see bl.factory.Factory#readOrders(bl.core.User)
 	 */

@@ -23,28 +23,28 @@ public class LoginView extends JPanel implements ActionListener
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The password field. */
 	private JPasswordField passwordField;
-	
+
 	/** The login field. */
 	private JTextField loginField;
-	
+
 	/** The lbl connexion. */
 	private JLabel lblConnexion;
-	
+
 	/** The lbl login. */
 	private JLabel lblLogin;
-	
+
 	/** The lbl password. */
 	private JLabel lblPassword;
-	
+
 	/** The btn login. */
 	private JButton btnLogin;
-	
+
 	/** The btn sign up. */
 	private JButton btnSignUp;
-	
+
 	/** The view controller. */
 	private ViewController viewController;
 
