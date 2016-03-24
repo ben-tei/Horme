@@ -1,6 +1,7 @@
 package bl.factory;
 
 import bl.core.ActivitySet;
+import bl.core.OrderSet;
 import bl.core.ProductSet;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
@@ -76,4 +77,11 @@ public abstract class Factory {
 	 */
 	public abstract ShopCartRowSet readShopCart(User user);
 
+	/**
+	 * Read orders.
+	 *
+	 ** @param user the user
+	 * @return the order set
+	 */
+	public abstract OrderSet readOrders(User user);
 }

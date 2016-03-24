@@ -5,6 +5,7 @@ import java.sql.*;
 import bl.core.Order;
 import bl.core.OrderSet;
 import bl.core.Trader;
+import bl.core.User;
 
 /**
  * The Class OrderSetJDBC.
@@ -14,7 +15,7 @@ public class OrderSetJDBC extends OrderSet {
 	/**
 	 * Instantiates a new order set jdbc.
 	 */
-	public OrderSetJDBC () 
+	public OrderSetJDBC (User user) 
 	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
@@ -22,6 +23,8 @@ public class OrderSetJDBC extends OrderSet {
 		Connection conn = null;
 
 		ResultSet rset = null;
+		
+		PreparedStatement pstmt = null;
 
 		Order order = null;
 
@@ -30,10 +33,12 @@ public class OrderSetJDBC extends OrderSet {
 		try{
 			conn = jdbcconnection.openConnection();
 
-			Statement state = conn.createStatement();
-
-			rset = state.executeQuery("SELECT `idPerson`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson` AND `numero`='9873567'");
-
+			//revoir requete
+			pstmt = conn.prepareStatement("SELECT `idPerson`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson`" + "AND `Order`.`idPerson`= ?");
+			
+			pstmt.setString(1, user.getId());
+			
+			rset = pstmt.executeQuery();
 
 			while(rset.next()){
 				order = new Order();
