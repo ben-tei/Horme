@@ -33,14 +33,13 @@ public class OrderSetJDBC extends OrderSet {
 		try{
 			conn = jdbcconnection.openConnection();
 
-			//revoir requete
 			pstmt = conn.prepareStatement("SELECT `Order`.`idTrader`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson`" + "AND `Order`.`idPerson`= ?");
 
 			pstmt.setString(1, user.getId());
 
 			rset = pstmt.executeQuery();
 
-			while(rset.next()){
+			while(rset.next()) {
 				order = new Order();
 				order.setDate(rset.getString("date"));
 				order.setNumero(rset.getString("numero"));
