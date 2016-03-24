@@ -54,8 +54,8 @@ public class ShopCartRow {
 	 *
 	 * @return the price
 	 */
-	public int getPrice() {
-		return this.price;
+	public String getPrice() {
+		return Integer.toString(this.price);
 	}
 	
 	/**
@@ -66,5 +66,15 @@ public class ShopCartRow {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
+	/**
+	 * Gets the quantity.
+	 *
+	 * @return the quantity
+	 */
+	public String getQuantity() {
+		return Integer.toString(this.quantity);
+	}
+	
 	
 }

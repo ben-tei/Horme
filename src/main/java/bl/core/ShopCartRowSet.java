@@ -8,31 +8,31 @@ import java.util.ArrayList;
 public class ShopCartRowSet {
 	
 /** The tab shop cart. */
-public ArrayList<Product> tabShopCart;
+public ArrayList<ShopCartRow> tabShopCart;
 	
 	/**
 	 * Instantiates a new shop cart row set.
 	 */
 	public ShopCartRowSet (){
-		this.tabShopCart = new ArrayList<Product>();
+		this.tabShopCart = new ArrayList<ShopCartRow>();
 	}
 	
 	/**
-	 * Adds the product.
+	 * Adds the shop cart row.
 	 *
-	 * @param product the product
+	 * @param shop cart row the shop cart row
 	 */
-	public void AddProduct(Product product){
-		this.tabShopCart.add(product);
+	public void AddShopCartRow(ShopCartRow rowCart){
+		this.tabShopCart.add(rowCart);
 	}
 	
 	/**
-	 * Gets the product by index.
+	 * Gets the shop cart row by index.
 	 *
 	 * @param index the index
-	 * @return the product by index
+	 * @return the shop cart row by index
 	 */
-	public Product getProductByIndex(int index){
+	public ShopCartRow getShopCartRowByIndex(int index){
 		return this.tabShopCart.get(index);
 	}
 	

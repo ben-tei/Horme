@@ -2,7 +2,7 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.core.Product;
+import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
 
@@ -28,24 +28,23 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 		PreparedStatement pstmt = null;
 
-		Product product = null;
+		ShopCartRow rowCart = null;
 
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT * FROM Product"); // where idUser = ? ; pstmt.setString(1, user.getId());
+			pstmt = conn.prepareStatement("SELECT quantity, ConstituteShoppingCart.price, Product.name FROM Product, ConstituteShoppingCart, Person, ShoppingCart WHERE Product.idProduct = ConstituteShoppingCart.idProduct AND ShoppingCart.idPerson = ? AND ShoppingCart.idShoppingCart = ConstituteShoppingCart.idShoppingCart"); // where idUser = ? ; pstmt.setString(1, user.getId());
 
-			//pstmt.setString(1, user.getId());
+			pstmt.setString(1, user.getId());
 
 			rset = pstmt.executeQuery();
 
 			while(rset.next()) {
-				product = new Product();
-				product.setName(rset.getString("name"));
-				product.setReference(rset.getString("reference"));
-				product.setPrice(rset.getInt("price"));
-				product.setStockQuantity(rset.getInt("stockQuantity"));
-				this.AddProduct(product);
+				rowCart = new ShopCartRow();
+				rowCart.setName(rset.getString("name"));
+				rowCart.setPrice(rset.getInt("price"));
+				rowCart.setQuantity(rset.getInt("quantity"));
+				this.AddShopCartRow(rowCart);
 			}
 		}
 
