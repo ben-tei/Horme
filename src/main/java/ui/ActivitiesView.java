@@ -36,15 +36,15 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		new Menu(this, this.viewController);
 		
 		JLabel name = new JLabel("Name");
-		name.setBounds(140, 175, 46, 14);
+		name.setBounds(140, 175, 200, 14);
 		this.add(name);
 
 		JLabel category = new JLabel("Category");
-		category.setBounds(334, 175, 60, 14);
+		category.setBounds(400, 175, 100, 14);
 		this.add(category);
 
 		JLabel description = new JLabel("Description");
-		description.setBounds(519, 175, 46, 14);
+		description.setBounds(520, 175, 250, 14);
 		this.add(description);
 		
 		int placement = 231;
@@ -53,15 +53,15 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		for(int i = 0; i <= activityFacade.readActivities(user).size() - 1; i++) {
 
 			JLabel Aname = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getName());
-			Aname.setBounds(140, placement, 120, 14);
+			Aname.setBounds(140, placement, 200, 14);
 			this.add(Aname);
 
 			JLabel Acategory = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getCategory().getName());
-			Acategory.setBounds(334, placement, 120, 14);
+			Acategory.setBounds(400, placement, 100, 14);
 			this.add(Acategory);
 
 			JLabel Adescription = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getDescription());
-			Adescription.setBounds(519, placement, 120, 14);
+			Adescription.setBounds(520, placement, 200, 14);
 			this.add(Adescription);
 
 			placement = placement + 32;

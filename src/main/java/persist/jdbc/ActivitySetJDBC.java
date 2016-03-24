@@ -36,7 +36,7 @@ public class ActivitySetJDBC extends ActivitySet  {
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT a.name, a.description, c.name FROM Activity a, Category c WHERE a.idCategory = c.idCategory"
-					+ "AND a.idPerson = ?");
+					+ " AND a.idUser = ?");
 
 			pstmt.setString(1, user.getId());
 
