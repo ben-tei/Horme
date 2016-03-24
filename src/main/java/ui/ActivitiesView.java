@@ -52,17 +52,17 @@ public class ActivitiesView extends JPanel implements ActionListener {
 
 		for(int i = 0; i <= activityFacade.readActivities(user).size() - 1; i++) {
 
-			JLabel Pname = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getName());
-			Pname.setBounds(140, placement, 120, 14);
-			this.add(Pname);
+			JLabel Aname = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getName());
+			Aname.setBounds(140, placement, 120, 14);
+			this.add(Aname);
 
-			JLabel Pcategory = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getCategory().getName());
-			Pcategory.setBounds(334, placement, 120, 14);
-			this.add(Pcategory);
+			JLabel Acategory = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getCategory().getName());
+			Acategory.setBounds(334, placement, 120, 14);
+			this.add(Acategory);
 
-			JLabel Pdescription = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getDescription());
-			Pdescription.setBounds(519, placement, 120, 14);
-			this.add(Pdescription);
+			JLabel Adescription = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getDescription());
+			Adescription.setBounds(519, placement, 120, 14);
+			this.add(Adescription);
 
 			placement = placement + 32;
 		}
