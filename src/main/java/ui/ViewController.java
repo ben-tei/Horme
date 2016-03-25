@@ -1,9 +1,14 @@
 package ui;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import bl.facade.ActivityFacade;
+<<<<<<< HEAD
+=======
+import bl.facade.NotificationFacade;
+import bl.facade.ProductFacade;
 import bl.facade.ShopCartFacade;
+>>>>>>> origin/master
 import bl.facade.UserFacade;
 
 /**
@@ -12,7 +17,7 @@ import bl.facade.UserFacade;
 public class ViewController {
 
 	/** The my window. */
-	private JFrame myWindow;
+	private Window myWindow;
 
 	/** The my j panel. */
 	private JPanel myJPanel;
@@ -20,7 +25,16 @@ public class ViewController {
 	/** The user facade. */
 	private UserFacade userFacade;
 	
+	/** The activity facade. */
+	private ActivityFacade activityFacade;
+
 	private ShopCartFacade shopCartFacade;
+
+	private ProductFacade productFacade;
+
+	private ActivityFacade activityFacade;
+
+	private NotificationFacade notificationFacade;
 
 	/**
 	 * Instantiates a new view controller.
@@ -30,6 +44,9 @@ public class ViewController {
 		this.myWindow = new Window(600, 920);
 		this.userFacade = new UserFacade();
 		this.shopCartFacade = new ShopCartFacade();
+		this.productFacade = new ProductFacade();
+		this.activityFacade = new ActivityFacade();
+		this.notificationFacade = new NotificationFacade();
 		this.showLoginPanel();
 		this.myWindow.setVisible(true);
 	}
@@ -44,9 +61,35 @@ public class ViewController {
 		return this.userFacade;
 	}
 	
+	/**
+	 * Gets the activity facade.
+	 *
+	 * @return the activity facade
+	 */
+	public ActivityFacade getActivityFacade()
+	{
+		return this.activityFacade;
+	}
+
 	public ShopCartFacade getShopCartFacade()
 	{
 		return this.shopCartFacade;
+	}
+
+	public ProductFacade getProductFacade() {
+		return productFacade;
+	}
+
+	public ActivityFacade getActivityFacade() {
+		return activityFacade;
+	}
+
+	public NotificationFacade getNotificationFacade() {
+		return notificationFacade;
+	}
+
+	public Window getMyWindow() {
+		return myWindow;
 	}
 
 	/**
@@ -101,6 +144,19 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show activity panel.
+	 */
+	public void showActivityPanel()
+	{
+		this.myWindow.setTitle("Horme - New Activity");
+		this.myJPanel = new ActivityView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
 	/**
 	 * Show diary panel.
 	 */

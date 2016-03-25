@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Product {
+public abstract class Product {
 	/**
 	 * Description of the id.
 	 */
@@ -207,6 +207,6 @@ public class Product {
 		this.id = id;
 	}
 	
-	
+	public abstract void save();
 	
 }

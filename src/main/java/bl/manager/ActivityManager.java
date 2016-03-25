@@ -1,6 +1,8 @@
 package bl.manager;
 
+import bl.core.Activity;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.User;
 import bl.factory.Factory;
 import persist.factoryjdbc.FactoryJDBC;
@@ -15,6 +17,9 @@ public class ActivityManager {
 	
 	/** The activities. */
 	private ActivitySet activities;
+	
+	/** An activity. */
+	private Activity activity;
 
 	/**
 	 * Instantiates a new activity manager.
@@ -35,5 +40,18 @@ public class ActivityManager {
 		activities = factory.readActivities(user);
 		return activities;
 	}
+	
+	/**
+	 * Create activity.
+	 *
+	 * @param user the user
+	 * @return the activity set
+	 */
+	public Activity createActivity(String name, String category, String description)
+	{
+		activity = this.factory.createActivity(name, category, description);
+		return activity;
+	}
+	
 
 }

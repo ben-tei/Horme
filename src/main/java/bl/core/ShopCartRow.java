@@ -4,42 +4,58 @@ package bl.core;
  * The Class ShopCartRow.
  */
 public class ShopCartRow {
-	
+
 	/** The name. */
+	private int idProduct;
+
+	private int idShoppingCart;
+
 	private String name;
-	
+
 	/** The price. */
 	private int price;
-	
+
 	/** The quantity. */
 	private int quantity;
-	
-	
+
+
 	/**
 	 * Instantiates a new shop cart row.
 	 */
 	public ShopCartRow() {
-		
+
 	}
-	
-	/**
-	 * Sets the name.
-	 *
-	 * @param name the new name
-	 */
-	public void setName(String name){
+
+	public int getIdProduct() {
+		return idProduct;
+	}
+
+
+	public void setIdProduct(int idProduct) {
+		this.idProduct = idProduct;
+	}
+
+
+	public int getIdShoppingCart() {
+		return idShoppingCart;
+	}
+
+
+	public void setIdShoppingCart(int idShoppingCart) {
+		this.idShoppingCart = idShoppingCart;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	
-	/**
-	 * Gets the name.
-	 *
-	 * @return the name
-	 */
-	public String getName() {
-		return this.name;
-	}
-	
+
+
 	/**
 	 * Sets the price.
 	 *
@@ -48,7 +64,7 @@ public class ShopCartRow {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
+
 	/**
 	 * Gets the price.
 	 *
@@ -57,7 +73,7 @@ public class ShopCartRow {
 	public String getPrice() {
 		return Integer.toString(this.price);
 	}
-	
+
 	/**
 	 * Sets the quantity.
 	 *
@@ -66,7 +82,7 @@ public class ShopCartRow {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
+
 	/**
 	 * Gets the quantity.
 	 *
@@ -75,6 +91,6 @@ public class ShopCartRow {
 	public String getQuantity() {
 		return Integer.toString(this.quantity);
 	}
-	
-	
+
+
 }

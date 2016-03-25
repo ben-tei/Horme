@@ -2,8 +2,6 @@ package ui;
 
 import javax.swing.JPanel;
 
-import bl.facade.NotificationFacade;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,9 +13,6 @@ public class NotificationView extends JPanel implements ActionListener {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The notification facade. */
-	private NotificationFacade notificationFacade;
-
 	/** The view controller. */
 	private ViewController viewController;
 
@@ -27,8 +22,6 @@ public class NotificationView extends JPanel implements ActionListener {
 	 * @param vc the vc
 	 */
 	public NotificationView (ViewController vc) {
-
-		this.notificationFacade = new NotificationFacade();
 
 		this.viewController = vc;
 
@@ -45,7 +38,7 @@ public class NotificationView extends JPanel implements ActionListener {
 	 * @return the notifications
 	 */
 	public void getNotifications() {
-		this.notificationFacade.getNotifications();
+		this.viewController.getNotificationFacade().getNotifications();
 	}
 
 	/* (non-Javadoc)
