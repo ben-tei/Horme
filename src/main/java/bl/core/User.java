@@ -30,7 +30,7 @@ public abstract class User extends Person {
 	/**
 	 * Description of the property shoppingCarts.
 	 */
-	public HashSet<ShoppingCart> shoppingCarts = new HashSet<ShoppingCart>();
+	public ShoppingCart shoppingCart;
 
 	/**
 	 * Description of the property entries.
@@ -86,12 +86,12 @@ public abstract class User extends Person {
 		return this.whishLists;
 	}
 
-	/**
-	 * Returns shoppingCarts.
-	 * @return shoppingCarts 
-	 */
-	public HashSet<ShoppingCart> getShoppingCarts() {
-		return this.shoppingCarts;
+	public ShoppingCart getShoppingCart() {
+		return shoppingCart;
+	}
+
+	public void setShoppingCart(ShoppingCart shoppingCart) {
+		this.shoppingCart = shoppingCart;
 	}
 
 	/**
@@ -162,7 +162,7 @@ public abstract class User extends Person {
 			throw new WrongPasswordException("Wrong password !");
 		}
 	}
-	
+
 	public abstract void save();
 
 }

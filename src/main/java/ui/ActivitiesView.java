@@ -5,9 +5,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import bl.core.User;
+<<<<<<< HEAD
 import bl.facade.ActivityFacade;
 
 import java.awt.Font;
+=======
+>>>>>>> origin/master
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +24,7 @@ public class ActivitiesView extends JPanel implements ActionListener {
 
 	/** The view controller. */
 	private ViewController viewController;
+<<<<<<< HEAD
 	
 	/** The product facade. */
 	private ActivityFacade activityFacade;
@@ -28,6 +32,9 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	/** The btn add activity. */
 	private JButton btnAddActivity;
 	
+=======
+
+>>>>>>> origin/master
 	/**
 	 * Instantiates a new activities view.
 	 *
@@ -36,11 +43,11 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	public ActivitiesView (ViewController vc) {
 
 		this.viewController = vc;
-		this.activityFacade = new ActivityFacade();
+
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
-		
+
 		JLabel name = new JLabel("Name");
 		name.setBounds(140, 175, 200, 14);
 		this.add(name);
@@ -52,6 +59,7 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		JLabel description = new JLabel("Description");
 		description.setBounds(520, 175, 250, 14);
 		this.add(description);
+<<<<<<< HEAD
 		
 		this.btnAddActivity = new JButton("Add Activity");
 		btnAddActivity.setBounds(700, 500, 150, 23);
@@ -60,20 +68,23 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		this.btnAddActivity.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnAddActivity);
 		
+=======
+
+>>>>>>> origin/master
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
 
-		for(int i = 0; i <= activityFacade.readActivities(user).size() - 1; i++) {
+		for(int i = 0; i <= this.viewController.getActivityFacade().readActivities(user).size() - 1; i++) {
 
-			JLabel Aname = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getName());
+			JLabel Aname = new JLabel(this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getName());
 			Aname.setBounds(140, placement, 200, 14);
 			this.add(Aname);
 
-			JLabel Acategory = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getCategory().getName());
+			JLabel Acategory = new JLabel(this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getCategory().getName());
 			Acategory.setBounds(400, placement, 100, 14);
 			this.add(Acategory);
 
-			JLabel Adescription = new JLabel(activityFacade.readActivities(user).getActivityByIndex(i).getDescription());
+			JLabel Adescription = new JLabel(this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getDescription());
 			Adescription.setBounds(520, placement, 200, 14);
 			this.add(Adescription);
 

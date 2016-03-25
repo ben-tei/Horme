@@ -1,6 +1,7 @@
 package bl.facade;
 
 import bl.core.ShopCartRowSet;
+import bl.core.ShoppingCart;
 import bl.core.User;
 import bl.manager.ShopCartManager;
 
@@ -27,5 +28,14 @@ public class ShopCartFacade {
 	 */
 	public ShopCartRowSet readShopCart(User user) {
 		return this.shopCartManager.readShopCart(user);
+	}
+	
+	public ShoppingCart getShopCart(User user) {
+		return this.shopCartManager.getShopCart(user);
+	}
+	
+	public void addToShoppingCart(int indice, int quantity)
+	{
+		this.shopCartManager.addToShoppingCart(indice, quantity);
 	}
 }

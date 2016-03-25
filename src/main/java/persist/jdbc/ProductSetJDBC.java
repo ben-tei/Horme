@@ -2,7 +2,6 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.core.Product;
 import bl.core.ProductSet;
 
 /**
@@ -22,7 +21,7 @@ public class ProductSetJDBC extends ProductSet {
 
 		ResultSet rset = null;
 
-		Product product = null;
+		ProductJDBC product = null;
 
 		try {
 			conn = jdbcconnection.openConnection();
@@ -33,7 +32,7 @@ public class ProductSetJDBC extends ProductSet {
 
 
 			while(rset.next()){
-				product = new Product();
+				product = new ProductJDBC();
 				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
 				product.setReference(rset.getString("reference"));
@@ -70,7 +69,7 @@ public class ProductSetJDBC extends ProductSet {
 
 		PreparedStatement pstmt = null;
 
-		Product product = null;
+		ProductJDBC product = null;
 
 		try {
 			conn = jdbcconnection.openConnection();
@@ -83,7 +82,7 @@ public class ProductSetJDBC extends ProductSet {
 			rset = pstmt.executeQuery();
 
 			while(rset.next()){
-				product = new Product();
+				product = new ProductJDBC();
 				product.setName(rset.getString("name"));
 				product.setReference(rset.getString("reference"));
 				product.setPrice(rset.getInt("price"));
