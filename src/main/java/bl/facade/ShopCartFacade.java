@@ -33,4 +33,9 @@ public class ShopCartFacade {
 	public ShoppingCart getShopCart(User user) {
 		return this.shopCartManager.getShopCart(user);
 	}
+	
+	public void addToShoppingCart(int indice, int quantity)
+	{
+		this.shopCartManager.addToShoppingCart(indice, quantity);
+	}
 }

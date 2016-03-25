@@ -44,7 +44,7 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 				rowCart.setName(rset.getString("name"));
 				rowCart.setPrice(rset.getInt("price"));
 				rowCart.setQuantity(rset.getInt("quantity"));
-				this.AddShopCartRow(rowCart);
+				this.addShopCartRow(rowCart);
 			}
 		}
 

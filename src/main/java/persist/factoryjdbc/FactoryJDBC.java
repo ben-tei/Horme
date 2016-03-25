@@ -3,6 +3,7 @@ package persist.factoryjdbc;
 import bl.core.ActivitySet;
 import bl.core.OrderSet;
 import bl.core.ProductSet;
+import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
 import bl.core.ShoppingCart;
 import bl.core.User;
@@ -102,6 +103,11 @@ public class FactoryJDBC extends Factory
 	@Override
 	public OrderSet readOrders(User user) {
 		return new OrderSetJDBC(user);
+	}
+
+	@Override
+	public ShopCartRow addToShoppingCart(int indice, int quantity) {
+		return new ShopCartRowJDBC(indice, quantity);
 	}
 
 }

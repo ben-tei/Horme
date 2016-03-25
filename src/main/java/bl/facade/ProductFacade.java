@@ -2,6 +2,7 @@ package bl.facade;
 
 import bl.core.ProductSet;
 import bl.manager.ProductManager;
+import exceptions.NotEnoughStockException;
 
 /**
  * The Class ProductFacade.
@@ -38,6 +39,11 @@ public class ProductFacade {
 	public ProductSet searchProducts(String searchString)
 	{
 		return this.productManager.searchProducts(searchString);
+	}
+
+	public void updateQuantityInStock(int indice, int quantity) throws NotEnoughStockException
+	{
+		this.productManager.updateQuantityInStock(indice, quantity);
 	}
 
 }

@@ -3,6 +3,7 @@ package bl.factory;
 import bl.core.ActivitySet;
 import bl.core.OrderSet;
 import bl.core.ProductSet;
+import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
 import bl.core.ShoppingCart;
 import bl.core.User;
@@ -79,6 +80,8 @@ public abstract class Factory {
 	public abstract ShopCartRowSet readShopCart(User user);
 	
 	public abstract ShoppingCart getShopCart(User user);
+	
+	public abstract ShopCartRow addToShoppingCart(int indice, int quantity);
 
 	/**
 	 * Read orders.
