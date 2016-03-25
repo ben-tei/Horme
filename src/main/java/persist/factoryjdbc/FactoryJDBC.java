@@ -2,7 +2,6 @@ package persist.factoryjdbc;
 
 import bl.core.Activity;
 import bl.core.ActivitySet;
-import bl.core.Category;
 import bl.core.OrderSet;
 import bl.core.Product;
 import bl.core.ProductSet;

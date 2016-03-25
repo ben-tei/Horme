@@ -2,7 +2,6 @@ package bl.manager;
 
 import bl.core.Activity;
 import bl.core.ActivitySet;
-import bl.core.Category;
 import bl.core.User;
 import bl.factory.Factory;
 import persist.factoryjdbc.FactoryJDBC;
@@ -14,10 +13,10 @@ public class ActivityManager {
 
 	/** The factory. */
 	private Factory factory;
-	
+
 	/** The activities. */
 	private ActivitySet activities;
-	
+
 	/** An activity. */
 	private Activity activity;
 
@@ -40,7 +39,7 @@ public class ActivityManager {
 		activities = factory.readActivities(user);
 		return activities;
 	}
-	
+
 	/**
 	 * Create activity.
 	 *
@@ -52,6 +51,6 @@ public class ActivityManager {
 		activity = this.factory.createActivity(name, category, description);
 		return activity;
 	}
-	
+
 
 }
