@@ -28,7 +28,7 @@ public class OrderSetJDBC extends OrderSet {
 
 		TraderJDBC trader = null;
 
-		try{
+		try {
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT `Order`.`idTrader`, `website`, `date`, `numero` FROM `Order`, `Trader` WHERE `Order`.`idTrader` = `Trader`.`idPerson`" + "AND `Order`.`idPerson`= ?");

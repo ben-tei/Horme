@@ -38,11 +38,9 @@ public class ActivityJDBC extends Activity {
 
 		ResultSet rsetCategory= null;
 
-
 		JComboBox categoryChoice = null; // pas ici qu'il faut le faire mais dans la vue !!!
 
-
-		try{
+		try {
 			conn = jdbcconnection.openConnection();
 
 			St = (Statement) conn.createStatement(); 

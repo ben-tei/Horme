@@ -50,8 +50,6 @@ public class ShopCartView extends JPanel implements ActionListener {
 		this.add(price);
 
 
-
-
 		int placement = 231;
 
 
@@ -87,7 +85,7 @@ public class ShopCartView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		
+
 		if(cmd.equals("validate")) {
 			this.viewController.getShopCartFacade().placeOrder();
 			JOptionPane.showMessageDialog(null, "Your order has been successfully added", "Order Confirmation", JOptionPane.INFORMATION_MESSAGE);

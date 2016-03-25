@@ -30,7 +30,7 @@ public class ActivitySetJDBC extends ActivitySet  {
 
 		CategoryJDBC category;
 
-		try{
+		try {
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT a.name, a.description, c.name FROM Activity a, Category c WHERE a.idCategory = c.idCategory"

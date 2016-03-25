@@ -37,7 +37,7 @@ public class ActivityFacade {
 	 *
 	 * @param name the name
 	 * @param category the category
-	 * @param description the descritption
+	 * @param description the description
 	 */
 
 	public Activity createActivity(String name, String category, String description)
