@@ -1,6 +1,7 @@
 package bl.manager;
 
 import bl.core.ShopCartRowSet;
+import bl.core.ShoppingCart;
 import bl.core.User;
 import bl.factory.Factory;
 import persist.factoryjdbc.FactoryJDBC;
@@ -15,6 +16,8 @@ public class ShopCartManager {
 	
 	/** The shop cart rows. */
 	private ShopCartRowSet shopCartRows;
+	
+	private ShoppingCart shopCart;
 
 	/**
 	 * Instantiates a new shop cart manager.
@@ -34,6 +37,11 @@ public class ShopCartManager {
 	{
 		shopCartRows = factory.readShopCart(user);
 		return shopCartRows;
+	}
+	
+	public ShoppingCart getShopCart(User user) {
+		shopCart = factory.getShopCart(user);
+		return shopCart;
 	}
 
 

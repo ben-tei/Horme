@@ -17,6 +17,10 @@ import java.util.HashSet;
  */
 public class ShoppingCart {
 	/**
+	 * Description of the property id.
+	 */
+	public String id = "";
+	/**
 	 * Description of the property whishLists.
 	 */
 	public HashSet<WhishList> whishLists = new HashSet<WhishList>();
@@ -79,5 +83,15 @@ public class ShoppingCart {
 	public HashSet<Product> getProducts() {
 		return this.products;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
 
 }

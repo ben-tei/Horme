@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import bl.facade.ShopCartFacade;
 import bl.facade.UserFacade;
 
 /**
@@ -18,6 +19,8 @@ public class ViewController {
 
 	/** The user facade. */
 	private UserFacade userFacade;
+	
+	private ShopCartFacade shopCartFacade;
 
 	/**
 	 * Instantiates a new view controller.
@@ -26,6 +29,7 @@ public class ViewController {
 	{
 		this.myWindow = new Window(600, 920);
 		this.userFacade = new UserFacade();
+		this.shopCartFacade = new ShopCartFacade();
 		this.showLoginPanel();
 		this.myWindow.setVisible(true);
 	}
@@ -38,6 +42,11 @@ public class ViewController {
 	public UserFacade getUserFacade()
 	{
 		return this.userFacade;
+	}
+	
+	public ShopCartFacade getShopCartFacade()
+	{
+		return this.shopCartFacade;
 	}
 
 	/**

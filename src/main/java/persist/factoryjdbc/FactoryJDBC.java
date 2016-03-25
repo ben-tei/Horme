@@ -4,6 +4,7 @@ import bl.core.ActivitySet;
 import bl.core.OrderSet;
 import bl.core.ProductSet;
 import bl.core.ShopCartRowSet;
+import bl.core.ShoppingCart;
 import bl.core.User;
 import bl.factory.Factory;
 import exceptions.*;
@@ -12,6 +13,7 @@ import persist.jdbc.NotificationJDBC;
 import persist.jdbc.OrderSetJDBC;
 import persist.jdbc.ProductSetJDBC;
 import persist.jdbc.ShopCartRowSetJDBC;
+import persist.jdbc.ShoppingCartJDBC;
 import persist.jdbc.UserJDBC;
 
 /**
@@ -79,6 +81,11 @@ public class FactoryJDBC extends Factory
 	public ShopCartRowSet readShopCart(User user) 
 	{
 		return new ShopCartRowSetJDBC(user);
+	}
+
+	public ShoppingCart getShopCart(User user) 
+	{
+		return new ShoppingCartJDBC(user);
 	}
 
 	/* (non-Javadoc)

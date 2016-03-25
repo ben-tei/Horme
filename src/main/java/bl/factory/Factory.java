@@ -4,6 +4,7 @@ import bl.core.ActivitySet;
 import bl.core.OrderSet;
 import bl.core.ProductSet;
 import bl.core.ShopCartRowSet;
+import bl.core.ShoppingCart;
 import bl.core.User;
 import exceptions.*;
 
@@ -76,6 +77,8 @@ public abstract class Factory {
 	 * @return the shop cart row set
 	 */
 	public abstract ShopCartRowSet readShopCart(User user);
+	
+	public abstract ShoppingCart getShopCart(User user);
 
 	/**
 	 * Read orders.

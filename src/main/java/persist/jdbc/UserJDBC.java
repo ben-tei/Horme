@@ -94,7 +94,13 @@ public class UserJDBC extends User
 
 		PreparedStatement pstmt2 = null;
 
+		PreparedStatement pstmt3 = null;
+
+		PreparedStatement pstmt4 = null;
+
 		ResultSet rset = null;
+
+		ResultSet rset2 = null;
 
 		try {
 
@@ -122,6 +128,20 @@ public class UserJDBC extends User
 				pstmt2.setString(9, password);
 
 				pstmt2.executeUpdate();
+
+				pstmt3 = conn.prepareStatement("SELECT MAX(idPerson) AS last FROM Person");
+
+				rset2 = pstmt3.executeQuery();
+
+				if (rset2.next())
+				{
+
+					pstmt4 = conn.prepareStatement("INSERT INTO ShoppingCart (idPerson) VALUES (?)");
+
+					pstmt4.setString(1, rset2.getString("last"));
+
+					pstmt4.executeUpdate();
+				}
 			}
 			else
 			{
@@ -138,6 +158,10 @@ public class UserJDBC extends User
 			jdbcconnection.close(pstmt);
 
 			jdbcconnection.close(pstmt2);
+			
+			jdbcconnection.close(pstmt3);
+			
+			jdbcconnection.close(pstmt4);
 
 			jdbcconnection.closeConnection();
 
@@ -180,7 +204,7 @@ public class UserJDBC extends User
 			pstmt.setString(8, this.getId());
 
 			pstmt.executeUpdate();
-			
+
 		}
 
 		catch (SQLException e) {
