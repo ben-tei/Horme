@@ -1,5 +1,6 @@
 package ui;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -21,6 +22,10 @@ public class ShopCartView extends JPanel implements ActionListener {
 	
 	/** The shop Cart Facade facade. */
 	private ShopCartFacade shopCartFacade;
+	
+	/** The btn validate. */
+	private JButton btnValidate;
+
 
 	/**
 	 * Instantiates a new shop cart view.
@@ -71,6 +76,12 @@ public class ShopCartView extends JPanel implements ActionListener {
 
 			placement = placement + 32;
 		}
+		
+		btnValidate = new JButton("Validate the cart");
+		btnValidate.setBounds(135, placement+24, 140, 23);
+		btnValidate.addActionListener(this);
+		btnValidate.setActionCommand("diary");
+		this.add(btnValidate);
 
 	}
 
