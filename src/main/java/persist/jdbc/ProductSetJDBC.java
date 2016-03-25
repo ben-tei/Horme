@@ -34,6 +34,7 @@ public class ProductSetJDBC extends ProductSet {
 
 			while(rset.next()){
 				product = new Product();
+				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
 				product.setReference(rset.getString("reference"));
 				product.setPrice(rset.getInt("price"));

@@ -6,7 +6,6 @@ import exceptions.AlreadyExistsException;
 import exceptions.WrongLoginException;
 import exceptions.WrongPasswordException;
 import persist.factoryjdbc.FactoryJDBC;
-import persist.jdbc.UserJDBC;
 import util.HashText;
 
 /**
@@ -81,7 +80,14 @@ public class UserManager {
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
 			String email)
 	{
-		((UserJDBC) this.user).updateUser(name, firstname, street, zipCode, city, phone, email);
+		this.user.setName(name);
+		this.user.setFirstName(firstname);
+		this.user.setStreet(street);
+		this.user.setZipCode(zipCode);
+		this.user.setCity(city);
+		this.user.setPhone(phone);
+		this.user.setEmail(email);
+		this.user.save();
 		return this.user;
 	}
 

@@ -25,9 +25,9 @@ public class ViewController {
 	public ViewController()
 	{
 		this.myWindow = new Window(600, 920);
-		this.myWindow.setVisible(true);
 		this.userFacade = new UserFacade();
 		this.showLoginPanel();
+		this.myWindow.setVisible(true);
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class ViewController {
 	 */
 	public void showProfilePanel()
 	{
-		this.myWindow.setTitle("Horme - Profil");
+		this.myWindow.setTitle("Horme - Profile");
 		this.myJPanel = new ProfileView(this);      
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();

@@ -164,6 +164,7 @@ public class LoginView extends JPanel implements ActionListener
 			{
 				try {
 					this.viewController.getUserFacade().login(getLoginText(), getPasswdText());
+					// this.viewController.getShoppingCartFacade().getSC(this.viewController.getUserFacade().getUser())
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showIndexPanel();
 				} catch (WrongLoginException | WrongPasswordException e1) {

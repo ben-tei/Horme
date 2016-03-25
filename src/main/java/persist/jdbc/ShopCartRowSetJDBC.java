@@ -33,7 +33,7 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT quantity, ConstituteShoppingCart.price, Product.name FROM Product, ConstituteShoppingCart, Person, ShoppingCart WHERE Product.idProduct = ConstituteShoppingCart.idProduct AND ShoppingCart.idPerson = ? AND ShoppingCart.idShoppingCart = ConstituteShoppingCart.idShoppingCart"); // where idUser = ? ; pstmt.setString(1, user.getId());
+			pstmt = conn.prepareStatement("SELECT quantity, ConstituteShoppingCart.price, Product.name FROM Product, ConstituteShoppingCart, ShoppingCart WHERE Product.idProduct = ConstituteShoppingCart.idProduct AND ShoppingCart.idPerson = ? AND ShoppingCart.idShoppingCart = ConstituteShoppingCart.idShoppingCart");
 
 			pstmt.setString(1, user.getId());
 

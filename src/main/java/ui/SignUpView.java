@@ -394,6 +394,9 @@ public class SignUpView extends JPanel implements ActionListener {
 							getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText(), 
 							getLoginField().getText(), new String(getPswdField().getPassword()));
 
+					
+					// this.viewController.getShoppingCartFacade().createSC(this.viewController.getUserFacade().getUser())
+
 					JOptionPane.showMessageDialog(null, "You are now registered " + getLoginField().getText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showLoginPanel();
 				} catch (AlreadyExistsException e1) {

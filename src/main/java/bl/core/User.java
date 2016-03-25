@@ -162,5 +162,7 @@ public abstract class User extends Person {
 			throw new WrongPasswordException("Wrong password !");
 		}
 	}
+	
+	public abstract void save();
 
 }

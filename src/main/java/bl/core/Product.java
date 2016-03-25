@@ -17,6 +17,10 @@ import java.util.HashSet;
  */
 public class Product {
 	/**
+	 * Description of the id.
+	 */
+	public String id = "";
+	/**
 	 * Description of the property orders.
 	 */
 	public HashSet<Order> orders = new HashSet<Order>();
@@ -194,5 +198,15 @@ public class Product {
 	public void setPrice(Integer newPrice) {
 		this.price = newPrice;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	
 	
 }

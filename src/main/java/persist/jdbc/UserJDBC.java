@@ -155,8 +155,7 @@ public class UserJDBC extends User
 	 * @param phone the phone
 	 * @param email the email
 	 */
-	public void updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email)
+	public void save()
 	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -171,24 +170,17 @@ public class UserJDBC extends User
 			pstmt = conn.prepareStatement("UPDATE Person SET name = ?, firstname = ?, street = ?, "
 					+ "zipCode = ?, city = ?, phone = ?, email = ? WHERE idPerson = ?");
 
-			pstmt.setString(1, name);
-			pstmt.setString(2, firstname);
-			pstmt.setString(3, street);
-			pstmt.setString(4, zipCode);
-			pstmt.setString(5, city);
-			pstmt.setString(6, phone);
-			pstmt.setString(7, email);
+			pstmt.setString(1, this.getName());
+			pstmt.setString(2, this.getFirstName());
+			pstmt.setString(3, this.getStreet());
+			pstmt.setString(4, this.getZipCode());
+			pstmt.setString(5, this.getCity());
+			pstmt.setString(6, this.getPhone());
+			pstmt.setString(7, this.getEmail());
 			pstmt.setString(8, this.getId());
 
 			pstmt.executeUpdate();
-
-			this.setName(name);
-			this.setFirstName(firstname);
-			this.setStreet(street);
-			this.setZipCode(zipCode);
-			this.setCity(city);
-			this.setPhone(phone);
-			this.setEmail(email);
+			
 		}
 
 		catch (SQLException e) {

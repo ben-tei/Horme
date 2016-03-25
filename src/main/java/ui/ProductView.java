@@ -41,7 +41,7 @@ public class ProductView extends JPanel implements ActionListener{
 		this.add(name);
 
 		JLabel reference = new JLabel("Reference");
-		reference.setBounds(334, 175, 60, 14);
+		reference.setBounds(334, 175, 80, 14);
 		this.add(reference);
 
 		JLabel price = new JLabel("Price");
@@ -49,7 +49,7 @@ public class ProductView extends JPanel implements ActionListener{
 		this.add(price);
 
 		JLabel quantity = new JLabel("Quantity");
-		quantity.setBounds(695, 175, 52, 14);
+		quantity.setBounds(695, 175, 80, 14);
 		this.add(quantity);
 
 
