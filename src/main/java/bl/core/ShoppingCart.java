@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class ShoppingCart {
+public  abstract class ShoppingCart {
 	/**
 	 * Description of the property id.
 	 */
@@ -92,6 +92,6 @@ public class ShoppingCart {
 		this.id = id;
 	}
 
-
+	public abstract void placeOrder(ShopCartRowSet shopCartRows);
 
 }

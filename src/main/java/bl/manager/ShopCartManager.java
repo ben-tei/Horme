@@ -43,6 +43,9 @@ public class ShopCartManager {
 		shopCart = factory.getShopCart(user);
 		return shopCart;
 	}
-
+	
+	public void placeOrder(){
+		this.shopCart.placeOrder(shopCartRows);
+	}
 
 }

@@ -30,7 +30,7 @@ public abstract class User extends Person {
 	/**
 	 * Description of the property shoppingCarts.
 	 */
-	public ShoppingCart shoppingCart = new ShoppingCart();
+	public ShoppingCart shoppingCart;
 
 	/**
 	 * Description of the property entries.

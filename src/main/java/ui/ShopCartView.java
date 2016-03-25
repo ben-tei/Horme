@@ -2,6 +2,7 @@ package ui;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import bl.facade.ShopCartFacade;
@@ -80,7 +81,7 @@ public class ShopCartView extends JPanel implements ActionListener {
 		btnValidate = new JButton("Validate the cart");
 		btnValidate.setBounds(135, placement+24, 140, 23);
 		btnValidate.addActionListener(this);
-		btnValidate.setActionCommand("diary");
+		btnValidate.setActionCommand("validate");
 		this.add(btnValidate);
 
 	}
@@ -91,6 +92,13 @@ public class ShopCartView extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		String cmd = e.getActionCommand();
+		
+		if(cmd.equals("validate")) {
+			this.shopCartFacade.placeOrder();
+			JOptionPane.showMessageDialog(null, "Your order has been successfully added", "Order Confirmation", JOptionPane.INFORMATION_MESSAGE);
+			this.viewController.showOrdersPanel();
+		}
 
 	}
 
