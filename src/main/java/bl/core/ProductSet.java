@@ -39,6 +39,22 @@ public abstract class ProductSet {
 		return this.tabProducts.get(index);
 	}
 
+	public Product getProductById(String id)
+	{
+		int i = 0;
+		boolean find = false;
+		while(i < this.tabProducts.size() && !find)
+		{
+			if(this.tabProducts.get(i).getId().equals(id))
+			{
+				find = true;
+			}
+			i++;
+		}
+
+		return this.tabProducts.get(i-1);
+	}
+
 	/**
 	 * Size.
 	 *

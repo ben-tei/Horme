@@ -22,6 +22,7 @@ public class ProductManager {
 	public ProductManager()
 	{
 		this.factory = new FactoryJDBC();
+		readProducts();
 	}
 
 	/**
@@ -47,17 +48,36 @@ public class ProductManager {
 		return products;
 	}
 
-	public void updateQuantityInStock(int indice, int quantity) throws NotEnoughStockException
+	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException
 	{
-		int quantityInStock = this.products.getProductByIndex(indice).getStockQuantity();
+		int quantityInStock = this.products.getProductByIndex(index).getStockQuantity();
 		if(quantityInStock < quantity)
 		{
 			throw new NotEnoughStockException("Not enough stock !");
 		}
 		else
 		{
-			this.products.getProductByIndex(indice).setStockQuantity(quantityInStock - quantity);
-			this.products.getProductByIndex(indice).save();
+			this.products.getProductByIndex(index).setStockQuantity(quantityInStock - quantity);
+			this.products.getProductByIndex(index).save();
+		}
+	}
+
+	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
+	{
+		int quantityInStock = this.products.getProductById(idProduct).getStockQuantity();
+		
+		System.out.println(quantityInStock);
+		System.out.println(quantity);
+		System.out.println(oldQuantity);
+
+		if(quantityInStock + oldQuantity - quantity < 0)
+		{
+			throw new NotEnoughStockException("Not enough stock !");
+		}
+		else
+		{
+			this.products.getProductById(idProduct).setStockQuantity(quantityInStock + oldQuantity - quantity);
+			this.products.getProductById(idProduct).save();
 		}
 	}
 

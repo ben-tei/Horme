@@ -44,4 +44,14 @@ public class ShopCartFacade {
 	{
 		this.shopCartManager.addToShoppingCart(p, quantity);
 	}
+
+	public void removeFromShoppingCart(String idProduct, int quantity)
+	{
+		this.shopCartManager.removeFromShoppingCart(idProduct, quantity);
+	}
+
+	public int getQuantity(String idProduct)
+	{
+		return this.shopCartManager.getQuantity(idProduct);
+	}
 }

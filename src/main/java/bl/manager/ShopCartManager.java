@@ -54,6 +54,24 @@ public class ShopCartManager {
 		this.shopCart.placeOrder(shopCartRows);
 	}
 
+	public int getQuantity(String idProduct)
+	{
+		int quantity = 0;
+		boolean find = false;
+		int i = 0;
+		while(i < this.shopCartRows.size() && !find)
+		{
+			if(this.shopCartRows.getShopCartRowByIndex(i).getIdProduct().equals(idProduct))
+			{
+				quantity = this.shopCartRows.getShopCartRowByIndex(i).getQuantity();
+				find = true;
+			}
+			i++;
+
+		}
+		return quantity;
+	}
+
 	public void addToShoppingCart(Product p, int quantity)
 	{
 		this.shopCartRow = factory.createShopCartRow(p, this.shopCart, quantity);
@@ -76,6 +94,11 @@ public class ShopCartManager {
 		{
 			this.shopCartRows.getShopCartRowByIndex(i - 1).setQuantity(quantity + this.shopCartRows.getShopCartRowByIndex(i - 1).getQuantity());
 		}
+
+	}
+
+	public void removeFromShoppingCart(String idProduct, int quantity)
+	{
 
 	}
 

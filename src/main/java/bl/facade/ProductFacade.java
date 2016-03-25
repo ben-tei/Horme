@@ -41,9 +41,14 @@ public class ProductFacade {
 		return this.productManager.searchProducts(searchString);
 	}
 
-	public void updateQuantityInStock(int indice, int quantity) throws NotEnoughStockException
+	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException
 	{
-		this.productManager.updateQuantityInStock(indice, quantity);
+		this.productManager.updateQuantityInStock(index, quantity);
+	}
+	
+	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
+	{
+		this.productManager.updateQuantityInStock(idProduct, quantity, oldQuantity);
 	}
 
 }
