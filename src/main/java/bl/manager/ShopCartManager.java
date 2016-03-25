@@ -1,5 +1,6 @@
 package bl.manager;
 
+import bl.core.Product;
 import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
 import bl.core.ShoppingCart;
@@ -38,26 +39,44 @@ public class ShopCartManager {
 	 */
 	public ShopCartRowSet readShopCart(User user)
 	{
-		shopCartRows = factory.readShopCart(user);
 		return shopCartRows;
 	}
 
-	public ShoppingCart getShopCart(User user) {
+	public ShoppingCart getShopCart(User user)
+	{
 		shopCart = factory.getShopCart(user);
+		shopCartRows = factory.readShopCart(user);
 		return shopCart;
 	}
-<<<<<<< HEAD
-	
-	public void placeOrder(){
+
+	public void placeOrder()
+	{
 		this.shopCart.placeOrder(shopCartRows);
 	}
-=======
 
-	public void addToShoppingCart(int indice, int quantity)
+	public void addToShoppingCart(Product p, int quantity)
 	{
-		this.shopCartRow = factory.addToShoppingCart(indice, quantity);
-	}
+		this.shopCartRow = factory.createShopCartRow(p, this.shopCart, quantity);
+		boolean find = false;
+		int i = 0;
+		while(i < this.shopCartRows.size() && !find)
+		{
+			if(this.shopCartRows.getShopCartRowByIndex(i).getIdProduct().equals(p.getId()) && this.shopCartRows.getShopCartRowByIndex(i).getIdShoppingCart().equals(this.shopCart.getId()))
+			{
+				find = true;
+			}
+			i++;
+		}
 
->>>>>>> origin/master
+		if(!find)
+		{
+			this.shopCartRows.addShopCartRow(this.shopCartRow);
+		}
+		else
+		{
+			this.shopCartRows.getShopCartRowByIndex(i - 1).setQuantity(quantity + this.shopCartRows.getShopCartRowByIndex(i - 1).getQuantity());
+		}
+
+	}
 
 }

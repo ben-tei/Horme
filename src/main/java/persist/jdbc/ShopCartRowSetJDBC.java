@@ -2,7 +2,6 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
 
@@ -28,19 +27,23 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 		PreparedStatement pstmt = null;
 
-		ShopCartRow rowCart = null;
+		ShopCartRowJDBC rowCart = null;
 
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT quantity, ConstituteShoppingCart.price, Product.name FROM Product, ConstituteShoppingCart, ShoppingCart WHERE Product.idProduct = ConstituteShoppingCart.idProduct AND ShoppingCart.idPerson = ? AND ShoppingCart.idShoppingCart = ConstituteShoppingCart.idShoppingCart");
+			pstmt = conn.prepareStatement("SELECT ConstituteShoppingCart.idProduct, ConstituteShoppingCart.idShoppingCart, quantity, ConstituteShoppingCart.price, "
+					+ "Product.name FROM Product, ConstituteShoppingCart, ShoppingCart WHERE Product.idProduct = ConstituteShoppingCart.idProduct "
+					+ "AND ShoppingCart.idPerson = ? AND ShoppingCart.idShoppingCart = ConstituteShoppingCart.idShoppingCart");
 
 			pstmt.setString(1, user.getId());
 
 			rset = pstmt.executeQuery();
 
 			while(rset.next()) {
-				rowCart = new ShopCartRow();
+				rowCart = new ShopCartRowJDBC();
+				rowCart.setIdProduct(rset.getString("idProduct"));
+				rowCart.setIdShoppingCart(rset.getString("idShoppingCart"));
 				rowCart.setName(rset.getString("name"));
 				rowCart.setPrice(rset.getInt("price"));
 				rowCart.setQuantity(rset.getInt("quantity"));

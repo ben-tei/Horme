@@ -15,16 +15,16 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class WhishList {
+public abstract class WhishList {
 	/**
 	 * Description of the property ressources.
 	 */
-	public HashSet<Ressource> ressources = new HashSet<Ressource>();
+	private HashSet<Ressource> ressources = new HashSet<Ressource>();
 
 	/**
 	 * Description of the property user.
 	 */
-	public User user = null;
+	private User user = null;
 
 	/**
 	 * Description of the property name.
@@ -34,7 +34,7 @@ public class WhishList {
 	/**
 	 * Description of the property shoppingCarts.
 	 */
-	public HashSet<ShoppingCart> shoppingCarts = new HashSet<ShoppingCart>();
+	private HashSet<ShoppingCart> shoppingCarts = new HashSet<ShoppingCart>();
 
 	// Start of user code (user defined attributes for WhishList)
 

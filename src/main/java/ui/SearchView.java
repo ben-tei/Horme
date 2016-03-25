@@ -2,15 +2,20 @@ package ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import bl.core.ProductSet;
+import exceptions.NotEnoughStockException;
+
 /**
- * The Class SearchView.
+ * The Class ProductView.
  */
-public class SearchView extends JPanel implements ActionListener {
+public class SearchView extends JPanel implements ActionListener{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -18,13 +23,16 @@ public class SearchView extends JPanel implements ActionListener {
 	/** The view controller. */
 	private ViewController viewController;
 
+	private ProductSet productSet;
+
+	private ArrayList<JComboBox> comboBoxList = new ArrayList<JComboBox>();
+
 	/**
-	 * Instantiates a new search view.
+	 * Instantiates a new product view.
 	 *
 	 * @param vc the vc
-	 * @param productName the product name
 	 */
-	public SearchView (ViewController vc, String productName)
+	public SearchView (ViewController vc, String searchString)
 	{
 		this.viewController = vc;
 
@@ -51,27 +59,35 @@ public class SearchView extends JPanel implements ActionListener {
 
 		int placement = 231;
 
+		productSet = this.viewController.getProductFacade().searchProducts(searchString);
 
-		for(int i = 0; i <= this.viewController.getProductFacade().searchProducts(productName).size() - 1; i++) {
+		for(int i = 0; i < productSet.size(); i++) {
 
-			JLabel Pname = new JLabel(this.viewController.getProductFacade().readProducts().getProductByIndex(i).getName());
+			JLabel Pname = new JLabel(productSet.getProductByIndex(i).getName());
 			Pname.setBounds(65, placement, 120, 14);
 			this.add(Pname);
 
-			JLabel Preference = new JLabel(this.viewController.getProductFacade().readProducts().getProductByIndex(i).getReference());
+			JLabel Preference = new JLabel(productSet.getProductByIndex(i).getReference());
 			Preference.setBounds(260, placement, 120, 14);
 			this.add(Preference);
 
-			JLabel Pprice = new JLabel(this.viewController.getProductFacade().readProducts().getProductByIndex(i).getPrice());
+			JLabel Pprice = new JLabel(Integer.toString(productSet.getProductByIndex(i).getPrice()));
 			Pprice.setBounds(445, placement, 120, 14);
 			this.add(Pprice);
 
-			JLabel Pquantity = new JLabel(this.viewController.getProductFacade().readProducts().getProductByIndex(i).getStockQuantity());
-			Pquantity.setBounds(620, placement, 120, 14);
+			JComboBox<Integer> Pquantity = new JComboBox<Integer>();
+			for(int j = 1; j < productSet.getProductByIndex(i).getStockQuantity(); j++)
+			{
+				Pquantity.addItem(j);
+			}
+			Pquantity.setBounds(620, placement - 3, 50, 20);
 			this.add(Pquantity);
+			comboBoxList.add(Pquantity);
 
-			JButton addToShopCartButton = new JButton("Add to Shopping Cart");
-			addToShopCartButton.setBounds(710, placement-3, 160, 20);
+			MyJButton addToShopCartButton = new MyJButton("Add to Shopping Cart", i);
+			addToShopCartButton.addActionListener(this);
+			addToShopCartButton.setActionCommand("add");
+			addToShopCartButton.setBounds(710, placement - 3, 160, 20);
 			this.add(addToShopCartButton);
 
 			placement = placement + 50;
@@ -80,16 +96,26 @@ public class SearchView extends JPanel implements ActionListener {
 
 	}
 
-
-
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
-
+		String cmd = e.getActionCommand();
+		if(cmd.equals("add"))
+		{
+			int indice = ((MyJButton)e.getSource()).getIndice();
+			try {
+				viewController.getProductFacade().updateQuantityInStock(indice, (int) comboBoxList.get(indice).getSelectedItem());
+				viewController.getShopCartFacade().addToShoppingCart(productSet.getProductByIndex(indice), (int) comboBoxList.get(indice).getSelectedItem());
+				JOptionPane.showMessageDialog(null, "The product has been added !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				viewController.showShopCartPanel();
+			} catch (NotEnoughStockException e1) {
+				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+		}
 
 	}
 

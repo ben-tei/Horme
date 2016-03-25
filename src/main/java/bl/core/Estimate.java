@@ -15,21 +15,21 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Estimate {
+public abstract class Estimate {
 	/**
 	 * Description of the property products.
 	 */
-	public HashSet<Product> products = new HashSet<Product>();
+	private HashSet<Product> products = new HashSet<Product>();
 
 	/**
 	 * Description of the property trader.
 	 */
-	public Trader trader = null;
+	private Trader trader = null;
 
 	/**
 	 * Description of the property user.
 	 */
-	public User user = null;
+	private User user = null;
 
 	// Start of user code (user defined attributes for Estimate)
 

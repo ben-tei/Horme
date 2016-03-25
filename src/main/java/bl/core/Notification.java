@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Notification {
+public abstract class Notification {
 	/**
 	 * Description of the property name.
 	 */
@@ -24,7 +24,7 @@ public class Notification {
 	/**
 	 * Description of the property persons.
 	 */
-	public HashSet<Person> persons = new HashSet<Person>();
+	private HashSet<Person> persons = new HashSet<Person>();
 
 	/**
 	 * Description of the property content.

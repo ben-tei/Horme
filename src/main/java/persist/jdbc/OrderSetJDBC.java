@@ -2,9 +2,7 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.core.Order;
 import bl.core.OrderSet;
-import bl.core.Trader;
 import bl.core.User;
 
 /**
@@ -26,9 +24,9 @@ public class OrderSetJDBC extends OrderSet {
 
 		PreparedStatement pstmt = null;
 
-		Order order = null;
+		OrderJDBC order = null;
 
-		Trader trader = null;
+		TraderJDBC trader = null;
 
 		try{
 			conn = jdbcconnection.openConnection();
@@ -40,13 +38,14 @@ public class OrderSetJDBC extends OrderSet {
 			rset = pstmt.executeQuery();
 
 			while(rset.next()) {
-				order = new Order();
+				order = new OrderJDBC();
 				order.setDate(rset.getString("date"));
 				order.setNumero(rset.getString("numero"));
-				trader = new Trader(rset.getString("idTrader"));
+				trader = new TraderJDBC();
+				trader.setId(rset.getString("idTrader"));
 				trader.setWebsite(rset.getString("website"));
 				order.setTrader(trader);
-				this.AddOrder(order);
+				this.addOrder(order);
 			}
 		}
 

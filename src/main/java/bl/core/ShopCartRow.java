@@ -3,12 +3,12 @@ package bl.core;
 /**
  * The Class ShopCartRow.
  */
-public class ShopCartRow {
+public abstract class ShopCartRow {
 
 	/** The name. */
-	private int idProduct;
+	private String idProduct;
 
-	private int idShoppingCart;
+	private String idShoppingCart;
 
 	private String name;
 
@@ -26,22 +26,22 @@ public class ShopCartRow {
 
 	}
 
-	public int getIdProduct() {
+	public String getIdProduct() {
 		return idProduct;
 	}
 
 
-	public void setIdProduct(int idProduct) {
+	public void setIdProduct(String idProduct) {
 		this.idProduct = idProduct;
 	}
 
 
-	public int getIdShoppingCart() {
+	public String getIdShoppingCart() {
 		return idShoppingCart;
 	}
 
 
-	public void setIdShoppingCart(int idShoppingCart) {
+	public void setIdShoppingCart(String idShoppingCart) {
 		this.idShoppingCart = idShoppingCart;
 	}
 
@@ -70,8 +70,8 @@ public class ShopCartRow {
 	 *
 	 * @return the price
 	 */
-	public String getPrice() {
-		return Integer.toString(this.price);
+	public Integer getPrice() {
+		return this.price;
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class ShopCartRow {
 	 *
 	 * @return the quantity
 	 */
-	public String getQuantity() {
-		return Integer.toString(this.quantity);
+	public Integer getQuantity() {
+		return this.quantity;
 	}
 
 

@@ -4,6 +4,7 @@ import bl.core.Activity;
 import bl.core.ActivitySet;
 import bl.core.Category;
 import bl.core.OrderSet;
+import bl.core.Product;
 import bl.core.ProductSet;
 import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
@@ -16,6 +17,7 @@ import persist.jdbc.ActivitySetJDBC;
 import persist.jdbc.NotificationJDBC;
 import persist.jdbc.OrderSetJDBC;
 import persist.jdbc.ProductSetJDBC;
+import persist.jdbc.ShopCartRowJDBC;
 import persist.jdbc.ShopCartRowSetJDBC;
 import persist.jdbc.ShoppingCartJDBC;
 import persist.jdbc.UserJDBC;
@@ -99,7 +101,7 @@ public class FactoryJDBC extends Factory
 		// TODO Auto-generated method stub
 		return new ActivitySetJDBC(user);
 	}
-	
+
 	public Activity createActivity(String name, String category, String description)
 	{
 		return new ActivityJDBC(name, category, description);
@@ -113,13 +115,10 @@ public class FactoryJDBC extends Factory
 		return new OrderSetJDBC(user);
 	}
 
-<<<<<<< HEAD
-
-=======
 	@Override
-	public ShopCartRow addToShoppingCart(int indice, int quantity) {
-		return new ShopCartRowJDBC(indice, quantity);
+	public ShopCartRow createShopCartRow(Product p, ShoppingCart shopCart, int quantity) {
+		// TODO Auto-generated method stub
+		return new ShopCartRowJDBC(p, shopCart, quantity);
 	}
->>>>>>> origin/master
 
 }

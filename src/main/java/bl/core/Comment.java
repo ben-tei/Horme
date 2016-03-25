@@ -13,11 +13,11 @@ package bl.core;
  * 
  * @author Meche
  */
-public class Comment {
+public abstract class Comment {
 	/**
 	 * Description of the property person.
 	 */
-	public Person person = null;
+	private Person person = null;
 
 	/**
 	 * Description of the property content.
@@ -27,7 +27,7 @@ public class Comment {
 	/**
 	 * Description of the property diaryEntry.
 	 */
-	public DiaryEntry diaryEntry = null;
+	private DiaryEntry diaryEntry = null;
 
 	// Start of user code (user defined attributes for Comment)
 

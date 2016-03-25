@@ -38,7 +38,7 @@ public class ProductSetJDBC extends ProductSet {
 				product.setReference(rset.getString("reference"));
 				product.setPrice(rset.getInt("price"));
 				product.setStockQuantity(rset.getInt("stockQuantity"));
-				this.AddProduct(product);
+				this.addProduct(product);
 			}
 		}
 
@@ -83,11 +83,12 @@ public class ProductSetJDBC extends ProductSet {
 
 			while(rset.next()){
 				product = new ProductJDBC();
+				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
 				product.setReference(rset.getString("reference"));
 				product.setPrice(rset.getInt("price"));
 				product.setStockQuantity(rset.getInt("stockQuantity"));
-				this.AddProduct(product);
+				this.addProduct(product);
 			}
 		}
 

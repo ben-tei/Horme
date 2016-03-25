@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Category {
+public abstract class Category {
 	/**
 	 * Description of the property name.
 	 */
@@ -34,22 +34,22 @@ public class Category {
 	/**
 	 * Description of the property categories2.
 	 */
-	public HashSet<Category> categories2 = new HashSet<Category>();
+	private HashSet<Category> categories2 = new HashSet<Category>();
 
 	/**
 	 * Description of the property activities.
 	 */
-	public HashSet<Activity> activities = new HashSet<Activity>();
+	private HashSet<Activity> activities = new HashSet<Activity>();
 
 	/**
 	 * Description of the property products.
 	 */
-	public HashSet<Product> products = new HashSet<Product>();
+	private HashSet<Product> products = new HashSet<Product>();
 
 	/**
 	 * Description of the property categories1.
 	 */
-	public HashSet<Category> categories1 = new HashSet<Category>();
+	private HashSet<Category> categories1 = new HashSet<Category>();
 
 	// Start of user code (user defined attributes for Category)
 

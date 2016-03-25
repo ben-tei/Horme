@@ -15,25 +15,25 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public  abstract class ShoppingCart {
+public abstract class ShoppingCart {
 	/**
 	 * Description of the property id.
 	 */
-	public String id = "";
+	private String id = "";
 	/**
 	 * Description of the property whishLists.
 	 */
-	public HashSet<WhishList> whishLists = new HashSet<WhishList>();
+	private HashSet<WhishList> whishLists = new HashSet<WhishList>();
 
 	/**
 	 * Description of the property user.
 	 */
-	public User user = null;
+	private User user = null;
 
 	/**
 	 * Description of the property products.
 	 */
-	public HashSet<Product> products = new HashSet<Product>();
+	private HashSet<Product> products = new HashSet<Product>();
 
 	// Start of user code (user defined attributes for ShoppingCart)
 

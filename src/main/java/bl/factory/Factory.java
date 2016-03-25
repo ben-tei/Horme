@@ -4,6 +4,7 @@ import bl.core.Activity;
 import bl.core.ActivitySet;
 import bl.core.Category;
 import bl.core.OrderSet;
+import bl.core.Product;
 import bl.core.ProductSet;
 import bl.core.ShopCartRow;
 import bl.core.ShopCartRowSet;
@@ -92,7 +93,7 @@ public abstract class Factory {
 	
 	public abstract ShoppingCart getShopCart(User user);
 	
-	public abstract ShopCartRow addToShoppingCart(int indice, int quantity);
+	public abstract ShopCartRow createShopCartRow(Product p, ShoppingCart shopCart, int quantity);
 
 	/**
 	 * Read orders.

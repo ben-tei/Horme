@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class DiaryEntry {
+public abstract class DiaryEntry {
 	/**
 	 * Description of the property position.
 	 */
@@ -34,12 +34,12 @@ public class DiaryEntry {
 	/**
 	 * Description of the property user.
 	 */
-	public User user = null;
+	private User user = null;
 
 	/**
 	 * Description of the property activity.
 	 */
-	public Activity activity = null;
+	private Activity activity = null;
 
 	/**
 	 * Description of the property content.
@@ -49,7 +49,7 @@ public class DiaryEntry {
 	/**
 	 * Description of the property comments.
 	 */
-	public HashSet<Comment> comments = new HashSet<Comment>();
+	private HashSet<Comment> comments = new HashSet<Comment>();
 
 	// Start of user code (user defined attributes for DiaryEntry)
 

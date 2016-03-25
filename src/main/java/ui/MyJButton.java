@@ -5,17 +5,17 @@ import javax.swing.JButton;
 public class MyJButton extends JButton {
 
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private int indice;
 
-	public MyJButton(String name, int id)
+	public MyJButton(String name, int indice)
 	{
 		super(name);
-		this.id = id;
+		this.indice = indice;
 	}
 
-	public int getId()
+	public int getIndice()
 	{
-		return this.id;
+		return this.indice;
 	}
 
 }

@@ -5,12 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import bl.core.User;
-<<<<<<< HEAD
-import bl.facade.ActivityFacade;
 
 import java.awt.Font;
-=======
->>>>>>> origin/master
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,17 +20,9 @@ public class ActivitiesView extends JPanel implements ActionListener {
 
 	/** The view controller. */
 	private ViewController viewController;
-<<<<<<< HEAD
-	
-	/** The product facade. */
-	private ActivityFacade activityFacade;
-	
+
 	/** The btn add activity. */
 	private JButton btnAddActivity;
-	
-=======
-
->>>>>>> origin/master
 	/**
 	 * Instantiates a new activities view.
 	 *
@@ -59,18 +47,14 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		JLabel description = new JLabel("Description");
 		description.setBounds(520, 175, 250, 14);
 		this.add(description);
-<<<<<<< HEAD
-		
+
 		this.btnAddActivity = new JButton("Add Activity");
 		btnAddActivity.setBounds(700, 500, 150, 23);
 		this.btnAddActivity.addActionListener(this);
 		this.btnAddActivity.setActionCommand("addactivity");
 		this.btnAddActivity.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnAddActivity);
-		
-=======
 
->>>>>>> origin/master
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
 

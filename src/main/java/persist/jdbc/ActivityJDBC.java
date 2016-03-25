@@ -10,10 +10,14 @@ import javax.swing.JComboBox;
 import com.mysql.jdbc.Statement;
 
 import bl.core.Activity;
-import bl.core.Category;
 
 
 public class ActivityJDBC extends Activity {
+	
+	public ActivityJDBC()
+	{
+		super();
+	}
 
 	/**
 	 * Instantiates a new activity jdbc.
@@ -27,37 +31,37 @@ public class ActivityJDBC extends Activity {
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
-		
-		PreparedStatement pstmt = null;
-		
-		Statement St = null;
-		
-		ResultSet rsetCategory= null;
-		
-		
-		JComboBox categoryChoice = null;
 
-		
+		PreparedStatement pstmt = null;
+
+		Statement St = null;
+
+		ResultSet rsetCategory= null;
+
+
+		JComboBox categoryChoice = null; // pas ici qu'il faut le faire mais dans la vue !!!
+
+
 		try{
 			conn = jdbcconnection.openConnection();
-			
+
 			St = (Statement) conn.createStatement(); 
 			rsetCategory = St.executeQuery("SELECT name FROM category"); 
 			while (rsetCategory.next()) 
 			{ 
-			       //Pour affecter une valeur de base de données à un Combobox  
-			    categoryChoice.addItem(rsetCategory.getString(name));
+				//Pour affecter une valeur de base de donnees a� un Combobox  
+				categoryChoice.addItem(rsetCategory.getString(name));
 			} 
 
 			pstmt = conn.prepareStatement("INSERT INTO Activity (name, description) "
-						+ "VALUES (?, ?) ");
+					+ "VALUES (?, ?) ");
 
 			pstmt.setString(1, name);
 			pstmt.setString(2, description);
 
 			pstmt.executeUpdate();
 
-			
+
 		}
 
 		catch (SQLException e) {
@@ -70,8 +74,7 @@ public class ActivityJDBC extends Activity {
 			jdbcconnection.closeConnection();
 
 		}
-	
-	
+
 	}
-		
+
 }

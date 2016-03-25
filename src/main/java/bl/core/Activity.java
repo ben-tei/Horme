@@ -15,22 +15,22 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Activity {
+public abstract class Activity {
 	/**
 	 * Description of the property user.
 	 */
-	public User user = null;
+	private User user = null;
 
 	/**
 	 * Description of the property ressources.
 	 */
-	public HashSet<Ressource> ressources = new HashSet<Ressource>();
+	private HashSet<Ressource> ressources = new HashSet<Ressource>();
 
 	/**
 	 * Description of the property name.
 	 */
 	private String name = "";
-	
+
 	/**
 	 * Description of the property description.
 	 */
@@ -39,17 +39,17 @@ public class Activity {
 	/**
 	 * Description of the property category.
 	 */
-	public Category category = null;
+	private Category category = null;
 
 	/**
 	 * Description of the property entries.
 	 */
-	public HashSet<DiaryEntry> entries = new HashSet<DiaryEntry>();
+	private HashSet<DiaryEntry> entries = new HashSet<DiaryEntry>();
 
 	/**
 	 * Description of the property objectives.
 	 */
-	public HashSet<Objective> objectives = new HashSet<Objective>();
+	private HashSet<Objective> objectives = new HashSet<Objective>();
 
 	// Start of user code (user defined attributes for Activity)
 

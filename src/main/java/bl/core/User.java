@@ -21,36 +21,36 @@ public abstract class User extends Person {
 	/**
 	 * Description of the property id.
 	 */
-	public String id = "";
+	private String id = "";
 	/**
 	 * Description of the property whishLists.
 	 */
-	public HashSet<WhishList> whishLists = new HashSet<WhishList>();
+	private HashSet<WhishList> whishLists = new HashSet<WhishList>();
 
 	/**
 	 * Description of the property shoppingCarts.
 	 */
-	public ShoppingCart shoppingCart;
+	private ShoppingCart shoppingCart;
 
 	/**
 	 * Description of the property entries.
 	 */
-	public HashSet<DiaryEntry> entries = new HashSet<DiaryEntry>();
+	private HashSet<DiaryEntry> entries = new HashSet<DiaryEntry>();
 
 	/**
 	 * Description of the property estimates.
 	 */
-	public HashSet<Estimate> estimates = new HashSet<Estimate>();
+	private HashSet<Estimate> estimates = new HashSet<Estimate>();
 
 	/**
 	 * Description of the property orders.
 	 */
-	public HashSet<Order> orders = new HashSet<Order>();
+	private HashSet<Order> orders = new HashSet<Order>();
 
 	/**
 	 * Description of the property proposedActivities.
 	 */
-	public HashSet<Activity> proposedActivities = new HashSet<Activity>();
+	private HashSet<Activity> proposedActivities = new HashSet<Activity>();
 
 	// Start of user code (user defined attributes for User)
 

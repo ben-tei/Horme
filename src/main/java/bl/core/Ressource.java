@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Ressource {
+public abstract class Ressource {
 	/**
 	 * Description of the property nom.
 	 */
@@ -24,12 +24,12 @@ public class Ressource {
 	/**
 	 * Description of the property whishLists.
 	 */
-	public HashSet<WhishList> whishLists = new HashSet<WhishList>();
+	private HashSet<WhishList> whishLists = new HashSet<WhishList>();
 
 	/**
 	 * Description of the property activitys.
 	 */
-	public HashSet<Activity> activitys = new HashSet<Activity>();
+	private HashSet<Activity> activitys = new HashSet<Activity>();
 
 	// Start of user code (user defined attributes for Ressource)
 

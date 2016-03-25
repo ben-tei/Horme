@@ -24,12 +24,12 @@ public abstract class Person {
 	/**
 	 * Description of the property comments.
 	 */
-	public HashSet<Comment> comments = new HashSet<Comment>();
+	private HashSet<Comment> comments = new HashSet<Comment>();
 
 	/**
 	 * Description of the property notifications.
 	 */
-	public HashSet<Notification> notifications = new HashSet<Notification>();
+	private HashSet<Notification> notifications = new HashSet<Notification>();
 
 	/**
 	 * Description of the property password.

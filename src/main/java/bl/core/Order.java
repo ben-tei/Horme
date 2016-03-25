@@ -15,11 +15,11 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Order {
+public abstract class Order {
 	/**
 	 * Description of the property traders.
 	 */
-	public Trader trader = null;
+	private Trader trader = null;
 
 	/**
 	 * Description of the property date.
@@ -29,17 +29,17 @@ public class Order {
 	/**
 	 * Description of the property numero.
 	 */
-	public String numero = "";
+	private String numero = "";
 
 	/**
 	 * Description of the property products.
 	 */
-	public HashSet<Product> products = new HashSet<Product>();
+	private HashSet<Product> products = new HashSet<Product>();
 
 	/**
 	 * Description of the property user.
 	 */
-	public User user = null;
+	private User user = null;
 
 	// Start of user code (user defined attributes for Order)
 

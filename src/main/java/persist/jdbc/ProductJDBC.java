@@ -23,8 +23,8 @@ public class ProductJDBC extends Product {
 
 			pstmt = conn.prepareStatement("UPDATE Product SET stockQuantity = ?, price = ?, reference = ?, name = ? WHERE idProduct = ?");
 
-			pstmt.setString(1, this.getStockQuantity());
-			pstmt.setString(2, this.getPrice());
+			pstmt.setString(1, Integer.toString(this.getStockQuantity()));
+			pstmt.setString(2, Integer.toString(this.getPrice()));
 			pstmt.setString(3, this.getReference());
 			pstmt.setString(4, this.getName());
 			pstmt.setString(5, this.getId());

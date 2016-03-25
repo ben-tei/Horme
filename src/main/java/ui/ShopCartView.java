@@ -61,11 +61,11 @@ public class ShopCartView extends JPanel implements ActionListener {
 			Pname.setBounds(140, placement, 120, 14);
 			this.add(Pname);
 
-			JLabel Pquantity = new JLabel(this.viewController.getShopCartFacade().readShopCart(this.viewController.getUserFacade().getUser()).getShopCartRowByIndex(i).getQuantity());
+			JLabel Pquantity = new JLabel(Integer.toString(this.viewController.getShopCartFacade().readShopCart(this.viewController.getUserFacade().getUser()).getShopCartRowByIndex(i).getQuantity()));
 			Pquantity.setBounds(334, placement, 120, 14);
 			this.add(Pquantity);
 
-			JLabel Pprice = new JLabel(this.viewController.getShopCartFacade().readShopCart(this.viewController.getUserFacade().getUser()).getShopCartRowByIndex(i).getPrice());
+			JLabel Pprice = new JLabel(Integer.toString(this.viewController.getShopCartFacade().readShopCart(this.viewController.getUserFacade().getUser()).getShopCartRowByIndex(i).getPrice()));
 			Pprice.setBounds(519, placement, 120, 14);
 			this.add(Pprice);
 
@@ -89,7 +89,7 @@ public class ShopCartView extends JPanel implements ActionListener {
 		String cmd = e.getActionCommand();
 		
 		if(cmd.equals("validate")) {
-			this.shopCartFacade.placeOrder();
+			this.viewController.getShopCartFacade().placeOrder();
 			JOptionPane.showMessageDialog(null, "Your order has been successfully added", "Order Confirmation", JOptionPane.INFORMATION_MESSAGE);
 			this.viewController.showOrdersPanel();
 		}

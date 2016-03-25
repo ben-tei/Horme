@@ -13,7 +13,7 @@ package bl.core;
  * 
  * @author Meche
  */
-public class Objective {
+public abstract class Objective {
 	/**
 	 * Description of the property deadline.
 	 */
@@ -32,7 +32,7 @@ public class Objective {
 	/**
 	 * Description of the property activity.
 	 */
-	public Activity activity = null;
+	private Activity activity = null;
 
 	// Start of user code (user defined attributes for Objective)
 

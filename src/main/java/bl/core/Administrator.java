@@ -9,7 +9,7 @@ package bl.core;
  * 
  * @author Meche
  */
-public class Administrator extends Person {
+public abstract class Administrator extends Person {
 	// Start of user code (user defined attributes for Administrator)
 
 	// End of user code

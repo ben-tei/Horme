@@ -2,9 +2,7 @@ package persist.jdbc;
 
 import java.sql.*;
 
-import bl.core.Activity;
 import bl.core.ActivitySet;
-import bl.core.Category;
 import bl.core.User;
 
 /**
@@ -28,9 +26,9 @@ public class ActivitySetJDBC extends ActivitySet  {
 
 		PreparedStatement pstmt = null;
 
-		Activity activity = null;
+		ActivityJDBC activity = null;
 
-		Category category = null;
+		CategoryJDBC category;
 
 		try{
 			conn = jdbcconnection.openConnection();
@@ -43,8 +41,8 @@ public class ActivitySetJDBC extends ActivitySet  {
 			rsetActivity = pstmt.executeQuery();
 
 			while(rsetActivity.next()) {
-				activity = new Activity();
-				category = new Category();
+				activity = new ActivityJDBC();
+				category = new CategoryJDBC();
 				activity.setName(rsetActivity.getString("a.name"));
 				category.setName(rsetActivity.getString("c.name"));
 				activity.setCategory(category);

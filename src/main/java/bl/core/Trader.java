@@ -15,7 +15,7 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public class Trader extends Person {
+public abstract class Trader extends Person {
 	/**
 	 * Description of the property id.
 	 */
@@ -28,7 +28,7 @@ public class Trader extends Person {
 	/**
 	 * Description of the property orders.
 	 */
-	public HashSet<Order> orders = new HashSet<Order>();
+	private HashSet<Order> orders = new HashSet<Order>();
 
 	/**
 	 * Description of the property website.
@@ -38,12 +38,12 @@ public class Trader extends Person {
 	/**
 	 * Description of the property products.
 	 */
-	public HashSet<Product> products = new HashSet<Product>();
+	private HashSet<Product> products = new HashSet<Product>();
 
 	/**
 	 * Description of the property estimates.
 	 */
-	public HashSet<Estimate> estimates = new HashSet<Estimate>();
+	private HashSet<Estimate> estimates = new HashSet<Estimate>();
 
 	// Start of user code (user defined attributes for Trader)
 

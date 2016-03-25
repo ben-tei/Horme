@@ -3,12 +3,9 @@ package ui;
 import javax.swing.JPanel;
 
 import bl.facade.ActivityFacade;
-<<<<<<< HEAD
-=======
 import bl.facade.NotificationFacade;
 import bl.facade.ProductFacade;
 import bl.facade.ShopCartFacade;
->>>>>>> origin/master
 import bl.facade.UserFacade;
 
 /**
@@ -31,8 +28,6 @@ public class ViewController {
 	private ShopCartFacade shopCartFacade;
 
 	private ProductFacade productFacade;
-
-	private ActivityFacade activityFacade;
 
 	private NotificationFacade notificationFacade;
 
@@ -78,10 +73,6 @@ public class ViewController {
 
 	public ProductFacade getProductFacade() {
 		return productFacade;
-	}
-
-	public ActivityFacade getActivityFacade() {
-		return activityFacade;
 	}
 
 	public NotificationFacade getNotificationFacade() {

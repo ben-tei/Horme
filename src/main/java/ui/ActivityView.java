@@ -12,8 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import bl.core.Category;
 
-
-
 public class ActivityView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */

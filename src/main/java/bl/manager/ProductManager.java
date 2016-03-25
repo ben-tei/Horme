@@ -49,7 +49,7 @@ public class ProductManager {
 
 	public void updateQuantityInStock(int indice, int quantity) throws NotEnoughStockException
 	{
-		int quantityInStock = Integer.parseInt(this.products.getProductByIndex(indice).getStockQuantity());
+		int quantityInStock = this.products.getProductByIndex(indice).getStockQuantity();
 		if(quantityInStock < quantity)
 		{
 			throw new NotEnoughStockException("Not enough stock !");

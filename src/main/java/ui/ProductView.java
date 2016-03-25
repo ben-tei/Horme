@@ -2,11 +2,15 @@ package ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import bl.core.ProductSet;
+import exceptions.NotEnoughStockException;
 
 /**
  * The Class ProductView.
@@ -20,6 +24,8 @@ public class ProductView extends JPanel implements ActionListener{
 	private ViewController viewController;
 
 	private ProductSet productSet;
+
+	private ArrayList<JComboBox> comboBoxList = new ArrayList<JComboBox>();
 
 	/**
 	 * Instantiates a new product view.
@@ -55,7 +61,7 @@ public class ProductView extends JPanel implements ActionListener{
 
 		productSet = this.viewController.getProductFacade().readProducts();
 
-		for(int i = 0; i <= productSet.size() - 1; i++) {
+		for(int i = 0; i < productSet.size(); i++) {
 
 			JLabel Pname = new JLabel(productSet.getProductByIndex(i).getName());
 			Pname.setBounds(65, placement, 120, 14);
@@ -65,18 +71,23 @@ public class ProductView extends JPanel implements ActionListener{
 			Preference.setBounds(260, placement, 120, 14);
 			this.add(Preference);
 
-			JLabel Pprice = new JLabel(productSet.getProductByIndex(i).getPrice());
+			JLabel Pprice = new JLabel(Integer.toString(productSet.getProductByIndex(i).getPrice()));
 			Pprice.setBounds(445, placement, 120, 14);
 			this.add(Pprice);
 
-			JLabel Pquantity = new JLabel(productSet.getProductByIndex(i).getStockQuantity());
-			Pquantity.setBounds(620, placement, 120, 14);
+			JComboBox<Integer> Pquantity = new JComboBox<Integer>();
+			for(int j = 1; j < productSet.getProductByIndex(i).getStockQuantity(); j++)
+			{
+				Pquantity.addItem(j);
+			}
+			Pquantity.setBounds(620, placement - 3, 50, 20);
 			this.add(Pquantity);
+			comboBoxList.add(Pquantity);
 
 			MyJButton addToShopCartButton = new MyJButton("Add to Shopping Cart", i);
 			addToShopCartButton.addActionListener(this);
 			addToShopCartButton.setActionCommand("add");
-			addToShopCartButton.setBounds(710, placement-3, 160, 20);
+			addToShopCartButton.setBounds(710, placement - 3, 160, 20);
 			this.add(addToShopCartButton);
 
 			placement = placement + 50;
@@ -84,8 +95,6 @@ public class ProductView extends JPanel implements ActionListener{
 
 
 	}
-
-
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
@@ -96,7 +105,16 @@ public class ProductView extends JPanel implements ActionListener{
 		String cmd = e.getActionCommand();
 		if(cmd.equals("add"))
 		{
-			new SelectProductQuantityDialog(this.viewController, "Select Product Quantity", true, ((MyJButton)e.getSource()).getId());
+			int indice = ((MyJButton)e.getSource()).getIndice();
+			try {
+				viewController.getProductFacade().updateQuantityInStock(indice, (int) comboBoxList.get(indice).getSelectedItem());
+				viewController.getShopCartFacade().addToShoppingCart(productSet.getProductByIndex(indice), (int) comboBoxList.get(indice).getSelectedItem());
+				JOptionPane.showMessageDialog(null, "The product has been added !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				viewController.showProductsPanel();
+			} catch (NotEnoughStockException e1) {
+				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
+			}
 		}
 
 	}

@@ -19,21 +19,21 @@ public abstract class Product {
 	/**
 	 * Description of the id.
 	 */
-	public String id = "";
+	private String id = "";
 	/**
 	 * Description of the property orders.
 	 */
-	public HashSet<Order> orders = new HashSet<Order>();
+	private HashSet<Order> orders = new HashSet<Order>();
 
 	/**
 	 * Description of the property shoppingCarts.
 	 */
-	public HashSet<ShoppingCart> shoppingCarts = new HashSet<ShoppingCart>();
+	private HashSet<ShoppingCart> shoppingCarts = new HashSet<ShoppingCart>();
 
 	/**
 	 * Description of the property traders.
 	 */
-	public HashSet<Trader> traders = new HashSet<Trader>();
+	private HashSet<Trader> traders = new HashSet<Trader>();
 
 	/**
 	 * Description of the property reference.
@@ -43,7 +43,7 @@ public abstract class Product {
 	/**
 	 * Description of the property estimates.
 	 */
-	public HashSet<Estimate> estimates = new HashSet<Estimate>();
+	private HashSet<Estimate> estimates = new HashSet<Estimate>();
 
 	/**
 	 * Description of the property name.
@@ -63,7 +63,7 @@ public abstract class Product {
 	/**
 	 * Description of the property category.
 	 */
-	public Category category = null;
+	private Category category = null;
 
 	// Start of user code (user defined attributes for Product)
 
@@ -152,8 +152,8 @@ public abstract class Product {
 	 * Returns stockQuantity.
 	 * @return stockQuantity 
 	 */
-	public String getStockQuantity() {
-		return Integer.toString(this.stockQuantity);
+	public Integer getStockQuantity() {
+		return this.stockQuantity;
 	}
 
 	/**
@@ -186,8 +186,8 @@ public abstract class Product {
 	 * Returns price.
 	 * @return price 
 	 */
-	public String getPrice() {
-		return Integer.toString(this.price);
+	public Integer getPrice() {
+		return this.price;
 	}
 
 	/**
