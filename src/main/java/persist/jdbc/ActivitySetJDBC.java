@@ -30,7 +30,7 @@ public class ActivitySetJDBC extends ActivitySet  {
 
 		Activity activity = null;
 
-		Category category;
+		Category category = null;
 
 		try{
 			conn = jdbcconnection.openConnection();

@@ -1,10 +1,13 @@
 package ui;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import bl.core.User;
 import bl.facade.ActivityFacade;
+
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +24,9 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	
 	/** The product facade. */
 	private ActivityFacade activityFacade;
+	
+	/** The btn add activity. */
+	private JButton btnAddActivity;
 	
 	/**
 	 * Instantiates a new activities view.
@@ -46,6 +52,13 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		JLabel description = new JLabel("Description");
 		description.setBounds(520, 175, 250, 14);
 		this.add(description);
+		
+		this.btnAddActivity = new JButton("Add Activity");
+		btnAddActivity.setBounds(700, 500, 150, 23);
+		this.btnAddActivity.addActionListener(this);
+		this.btnAddActivity.setActionCommand("addactivity");
+		this.btnAddActivity.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.add(btnAddActivity);
 		
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
@@ -74,7 +87,11 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		String cmd = e.getActionCommand();
+		if(cmd.equals("addactivity"))
+		{
+			this.viewController.showActivityPanel();
+		}
 	}
 
 }

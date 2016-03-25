@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import bl.facade.ActivityFacade;
 import bl.facade.UserFacade;
 
 /**
@@ -18,6 +19,9 @@ public class ViewController {
 
 	/** The user facade. */
 	private UserFacade userFacade;
+	
+	/** The activity facade. */
+	private ActivityFacade activityFacade;
 
 	/**
 	 * Instantiates a new view controller.
@@ -38,6 +42,16 @@ public class ViewController {
 	public UserFacade getUserFacade()
 	{
 		return this.userFacade;
+	}
+	
+	/**
+	 * Gets the activity facade.
+	 *
+	 * @return the activity facade
+	 */
+	public ActivityFacade getActivityFacade()
+	{
+		return this.activityFacade;
 	}
 
 	/**
@@ -92,6 +106,19 @@ public class ViewController {
 
 	}
 
+	/**
+	 * Show activity panel.
+	 */
+	public void showActivityPanel()
+	{
+		this.myWindow.setTitle("Horme - New Activity");
+		this.myJPanel = new ActivityView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+	
 	/**
 	 * Show diary panel.
 	 */

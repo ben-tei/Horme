@@ -1,12 +1,15 @@
 package persist.factoryjdbc;
 
+import bl.core.Activity;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.OrderSet;
 import bl.core.ProductSet;
 import bl.core.ShopCartRowSet;
 import bl.core.User;
 import bl.factory.Factory;
 import exceptions.*;
+import persist.jdbc.ActivityJDBC;
 import persist.jdbc.ActivitySetJDBC;
 import persist.jdbc.NotificationJDBC;
 import persist.jdbc.OrderSetJDBC;
@@ -88,6 +91,11 @@ public class FactoryJDBC extends Factory
 		// TODO Auto-generated method stub
 		return new ActivitySetJDBC(user);
 	}
+	
+	public Activity createActivity(String name, String category, String description)
+	{
+		return new ActivityJDBC(name, category, description);
+	}
 
 	/* (non-Javadoc)
 	 * @see bl.factory.Factory#readOrders(bl.core.User)
@@ -96,5 +104,7 @@ public class FactoryJDBC extends Factory
 	public OrderSet readOrders(User user) {
 		return new OrderSetJDBC(user);
 	}
+
+
 
 }

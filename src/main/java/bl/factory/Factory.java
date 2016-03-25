@@ -1,6 +1,8 @@
 package bl.factory;
 
+import bl.core.Activity;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.OrderSet;
 import bl.core.ProductSet;
 import bl.core.ShopCartRowSet;
@@ -68,6 +70,15 @@ public abstract class Factory {
 	 * @return the activity set
 	 */
 	public abstract ActivitySet readActivities(User user);
+	
+	/**
+	 * Create activity.
+	 *
+	 * @param user the user
+	 * @return the activity set
+	 */
+	public abstract Activity createActivity(String name, String category, String description);
+	
 
 	/**
 	 * Read shop cart.
