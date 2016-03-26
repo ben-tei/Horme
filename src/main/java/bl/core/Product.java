@@ -33,7 +33,7 @@ public abstract class Product {
 	/**
 	 * Description of the property traders.
 	 */
-	private HashSet<Trader> traders = new HashSet<Trader>();
+	private Trader trader= null;
 
 	/**
 	 * Description of the property reference.
@@ -102,8 +102,8 @@ public abstract class Product {
 	 * Returns traders.
 	 * @return traders 
 	 */
-	public HashSet<Trader> getTraders() {
-		return this.traders;
+	public Trader getTrader() {
+		return this.trader;
 	}
 
 	/**

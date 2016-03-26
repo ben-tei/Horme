@@ -78,33 +78,41 @@ public class ShoppingCartJDBC extends ShoppingCart {
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT COUNT(*) AS orderNumber FROM `Order`");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) + 1 AS orderNumber FROM `Order`");
 
 			rset = pstmt.executeQuery();
 			rset.next();
+			String orderNumber = rset.getString("orderNumber");
 
-			pstmt1 = conn.prepareStatement("INSERT INTO `Order` (date, numero, idPerson, idTrader) "
-					+ "VALUES (?, ?, ?, ?)");
+			pstmt1 = conn.prepareStatement("INSERT INTO `Order` (date, number, idPerson) "
+					+ "VALUES (?, ?, ?)");
 
 			pstmt1.setString(1, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
-			pstmt1.setString(2, rset.getString("orderNumber"));
+			pstmt1.setString(2, orderNumber);
 			pstmt1.setString(3, this.getUser().getId());
-			pstmt1.setString(4, "1");
 
 			pstmt1.executeUpdate();
 
-			pstmt2 = conn.prepareStatement("SELECT idOrder FROM `Order` WHERE numero=?");
-			pstmt2.setString(1, "102");
+			pstmt2 = conn.prepareStatement("SELECT idOrder FROM `Order` WHERE number = ?");
+			pstmt2.setString(1, orderNumber);
 
 			rset = pstmt2.executeQuery();
 
 			if (rset.next())
 			{
+				for(int i = 0; i < shopCartRows.size(); i++)
+				{
+					pstmt3 = conn.prepareStatement("INSERT INTO ConstituteOrder (idOrder, idProduct, price, quantity) "
+							+ "VALUES (?, ?, ?, ?)");
 
+					pstmt3.setString(1, rset.getString("idOrder"));
+					pstmt3.setString(2, shopCartRows.getShopCartRowByIndex(i).getIdProduct());
+					pstmt3.setString(3, Integer.toString(shopCartRows.getShopCartRowByIndex(i).getPrice()));
+					pstmt3.setString(4, Integer.toString(shopCartRows.getShopCartRowByIndex(i).getQuantity()));
+
+					pstmt3.executeUpdate();
+				}
 			}
-
-			pstmt3 = conn.prepareStatement("INSERT INTO ConstituteOrder (idOrder, idProduct, price, quantity) "
-					+ "VALUES (?, ?, ?, ?)");
 
 
 		}

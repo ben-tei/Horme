@@ -52,6 +52,12 @@ public class ShopCartManager {
 	public void placeOrder()
 	{
 		this.shopCart.placeOrder(shopCartRows);
+		for(int i = 0; i < this.shopCartRows.size(); i++)
+		{
+			this.shopCartRows.getShopCartRowByIndex(i).remove(this.shopCartRows.getShopCartRowByIndex(i).getIdProduct(), this.shopCartRows.getShopCartRowByIndex(i).getIdShoppingCart());
+		}
+
+		this.shopCartRows.getTabShopCart().clear();
 	}
 
 	public int getQuantity(String idProduct)
