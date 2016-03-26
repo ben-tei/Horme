@@ -141,7 +141,7 @@ public class ViewController {
 	public void showActivityPanel()
 	{
 		this.myWindow.setTitle("Horme - New Activity");
-		this.myJPanel = new ActivityView(this);      
+		//this.myJDialog = new ActivityView(this);      
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();

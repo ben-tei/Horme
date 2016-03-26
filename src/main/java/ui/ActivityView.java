@@ -3,16 +3,18 @@ package ui;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import bl.core.Category;
 
-public class ActivityView extends JPanel implements ActionListener {
+public class ActivityView extends JDialog implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -23,10 +25,10 @@ public class ActivityView extends JPanel implements ActionListener {
 	/** The name field. */
 	private JTextField nameField;
 
-	/** The street field. */
-	private JComboBox<Category> categoryChoice;
+	/** The category choice. */
+	private ArrayList<JComboBox> categoryChoice = new ArrayList<JComboBox>();
 
-	/** The city field. */
+	/** The description field. */
 	private JTextField descriptionField;
 
 
@@ -46,7 +48,7 @@ public class ActivityView extends JPanel implements ActionListener {
 		lblName.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblName);
 
-		JComboBox cbCategory = new JComboBox();
+		JComboBox<String> cbCategory = new JComboBox<String>();
 		JLabel lblCategory = new JLabel("Category *");
 		lblCategory.setBounds(75, 162, 55, 20);
 		lblCategory.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -75,9 +77,8 @@ public class ActivityView extends JPanel implements ActionListener {
 		nameField.setBounds(175, 106, 200, 20);
 		this.add(nameField);
 
-		categoryChoice = new JComboBox();
-		categoryChoice.setBounds(175, 162, 200, 20);
-		this.add(categoryChoice);
+		categoryChoice = new ArrayList<JComboBox>();
+	//	this.add(categoryChoice);
 
 		descriptionField = new JTextField();
 		descriptionField.setBounds(175, 162, 200, 20);
@@ -100,8 +101,8 @@ public class ActivityView extends JPanel implements ActionListener {
 	 * @return the category choice
 	 */
 
-	public JComboBox getCategoryChoice() {
-		return categoryChoice;
+	public Comparable<String> getNameCategory() {
+		return nameCategory;
 	}
 
 	/**
@@ -118,7 +119,7 @@ public class ActivityView extends JPanel implements ActionListener {
 	 *
 	 * @return true, if successful
 	 */
-	String nameCategory = (String)categoryChoice.getSelectedItem();
+	String nameCategory = categoryChoice.toString();
 	public boolean fieldsAreEmpty()
 	{
 		return getNameField().getText().equals("") || nameCategory.equals("") || getDescriptionField().getText().equals("");
@@ -140,10 +141,10 @@ public class ActivityView extends JPanel implements ActionListener {
 			}
 			else
 			{
-				this.viewController.getActivityFacade().createActivity(getNameField().getText(), getCategoryChoice().getSelectedItem().toString(), 
+				this.viewController.getActivityFacade().createActivity(getNameField().getText(), nameCategory, 
 						getDescriptionField().getText());
 
-				JOptionPane.showMessageDialog(null, "Activity " + getNameField().getText()+" successfully added" + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Activity \"" + getNameField().getText()+"\" successfully added" + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
 				this.viewController.showActivitiesPanel();
 
 			}
