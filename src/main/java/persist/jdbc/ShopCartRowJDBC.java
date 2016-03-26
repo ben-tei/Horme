@@ -86,4 +86,76 @@ public class ShopCartRowJDBC extends ShopCartRow {
 		}
 	}
 
+	@Override
+	public void save() {
+		// TODO Auto-generated method stub
+		JDBCConnection jdbcconnection = new JDBCConnection();
+
+		Connection conn = null;
+
+		PreparedStatement pstmt = null;
+
+		try {
+
+			conn = jdbcconnection.openConnection();
+
+			pstmt = conn.prepareStatement("UPDATE ConstituteShoppingCart SET quantity = ?, price = ? WHERE idShoppingCart = ? AND idProduct = ?");
+
+			pstmt.setString(1, Integer.toString(this.getQuantity()));
+			pstmt.setString(2, Integer.toString(this.getPrice()));
+			pstmt.setString(3, this.getIdShoppingCart());
+			pstmt.setString(4, this.getIdProduct());
+
+			pstmt.executeUpdate();
+
+		}
+
+		catch (SQLException e) {
+
+			JDBCConnection.ProcessSQLException(e);
+
+		} finally {
+
+			jdbcconnection.close(pstmt);
+
+			jdbcconnection.closeConnection();
+
+		}
+	}
+
+	@Override
+	public void remove(String idProduct, String idShopCart) {
+		// TODO Auto-generated method stub
+		JDBCConnection jdbcconnection = new JDBCConnection();
+
+		Connection conn = null;
+
+		PreparedStatement pstmt = null;
+
+		try {
+
+			conn = jdbcconnection.openConnection();
+
+			pstmt = conn.prepareStatement("DELETE FROM ConstituteShoppingCart WHERE idShoppingCart = ? AND idProduct = ?");
+
+			pstmt.setString(1, idShopCart);
+			pstmt.setString(2, idProduct);
+
+			pstmt.executeUpdate();
+
+		}
+
+		catch (SQLException e) {
+
+			JDBCConnection.ProcessSQLException(e);
+
+		} finally {
+
+			jdbcconnection.close(pstmt);
+
+			jdbcconnection.closeConnection();
+
+		}
+	}
+
 }

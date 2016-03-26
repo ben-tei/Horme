@@ -124,7 +124,7 @@ public class ShopCartView extends JPanel implements ActionListener {
 			int oldQuantity = viewController.getShopCartFacade().getQuantity(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct());
 			try {
 				viewController.getProductFacade().updateQuantityInStock(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct(), (int) comboBoxList.get(index).getSelectedItem(), oldQuantity);
-				//viewController.getShopCartFacade().removeFromShoppingCart(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct(), (int) comboBoxList.get(index).getSelectedItem(), oldQuantity);
+				viewController.getShopCartFacade().removeFromShoppingCart(index, (int) comboBoxList.get(index).getSelectedItem());
 				JOptionPane.showMessageDialog(null, "The product has been updated !", "Success", JOptionPane.INFORMATION_MESSAGE);
 				viewController.showShopCartPanel();
 			} catch (NotEnoughStockException e1) {

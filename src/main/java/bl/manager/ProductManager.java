@@ -22,7 +22,6 @@ public class ProductManager {
 	public ProductManager()
 	{
 		this.factory = new FactoryJDBC();
-		readProducts();
 	}
 
 	/**
@@ -65,10 +64,6 @@ public class ProductManager {
 	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
 	{
 		int quantityInStock = this.products.getProductById(idProduct).getStockQuantity();
-		
-		System.out.println(quantityInStock);
-		System.out.println(quantity);
-		System.out.println(oldQuantity);
 
 		if(quantityInStock + oldQuantity - quantity < 0)
 		{
