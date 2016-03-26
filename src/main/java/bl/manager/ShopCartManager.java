@@ -97,9 +97,20 @@ public class ShopCartManager {
 
 	}
 
-	public void removeFromShoppingCart(String idProduct, int quantity)
+	public void removeFromShoppingCart(int index, int quantity)
 	{
-
+		if(quantity == 0)
+		{
+			String idProduct = this.shopCartRows.getShopCartRowByIndex(index).getIdProduct();
+			String idShopCart = this.shopCartRows.getShopCartRowByIndex(index).getIdShoppingCart();
+			this.shopCartRows.getShopCartRowByIndex(index).remove(idProduct, idShopCart);
+			this.shopCartRows.getTabShopCart().remove(index);
+		}
+		else
+		{
+			this.shopCartRows.getShopCartRowByIndex(index).setQuantity(quantity);
+			this.shopCartRows.getShopCartRowByIndex(index).save();
+		}
 	}
 
 }

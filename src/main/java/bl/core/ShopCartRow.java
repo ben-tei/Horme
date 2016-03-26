@@ -92,5 +92,8 @@ public abstract class ShopCartRow {
 		return this.quantity;
 	}
 
+	public abstract void save();
+
+	public abstract void remove(String idProduct, String idShopCart);
 
 }

@@ -45,9 +45,9 @@ public class ShopCartFacade {
 		this.shopCartManager.addToShoppingCart(p, quantity);
 	}
 
-	public void removeFromShoppingCart(String idProduct, int quantity)
+	public void removeFromShoppingCart(int index, int quantity)
 	{
-		this.shopCartManager.removeFromShoppingCart(idProduct, quantity);
+		this.shopCartManager.removeFromShoppingCart(index, quantity);
 	}
 
 	public int getQuantity(String idProduct)

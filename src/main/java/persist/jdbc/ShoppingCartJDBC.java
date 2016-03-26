@@ -1,12 +1,13 @@
 package persist.jdbc;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 
 import bl.core.ShopCartRowSet;
 import bl.core.ShoppingCart;
 import bl.core.User;
-import java.util.Date;
-import java.util.UUID;
+
+import java.util.Calendar;
 
 /**
  * The Class ShopCartRowSetJDBC.
@@ -56,53 +57,56 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 		}
 	}
-	
+
 	public void placeOrder(ShopCartRowSet shopCartRows) 
 	{
-		
+
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
 
 		ResultSet rset = null;
-		
-		String numeroOrder = UUID.randomUUID().toString();
+
+		PreparedStatement pstmt = null;
 
 		PreparedStatement pstmt1 = null;
-		
+
 		PreparedStatement pstmt2 = null;
-		
+
 		PreparedStatement pstmt3 = null;
-		
-		Date date = new Date();
-		
+
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt1 = conn.prepareStatement("INSERT INTO Order (date, numero, idPerson, idTrader) "
+			pstmt = conn.prepareStatement("SELECT COUNT(*) AS orderNumber FROM `Order`");
+
+			rset = pstmt.executeQuery();
+			rset.next();
+
+			pstmt1 = conn.prepareStatement("INSERT INTO `Order` (date, numero, idPerson, idTrader) "
 					+ "VALUES (?, ?, ?, ?)");
-			
-			pstmt1.setDate(1, (java.sql.Date)date);
-			pstmt1.setString(2, numeroOrder);
+
+			pstmt1.setString(1, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
+			pstmt1.setString(2, rset.getString("orderNumber"));
 			pstmt1.setString(3, this.getUser().getId());
 			pstmt1.setString(4, "1");
 
 			pstmt1.executeUpdate();
-			
-			pstmt2 = conn.prepareStatement("SELECT idOrder FROM Order WHERE numero=?");
-			pstmt1.setString(1, "102");
-			
+
+			pstmt2 = conn.prepareStatement("SELECT idOrder FROM `Order` WHERE numero=?");
+			pstmt2.setString(1, "102");
+
 			rset = pstmt2.executeQuery();
-			
+
 			if (rset.next())
 			{
-				
+
 			}
-			
+
 			pstmt3 = conn.prepareStatement("INSERT INTO ConstituteOrder (idOrder, idProduct, price, quantity) "
 					+ "VALUES (?, ?, ?, ?)");
 
-			
+
 		}
 
 		catch (SQLException e) {
@@ -111,13 +115,14 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 		} finally {
 
+			jdbcconnection.close(pstmt);
 			jdbcconnection.close(pstmt1);
 			jdbcconnection.close(pstmt2);
 			jdbcconnection.close(pstmt3);
 			jdbcconnection.closeConnection();
 
 		}
-		
+
 	}
 
 }

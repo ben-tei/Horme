@@ -49,5 +49,8 @@ public abstract class ShopCartRowSet {
 		return this.tabShopCart.size();
 	}
 
+	public ArrayList<ShopCartRow> getTabShopCart() {
+		return tabShopCart;
+	}
 
 }
