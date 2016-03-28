@@ -26,7 +26,7 @@ public class OrderSetJDBC extends OrderSet {
 
 		OrderJDBC order = null;
 
-		TraderJDBC trader = null;
+		//TraderJDBC trader = null;
 
 		try {
 			conn = jdbcconnection.openConnection();
@@ -34,14 +34,14 @@ public class OrderSetJDBC extends OrderSet {
 			/*pstmt = conn.prepareStatement("SELECT `Order`.`idTrader`, `website`, `date`, `number` FROM `Order`, `Trader` "
 					+ "WHERE `Order`.`idTrader` = `Trader`.`idPerson` AND `Order`.`idPerson`= ?");*/
 
-			pstmt = conn.prepareStatement("SELECT `date`, `number` FROM `Order`, `Trader` "
-					+ "WHERE `Order`.`idPerson`= ?");
+			pstmt = conn.prepareStatement("SELECT `date`, `number` FROM `Order` WHERE `Order`.`idPerson`= ?");
 
 			pstmt.setString(1, user.getId());
 
 			rset = pstmt.executeQuery();
 
 			while(rset.next()) {
+
 				order = new OrderJDBC();
 				order.setDate(rset.getString("date"));
 				order.setNumero(rset.getString("number"));

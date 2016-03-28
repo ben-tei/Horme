@@ -1,20 +1,19 @@
 package ui;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import bl.core.Category;
 
-public class ActivityView extends JDialog implements ActionListener {
+import bl.core.ActivityCategorySet;
+import exceptions.AlreadyExistsException;
+
+public class CreateActivityView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -25,63 +24,65 @@ public class ActivityView extends JDialog implements ActionListener {
 	/** The name field. */
 	private JTextField nameField;
 
-	/** The category choice. */
-	private ArrayList<JComboBox> categoryChoice = new ArrayList<JComboBox>();
+	private JComboBox<String> cbCategories = new JComboBox<String>();
 
 	/** The description field. */
 	private JTextField descriptionField;
 
+	private ActivityCategorySet activityCategorySet;
 
-	public ActivityView(ViewController vc)
+
+	public CreateActivityView(ViewController vc)
 	{
 		this.viewController = vc;
 
 		this.setLayout(null);
 
-		JLabel lblNewActivity = new JLabel("Create a new activity");
-		lblNewActivity.setBounds(413, 11, 68, 25);
-		lblNewActivity.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		this.add(lblNewActivity);
+		new Menu(this, this.viewController);
+
+		this.activityCategorySet = this.viewController.getCategoryFacade().getActivitiesCategories();
 
 		JLabel lblName = new JLabel("Name *");
-		lblName.setBounds(75, 106, 55, 20);
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblName.setBounds(75, 175, 90, 20);
 		this.add(lblName);
 
-		JComboBox<String> cbCategory = new JComboBox<String>();
 		JLabel lblCategory = new JLabel("Category *");
-		lblCategory.setBounds(75, 162, 55, 20);
-		lblCategory.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblCategory.setBounds(75, 255, 90, 20);
 		this.add(lblCategory);
 
 		JLabel lblDescription = new JLabel("Description *");
-		lblDescription.setBounds(75, 278, 53, 20);
-		lblDescription.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblDescription.setBounds(75, 335, 90, 20);
 		this.add(lblDescription);
 
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(this);
 		btnConfirm.setActionCommand("confirm");
 		btnConfirm.setBounds(438, 495, 83, 23);
-		btnConfirm.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnConfirm);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this);
 		btnBack.setActionCommand("back");
 		btnBack.setBounds(692, 495, 68, 23);
-		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnBack);
 
 		nameField = new JTextField();
-		nameField.setBounds(175, 106, 200, 20);
+		nameField.setBounds(175, 175, 200, 20);
+		this.nameField.addActionListener(this);
+		this.nameField.setActionCommand("confirm");
 		this.add(nameField);
 
-		categoryChoice = new ArrayList<JComboBox>();
-	//	this.add(categoryChoice);
+		cbCategories.setBounds(175, 255, 200, 20);
+		for(int i = 0; i < this.activityCategorySet.size(); i++)
+		{
+			this.cbCategories.addItem(this.activityCategorySet.getCategoryByIndex(i).getName());
+		}
+		this.add(cbCategories);
 
 		descriptionField = new JTextField();
-		descriptionField.setBounds(175, 162, 200, 20);
+		descriptionField.setBounds(175, 335, 200, 20);
+		this.descriptionField.addActionListener(this);
+		this.descriptionField.setActionCommand("confirm");
 		this.add(descriptionField);
 
 	}
@@ -101,8 +102,8 @@ public class ActivityView extends JDialog implements ActionListener {
 	 * @return the category choice
 	 */
 
-	public Comparable<String> getNameCategory() {
-		return nameCategory;
+	public String getNameCategory() {
+		return (String) cbCategories.getSelectedItem();
 	}
 
 	/**
@@ -119,10 +120,10 @@ public class ActivityView extends JDialog implements ActionListener {
 	 *
 	 * @return true, if successful
 	 */
-	String nameCategory = categoryChoice.toString();
+
 	public boolean fieldsAreEmpty()
 	{
-		return getNameField().getText().equals("") || nameCategory.equals("") || getDescriptionField().getText().equals("");
+		return getNameField().getText().equals("") || getNameCategory().equals("") || getDescriptionField().getText().equals("");
 	}
 
 	@Override
@@ -141,11 +142,17 @@ public class ActivityView extends JDialog implements ActionListener {
 			}
 			else
 			{
-				this.viewController.getActivityFacade().createActivity(getNameField().getText(), nameCategory, 
-						getDescriptionField().getText());
+				try {
+					this.viewController.getActivityFacade().createActivity(getNameField().getText(), 
+							getDescriptionField().getText(), this.activityCategorySet.getCategoryByIndex(cbCategories.getSelectedIndex()), 
+							this.viewController.getUserFacade().getUser());
 
-				JOptionPane.showMessageDialog(null, "Activity \"" + getNameField().getText()+"\" successfully added" + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
-				this.viewController.showActivitiesPanel();
+					JOptionPane.showMessageDialog(null, "Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+					this.viewController.showActivitiesPanel();
+				} catch (AlreadyExistsException e1) {
+					// TODO Auto-generated catch block
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
+				}
 
 			}
 

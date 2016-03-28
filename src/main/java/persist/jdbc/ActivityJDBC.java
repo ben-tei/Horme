@@ -5,15 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JComboBox;
-
-import com.mysql.jdbc.Statement;
-
 import bl.core.Activity;
+import bl.core.Category;
+import bl.core.User;
+import exceptions.AlreadyExistsException;
 
 
 public class ActivityJDBC extends Activity {
-	
+
 	public ActivityJDBC()
 	{
 		super();
@@ -25,8 +24,9 @@ public class ActivityJDBC extends Activity {
 	 * @param name the name
 	 * @param category the category
 	 * @param descritption the description
+	 * @throws AlreadyExistsException 
 	 */
-	public ActivityJDBC(String name, String category, String description)
+	public ActivityJDBC(String name, String description, Category category, User user) throws AlreadyExistsException
 	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -34,32 +34,37 @@ public class ActivityJDBC extends Activity {
 
 		PreparedStatement pstmt = null;
 
-		Statement St = null;
+		PreparedStatement pstmt2 = null;
 
-		ResultSet rsetCategory= null;
-
-		JComboBox categoryChoice = null; // pas ici qu'il faut le faire mais dans la vue !!!
+		ResultSet rset = null;
 
 		try {
+
 			conn = jdbcconnection.openConnection();
 
-			St = (Statement) conn.createStatement(); 
-			rsetCategory = St.executeQuery("SELECT name FROM category"); 
-			while (rsetCategory.next()) 
-			{ 
-				//Pour affecter une valeur de base de donnees a  un Combobox  
-				categoryChoice.addItem(rsetCategory.getString(name));
-			} 
-
-			pstmt = conn.prepareStatement("INSERT INTO Activity (name, description) "
-					+ "VALUES (?, ?) ");
+			pstmt = conn.prepareStatement("SELECT * FROM Activity WHERE name=?");
 
 			pstmt.setString(1, name);
-			pstmt.setString(2, description);
 
-			pstmt.executeUpdate();
+			rset = pstmt.executeQuery();
 
+			if (!rset.next())
+			{
+				pstmt2 = conn.prepareStatement("INSERT INTO Activity (name, description, idCategory, idUser) "
+						+ "VALUES (?, ?, ?, ?)");
 
+				pstmt2.setString(1, name);
+				pstmt2.setString(2, description);
+				pstmt2.setString(3, category.getId());
+				pstmt2.setString(4, user.getId());
+
+				pstmt2.executeUpdate();
+
+			}
+			else
+			{
+				throw new AlreadyExistsException("Activity already exists !");
+			}
 		}
 
 		catch (SQLException e) {
@@ -68,11 +73,13 @@ public class ActivityJDBC extends Activity {
 
 		} finally {
 
+			jdbcconnection.close(pstmt);
+
+			jdbcconnection.close(pstmt2);
 
 			jdbcconnection.closeConnection();
 
 		}
-
 	}
 
 }

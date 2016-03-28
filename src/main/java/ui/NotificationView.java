@@ -32,15 +32,6 @@ public class NotificationView extends JPanel implements ActionListener {
 
 	}
 
-	/**
-	 * Gets the notifications.
-	 *
-	 * @return the notifications
-	 */
-	public void getNotifications() {
-		this.viewController.getNotificationFacade().getNotifications();
-	}
-
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */

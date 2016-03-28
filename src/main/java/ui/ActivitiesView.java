@@ -51,7 +51,7 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		this.btnAddActivity = new JButton("Add Activity");
 		btnAddActivity.setBounds(700, 500, 150, 23);
 		this.btnAddActivity.addActionListener(this);
-		this.btnAddActivity.setActionCommand("addactivity");
+		this.btnAddActivity.setActionCommand("addActivity");
 		this.btnAddActivity.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnAddActivity);
 
@@ -83,9 +83,9 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if(cmd.equals("addactivity"))
+		if(cmd.equals("addActivity"))
 		{
-			this.viewController.showActivityPanel();
+			this.viewController.showCreateActivityPanel();
 		}
 	}
 

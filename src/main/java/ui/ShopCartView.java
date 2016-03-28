@@ -28,7 +28,7 @@ public class ShopCartView extends JPanel implements ActionListener {
 	/** The btn validate. */
 	private JButton btnValidate;
 
-	private ArrayList<JComboBox> comboBoxList = new ArrayList<JComboBox>();
+	private ArrayList<JComboBox<Integer>> comboBoxList = new ArrayList<JComboBox<Integer>>();
 
 	private ShopCartRowSet shopCartRowSet;
 
@@ -97,11 +97,15 @@ public class ShopCartView extends JPanel implements ActionListener {
 			placement = placement + 50;
 		}
 
-		btnValidate = new JButton("Validate the cart");
-		btnValidate.setBounds(135, placement + 50, 140, 23);
-		btnValidate.addActionListener(this);
-		btnValidate.setActionCommand("validate");
-		this.add(btnValidate);
+		if(this.shopCartRowSet.size() > 0)
+		{
+
+			btnValidate = new JButton("Validate the cart");
+			btnValidate.setBounds(135, placement + 50, 140, 23);
+			btnValidate.addActionListener(this);
+			btnValidate.setActionCommand("validate");
+			this.add(btnValidate);
+		}
 
 	}
 

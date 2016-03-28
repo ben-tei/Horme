@@ -98,6 +98,8 @@ public class UserJDBC extends User
 
 		PreparedStatement pstmt4 = null;
 
+		PreparedStatement pstmt5 = null;
+
 		ResultSet rset = null;
 
 		ResultSet rset2 = null;
@@ -141,6 +143,12 @@ public class UserJDBC extends User
 					pstmt4.setString(1, rset2.getString("last"));
 
 					pstmt4.executeUpdate();
+
+					pstmt5 = conn.prepareStatement("INSERT INTO User (idPerson) VALUES (?)");
+
+					pstmt5.setString(1, rset2.getString("last"));
+
+					pstmt5.executeUpdate();
 				}
 			}
 			else
@@ -158,10 +166,12 @@ public class UserJDBC extends User
 			jdbcconnection.close(pstmt);
 
 			jdbcconnection.close(pstmt2);
-			
+
 			jdbcconnection.close(pstmt3);
-			
+
 			jdbcconnection.close(pstmt4);
+
+			jdbcconnection.close(pstmt5);
 
 			jdbcconnection.closeConnection();
 

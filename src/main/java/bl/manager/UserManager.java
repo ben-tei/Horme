@@ -15,7 +15,7 @@ public class UserManager {
 
 	/** The factory. */
 	private Factory factory;
-	
+
 	/** The user. */
 	private User user;
 
@@ -61,6 +61,10 @@ public class UserManager {
 	public User createUser(String name, String firstname, String street, String zipCode, String city, String phone,
 			String email, String login, String password) throws AlreadyExistsException
 	{
+		name = name.toUpperCase();
+		firstname = firstname.substring(0, 1).toUpperCase() + firstname.substring(1);
+		city = city.substring(0, 1).toUpperCase() + city.substring(1);
+
 		user = this.factory.createUser(name, firstname, street, zipCode, city, phone, email, login, HashText.sha1(password));
 		return user;
 	}
@@ -80,6 +84,10 @@ public class UserManager {
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
 			String email)
 	{
+		name = name.toUpperCase();
+		firstname = firstname.substring(0, 1).toUpperCase() + firstname.substring(1);
+		city = city.substring(0, 1).toUpperCase() + city.substring(1);
+		
 		this.user.setName(name);
 		this.user.setFirstName(firstname);
 		this.user.setStreet(street);

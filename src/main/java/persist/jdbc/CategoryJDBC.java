@@ -6,6 +6,7 @@ public class CategoryJDBC extends Category {
 
 	public CategoryJDBC() {
 		// TODO Auto-generated constructor stub
+		super();
 	}
 
 }

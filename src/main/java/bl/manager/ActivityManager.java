@@ -2,8 +2,10 @@ package bl.manager;
 
 import bl.core.Activity;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.User;
 import bl.factory.Factory;
+import exceptions.AlreadyExistsException;
 import persist.factoryjdbc.FactoryJDBC;
 
 /**
@@ -45,10 +47,12 @@ public class ActivityManager {
 	 *
 	 * @param user the user
 	 * @return the activity set
+	 * @throws AlreadyExistsException 
 	 */
-	public Activity createActivity(String name, String category, String description)
-	{
-		activity = this.factory.createActivity(name, category, description);
+
+	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
+		// TODO Auto-generated method stub
+		activity = this.factory.createActivity(name, description, category, user);
 		return activity;
 	}
 

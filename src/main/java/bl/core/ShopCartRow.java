@@ -23,7 +23,7 @@ public abstract class ShopCartRow {
 	 * Instantiates a new shop cart row.
 	 */
 	public ShopCartRow() {
-
+		super();
 	}
 
 	public String getIdProduct() {

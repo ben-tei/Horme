@@ -3,7 +3,7 @@ package ui;
 import javax.swing.JPanel;
 
 import bl.facade.ActivityFacade;
-import bl.facade.NotificationFacade;
+import bl.facade.CategoryFacade;
 import bl.facade.ProductFacade;
 import bl.facade.ShopCartFacade;
 import bl.facade.UserFacade;
@@ -21,15 +21,15 @@ public class ViewController {
 
 	/** The user facade. */
 	private UserFacade userFacade;
-	
+
 	/** The activity facade. */
 	private ActivityFacade activityFacade;
+
+	private CategoryFacade categoryFacade;
 
 	private ShopCartFacade shopCartFacade;
 
 	private ProductFacade productFacade;
-
-	private NotificationFacade notificationFacade;
 
 	/**
 	 * Instantiates a new view controller.
@@ -39,9 +39,9 @@ public class ViewController {
 		this.myWindow = new Window(600, 920);
 		this.userFacade = new UserFacade();
 		this.shopCartFacade = new ShopCartFacade();
+		this.categoryFacade = new CategoryFacade();
 		this.productFacade = new ProductFacade();
 		this.activityFacade = new ActivityFacade();
-		this.notificationFacade = new NotificationFacade();
 		this.showLoginPanel();
 		this.myWindow.setVisible(true);
 	}
@@ -55,7 +55,7 @@ public class ViewController {
 	{
 		return this.userFacade;
 	}
-	
+
 	/**
 	 * Gets the activity facade.
 	 *
@@ -66,6 +66,10 @@ public class ViewController {
 		return this.activityFacade;
 	}
 
+	public CategoryFacade getCategoryFacade() {
+		return categoryFacade;
+	}
+
 	public ShopCartFacade getShopCartFacade()
 	{
 		return this.shopCartFacade;
@@ -73,10 +77,6 @@ public class ViewController {
 
 	public ProductFacade getProductFacade() {
 		return productFacade;
-	}
-
-	public NotificationFacade getNotificationFacade() {
-		return notificationFacade;
 	}
 
 	public Window getMyWindow() {
@@ -135,6 +135,16 @@ public class ViewController {
 
 	}
 
+	public void showCreateActivityPanel()
+	{
+		this.myWindow.setTitle("Horme - Create Activity");
+		this.myJPanel = new CreateActivityView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+
 	/**
 	 * Show activity panel.
 	 */
@@ -147,7 +157,7 @@ public class ViewController {
 		this.myWindow.getContentPane().repaint();
 
 	}
-	
+
 	/**
 	 * Show diary panel.
 	 */

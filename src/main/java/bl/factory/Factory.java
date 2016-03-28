@@ -1,7 +1,9 @@
 package bl.factory;
 
 import bl.core.Activity;
+import bl.core.ActivityCategorySet;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.OrderSet;
 import bl.core.Product;
 import bl.core.ProductSet;
@@ -44,13 +46,6 @@ public abstract class Factory {
 			String phone, String email, String login, String password) throws AlreadyExistsException;
 
 	/**
-	 * Gets the notifications.
-	 *
-	 * @return the notifications
-	 */
-	public abstract void getNotifications();
-
-	/**
 	 * Read products.
 	 *
 	 * @return the product set
@@ -72,15 +67,6 @@ public abstract class Factory {
 	 * @return the activity set
 	 */
 	public abstract ActivitySet readActivities(User user);
-	
-	/**
-	 * Create activity.
-	 *
-	 * @param user the user
-	 * @return the activity set
-	 */
-	public abstract Activity createActivity(String name, String category, String description);
-	
 
 	/**
 	 * Read shop cart.
@@ -89,9 +75,9 @@ public abstract class Factory {
 	 * @return the shop cart row set
 	 */
 	public abstract ShopCartRowSet readShopCart(User user);
-	
+
 	public abstract ShoppingCart getShopCart(User user);
-	
+
 	public abstract ShopCartRow createShopCartRow(Product p, ShoppingCart shopCart, int quantity);
 
 	/**
@@ -101,4 +87,9 @@ public abstract class Factory {
 	 * @return the order set
 	 */
 	public abstract OrderSet readOrders(User user);
+
+	public abstract ActivityCategorySet getActivitiesCategories();
+
+	public abstract Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException;
+
 }

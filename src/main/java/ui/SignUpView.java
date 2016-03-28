@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 
 import exceptions.AlreadyExistsException;
 import util.EmailValidator;
+import util.PhoneValidator;
+import util.ZipCodeValidator;
 
 import java.awt.Color;
 
@@ -386,6 +388,14 @@ public class SignUpView extends JPanel implements ActionListener {
 			else if(!EmailValidator.validate(getEmailConfirm().getText()) || !EmailValidator.validate(getEmailField().getText()))
 			{
 				JOptionPane.showMessageDialog(null, "Email address not valid !", "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+			else if(!PhoneValidator.validate(getPhoneField().getText()))
+			{
+				JOptionPane.showMessageDialog(null, "Phone number not valid !", "Failure", JOptionPane.WARNING_MESSAGE);
+			}
+			else if(!ZipCodeValidator.validate(getZipField().getText()))
+			{
+				JOptionPane.showMessageDialog(null, "Zip Code not valid !", "Failure", JOptionPane.WARNING_MESSAGE);
 			}
 			else
 			{

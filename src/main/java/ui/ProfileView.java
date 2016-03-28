@@ -374,6 +374,7 @@ public class ProfileView extends JPanel implements ActionListener {
 						getZipField().getText(), getCityField().getText(), getPhoneField().getText(), getEmailField().getText());
 
 				JOptionPane.showMessageDialog(null, "Your profile has been updated !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				this.viewController.showProfilePanel();
 
 			}
 		}

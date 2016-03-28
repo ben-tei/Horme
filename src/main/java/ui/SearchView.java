@@ -25,7 +25,7 @@ public class SearchView extends JPanel implements ActionListener{
 
 	private ProductSet productSet;
 
-	private ArrayList<JComboBox> comboBoxList = new ArrayList<JComboBox>();
+	private ArrayList<JComboBox<Integer>> comboBoxList = new ArrayList<JComboBox<Integer>>();
 
 	/**
 	 * Instantiates a new product view.

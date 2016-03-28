@@ -16,6 +16,8 @@ import java.util.HashSet;
  * @author Meche
  */
 public abstract class Category {
+	
+	private String id = "";
 	/**
 	 * Description of the property name.
 	 */
@@ -90,6 +92,14 @@ public abstract class Category {
 	 */
 	public String getShortDescription() {
 		return this.shortDescription;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**

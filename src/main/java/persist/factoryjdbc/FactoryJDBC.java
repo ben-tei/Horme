@@ -1,7 +1,9 @@
 package persist.factoryjdbc;
 
 import bl.core.Activity;
+import bl.core.ActivityCategorySet;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.OrderSet;
 import bl.core.Product;
 import bl.core.ProductSet;
@@ -11,9 +13,9 @@ import bl.core.ShoppingCart;
 import bl.core.User;
 import bl.factory.Factory;
 import exceptions.*;
+import persist.jdbc.ActivityCategorySetJDBC;
 import persist.jdbc.ActivityJDBC;
 import persist.jdbc.ActivitySetJDBC;
-import persist.jdbc.NotificationJDBC;
 import persist.jdbc.OrderSetJDBC;
 import persist.jdbc.ProductSetJDBC;
 import persist.jdbc.ShopCartRowJDBC;
@@ -50,16 +52,6 @@ public class FactoryJDBC extends Factory
 	{
 		return new UserJDBC(name, firstname, street, zipCode, city, phone, email, login, password);
 	}
-
-	/* (non-Javadoc)
-	 * @see bl.factory.Factory#getNotifications()
-	 */
-	@Override
-	public void getNotifications() 
-	{
-		NotificationJDBC notifjdbc = new NotificationJDBC();
-	}
-
 
 	/* (non-Javadoc)
 	 * @see bl.factory.Factory#readProducts()
@@ -101,11 +93,6 @@ public class FactoryJDBC extends Factory
 		return new ActivitySetJDBC(user);
 	}
 
-	public Activity createActivity(String name, String category, String description)
-	{
-		return new ActivityJDBC(name, category, description);
-	}
-
 	/* (non-Javadoc)
 	 * @see bl.factory.Factory#readOrders(bl.core.User)
 	 */
@@ -118,6 +105,18 @@ public class FactoryJDBC extends Factory
 	public ShopCartRow createShopCartRow(Product p, ShoppingCart shopCart, int quantity) {
 		// TODO Auto-generated method stub
 		return new ShopCartRowJDBC(p, shopCart, quantity);
+	}
+
+	@Override
+	public ActivityCategorySet getActivitiesCategories() {
+		// TODO Auto-generated method stub
+		return new ActivityCategorySetJDBC();
+	}
+
+	@Override
+	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
+		// TODO Auto-generated method stub
+		return new ActivityJDBC(name, description, category, user);
 	}
 
 }

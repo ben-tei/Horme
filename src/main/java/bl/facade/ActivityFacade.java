@@ -2,8 +2,10 @@ package bl.facade;
 
 import bl.core.Activity;
 import bl.core.ActivitySet;
+import bl.core.Category;
 import bl.core.User;
 import bl.manager.ActivityManager;
+import exceptions.AlreadyExistsException;
 
 /**
  * The Class ActivityFacade.
@@ -38,10 +40,12 @@ public class ActivityFacade {
 	 * @param name the name
 	 * @param category the category
 	 * @param description the description
+	 * @throws AlreadyExistsException 
 	 */
 
-	public Activity createActivity(String name, String category, String description)
-	{
-		return this.activityManager.createActivity(name, category, description);
+	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
+		// TODO Auto-generated method stub
+		return this.activityManager.createActivity(name, description, category, user);
 	}
+
 }
