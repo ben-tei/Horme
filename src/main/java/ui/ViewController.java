@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import bl.facade.ActivityFacade;
 import bl.facade.CategoryFacade;
+import bl.facade.DiaryFacade;
 import bl.facade.ProductFacade;
 import bl.facade.ShopCartFacade;
 import bl.facade.UserFacade;
@@ -31,6 +32,8 @@ public class ViewController {
 
 	private ProductFacade productFacade;
 
+	private DiaryFacade diaryFacade;
+
 	/**
 	 * Instantiates a new view controller.
 	 */
@@ -42,6 +45,7 @@ public class ViewController {
 		this.categoryFacade = new CategoryFacade();
 		this.productFacade = new ProductFacade();
 		this.activityFacade = new ActivityFacade();
+		this.diaryFacade = new DiaryFacade();
 		this.showLoginPanel();
 		this.myWindow.setVisible(true);
 	}
@@ -64,6 +68,10 @@ public class ViewController {
 	public ActivityFacade getActivityFacade()
 	{
 		return this.activityFacade;
+	}
+
+	public DiaryFacade getDiaryFacade() {
+		return diaryFacade;
 	}
 
 	public CategoryFacade getCategoryFacade() {

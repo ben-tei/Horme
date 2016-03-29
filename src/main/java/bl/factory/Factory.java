@@ -4,6 +4,7 @@ import bl.core.Activity;
 import bl.core.ActivityCategorySet;
 import bl.core.ActivitySet;
 import bl.core.Category;
+import bl.core.ObjectiveSet;
 import bl.core.OrderSet;
 import bl.core.Product;
 import bl.core.ProductSet;
@@ -91,5 +92,7 @@ public abstract class Factory {
 	public abstract ActivityCategorySet getActivitiesCategories();
 
 	public abstract Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException;
+
+	public abstract ObjectiveSet readObjectives(User user);
 
 }

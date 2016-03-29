@@ -4,6 +4,7 @@ import bl.core.Activity;
 import bl.core.ActivityCategorySet;
 import bl.core.ActivitySet;
 import bl.core.Category;
+import bl.core.ObjectiveSet;
 import bl.core.OrderSet;
 import bl.core.Product;
 import bl.core.ProductSet;
@@ -117,6 +118,12 @@ public class FactoryJDBC extends Factory
 	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
 		// TODO Auto-generated method stub
 		return new ActivityJDBC(name, description, category, user);
+	}
+
+	@Override
+	public ObjectiveSet readObjectives(User user) {
+		// TODO Auto-generated method stub
+		return new ObjectiveSetJDBC(user);
 	}
 
 }
