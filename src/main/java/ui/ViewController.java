@@ -153,6 +153,16 @@ public class ViewController {
 
 	}
 
+	public void showCreateObjectivePanel()
+	{
+		this.myWindow.setTitle("Horme - Create Objective");
+		this.myJPanel = new CreateObjectiveView(this);      
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+
+	}
+
 	/**
 	 * Show activity panel.
 	 */

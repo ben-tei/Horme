@@ -33,7 +33,7 @@ public class ActivitySetJDBC extends ActivitySet  {
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT a.idActivity, a.name, a.description, c.name FROM Activity a, Category c WHERE a.idCategory = c.idCategory"
+			pstmt = conn.prepareStatement("SELECT a.idActivity, a.name, a.description, c.idCategory, c.name FROM Activity a, Category c WHERE a.idCategory = c.idCategory"
 					+ " AND a.idUser = ?");
 
 			pstmt.setString(1, user.getId());
@@ -45,9 +45,10 @@ public class ActivitySetJDBC extends ActivitySet  {
 				category = new CategoryJDBC();
 				activity.setId(rsetActivity.getString("a.idActivity"));
 				activity.setName(rsetActivity.getString("a.name"));
-				category.setName(rsetActivity.getString("c.name"));
-				activity.setCategory(category);
 				activity.setDescription(rsetActivity.getString("a.description"));
+				category.setName(rsetActivity.getString("c.name"));
+				category.setId(rsetActivity.getString("c.idCategory"));
+				activity.setCategory(category);
 				this.addActivity(activity);
 			}
 		}

@@ -91,15 +91,23 @@ public class ActivityJDBC extends Activity {
 
 		PreparedStatement pstmt = null;
 
+		PreparedStatement pstmt2 = null;
+
 		try {
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("DELETE FROM Activity WHERE idActivity = ?");
+			pstmt = conn.prepareStatement("DELETE FROM Objective WHERE idActivity = ?");
 
 			pstmt.setString(1, idActivity);
 
 			pstmt.executeUpdate();
+
+			pstmt2 = conn.prepareStatement("DELETE FROM Activity WHERE idActivity = ?");
+
+			pstmt2.setString(1, idActivity);
+
+			pstmt2.executeUpdate();
 
 		}
 
@@ -110,6 +118,8 @@ public class ActivityJDBC extends Activity {
 		} finally {
 
 			jdbcconnection.close(pstmt);
+
+			jdbcconnection.close(pstmt2);
 
 			jdbcconnection.closeConnection();
 

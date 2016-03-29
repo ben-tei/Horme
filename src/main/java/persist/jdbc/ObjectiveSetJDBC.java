@@ -17,7 +17,7 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 
 		Connection conn = null;
 
-		ResultSet rsetActivity= null;
+		ResultSet rset = null;
 
 		PreparedStatement pstmt = null;
 
@@ -28,21 +28,23 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT o.idObjective, o.name, o.description, o.deadline, a.name, a.idActivity FROM Activity a, Objective o WHERE a.idCategory = c.idCategory"
-					+ " AND a.idUser = ?");
+			pstmt = conn.prepareStatement("SELECT o.idObjective, o.name, o.description, o.deadline, a.name, a.idActivity FROM Activity a, Objective o WHERE o.idActivity"
+					+ " = a.idActivity AND a.idUser = ?");
 
 			pstmt.setString(1, user.getId());
 
-			rsetActivity = pstmt.executeQuery();
+			rset = pstmt.executeQuery();
 
-			while(rsetActivity.next()) {
+			while(rset.next()) {
 				objectiveJDBC = new ObjectiveJDBC();
 				activityJDBC = new ActivityJDBC();
-				objectiveJDBC.setId(rsetActivity.getString("a.idActivity"));
-				objectiveJDBC.setName(rsetActivity.getString("a.name"));
-				activityJDBC.setName(rsetActivity.getString("c.name"));
+				objectiveJDBC.setId(rset.getString("o.idObjective"));
+				objectiveJDBC.setName(rset.getString("o.name"));
+				objectiveJDBC.setDescription(rset.getString("o.description"));
+				objectiveJDBC.setDeadline(rset.getString("o.deadline"));
+				activityJDBC.setName(rset.getString("a.name"));
+				activityJDBC.setId(rset.getString("a.idActivity"));
 				objectiveJDBC.setActivity(activityJDBC);
-				objectiveJDBC.setDescription(rsetActivity.getString("a.description"));
 				this.addObjective(objectiveJDBC);
 			}
 		}

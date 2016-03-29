@@ -128,4 +128,6 @@ public abstract class Objective {
 		this.activity = newActivity;
 	}
 
+	public abstract void remove(String idObjective);
+
 }
