@@ -39,6 +39,14 @@ public abstract  class ActivitySet {
 		return this.tabActivities.get(index);
 	}
 
+	public ArrayList<Activity> getTabActivities() {
+		return tabActivities;
+	}
+
+	public void setTabActivities(ArrayList<Activity> tabActivities) {
+		this.tabActivities = tabActivities;
+	}
+
 	/**
 	 * Size.
 	 *
@@ -48,4 +56,10 @@ public abstract  class ActivitySet {
 	{
 		return this.tabActivities.size();
 	}
+	
+	public boolean isEmpty()
+	{
+		return this.tabActivities.size() == 0;
+	}
+	
 }

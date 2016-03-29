@@ -56,5 +56,12 @@ public class ActivityManager {
 		return activity;
 	}
 
+	public void removeFromMyActivities(int index) {
+		// TODO Auto-generated method stub
+		String idActivity = this.activities.getActivityByIndex(index).getId();
+		this.activities.getActivityByIndex(index).remove(idActivity);
+		this.activities.getTabActivities().remove(index);
+	}
+
 
 }

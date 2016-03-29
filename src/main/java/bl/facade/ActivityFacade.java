@@ -48,4 +48,9 @@ public class ActivityFacade {
 		return this.activityManager.createActivity(name, description, category, user);
 	}
 
+	public void removeFromMyActivities(int index) {
+		// TODO Auto-generated method stub
+		this.activityManager.removeFromMyActivities(index);
+	}
+
 }

@@ -48,6 +48,11 @@ public abstract class ShopCartRowSet {
 	{
 		return this.tabShopCart.size();
 	}
+	
+	public boolean isEmpty()
+	{
+		return this.tabShopCart.size() == 0;
+	}
 
 	public ArrayList<ShopCartRow> getTabShopCart() {
 		return tabShopCart;

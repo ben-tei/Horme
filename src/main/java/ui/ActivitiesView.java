@@ -72,6 +72,12 @@ public class ActivitiesView extends JPanel implements ActionListener {
 			Adescription.setBounds(520, placement, 200, 14);
 			this.add(Adescription);
 
+			MyJButton deleteActivity = new MyJButton("Delete", i);
+			deleteActivity.addActionListener(this);
+			deleteActivity.setActionCommand("delete");
+			deleteActivity.setBounds(700, placement - 3, 80, 20);
+			this.add(deleteActivity);
+
 			placement = placement + 32;
 		}
 	}
@@ -86,6 +92,12 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		if(cmd.equals("addActivity"))
 		{
 			this.viewController.showCreateActivityPanel();
+		}
+		else if(cmd.equals("delete"))
+		{
+			int index = ((MyJButton)e.getSource()).getIndex();
+			viewController.getActivityFacade().removeFromMyActivities(index);
+			viewController.showActivitiesPanel();
 		}
 	}
 

@@ -28,6 +28,14 @@ public abstract class ProductSet {
 		this.tabProducts.add(product);
 	}
 
+	public ArrayList<Product> getTabProducts() {
+		return tabProducts;
+	}
+
+	public void setTabProducts(ArrayList<Product> tabProducts) {
+		this.tabProducts = tabProducts;
+	}
+
 	/**
 	 * Gets the product by index.
 	 *
@@ -63,6 +71,11 @@ public abstract class ProductSet {
 	public int size()
 	{
 		return this.tabProducts.size();
+	}
+	
+	public boolean isEmpty()
+	{
+		return this.tabProducts.size() == 0;
 	}
 
 }

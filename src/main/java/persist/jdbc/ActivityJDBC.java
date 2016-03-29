@@ -82,4 +82,38 @@ public class ActivityJDBC extends Activity {
 		}
 	}
 
+	@Override
+	public void remove(String idActivity) {
+		// TODO Auto-generated method stub
+		JDBCConnection jdbcconnection = new JDBCConnection();
+
+		Connection conn = null;
+
+		PreparedStatement pstmt = null;
+
+		try {
+
+			conn = jdbcconnection.openConnection();
+
+			pstmt = conn.prepareStatement("DELETE FROM Activity WHERE idActivity = ?");
+
+			pstmt.setString(1, idActivity);
+
+			pstmt.executeUpdate();
+
+		}
+
+		catch (SQLException e) {
+
+			JDBCConnection.ProcessSQLException(e);
+
+		} finally {
+
+			jdbcconnection.close(pstmt);
+
+			jdbcconnection.closeConnection();
+
+		}
+	}
+
 }

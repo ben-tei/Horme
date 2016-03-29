@@ -11,6 +11,11 @@ import bl.core.User;
 public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 
+	public ShopCartRowSetJDBC() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
 	/**
 	 * Instantiates a new shop cart row set jdbc.
 	 *

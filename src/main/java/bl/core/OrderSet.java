@@ -28,6 +28,14 @@ public abstract class OrderSet {
 		this.tabOrders.add(order);
 	}
 
+	public ArrayList<Order> getTabOrders() {
+		return tabOrders;
+	}
+
+	public void setTabOrders(ArrayList<Order> tabOrders) {
+		this.tabOrders = tabOrders;
+	}
+
 	/**
 	 * Gets the order by index.
 	 *
@@ -47,6 +55,11 @@ public abstract class OrderSet {
 	public int size()
 	{
 		return this.tabOrders.size();
+	}
+	
+	public boolean isEmpty()
+	{
+		return this.tabOrders.size() == 0;
 	}
 
 }

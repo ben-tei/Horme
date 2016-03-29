@@ -16,6 +16,7 @@ import java.util.HashSet;
  * @author Meche
  */
 public abstract class Activity {
+	private String id = "";
 	/**
 	 * Description of the property user.
 	 */
@@ -67,12 +68,21 @@ public abstract class Activity {
 	// Start of user code (user defined methods for Activity)
 
 	// End of user code
+
 	/**
 	 * Returns user.
 	 * @return user 
 	 */
 	public User getUser() {
 		return this.user;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
@@ -159,5 +169,7 @@ public abstract class Activity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public abstract void remove(String idActivity);
 
 }
