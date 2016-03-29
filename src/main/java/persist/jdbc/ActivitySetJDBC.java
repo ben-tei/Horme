@@ -48,7 +48,7 @@ public class ActivitySetJDBC extends ActivitySet  {
 				category.setName(rsetActivity.getString("c.name"));
 				activity.setCategory(category);
 				activity.setDescription(rsetActivity.getString("a.description"));
-				this.AddActivity(activity);
+				this.addActivity(activity);
 			}
 		}
 

@@ -23,7 +23,7 @@ public abstract  class ActivitySet {
 	 *
 	 * @param activity the activity
 	 */
-	public void AddActivity(Activity activity)
+	public void addActivity(Activity activity)
 	{
 		this.tabActivities.add(activity);
 	}

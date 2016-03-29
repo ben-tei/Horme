@@ -1,8 +1,5 @@
 package bl.manager;
 
-import bl.core.Activity;
-import bl.core.ActivitySet;
-import bl.core.Objective;
 import bl.core.ObjectiveSet;
 import bl.core.User;
 import bl.factory.Factory;
@@ -15,9 +12,6 @@ public class DiaryManager {
 
 	/** The activities. */
 	private ObjectiveSet objectives;
-
-	/** An activity. */
-	private Objective objective;
 
 	/**
 	 * Instantiates a new activity manager.

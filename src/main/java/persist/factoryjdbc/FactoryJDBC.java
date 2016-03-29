@@ -17,6 +17,7 @@ import exceptions.*;
 import persist.jdbc.ActivityCategorySetJDBC;
 import persist.jdbc.ActivityJDBC;
 import persist.jdbc.ActivitySetJDBC;
+import persist.jdbc.ObjectiveSetJDBC;
 import persist.jdbc.OrderSetJDBC;
 import persist.jdbc.ProductSetJDBC;
 import persist.jdbc.ShopCartRowJDBC;

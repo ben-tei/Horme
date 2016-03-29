@@ -14,6 +14,7 @@ package bl.core;
  * @author Meche
  */
 public abstract class Objective {
+	private String id = "";
 	/**
 	 * Description of the property deadline.
 	 */
@@ -50,12 +51,21 @@ public abstract class Objective {
 	// Start of user code (user defined methods for Objective)
 
 	// End of user code
+	
 	/**
 	 * Returns deadline.
 	 * @return deadline 
 	 */
 	public String getDeadline() {
 		return this.deadline;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
