@@ -24,7 +24,7 @@ public class Menu implements ActionListener {
 	private JLabel lblUser;
 
 	/** The btn notifications. */
-	private JButton btnNotifications;
+	private JButton btnHome;
 
 	/** The btn profile. */
 	private JButton btnProfile;
@@ -47,6 +47,8 @@ public class Menu implements ActionListener {
 	/** The btn shopping cart. */
 	private JButton btnShoppingCart;
 
+	private JButton btnDisconnect;
+
 	/** The lbl search. */
 	private JLabel lblSearch;
 
@@ -66,14 +68,21 @@ public class Menu implements ActionListener {
 
 		lblUser = new JLabel("Connected as : " + this.viewController.getUserFacade().getUser().getFirstName() + " "
 				+ this.viewController.getUserFacade().getUser().getName());
-		lblUser.setBounds(15, 31, 309, 14);
+		lblUser.setBounds(15, 31, 180, 14);
 		jp.add(lblUser);
 
-		btnNotifications = new JButton("Notifications");
-		btnNotifications.setBounds(15, 70, 115, 23);
-		btnNotifications.addActionListener(this);
-		btnNotifications.setActionCommand("notification");
-		jp.add(btnNotifications);
+		btnDisconnect = new JButton("Disconnect");
+		btnDisconnect.setBounds(200, 28, 100, 20);
+		btnDisconnect.addActionListener(this);
+		btnDisconnect.setActionCommand("disconnect");
+		btnDisconnect.setFocusPainted(false);
+		jp.add(btnDisconnect);
+
+		btnHome = new JButton("Home");
+		btnHome.setBounds(15, 70, 115, 23);
+		btnHome.addActionListener(this);
+		btnHome.setActionCommand("home");
+		jp.add(btnHome);
 
 		btnProfile = new JButton("My profile");
 		btnProfile.setBounds(140, 70, 89, 23);
@@ -144,8 +153,8 @@ public class Menu implements ActionListener {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
 
-		if (cmd.equals("notification")) {
-			this.viewController.showNotificationPanel();
+		if (cmd.equals("home")) {
+			this.viewController.showIndexPanel();
 		}
 
 		else if (cmd.equals("profil")) {
@@ -178,6 +187,10 @@ public class Menu implements ActionListener {
 
 		else if (cmd.equals("search")) {
 			this.viewController.showSearchPanel(this.search.getText());
+		}
+
+		else if (cmd.equals("disconnect")) {
+			this.viewController.showLoginPanel();
 		}
 	}
 
