@@ -50,8 +50,7 @@ public class ShopCartManager {
 	public void placeOrder() {
 		this.shopCart.placeOrder(shopCartRows);
 		for (int i = 0; i < this.shopCartRows.size(); i++) {
-			this.shopCartRows.getShopCartRowByIndex(i).remove(this.shopCartRows.getShopCartRowByIndex(i).getIdProduct(),
-					this.shopCartRows.getShopCartRowByIndex(i).getIdShoppingCart());
+			this.shopCartRows.getShopCartRowByIndex(i).remove();
 		}
 
 		this.shopCartRows.getTabShopCart().clear();
@@ -95,9 +94,7 @@ public class ShopCartManager {
 
 	public void removeFromShoppingCart(int index, int quantity) {
 		if (quantity == 0) {
-			String idProduct = this.shopCartRows.getShopCartRowByIndex(index).getIdProduct();
-			String idShopCart = this.shopCartRows.getShopCartRowByIndex(index).getIdShoppingCart();
-			this.shopCartRows.getShopCartRowByIndex(index).remove(idProduct, idShopCart);
+			this.shopCartRows.getShopCartRowByIndex(index).remove();
 			this.shopCartRows.getTabShopCart().remove(index);
 		} else {
 			this.shopCartRows.getShopCartRowByIndex(index).setQuantity(quantity);

@@ -89,6 +89,6 @@ public abstract class ShopCartRow {
 
 	public abstract void save();
 
-	public abstract void remove(String idProduct, String idShopCart);
+	public abstract void remove();
 
 }

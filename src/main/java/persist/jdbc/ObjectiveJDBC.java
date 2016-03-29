@@ -72,7 +72,7 @@ public class ObjectiveJDBC extends Objective {
 	}
 
 	@Override
-	public void remove(String idObjective) {
+	public void remove() {
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -86,7 +86,7 @@ public class ObjectiveJDBC extends Objective {
 
 			pstmt = conn.prepareStatement("DELETE FROM Objective WHERE idObjective = ?");
 
-			pstmt.setString(1, idObjective);
+			pstmt.setString(1, this.getId());
 
 			pstmt.executeUpdate();
 

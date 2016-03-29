@@ -48,8 +48,7 @@ public class DiaryManager {
 
 	public void removeFromMyObjectives(int index) {
 		// TODO Auto-generated method stub
-		String idObjective = this.objectives.getObjectiveByIndex(index).getId();
-		this.objectives.getObjectiveByIndex(index).remove(idObjective);
+		this.objectives.getObjectiveByIndex(index).remove();
 		this.objectives.getTabObjectives().remove(index);
 	}
 

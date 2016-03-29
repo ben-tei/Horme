@@ -80,7 +80,7 @@ public class ActivityJDBC extends Activity {
 	}
 
 	@Override
-	public void remove(String idActivity) {
+	public void remove() {
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -96,13 +96,13 @@ public class ActivityJDBC extends Activity {
 
 			pstmt = conn.prepareStatement("DELETE FROM Objective WHERE idActivity = ?");
 
-			pstmt.setString(1, idActivity);
+			pstmt.setString(1, this.getId());
 
 			pstmt.executeUpdate();
 
 			pstmt2 = conn.prepareStatement("DELETE FROM Activity WHERE idActivity = ?");
 
-			pstmt2.setString(1, idActivity);
+			pstmt2.setString(1, this.getId());
 
 			pstmt2.executeUpdate();
 

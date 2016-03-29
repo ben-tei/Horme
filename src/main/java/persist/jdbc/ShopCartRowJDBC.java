@@ -124,7 +124,7 @@ public class ShopCartRowJDBC extends ShopCartRow {
 	}
 
 	@Override
-	public void remove(String idProduct, String idShopCart) {
+	public void remove() {
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -139,8 +139,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 			pstmt = conn
 					.prepareStatement("DELETE FROM ConstituteShoppingCart WHERE idShoppingCart = ? AND idProduct = ?");
 
-			pstmt.setString(1, idShopCart);
-			pstmt.setString(2, idProduct);
+			pstmt.setString(1, this.getIdShoppingCart());
+			pstmt.setString(2, this.getIdProduct());
 
 			pstmt.executeUpdate();
 

@@ -180,6 +180,6 @@ public abstract class Activity {
 		this.description = description;
 	}
 
-	public abstract void remove(String idActivity);
+	public abstract void remove();
 
 }
