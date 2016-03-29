@@ -31,9 +31,7 @@ public class CreateActivityView extends JPanel implements ActionListener {
 
 	private ActivityCategorySet activityCategorySet;
 
-
-	public CreateActivityView(ViewController vc)
-	{
+	public CreateActivityView(ViewController vc) {
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -73,8 +71,7 @@ public class CreateActivityView extends JPanel implements ActionListener {
 		this.add(nameField);
 
 		cbCategories.setBounds(175, 255, 200, 20);
-		for(int i = 0; i < this.activityCategorySet.size(); i++)
-		{
+		for (int i = 0; i < this.activityCategorySet.size(); i++) {
 			this.cbCategories.addItem(this.activityCategorySet.getCategoryByIndex(i).getName());
 		}
 		this.add(cbCategories);
@@ -103,7 +100,12 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	 */
 
 	public String getNameCategory() {
-		return (String) cbCategories.getSelectedItem();
+		if (cbCategories.getItemCount() != 0) {
+			return (String) cbCategories.getSelectedItem();
+		} else {
+			return "";
+		}
+
 	}
 
 	/**
@@ -121,33 +123,31 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	 * @return true, if successful
 	 */
 
-	public boolean fieldsAreEmpty()
-	{
-		return getNameField().getText().equals("") || getNameCategory().equals("") || getDescriptionField().getText().equals("");
+	public boolean fieldsAreEmpty() {
+		return getNameField().getText().equals("") || getNameCategory().equals("")
+				|| getDescriptionField().getText().equals("");
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if(cmd.equals("back"))
-		{
+		if (cmd.equals("back")) {
 			this.viewController.showActivitiesPanel();
-		}
-		else if(cmd.equals("confirm"))
-		{
-			if(fieldsAreEmpty())
-			{
-				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure", JOptionPane.WARNING_MESSAGE);
-			}
-			else
-			{
+		} else if (cmd.equals("confirm")) {
+			if (fieldsAreEmpty()) {
+				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",
+						JOptionPane.WARNING_MESSAGE);
+			} else {
 				try {
-					this.viewController.getActivityFacade().createActivity(getNameField().getText(), 
-							getDescriptionField().getText(), this.activityCategorySet.getCategoryByIndex(cbCategories.getSelectedIndex()), 
+					this.viewController.getActivityFacade().createActivity(getNameField().getText(),
+							getDescriptionField().getText(),
+							this.activityCategorySet.getCategoryByIndex(cbCategories.getSelectedIndex()),
 							this.viewController.getUserFacade().getUser());
 
-					JOptionPane.showMessageDialog(null, "Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success",
+							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showActivitiesPanel();
 				} catch (AlreadyExistsException e1) {
 					// TODO Auto-generated catch block

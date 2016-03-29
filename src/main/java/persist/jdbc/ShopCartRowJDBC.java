@@ -32,15 +32,15 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT * FROM ConstituteShoppingCart WHERE idShoppingCart = ? AND idProduct = ?");
+			pstmt = conn.prepareStatement(
+					"SELECT * FROM ConstituteShoppingCart WHERE idShoppingCart = ? AND idProduct = ?");
 
 			pstmt.setString(1, shopCart.getId());
 			pstmt.setString(2, p.getId());
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next())
-			{
+			if (!rset.next()) {
 				pstmt2 = conn.prepareStatement("INSERT INTO ConstituteShoppingCart VALUES (?, ?, ?, ?)");
 
 				pstmt2.setString(1, Integer.toString(quantity));
@@ -50,11 +50,10 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 				pstmt2.executeUpdate();
 
-			}
-			else
-			{
+			} else {
 
-				pstmt2 = conn.prepareStatement("UPDATE ConstituteShoppingCart SET quantity = quantity + ?, price = ? WHERE idShoppingCart = ? AND idProduct = ?");
+				pstmt2 = conn.prepareStatement(
+						"UPDATE ConstituteShoppingCart SET quantity = quantity + ?, price = ? WHERE idShoppingCart = ? AND idProduct = ?");
 
 				pstmt2.setString(1, Integer.toString(quantity));
 				pstmt2.setString(2, Integer.toString(p.getPrice()));
@@ -99,7 +98,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("UPDATE ConstituteShoppingCart SET quantity = ?, price = ? WHERE idShoppingCart = ? AND idProduct = ?");
+			pstmt = conn.prepareStatement(
+					"UPDATE ConstituteShoppingCart SET quantity = ?, price = ? WHERE idShoppingCart = ? AND idProduct = ?");
 
 			pstmt.setString(1, Integer.toString(this.getQuantity()));
 			pstmt.setString(2, Integer.toString(this.getPrice()));
@@ -136,7 +136,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("DELETE FROM ConstituteShoppingCart WHERE idShoppingCart = ? AND idProduct = ?");
+			pstmt = conn
+					.prepareStatement("DELETE FROM ConstituteShoppingCart WHERE idShoppingCart = ? AND idProduct = ?");
 
 			pstmt.setString(1, idShopCart);
 			pstmt.setString(2, idProduct);

@@ -1,5 +1,7 @@
 package bl.manager;
 
+import java.sql.Date;
+
 import bl.core.Activity;
 import bl.core.Objective;
 import bl.core.ObjectiveSet;
@@ -21,26 +23,26 @@ public class DiaryManager {
 	/**
 	 * Instantiates a new activity manager.
 	 */
-	public DiaryManager()
-	{
+	public DiaryManager() {
 		this.factory = new FactoryJDBC();
 	}
 
 	/**
 	 * Read activities.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the activity set
 	 */
-	public ObjectiveSet readObjectives(User user)
-	{
+	public ObjectiveSet readObjectives(User user) {
 		objectives = factory.readObjectives(user);
 		return objectives;
 	}
 
-	public Objective createObjective(String name, String description, String deadline, Activity activity) throws AlreadyExistsException {
+	public Objective createObjective(String name, String description, Date valideDate, Activity activity)
+			throws AlreadyExistsException {
 		// TODO Auto-generated method stub
-		objective = this.factory.createObjective(name, description, deadline, activity);
+		objective = this.factory.createObjective(name, description, valideDate, activity);
 		return objective;
 	}
 

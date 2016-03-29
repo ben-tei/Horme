@@ -51,10 +51,11 @@ public abstract class Objective {
 	// Start of user code (user defined methods for Objective)
 
 	// End of user code
-	
+
 	/**
 	 * Returns deadline.
-	 * @return deadline 
+	 * 
+	 * @return deadline
 	 */
 	public String getDeadline() {
 		return this.deadline;
@@ -69,9 +70,10 @@ public abstract class Objective {
 	}
 
 	/**
-	 * Sets a value to attribute deadline. 
+	 * Sets a value to attribute deadline.
 	 *
-	 * @param newDeadline the new deadline
+	 * @param newDeadline
+	 *            the new deadline
 	 */
 	public void setDeadline(String newDeadline) {
 		this.deadline = newDeadline;
@@ -79,16 +81,18 @@ public abstract class Objective {
 
 	/**
 	 * Returns description.
-	 * @return description 
+	 * 
+	 * @return description
 	 */
 	public String getDescription() {
 		return this.description;
 	}
 
 	/**
-	 * Sets a value to attribute description. 
+	 * Sets a value to attribute description.
 	 *
-	 * @param newDescription the new description
+	 * @param newDescription
+	 *            the new description
 	 */
 	public void setDescription(String newDescription) {
 		this.description = newDescription;
@@ -96,16 +100,18 @@ public abstract class Objective {
 
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -113,16 +119,18 @@ public abstract class Objective {
 
 	/**
 	 * Returns activity.
-	 * @return activity 
+	 * 
+	 * @return activity
 	 */
 	public Activity getActivity() {
 		return this.activity;
 	}
 
 	/**
-	 * Sets a value to attribute activity. 
+	 * Sets a value to attribute activity.
 	 *
-	 * @param newActivity the new activity
+	 * @param newActivity
+	 *            the new activity
 	 */
 	public void setActivity(Activity newActivity) {
 		this.activity = newActivity;

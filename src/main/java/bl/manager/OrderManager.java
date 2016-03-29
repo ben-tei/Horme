@@ -19,8 +19,7 @@ public class OrderManager {
 	/**
 	 * Instantiates a new order manager.
 	 */
-	public OrderManager()
-	{
+	public OrderManager() {
 		this.factory = new FactoryJDBC();
 	}
 
@@ -29,10 +28,8 @@ public class OrderManager {
 	 *
 	 * @return the order set
 	 */
-	public OrderSet readOrders(User user)
-	{
+	public OrderSet readOrders(User user) {
 		orders = factory.readOrders(user);
 		return orders;
 	}
 }
-

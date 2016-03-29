@@ -12,8 +12,7 @@ public class ProductSetJDBC extends ProductSet {
 	/**
 	 * Instantiates a new product set jdbc.
 	 */
-	public ProductSetJDBC () 
-	{
+	public ProductSetJDBC() {
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -30,8 +29,7 @@ public class ProductSetJDBC extends ProductSet {
 
 			rset = state.executeQuery("SELECT * FROM Product");
 
-
-			while(rset.next()){
+			while (rset.next()) {
 				product = new ProductJDBC();
 				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
@@ -56,10 +54,10 @@ public class ProductSetJDBC extends ProductSet {
 	/**
 	 * Instantiates a new product set jdbc.
 	 *
-	 * @param searchString the search string
+	 * @param searchString
+	 *            the search string
 	 */
-	public ProductSetJDBC (String searchString) 
-	{
+	public ProductSetJDBC(String searchString) {
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -76,12 +74,12 @@ public class ProductSetJDBC extends ProductSet {
 
 			pstmt = conn.prepareStatement("SELECT * FROM Product WHERE name LIKE ? OR reference LIKE ?");
 
-			pstmt.setString(1, "%"+ searchString + "%");
-			pstmt.setString(2, "%"+ searchString + "%");
+			pstmt.setString(1, "%" + searchString + "%");
+			pstmt.setString(2, "%" + searchString + "%");
 
 			rset = pstmt.executeQuery();
 
-			while(rset.next()){
+			while (rset.next()) {
 				product = new ProductJDBC();
 				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
@@ -104,4 +102,3 @@ public class ProductSetJDBC extends ProductSet {
 	}
 
 }
-

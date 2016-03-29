@@ -25,19 +25,18 @@ public class ActivityManager {
 	/**
 	 * Instantiates a new activity manager.
 	 */
-	public ActivityManager()
-	{
+	public ActivityManager() {
 		this.factory = new FactoryJDBC();
 	}
 
 	/**
 	 * Read activities.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the activity set
 	 */
-	public ActivitySet readActivities(User user)
-	{
+	public ActivitySet readActivities(User user) {
 		activities = factory.readActivities(user);
 		return activities;
 	}
@@ -45,12 +44,14 @@ public class ActivityManager {
 	/**
 	 * Create activity.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the activity set
-	 * @throws AlreadyExistsException 
+	 * @throws AlreadyExistsException
 	 */
 
-	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
+	public Activity createActivity(String name, String description, Category category, User user)
+			throws AlreadyExistsException {
 		// TODO Auto-generated method stub
 		activity = this.factory.createActivity(name, description, category, user);
 		return activity;
@@ -62,6 +63,5 @@ public class ActivityManager {
 		this.activities.getActivityByIndex(index).remove(idActivity);
 		this.activities.getTabActivities().remove(index);
 	}
-
 
 }

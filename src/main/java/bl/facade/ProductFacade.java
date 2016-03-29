@@ -15,8 +15,7 @@ public class ProductFacade {
 	/**
 	 * Instantiates a new product facade.
 	 */
-	public ProductFacade ()
-	{
+	public ProductFacade() {
 		this.productManager = new ProductManager();
 	}
 
@@ -25,29 +24,26 @@ public class ProductFacade {
 	 *
 	 * @return the product set
 	 */
-	public ProductSet readProducts()
-	{
+	public ProductSet readProducts() {
 		return this.productManager.readProducts();
 	}
 
 	/**
 	 * Search products.
 	 *
-	 * @param searchString the search string
+	 * @param searchString
+	 *            the search string
 	 * @return the product set
 	 */
-	public ProductSet searchProducts(String searchString)
-	{
+	public ProductSet searchProducts(String searchString) {
 		return this.productManager.searchProducts(searchString);
 	}
 
-	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException
-	{
+	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException {
 		this.productManager.updateQuantityInStock(index, quantity);
 	}
-	
-	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
-	{
+
+	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException {
 		this.productManager.updateQuantityInStock(idProduct, quantity, oldQuantity);
 	}
 

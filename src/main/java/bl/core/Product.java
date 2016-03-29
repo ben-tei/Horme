@@ -33,7 +33,7 @@ public abstract class Product {
 	/**
 	 * Description of the property traders.
 	 */
-	private Trader trader= null;
+	private Trader trader = null;
 
 	/**
 	 * Description of the property reference.
@@ -54,7 +54,7 @@ public abstract class Product {
 	 * Description of the property stockQuantity.
 	 */
 	private Integer stockQuantity = Integer.valueOf(0);
-	
+
 	/**
 	 * Description of the property stockQuantity.
 	 */
@@ -68,8 +68,7 @@ public abstract class Product {
 	// Start of user code (user defined attributes for Product)
 
 	// End of user code
-	
-	
+
 	/**
 	 * The constructor.
 	 */
@@ -84,7 +83,8 @@ public abstract class Product {
 	// End of user code
 	/**
 	 * Returns orders.
-	 * @return orders 
+	 * 
+	 * @return orders
 	 */
 	public HashSet<Order> getOrders() {
 		return this.orders;
@@ -92,7 +92,8 @@ public abstract class Product {
 
 	/**
 	 * Returns shoppingCarts.
-	 * @return shoppingCarts 
+	 * 
+	 * @return shoppingCarts
 	 */
 	public HashSet<ShoppingCart> getShoppingCarts() {
 		return this.shoppingCarts;
@@ -100,7 +101,8 @@ public abstract class Product {
 
 	/**
 	 * Returns traders.
-	 * @return traders 
+	 * 
+	 * @return traders
 	 */
 	public Trader getTrader() {
 		return this.trader;
@@ -108,16 +110,18 @@ public abstract class Product {
 
 	/**
 	 * Returns reference.
-	 * @return reference 
+	 * 
+	 * @return reference
 	 */
 	public String getReference() {
 		return this.reference;
 	}
 
 	/**
-	 * Sets a value to attribute reference. 
+	 * Sets a value to attribute reference.
 	 *
-	 * @param newReference the new reference
+	 * @param newReference
+	 *            the new reference
 	 */
 	public void setReference(String newReference) {
 		this.reference = newReference;
@@ -125,7 +129,8 @@ public abstract class Product {
 
 	/**
 	 * Returns estimates.
-	 * @return estimates 
+	 * 
+	 * @return estimates
 	 */
 	public HashSet<Estimate> getEstimates() {
 		return this.estimates;
@@ -133,16 +138,18 @@ public abstract class Product {
 
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -150,16 +157,18 @@ public abstract class Product {
 
 	/**
 	 * Returns stockQuantity.
-	 * @return stockQuantity 
+	 * 
+	 * @return stockQuantity
 	 */
 	public Integer getStockQuantity() {
 		return this.stockQuantity;
 	}
 
 	/**
-	 * Sets a value to attribute stockQuantity. 
+	 * Sets a value to attribute stockQuantity.
 	 *
-	 * @param newStockQuantity the new stock quantity
+	 * @param newStockQuantity
+	 *            the new stock quantity
 	 */
 	public void setStockQuantity(Integer newStockQuantity) {
 		this.stockQuantity = newStockQuantity;
@@ -167,33 +176,37 @@ public abstract class Product {
 
 	/**
 	 * Returns category.
-	 * @return category 
+	 * 
+	 * @return category
 	 */
 	public Category getCategory() {
 		return this.category;
 	}
 
 	/**
-	 * Sets a value to attribute category. 
+	 * Sets a value to attribute category.
 	 *
-	 * @param newCategory the new category
+	 * @param newCategory
+	 *            the new category
 	 */
 	public void setCategory(Category newCategory) {
 		this.category = newCategory;
 	}
-	
+
 	/**
 	 * Returns price.
-	 * @return price 
+	 * 
+	 * @return price
 	 */
 	public Integer getPrice() {
 		return this.price;
 	}
 
 	/**
-	 * Sets a value to attribute price. 
+	 * Sets a value to attribute price.
 	 *
-	 * @param newPrice the new price
+	 * @param newPrice
+	 *            the new price
 	 */
 	public void setPrice(Integer newPrice) {
 		this.price = newPrice;
@@ -206,7 +219,7 @@ public abstract class Product {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	public abstract void save();
-	
+
 }

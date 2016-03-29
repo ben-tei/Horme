@@ -11,11 +11,11 @@ public class HashText {
 	/**
 	 * Sha1.
 	 *
-	 * @param input the input
+	 * @param input
+	 *            the input
 	 * @return the string
 	 */
-	public static String sha1(String input)
-	{
+	public static String sha1(String input) {
 		MessageDigest mDigest = null;
 		try {
 			mDigest = MessageDigest.getInstance("SHA1");
@@ -25,8 +25,7 @@ public class HashText {
 		}
 		byte[] result = mDigest.digest(input.getBytes());
 		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < result.length; i++)
-		{
+		for (int i = 0; i < result.length; i++) {
 			sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
 		}
 

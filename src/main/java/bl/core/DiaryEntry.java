@@ -69,16 +69,18 @@ public abstract class DiaryEntry {
 	// End of user code
 	/**
 	 * Returns position.
-	 * @return position 
+	 * 
+	 * @return position
 	 */
 	public String getPosition() {
 		return this.position;
 	}
 
 	/**
-	 * Sets a value to attribute position. 
+	 * Sets a value to attribute position.
 	 *
-	 * @param newPosition the new position
+	 * @param newPosition
+	 *            the new position
 	 */
 	public void setPosition(String newPosition) {
 		this.position = newPosition;
@@ -86,16 +88,18 @@ public abstract class DiaryEntry {
 
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -103,16 +107,18 @@ public abstract class DiaryEntry {
 
 	/**
 	 * Returns date.
-	 * @return date 
+	 * 
+	 * @return date
 	 */
 	public String getDate() {
 		return this.date;
 	}
 
 	/**
-	 * Sets a value to attribute date. 
+	 * Sets a value to attribute date.
 	 *
-	 * @param newDate the new date
+	 * @param newDate
+	 *            the new date
 	 */
 	public void setDate(String newDate) {
 		this.date = newDate;
@@ -120,16 +126,18 @@ public abstract class DiaryEntry {
 
 	/**
 	 * Returns user.
-	 * @return user 
+	 * 
+	 * @return user
 	 */
 	public User getUser() {
 		return this.user;
 	}
 
 	/**
-	 * Sets a value to attribute user. 
+	 * Sets a value to attribute user.
 	 *
-	 * @param newUser the new user
+	 * @param newUser
+	 *            the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -137,16 +145,18 @@ public abstract class DiaryEntry {
 
 	/**
 	 * Returns activity.
-	 * @return activity 
+	 * 
+	 * @return activity
 	 */
 	public Activity getActivity() {
 		return this.activity;
 	}
 
 	/**
-	 * Sets a value to attribute activity. 
+	 * Sets a value to attribute activity.
 	 *
-	 * @param newActivity the new activity
+	 * @param newActivity
+	 *            the new activity
 	 */
 	public void setActivity(Activity newActivity) {
 		this.activity = newActivity;
@@ -154,16 +164,18 @@ public abstract class DiaryEntry {
 
 	/**
 	 * Returns content.
-	 * @return content 
+	 * 
+	 * @return content
 	 */
 	public String getContent() {
 		return this.content;
 	}
 
 	/**
-	 * Sets a value to attribute content. 
+	 * Sets a value to attribute content.
 	 *
-	 * @param newContent the new content
+	 * @param newContent
+	 *            the new content
 	 */
 	public void setContent(String newContent) {
 		this.content = newContent;
@@ -171,7 +183,8 @@ public abstract class DiaryEntry {
 
 	/**
 	 * Returns comments.
-	 * @return comments 
+	 * 
+	 * @return comments
 	 */
 	public HashSet<Comment> getComments() {
 		return this.comments;

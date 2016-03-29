@@ -54,16 +54,18 @@ public abstract class Notification {
 	// End of user code
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -71,7 +73,8 @@ public abstract class Notification {
 
 	/**
 	 * Returns persons.
-	 * @return persons 
+	 * 
+	 * @return persons
 	 */
 	public HashSet<Person> getPersons() {
 		return this.persons;
@@ -79,16 +82,18 @@ public abstract class Notification {
 
 	/**
 	 * Returns content.
-	 * @return content 
+	 * 
+	 * @return content
 	 */
 	public String getContent() {
 		return this.content;
 	}
 
 	/**
-	 * Sets a value to attribute content. 
+	 * Sets a value to attribute content.
 	 *
-	 * @param newContent the new content
+	 * @param newContent
+	 *            the new content
 	 */
 	public void setContent(String newContent) {
 		this.content = newContent;
@@ -96,16 +101,18 @@ public abstract class Notification {
 
 	/**
 	 * Returns date.
-	 * @return date 
+	 * 
+	 * @return date
 	 */
 	public String getDate() {
 		return this.date;
 	}
 
 	/**
-	 * Sets a value to attribute date. 
+	 * Sets a value to attribute date.
 	 *
-	 * @param newDate the new date
+	 * @param newDate
+	 *            the new date
 	 */
 	public void setDate(String newDate) {
 		this.date = newDate;

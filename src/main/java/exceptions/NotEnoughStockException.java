@@ -3,8 +3,7 @@ package exceptions;
 /**
  * The Class AlreadyExistsException.
  */
-public class NotEnoughStockException extends Exception
-{ 
+public class NotEnoughStockException extends Exception {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -12,11 +11,11 @@ public class NotEnoughStockException extends Exception
 	/**
 	 * Instantiates a new already exists exception.
 	 *
-	 * @param message the message
+	 * @param message
+	 *            the message
 	 */
-	public NotEnoughStockException(String message)
-	{
+	public NotEnoughStockException(String message) {
 		super(message);
-	} 
+	}
 
 }

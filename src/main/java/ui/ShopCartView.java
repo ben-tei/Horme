@@ -34,20 +34,19 @@ public class ShopCartView extends JPanel implements ActionListener {
 
 	private ProductSet productSet;
 
-
 	/**
 	 * Instantiates a new shop cart view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public ShopCartView (ViewController vc) {
+	public ShopCartView(ViewController vc) {
 
 		this.viewController = vc;
 
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
-
 
 		JLabel name = new JLabel("Name");
 		name.setBounds(140, 175, 46, 14);
@@ -61,13 +60,13 @@ public class ShopCartView extends JPanel implements ActionListener {
 		price.setBounds(519, 175, 46, 14);
 		this.add(price);
 
-
 		int placement = 231;
 
-		this.shopCartRowSet = this.viewController.getShopCartFacade().readShopCart(this.viewController.getUserFacade().getUser());
+		this.shopCartRowSet = this.viewController.getShopCartFacade()
+				.readShopCart(this.viewController.getUserFacade().getUser());
 		this.productSet = this.viewController.getProductFacade().readProducts();
 
-		for(int i = 0; i <= this.shopCartRowSet.size() - 1; i++) {
+		for (int i = 0; i <= this.shopCartRowSet.size() - 1; i++) {
 
 			JLabel Pname = new JLabel(this.shopCartRowSet.getShopCartRowByIndex(i).getName());
 			Pname.setBounds(140, placement, 120, 14);
@@ -75,8 +74,9 @@ public class ShopCartView extends JPanel implements ActionListener {
 
 			JComboBox<Integer> Pquantity = new JComboBox<Integer>();
 
-			for(int j = 0; j < this.productSet.getProductById(this.shopCartRowSet.getShopCartRowByIndex(i).getIdProduct()).getStockQuantity() + this.shopCartRowSet.getShopCartRowByIndex(i).getQuantity() + 1; j++)
-			{
+			for (int j = 0; j < this.productSet
+					.getProductById(this.shopCartRowSet.getShopCartRowByIndex(i).getIdProduct()).getStockQuantity()
+					+ this.shopCartRowSet.getShopCartRowByIndex(i).getQuantity() + 1; j++) {
 				Pquantity.addItem(j);
 			}
 			Pquantity.setSelectedIndex(this.shopCartRowSet.getShopCartRowByIndex(i).getQuantity());
@@ -97,8 +97,7 @@ public class ShopCartView extends JPanel implements ActionListener {
 			placement = placement + 50;
 		}
 
-		if(this.shopCartRowSet.size() > 0)
-		{
+		if (this.shopCartRowSet.size() > 0) {
 
 			btnValidate = new JButton("Validate the cart");
 			btnValidate.setBounds(135, placement + 50, 140, 23);
@@ -109,27 +108,34 @@ public class ShopCartView extends JPanel implements ActionListener {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
 
-		if(cmd.equals("validate")) {
+		if (cmd.equals("validate")) {
 			this.viewController.getShopCartFacade().placeOrder();
-			JOptionPane.showMessageDialog(null, "Your order has been successfully added", "Order Confirmation", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Your order has been successfully added", "Order Confirmation",
+					JOptionPane.INFORMATION_MESSAGE);
 			this.viewController.showOrdersPanel();
-		}
-		else if(cmd.equals("update"))
-		{
-			int index = ((MyJButton)e.getSource()).getIndex();
-			int oldQuantity = viewController.getShopCartFacade().getQuantity(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct());
+		} else if (cmd.equals("update")) {
+			int index = ((MyJButton) e.getSource()).getIndex();
+			int oldQuantity = viewController.getShopCartFacade()
+					.getQuantity(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct());
 			try {
-				viewController.getProductFacade().updateQuantityInStock(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct(), (int) comboBoxList.get(index).getSelectedItem(), oldQuantity);
-				viewController.getShopCartFacade().removeFromShoppingCart(index, (int) comboBoxList.get(index).getSelectedItem());
-				JOptionPane.showMessageDialog(null, "The product has been updated !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				viewController.getProductFacade().updateQuantityInStock(
+						this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct(),
+						(int) comboBoxList.get(index).getSelectedItem(), oldQuantity);
+				viewController.getShopCartFacade().removeFromShoppingCart(index,
+						(int) comboBoxList.get(index).getSelectedItem());
+				JOptionPane.showMessageDialog(null, "The product has been updated !", "Success",
+						JOptionPane.INFORMATION_MESSAGE);
 				viewController.showShopCartPanel();
 			} catch (NotEnoughStockException e1) {
 				// TODO Auto-generated catch block

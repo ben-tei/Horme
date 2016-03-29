@@ -8,7 +8,8 @@ public final class JDBCConstants {
 	/**
 	 * Instantiates a new JDBC constants.
 	 */
-	private JDBCConstants() { }
+	private JDBCConstants() {
+	}
 
 	/** The Constant DRIVER. */
 	public static final String DRIVER = "com.mysql.jdbc.Driver";

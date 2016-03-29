@@ -22,22 +22,24 @@ public class UserManager {
 	/**
 	 * Instantiates a new user manager.
 	 */
-	public UserManager()
-	{
+	public UserManager() {
 		this.factory = new FactoryJDBC();
 	}
 
 	/**
 	 * Find user.
 	 *
-	 * @param login the login
-	 * @param password the password
+	 * @param login
+	 *            the login
+	 * @param password
+	 *            the password
 	 * @return the user
-	 * @throws WrongLoginException the wrong login exception
-	 * @throws WrongPasswordException the wrong password exception
+	 * @throws WrongLoginException
+	 *             the wrong login exception
+	 * @throws WrongPasswordException
+	 *             the wrong password exception
 	 */
-	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException
-	{
+	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException {
 		user = this.factory.findUser(login);
 		user.isPasswordOK(HashText.sha1(password));
 		return user;
@@ -46,48 +48,64 @@ public class UserManager {
 	/**
 	 * Creates the user.
 	 *
-	 * @param name the name
-	 * @param firstname the firstname
-	 * @param street the street
-	 * @param zipCode the zip code
-	 * @param city the city
-	 * @param phone the phone
-	 * @param email the email
-	 * @param login the login
-	 * @param password the password
+	 * @param name
+	 *            the name
+	 * @param firstname
+	 *            the firstname
+	 * @param street
+	 *            the street
+	 * @param zipCode
+	 *            the zip code
+	 * @param city
+	 *            the city
+	 * @param phone
+	 *            the phone
+	 * @param email
+	 *            the email
+	 * @param login
+	 *            the login
+	 * @param password
+	 *            the password
 	 * @return the user
-	 * @throws AlreadyExistsException the already exists exception
+	 * @throws AlreadyExistsException
+	 *             the already exists exception
 	 */
 	public User createUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) throws AlreadyExistsException
-	{
+			String email, String login, String password) throws AlreadyExistsException {
 		name = name.toUpperCase();
 		firstname = firstname.substring(0, 1).toUpperCase() + firstname.substring(1);
 		city = city.substring(0, 1).toUpperCase() + city.substring(1);
 
-		user = this.factory.createUser(name, firstname, street, zipCode, city, phone, email, login, HashText.sha1(password));
+		user = this.factory.createUser(name, firstname, street, zipCode, city, phone, email, login,
+				HashText.sha1(password));
 		return user;
 	}
 
 	/**
 	 * Update user.
 	 *
-	 * @param name the name
-	 * @param firstname the firstname
-	 * @param street the street
-	 * @param zipCode the zip code
-	 * @param city the city
-	 * @param phone the phone
-	 * @param email the email
+	 * @param name
+	 *            the name
+	 * @param firstname
+	 *            the firstname
+	 * @param street
+	 *            the street
+	 * @param zipCode
+	 *            the zip code
+	 * @param city
+	 *            the city
+	 * @param phone
+	 *            the phone
+	 * @param email
+	 *            the email
 	 * @return the user
 	 */
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email)
-	{
+			String email) {
 		name = name.toUpperCase();
 		firstname = firstname.substring(0, 1).toUpperCase() + firstname.substring(1);
 		city = city.substring(0, 1).toUpperCase() + city.substring(1);
-		
+
 		this.user.setName(name);
 		this.user.setFirstName(firstname);
 		this.user.setStreet(street);
@@ -104,8 +122,7 @@ public class UserManager {
 	 *
 	 * @return the user
 	 */
-	public User getUser()
-	{
+	public User getUser() {
 		return this.user;
 	}
 

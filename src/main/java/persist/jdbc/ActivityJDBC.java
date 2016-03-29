@@ -10,24 +10,24 @@ import bl.core.Category;
 import bl.core.User;
 import exceptions.AlreadyExistsException;
 
-
 public class ActivityJDBC extends Activity {
 
-	public ActivityJDBC()
-	{
+	public ActivityJDBC() {
 		super();
 	}
 
 	/**
 	 * Instantiates a new activity jdbc.
 	 *
-	 * @param name the name
-	 * @param category the category
-	 * @param descritption the description
-	 * @throws AlreadyExistsException 
+	 * @param name
+	 *            the name
+	 * @param category
+	 *            the category
+	 * @param descritption
+	 *            the description
+	 * @throws AlreadyExistsException
 	 */
-	public ActivityJDBC(String name, String description, Category category, User user) throws AlreadyExistsException
-	{
+	public ActivityJDBC(String name, String description, Category category, User user) throws AlreadyExistsException {
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -48,10 +48,9 @@ public class ActivityJDBC extends Activity {
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next())
-			{
-				pstmt2 = conn.prepareStatement("INSERT INTO Activity (name, description, idCategory, idUser) "
-						+ "VALUES (?, ?, ?, ?)");
+			if (!rset.next()) {
+				pstmt2 = conn.prepareStatement(
+						"INSERT INTO Activity (name, description, idCategory, idUser) " + "VALUES (?, ?, ?, ?)");
 
 				pstmt2.setString(1, name);
 				pstmt2.setString(2, description);
@@ -60,9 +59,7 @@ public class ActivityJDBC extends Activity {
 
 				pstmt2.executeUpdate();
 
-			}
-			else
-			{
+			} else {
 				throw new AlreadyExistsException("Activity already exists !");
 			}
 		}

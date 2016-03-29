@@ -56,14 +56,16 @@ public class Menu implements ActionListener {
 	/**
 	 * Instantiates a new menu.
 	 *
-	 * @param jp the jp
-	 * @param vc the vc
+	 * @param jp
+	 *            the jp
+	 * @param vc
+	 *            the vc
 	 */
-	public Menu(JPanel jp, ViewController vc)
-	{	
+	public Menu(JPanel jp, ViewController vc) {
 		this.viewController = vc;
 
-		lblUser = new JLabel("Connected as : " + this.viewController.getUserFacade().getUser().getFirstName() + " " + this.viewController.getUserFacade().getUser().getName());
+		lblUser = new JLabel("Connected as : " + this.viewController.getUserFacade().getUser().getFirstName() + " "
+				+ this.viewController.getUserFacade().getUser().getName());
 		lblUser.setBounds(15, 31, 309, 14);
 		jp.add(lblUser);
 
@@ -131,48 +133,50 @@ public class Menu implements ActionListener {
 		jp.add(lblHorme);
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
 
-		if(cmd.equals("notification")) {
+		if (cmd.equals("notification")) {
 			this.viewController.showNotificationPanel();
 		}
 
-		else if(cmd.equals("profil")) {
+		else if (cmd.equals("profil")) {
 			this.viewController.showProfilePanel();
 		}
 
-		else if(cmd.equals("products"))
-		{
+		else if (cmd.equals("products")) {
 			this.viewController.showProductsPanel();
 		}
 
-		else if(cmd.equals("activities")) {
+		else if (cmd.equals("activities")) {
 			this.viewController.showActivitiesPanel();
 		}
 
-		else if(cmd.equals("diary")) {
+		else if (cmd.equals("diary")) {
 			this.viewController.showDiaryPanel();
 		}
 
-		else if(cmd.equals("wishlist")) {
+		else if (cmd.equals("wishlist")) {
 			this.viewController.showWishlistPanel();
 		}
 
-		else if(cmd.equals("orders")) {
+		else if (cmd.equals("orders")) {
 			this.viewController.showOrdersPanel();
 		}
 
-		else if(cmd.equals("cart")) {
+		else if (cmd.equals("cart")) {
 			this.viewController.showShopCartPanel();
 		}
 
-		else if(cmd.equals("search")) {
+		else if (cmd.equals("search")) {
 			this.viewController.showSearchPanel(this.search.getText());
 		}
 	}

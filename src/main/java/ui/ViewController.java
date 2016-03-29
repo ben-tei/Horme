@@ -37,8 +37,7 @@ public class ViewController {
 	/**
 	 * Instantiates a new view controller.
 	 */
-	public ViewController()
-	{
+	public ViewController() {
 		this.myWindow = new Window(600, 920);
 		this.userFacade = new UserFacade();
 		this.shopCartFacade = new ShopCartFacade();
@@ -55,8 +54,7 @@ public class ViewController {
 	 *
 	 * @return the user facade
 	 */
-	public UserFacade getUserFacade()
-	{
+	public UserFacade getUserFacade() {
 		return this.userFacade;
 	}
 
@@ -65,8 +63,7 @@ public class ViewController {
 	 *
 	 * @return the activity facade
 	 */
-	public ActivityFacade getActivityFacade()
-	{
+	public ActivityFacade getActivityFacade() {
 		return this.activityFacade;
 	}
 
@@ -78,8 +75,7 @@ public class ViewController {
 		return categoryFacade;
 	}
 
-	public ShopCartFacade getShopCartFacade()
-	{
+	public ShopCartFacade getShopCartFacade() {
 		return this.shopCartFacade;
 	}
 
@@ -94,10 +90,9 @@ public class ViewController {
 	/**
 	 * Show index panel.
 	 */
-	public void showIndexPanel()
-	{
+	public void showIndexPanel() {
 		this.myWindow.setTitle("Horme - Welcome");
-		this.myJPanel = new IndexView(this);      
+		this.myJPanel = new IndexView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -107,10 +102,9 @@ public class ViewController {
 	/**
 	 * Show notification panel.
 	 */
-	public void showNotificationPanel()
-	{
+	public void showNotificationPanel() {
 		this.myWindow.setTitle("Horme - Notifications");
-		this.myJPanel = new NotificationView(this);      
+		this.myJPanel = new NotificationView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -120,10 +114,9 @@ public class ViewController {
 	/**
 	 * Show profile panel.
 	 */
-	public void showProfilePanel()
-	{
+	public void showProfilePanel() {
 		this.myWindow.setTitle("Horme - Profile");
-		this.myJPanel = new ProfileView(this);      
+		this.myJPanel = new ProfileView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -133,30 +126,27 @@ public class ViewController {
 	/**
 	 * Show activities panel.
 	 */
-	public void showActivitiesPanel()
-	{
+	public void showActivitiesPanel() {
 		this.myWindow.setTitle("Horme - Activities");
-		this.myJPanel = new ActivitiesView(this);      
+		this.myJPanel = new ActivitiesView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
 
 	}
 
-	public void showCreateActivityPanel()
-	{
+	public void showCreateActivityPanel() {
 		this.myWindow.setTitle("Horme - Create Activity");
-		this.myJPanel = new CreateActivityView(this);      
+		this.myJPanel = new CreateActivityView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
 
 	}
 
-	public void showCreateObjectivePanel()
-	{
+	public void showCreateObjectivePanel() {
 		this.myWindow.setTitle("Horme - Create Objective");
-		this.myJPanel = new CreateObjectiveView(this);      
+		this.myJPanel = new CreateObjectiveView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -166,10 +156,9 @@ public class ViewController {
 	/**
 	 * Show activity panel.
 	 */
-	public void showActivityPanel()
-	{
+	public void showActivityPanel() {
 		this.myWindow.setTitle("Horme - New Activity");
-		//this.myJDialog = new ActivityView(this);      
+		// this.myJDialog = new ActivityView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -179,10 +168,9 @@ public class ViewController {
 	/**
 	 * Show diary panel.
 	 */
-	public void showDiaryPanel()
-	{
+	public void showDiaryPanel() {
 		this.myWindow.setTitle("Horme - Diary");
-		this.myJPanel = new DiaryView(this);      
+		this.myJPanel = new DiaryView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -192,10 +180,9 @@ public class ViewController {
 	/**
 	 * Show wishlist panel.
 	 */
-	public void showWishlistPanel()
-	{
+	public void showWishlistPanel() {
 		this.myWindow.setTitle("Horme - Wishlist");
-		this.myJPanel = new WishlistView(this);      
+		this.myJPanel = new WishlistView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -205,10 +192,9 @@ public class ViewController {
 	/**
 	 * Show orders panel.
 	 */
-	public void showOrdersPanel()
-	{
+	public void showOrdersPanel() {
 		this.myWindow.setTitle("Horme - Orders");
-		this.myJPanel = new OrdersView(this);      
+		this.myJPanel = new OrdersView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -218,10 +204,9 @@ public class ViewController {
 	/**
 	 * Show shop cart panel.
 	 */
-	public void showShopCartPanel()
-	{
+	public void showShopCartPanel() {
 		this.myWindow.setTitle("Horme - Shopping Cart");
-		this.myJPanel = new ShopCartView(this);      
+		this.myJPanel = new ShopCartView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -231,10 +216,9 @@ public class ViewController {
 	/**
 	 * Show login panel.
 	 */
-	public void showLoginPanel()
-	{
+	public void showLoginPanel() {
 		this.myWindow.setTitle("Horme - Login");
-		this.myJPanel = new LoginView(this);        
+		this.myJPanel = new LoginView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -244,10 +228,9 @@ public class ViewController {
 	/**
 	 * Show sign up panel.
 	 */
-	public void showSignUpPanel()
-	{
+	public void showSignUpPanel() {
 		this.myWindow.setTitle("Horme - Sign Up");
-		this.myJPanel = new SignUpView(this);        
+		this.myJPanel = new SignUpView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -257,10 +240,9 @@ public class ViewController {
 	/**
 	 * Show products panel.
 	 */
-	public void showProductsPanel()
-	{
+	public void showProductsPanel() {
 		this.myWindow.setTitle("Horme - Products");
-		this.myJPanel = new ProductView(this);        
+		this.myJPanel = new ProductView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -269,12 +251,12 @@ public class ViewController {
 	/**
 	 * Show search panel.
 	 *
-	 * @param searchString the search string
+	 * @param searchString
+	 *            the search string
 	 */
-	public void showSearchPanel(String searchString)
-	{
+	public void showSearchPanel(String searchString) {
 		this.myWindow.setTitle("Horme - Search");
-		this.myJPanel = new SearchView(this, searchString);        
+		this.myJPanel = new SearchView(this, searchString);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();

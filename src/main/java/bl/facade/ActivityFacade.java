@@ -18,32 +18,35 @@ public class ActivityFacade {
 	/**
 	 * Instantiates a new activity facade.
 	 */
-	public ActivityFacade ()
-	{
+	public ActivityFacade() {
 		this.activityManager = new ActivityManager();
 	}
 
 	/**
 	 * Read activities.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the activity set
 	 */
-	public ActivitySet readActivities(User user)
-	{
+	public ActivitySet readActivities(User user) {
 		return this.activityManager.readActivities(user);
 	}
 
 	/**
 	 * Create activity.
 	 *
-	 * @param name the name
-	 * @param category the category
-	 * @param description the description
-	 * @throws AlreadyExistsException 
+	 * @param name
+	 *            the name
+	 * @param category
+	 *            the category
+	 * @param description
+	 *            the description
+	 * @throws AlreadyExistsException
 	 */
 
-	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
+	public Activity createActivity(String name, String description, Category category, User user)
+			throws AlreadyExistsException {
 		// TODO Auto-generated method stub
 		return this.activityManager.createActivity(name, description, category, user);
 	}

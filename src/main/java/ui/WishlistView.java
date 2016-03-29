@@ -19,9 +19,10 @@ public class WishlistView extends JPanel implements ActionListener {
 	/**
 	 * Instantiates a new wishlist view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public WishlistView (ViewController vc) {
+	public WishlistView(ViewController vc) {
 
 		this.viewController = vc;
 
@@ -31,8 +32,11 @@ public class WishlistView extends JPanel implements ActionListener {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

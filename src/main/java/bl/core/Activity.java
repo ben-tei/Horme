@@ -71,7 +71,8 @@ public abstract class Activity {
 
 	/**
 	 * Returns user.
-	 * @return user 
+	 * 
+	 * @return user
 	 */
 	public User getUser() {
 		return this.user;
@@ -86,9 +87,10 @@ public abstract class Activity {
 	}
 
 	/**
-	 * Sets a value to attribute user. 
+	 * Sets a value to attribute user.
 	 *
-	 * @param newUser the new user
+	 * @param newUser
+	 *            the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -96,7 +98,8 @@ public abstract class Activity {
 
 	/**
 	 * Returns ressources.
-	 * @return ressources 
+	 * 
+	 * @return ressources
 	 */
 	public HashSet<Ressource> getRessources() {
 		return this.ressources;
@@ -104,16 +107,18 @@ public abstract class Activity {
 
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -121,16 +126,18 @@ public abstract class Activity {
 
 	/**
 	 * Returns category.
-	 * @return category 
+	 * 
+	 * @return category
 	 */
 	public Category getCategory() {
 		return this.category;
 	}
 
 	/**
-	 * Sets a value to attribute category. 
+	 * Sets a value to attribute category.
 	 *
-	 * @param newCategory the new category
+	 * @param newCategory
+	 *            the new category
 	 */
 	public void setCategory(Category newCategory) {
 		this.category = newCategory;
@@ -138,7 +145,8 @@ public abstract class Activity {
 
 	/**
 	 * Returns entries.
-	 * @return entries 
+	 * 
+	 * @return entries
 	 */
 	public HashSet<DiaryEntry> getEntries() {
 		return this.entries;
@@ -146,7 +154,8 @@ public abstract class Activity {
 
 	/**
 	 * Returns objectives.
-	 * @return objectives 
+	 * 
+	 * @return objectives
 	 */
 	public HashSet<Objective> getObjectives() {
 		return this.objectives;
@@ -164,12 +173,13 @@ public abstract class Activity {
 	/**
 	 * Sets the description.
 	 *
-	 * @param description the new description
+	 * @param description
+	 *            the new description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public abstract void remove(String idActivity);
 
 }

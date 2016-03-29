@@ -26,7 +26,8 @@ public class DiaryView extends JPanel implements ActionListener {
 	/**
 	 * Instantiates a new diary view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
 	public DiaryView(ViewController vc) {
 
@@ -35,7 +36,7 @@ public class DiaryView extends JPanel implements ActionListener {
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
-		
+
 		JLabel name = new JLabel("Name");
 		name.setBounds(65, 175, 200, 14);
 		this.add(name);
@@ -47,7 +48,7 @@ public class DiaryView extends JPanel implements ActionListener {
 		JLabel deadline = new JLabel("DeadLine");
 		deadline.setBounds(445, 175, 250, 14);
 		this.add(deadline);
-		
+
 		JLabel activity = new JLabel("Activity");
 		activity.setBounds(550, 175, 250, 14);
 		this.add(activity);
@@ -58,25 +59,29 @@ public class DiaryView extends JPanel implements ActionListener {
 		this.btnAddObjective.setActionCommand("addObjective");
 		this.btnAddObjective.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnAddObjective);
-		
+
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
 
-		for(int i = 0; i <= this.viewController.getDiaryFacade().readObjectives(user).size() - 1; i++) {
+		for (int i = 0; i <= this.viewController.getDiaryFacade().readObjectives(user).size() - 1; i++) {
 
-			JLabel Oname = new JLabel(this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getName());
+			JLabel Oname = new JLabel(
+					this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getName());
 			Oname.setBounds(65, placement, 200, 14);
 			this.add(Oname);
 
-			JLabel Odescription = new JLabel(this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getDescription());
+			JLabel Odescription = new JLabel(
+					this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getDescription());
 			Odescription.setBounds(260, placement, 200, 14);
 			this.add(Odescription);
-			
-			JLabel Odeadline = new JLabel(this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getDeadline());
+
+			JLabel Odeadline = new JLabel(
+					this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getDeadline());
 			Odeadline.setBounds(445, placement, 200, 14);
 			this.add(Odeadline);
 
-			JLabel Oactivity = new JLabel(this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getActivity().getName());
+			JLabel Oactivity = new JLabel(this.viewController.getDiaryFacade().readObjectives(user)
+					.getObjectiveByIndex(i).getActivity().getName());
 			Oactivity.setBounds(550, placement, 200, 14);
 			this.add(Oactivity);
 
@@ -91,20 +96,20 @@ public class DiaryView extends JPanel implements ActionListener {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if(cmd.equals("addObjective"))
-		{
+		if (cmd.equals("addObjective")) {
 			this.viewController.showCreateObjectivePanel();
-		}
-		else if(cmd.equals("delete"))
-		{
-			int index = ((MyJButton)e.getSource()).getIndex();
+		} else if (cmd.equals("delete")) {
+			int index = ((MyJButton) e.getSource()).getIndex();
 			viewController.getDiaryFacade().removeFromMyObjectives(index);
 			viewController.showDiaryPanel();
 		}

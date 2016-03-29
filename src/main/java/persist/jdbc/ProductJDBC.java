@@ -9,8 +9,7 @@ import bl.core.Product;
 public class ProductJDBC extends Product {
 
 	@Override
-	public void save()
-	{
+	public void save() {
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -21,7 +20,8 @@ public class ProductJDBC extends Product {
 
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("UPDATE Product SET stockQuantity = ?, price = ?, reference = ?, name = ? WHERE idProduct = ?");
+			pstmt = conn.prepareStatement(
+					"UPDATE Product SET stockQuantity = ?, price = ?, reference = ?, name = ? WHERE idProduct = ?");
 
 			pstmt.setString(1, Integer.toString(this.getStockQuantity()));
 			pstmt.setString(2, Integer.toString(this.getPrice()));

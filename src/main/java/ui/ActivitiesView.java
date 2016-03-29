@@ -23,12 +23,14 @@ public class ActivitiesView extends JPanel implements ActionListener {
 
 	/** The btn add activity. */
 	private JButton btnAddActivity;
+
 	/**
 	 * Instantiates a new activities view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public ActivitiesView (ViewController vc) {
+	public ActivitiesView(ViewController vc) {
 
 		this.viewController = vc;
 
@@ -58,17 +60,20 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
 
-		for(int i = 0; i <= this.viewController.getActivityFacade().readActivities(user).size() - 1; i++) {
+		for (int i = 0; i <= this.viewController.getActivityFacade().readActivities(user).size() - 1; i++) {
 
-			JLabel Aname = new JLabel(this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getName());
+			JLabel Aname = new JLabel(
+					this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getName());
 			Aname.setBounds(140, placement, 200, 14);
 			this.add(Aname);
 
-			JLabel Acategory = new JLabel(this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getCategory().getName());
+			JLabel Acategory = new JLabel(this.viewController.getActivityFacade().readActivities(user)
+					.getActivityByIndex(i).getCategory().getName());
 			Acategory.setBounds(400, placement, 100, 14);
 			this.add(Acategory);
 
-			JLabel Adescription = new JLabel(this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getDescription());
+			JLabel Adescription = new JLabel(this.viewController.getActivityFacade().readActivities(user)
+					.getActivityByIndex(i).getDescription());
 			Adescription.setBounds(520, placement, 200, 14);
 			this.add(Adescription);
 
@@ -82,20 +87,20 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if(cmd.equals("addActivity"))
-		{
+		if (cmd.equals("addActivity")) {
 			this.viewController.showCreateActivityPanel();
-		}
-		else if(cmd.equals("delete"))
-		{
-			int index = ((MyJButton)e.getSource()).getIndex();
+		} else if (cmd.equals("delete")) {
+			int index = ((MyJButton) e.getSource()).getIndex();
 			viewController.getActivityFacade().removeFromMyActivities(index);
 			viewController.showActivitiesPanel();
 		}

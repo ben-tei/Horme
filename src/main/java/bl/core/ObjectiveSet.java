@@ -10,18 +10,17 @@ public abstract class ObjectiveSet {
 	/**
 	 * Instantiates a new order set.
 	 */
-	public ObjectiveSet ()
-	{
+	public ObjectiveSet() {
 		this.tabObjectives = new ArrayList<Objective>();
 	}
 
 	/**
 	 * Adds the order.
 	 *
-	 * @param order the order
+	 * @param order
+	 *            the order
 	 */
-	public void addObjective(Objective o)
-	{
+	public void addObjective(Objective o) {
 		this.tabObjectives.add(o);
 	}
 
@@ -36,11 +35,11 @@ public abstract class ObjectiveSet {
 	/**
 	 * Gets the order by index.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the order by index
 	 */
-	public Objective getObjectiveByIndex(int index)
-	{
+	public Objective getObjectiveByIndex(int index) {
 		return this.tabObjectives.get(index);
 	}
 
@@ -49,13 +48,11 @@ public abstract class ObjectiveSet {
 	 *
 	 * @return the int
 	 */
-	public int size()
-	{
+	public int size() {
 		return this.tabObjectives.size();
 	}
 
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return this.tabObjectives.size() == 0;
 	}
 

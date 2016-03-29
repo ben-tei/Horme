@@ -17,14 +17,15 @@ public class ShopCartFacade {
 	/**
 	 * Instantiates a new shop cart facade.
 	 */
-	public ShopCartFacade () {
+	public ShopCartFacade() {
 		this.shopCartManager = new ShopCartManager();
 	}
 
 	/**
 	 * Read shop cart.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the shop cart row set
 	 */
 	public ShopCartRowSet readShopCart(User user) {
@@ -35,23 +36,19 @@ public class ShopCartFacade {
 		return this.shopCartManager.getShopCart(user);
 	}
 
-	public void placeOrder()
-	{
+	public void placeOrder() {
 		this.shopCartManager.placeOrder();
 	}
 
-	public void addToShoppingCart(Product p, int quantity)
-	{
+	public void addToShoppingCart(Product p, int quantity) {
 		this.shopCartManager.addToShoppingCart(p, quantity);
 	}
 
-	public void removeFromShoppingCart(int index, int quantity)
-	{
+	public void removeFromShoppingCart(int index, int quantity) {
 		this.shopCartManager.removeFromShoppingCart(index, quantity);
 	}
 
-	public int getQuantity(String idProduct)
-	{
+	public int getQuantity(String idProduct) {
 		return this.shopCartManager.getQuantity(idProduct);
 	}
 }

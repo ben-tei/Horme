@@ -1,5 +1,7 @@
 package bl.factory;
 
+import java.sql.Date;
+
 import bl.core.Activity;
 import bl.core.ActivityCategorySet;
 import bl.core.ActivitySet;
@@ -23,28 +25,40 @@ public abstract class Factory {
 	/**
 	 * Find user.
 	 *
-	 * @param login the login
+	 * @param login
+	 *            the login
 	 * @return the user
-	 * @throws WrongLoginException the wrong login exception
+	 * @throws WrongLoginException
+	 *             the wrong login exception
 	 */
 	public abstract User findUser(String login) throws WrongLoginException;
 
 	/**
 	 * Creates the user.
 	 *
-	 * @param name the name
-	 * @param firstname the firstname
-	 * @param street the street
-	 * @param zipCode the zip code
-	 * @param city the city
-	 * @param phone the phone
-	 * @param email the email
-	 * @param login the login
-	 * @param password the password
+	 * @param name
+	 *            the name
+	 * @param firstname
+	 *            the firstname
+	 * @param street
+	 *            the street
+	 * @param zipCode
+	 *            the zip code
+	 * @param city
+	 *            the city
+	 * @param phone
+	 *            the phone
+	 * @param email
+	 *            the email
+	 * @param login
+	 *            the login
+	 * @param password
+	 *            the password
 	 * @return the user
-	 * @throws AlreadyExistsException the already exists exception
+	 * @throws AlreadyExistsException
+	 *             the already exists exception
 	 */
-	public abstract User createUser(String name, String firstname, String street, String zipCode, String city, 
+	public abstract User createUser(String name, String firstname, String street, String zipCode, String city,
 			String phone, String email, String login, String password) throws AlreadyExistsException;
 
 	/**
@@ -57,7 +71,8 @@ public abstract class Factory {
 	/**
 	 * Search products.
 	 *
-	 * @param searchString the search string
+	 * @param searchString
+	 *            the search string
 	 * @return the product set
 	 */
 	public abstract ProductSet searchProducts(String searchString);
@@ -65,7 +80,8 @@ public abstract class Factory {
 	/**
 	 * Read activities.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the activity set
 	 */
 	public abstract ActivitySet readActivities(User user);
@@ -73,7 +89,8 @@ public abstract class Factory {
 	/**
 	 * Read shop cart.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 * @return the shop cart row set
 	 */
 	public abstract ShopCartRowSet readShopCart(User user);
@@ -85,17 +102,20 @@ public abstract class Factory {
 	/**
 	 * Read orders.
 	 *
-	 ** @param user the user
+	 ** @param user
+	 *            the user
 	 * @return the order set
 	 */
 	public abstract OrderSet readOrders(User user);
 
 	public abstract ActivityCategorySet getActivitiesCategories();
 
-	public abstract Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException;
+	public abstract Activity createActivity(String name, String description, Category category, User user)
+			throws AlreadyExistsException;
 
 	public abstract ObjectiveSet readObjectives(User user);
 
-	public abstract Objective createObjective(String name, String description, String deadline, Activity activity) throws AlreadyExistsException;
+	public abstract Objective createObjective(String name, String description, Date valideDate, Activity activity)
+			throws AlreadyExistsException;
 
 }

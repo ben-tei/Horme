@@ -16,7 +16,7 @@ import java.util.HashSet;
  * @author Meche
  */
 public abstract class Category {
-	
+
 	private String id = "";
 	/**
 	 * Description of the property name.
@@ -71,16 +71,18 @@ public abstract class Category {
 	// End of user code
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -88,7 +90,8 @@ public abstract class Category {
 
 	/**
 	 * Returns shortDescription.
-	 * @return shortDescription 
+	 * 
+	 * @return shortDescription
 	 */
 	public String getShortDescription() {
 		return this.shortDescription;
@@ -103,9 +106,10 @@ public abstract class Category {
 	}
 
 	/**
-	 * Sets a value to attribute shortDescription. 
+	 * Sets a value to attribute shortDescription.
 	 *
-	 * @param newShortDescription the new short description
+	 * @param newShortDescription
+	 *            the new short description
 	 */
 	public void setShortDescription(String newShortDescription) {
 		this.shortDescription = newShortDescription;
@@ -113,16 +117,18 @@ public abstract class Category {
 
 	/**
 	 * Returns longDescription.
-	 * @return longDescription 
+	 * 
+	 * @return longDescription
 	 */
 	public String getLongDescription() {
 		return this.longDescription;
 	}
 
 	/**
-	 * Sets a value to attribute longDescription. 
+	 * Sets a value to attribute longDescription.
 	 *
-	 * @param newLongDescription the new long description
+	 * @param newLongDescription
+	 *            the new long description
 	 */
 	public void setLongDescription(String newLongDescription) {
 		this.longDescription = newLongDescription;
@@ -130,7 +136,8 @@ public abstract class Category {
 
 	/**
 	 * Returns categories2.
-	 * @return categories2 
+	 * 
+	 * @return categories2
 	 */
 	public HashSet<Category> getCategories2() {
 		return this.categories2;
@@ -138,7 +145,8 @@ public abstract class Category {
 
 	/**
 	 * Returns activities.
-	 * @return activities 
+	 * 
+	 * @return activities
 	 */
 	public HashSet<Activity> getActivities() {
 		return this.activities;
@@ -146,7 +154,8 @@ public abstract class Category {
 
 	/**
 	 * Returns products.
-	 * @return products 
+	 * 
+	 * @return products
 	 */
 	public HashSet<Product> getProducts() {
 		return this.products;
@@ -154,7 +163,8 @@ public abstract class Category {
 
 	/**
 	 * Returns categories1.
-	 * @return categories1 
+	 * 
+	 * @return categories1
 	 */
 	public HashSet<Category> getCategories1() {
 		return this.categories1;

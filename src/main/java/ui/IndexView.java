@@ -19,10 +19,10 @@ public class IndexView extends JPanel implements ActionListener {
 	/**
 	 * Instantiates a new index view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public IndexView (ViewController vc)
-	{
+	public IndexView(ViewController vc) {
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -31,9 +31,11 @@ public class IndexView extends JPanel implements ActionListener {
 
 	}
 
-
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

@@ -7,17 +7,15 @@ import java.sql.*;
 /**
  * The Class JDBCConnection.
  */
-public class JDBCConnection
-{
-	
+public class JDBCConnection {
+
 	/** The conn. */
 	private Connection conn;
 
 	/**
 	 * Instantiates a new JDBC connection.
 	 */
-	public JDBCConnection()
-	{
+	public JDBCConnection() {
 
 	}
 
@@ -25,10 +23,10 @@ public class JDBCConnection
 	 * Open connection.
 	 *
 	 * @return the connection
-	 * @throws SQLException the SQL exception
+	 * @throws SQLException
+	 *             the SQL exception
 	 */
-	public Connection openConnection() throws SQLException
-	{
+	public Connection openConnection() throws SQLException {
 		try {
 
 			Class.forName(DRIVER).newInstance();
@@ -37,25 +35,27 @@ public class JDBCConnection
 
 			throw new SQLException(e.getMessage());
 
-		} 
+		}
 
 		DriverManager.setLoginTimeout(10);
 
 		this.conn = DriverManager.getConnection(URL, USER, PASSWORD);
 
-		return this.conn; 
+		return this.conn;
 	}
 
 	/**
 	 * Close connection.
 	 */
-	public void closeConnection()
-	{
-		if(this.conn != null)
-		{
-			try { this.conn.close(); } 
+	public void closeConnection() {
+		if (this.conn != null) {
+			try {
+				this.conn.close();
+			}
 
-			catch (SQLException e) { ProcessSQLException(e); }
+			catch (SQLException e) {
+				ProcessSQLException(e);
+			}
 		}
 	}
 
@@ -64,18 +64,17 @@ public class JDBCConnection
 	 *
 	 * @return the connection
 	 */
-	public Connection getConnection()
-	{
+	public Connection getConnection() {
 		return this.conn;
 	}
 
 	/**
 	 * Process sql exception.
 	 *
-	 * @param e the e
+	 * @param e
+	 *            the e
 	 */
-	public static void ProcessSQLException(SQLException e)
-	{
+	public static void ProcessSQLException(SQLException e) {
 		while (e != null) {
 
 			System.err.println(e.getErrorCode());
@@ -84,21 +83,24 @@ public class JDBCConnection
 
 			e = e.getNextException();
 		}
-	} 
+	}
 
 	/**
 	 * Close.
 	 *
-	 * @param pstmt the pstmt
+	 * @param pstmt
+	 *            the pstmt
 	 */
-	public void close(PreparedStatement pstmt)
-	{
-		if(pstmt != null)
-		{
-			try { pstmt.close(); } 
+	public void close(PreparedStatement pstmt) {
+		if (pstmt != null) {
+			try {
+				pstmt.close();
+			}
 
-			catch (SQLException e) { ProcessSQLException(e); }
+			catch (SQLException e) {
+				ProcessSQLException(e);
+			}
 		}
-	} 
+	}
 
 }

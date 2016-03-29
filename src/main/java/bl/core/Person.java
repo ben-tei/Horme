@@ -87,8 +87,10 @@ public abstract class Person {
 	/**
 	 * Instantiates a new person.
 	 *
-	 * @param login the login
-	 * @param password the password
+	 * @param login
+	 *            the login
+	 * @param password
+	 *            the password
 	 */
 	public Person(String login, String password) {
 		this.login = login;
@@ -100,16 +102,18 @@ public abstract class Person {
 	// End of user code
 	/**
 	 * Returns firstName.
-	 * @return firstName 
+	 * 
+	 * @return firstName
 	 */
 	public String getFirstName() {
 		return this.firstName;
 	}
 
 	/**
-	 * Sets a value to attribute firstName. 
+	 * Sets a value to attribute firstName.
 	 *
-	 * @param newFirstName the new first name
+	 * @param newFirstName
+	 *            the new first name
 	 */
 	public void setFirstName(String newFirstName) {
 		this.firstName = newFirstName;
@@ -117,7 +121,8 @@ public abstract class Person {
 
 	/**
 	 * Returns comments.
-	 * @return comments 
+	 * 
+	 * @return comments
 	 */
 	public HashSet<Comment> getComments() {
 		return this.comments;
@@ -125,7 +130,8 @@ public abstract class Person {
 
 	/**
 	 * Returns notifications.
-	 * @return notifications 
+	 * 
+	 * @return notifications
 	 */
 	public HashSet<Notification> getNotifications() {
 		return this.notifications;
@@ -133,16 +139,18 @@ public abstract class Person {
 
 	/**
 	 * Returns password.
-	 * @return password 
+	 * 
+	 * @return password
 	 */
 	public String getPassword() {
 		return this.password;
 	}
 
 	/**
-	 * Sets a value to attribute password. 
+	 * Sets a value to attribute password.
 	 *
-	 * @param newPassword the new password
+	 * @param newPassword
+	 *            the new password
 	 */
 	public void setPassword(String newPassword) {
 		this.password = newPassword;
@@ -150,16 +158,18 @@ public abstract class Person {
 
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -167,16 +177,18 @@ public abstract class Person {
 
 	/**
 	 * Returns zipCode.
-	 * @return zipCode 
+	 * 
+	 * @return zipCode
 	 */
 	public String getZipCode() {
 		return this.zipCode;
 	}
 
 	/**
-	 * Sets a value to attribute zipCode. 
+	 * Sets a value to attribute zipCode.
 	 *
-	 * @param newZipCode the new zip code
+	 * @param newZipCode
+	 *            the new zip code
 	 */
 	public void setZipCode(String newZipCode) {
 		this.zipCode = newZipCode;
@@ -184,16 +196,18 @@ public abstract class Person {
 
 	/**
 	 * Returns phone.
-	 * @return phone 
+	 * 
+	 * @return phone
 	 */
 	public String getPhone() {
 		return this.phone;
 	}
 
 	/**
-	 * Sets a value to attribute phone. 
+	 * Sets a value to attribute phone.
 	 *
-	 * @param newPhone the new phone
+	 * @param newPhone
+	 *            the new phone
 	 */
 	public void setPhone(String newPhone) {
 		this.phone = newPhone;
@@ -201,16 +215,18 @@ public abstract class Person {
 
 	/**
 	 * Returns city.
-	 * @return city 
+	 * 
+	 * @return city
 	 */
 	public String getCity() {
 		return this.city;
 	}
 
 	/**
-	 * Sets a value to attribute city. 
+	 * Sets a value to attribute city.
 	 *
-	 * @param newCity the new city
+	 * @param newCity
+	 *            the new city
 	 */
 	public void setCity(String newCity) {
 		this.city = newCity;
@@ -218,16 +234,18 @@ public abstract class Person {
 
 	/**
 	 * Returns email.
-	 * @return email 
+	 * 
+	 * @return email
 	 */
 	public String getEmail() {
 		return this.email;
 	}
 
 	/**
-	 * Sets a value to attribute email. 
+	 * Sets a value to attribute email.
 	 *
-	 * @param newEmail the new email
+	 * @param newEmail
+	 *            the new email
 	 */
 	public void setEmail(String newEmail) {
 		this.email = newEmail;
@@ -235,16 +253,18 @@ public abstract class Person {
 
 	/**
 	 * Returns login.
-	 * @return login 
+	 * 
+	 * @return login
 	 */
 	public String getLogin() {
 		return this.login;
 	}
 
 	/**
-	 * Sets a value to attribute login. 
+	 * Sets a value to attribute login.
 	 *
-	 * @param newLogin the new login
+	 * @param newLogin
+	 *            the new login
 	 */
 	public void setLogin(String newLogin) {
 		this.login = newLogin;
@@ -252,16 +272,18 @@ public abstract class Person {
 
 	/**
 	 * Returns street.
-	 * @return street 
+	 * 
+	 * @return street
 	 */
 	public String getStreet() {
 		return this.street;
 	}
 
 	/**
-	 * Sets a value to attribute street. 
+	 * Sets a value to attribute street.
 	 *
-	 * @param newStreet the new street
+	 * @param newStreet
+	 *            the new street
 	 */
 	public void setStreet(String newStreet) {
 		this.street = newStreet;

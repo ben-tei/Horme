@@ -49,7 +49,8 @@ public abstract class Estimate {
 	// End of user code
 	/**
 	 * Returns products.
-	 * @return products 
+	 * 
+	 * @return products
 	 */
 	public HashSet<Product> getProducts() {
 		return this.products;
@@ -57,16 +58,18 @@ public abstract class Estimate {
 
 	/**
 	 * Returns trader.
-	 * @return trader 
+	 * 
+	 * @return trader
 	 */
 	public Trader getTrader() {
 		return this.trader;
 	}
 
 	/**
-	 * Sets a value to attribute trader. 
+	 * Sets a value to attribute trader.
 	 *
-	 * @param newTrader the new trader
+	 * @param newTrader
+	 *            the new trader
 	 */
 	public void setTrader(Trader newTrader) {
 		this.trader = newTrader;
@@ -74,16 +77,18 @@ public abstract class Estimate {
 
 	/**
 	 * Returns user.
-	 * @return user 
+	 * 
+	 * @return user
 	 */
 	public User getUser() {
 		return this.user;
 	}
 
 	/**
-	 * Sets a value to attribute user. 
+	 * Sets a value to attribute user.
 	 *
-	 * @param newUser the new user
+	 * @param newUser
+	 *            the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;

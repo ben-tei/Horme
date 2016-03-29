@@ -47,16 +47,18 @@ public abstract class Comment {
 	// End of user code
 	/**
 	 * Returns person.
-	 * @return person 
+	 * 
+	 * @return person
 	 */
 	public Person getPerson() {
 		return this.person;
 	}
 
 	/**
-	 * Sets a value to attribute person. 
+	 * Sets a value to attribute person.
 	 *
-	 * @param newPerson the new person
+	 * @param newPerson
+	 *            the new person
 	 */
 	public void setPerson(Person newPerson) {
 		this.person = newPerson;
@@ -64,16 +66,18 @@ public abstract class Comment {
 
 	/**
 	 * Returns content.
-	 * @return content 
+	 * 
+	 * @return content
 	 */
 	public String getContent() {
 		return this.content;
 	}
 
 	/**
-	 * Sets a value to attribute content. 
+	 * Sets a value to attribute content.
 	 *
-	 * @param newContent the new content
+	 * @param newContent
+	 *            the new content
 	 */
 	public void setContent(String newContent) {
 		this.content = newContent;
@@ -81,16 +85,18 @@ public abstract class Comment {
 
 	/**
 	 * Returns diaryEntry.
-	 * @return diaryEntry 
+	 * 
+	 * @return diaryEntry
 	 */
 	public DiaryEntry getDiaryEntry() {
 		return this.diaryEntry;
 	}
 
 	/**
-	 * Sets a value to attribute diaryEntry. 
+	 * Sets a value to attribute diaryEntry.
 	 *
-	 * @param newDiaryEntry the new diary entry
+	 * @param newDiaryEntry
+	 *            the new diary entry
 	 */
 	public void setDiaryEntry(DiaryEntry newDiaryEntry) {
 		this.diaryEntry = newDiaryEntry;

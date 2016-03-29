@@ -59,7 +59,8 @@ public abstract class Order {
 	// End of user code
 	/**
 	 * Returns traders.
-	 * @return traders 
+	 * 
+	 * @return traders
 	 */
 	public Trader getTrader() {
 		return this.trader;
@@ -67,16 +68,18 @@ public abstract class Order {
 
 	/**
 	 * Returns date.
-	 * @return date 
+	 * 
+	 * @return date
 	 */
 	public String getDate() {
 		return this.date;
 	}
 
 	/**
-	 * Sets a value to attribute date. 
+	 * Sets a value to attribute date.
 	 *
-	 * @param newDate the new date
+	 * @param newDate
+	 *            the new date
 	 */
 	public void setDate(String newDate) {
 		this.date = newDate;
@@ -84,16 +87,18 @@ public abstract class Order {
 
 	/**
 	 * Returns numero.
-	 * @return numero 
+	 * 
+	 * @return numero
 	 */
 	public String getNumero() {
 		return this.numero;
 	}
 
 	/**
-	 * Sets a value to attribute numero. 
+	 * Sets a value to attribute numero.
 	 *
-	 * @param newNumero the new numero
+	 * @param newNumero
+	 *            the new numero
 	 */
 	public void setNumero(String newNumero) {
 		this.numero = newNumero;
@@ -101,7 +106,8 @@ public abstract class Order {
 
 	/**
 	 * Returns products.
-	 * @return products 
+	 * 
+	 * @return products
 	 */
 	public HashSet<Product> getProducts() {
 		return this.products;
@@ -109,16 +115,18 @@ public abstract class Order {
 
 	/**
 	 * Returns user.
-	 * @return user 
+	 * 
+	 * @return user
 	 */
 	public User getUser() {
 		return this.user;
 	}
 
 	/**
-	 * Sets a value to attribute user. 
+	 * Sets a value to attribute user.
 	 *
-	 * @param newUser the new user
+	 * @param newUser
+	 *            the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -127,11 +135,12 @@ public abstract class Order {
 	/**
 	 * Sets the trader.
 	 *
-	 * @param newTrader the new trader
+	 * @param newTrader
+	 *            the new trader
 	 */
 	public void setTrader(Trader newTrader) {
 		this.trader = newTrader;
-		
+
 	}
 
 }

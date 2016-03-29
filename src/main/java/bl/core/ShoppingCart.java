@@ -53,7 +53,8 @@ public abstract class ShoppingCart {
 	// End of user code
 	/**
 	 * Returns whishLists.
-	 * @return whishLists 
+	 * 
+	 * @return whishLists
 	 */
 	public HashSet<WhishList> getWhishLists() {
 		return this.whishLists;
@@ -61,16 +62,18 @@ public abstract class ShoppingCart {
 
 	/**
 	 * Returns user.
-	 * @return user 
+	 * 
+	 * @return user
 	 */
 	public User getUser() {
 		return this.user;
 	}
 
 	/**
-	 * Sets a value to attribute user. 
+	 * Sets a value to attribute user.
 	 *
-	 * @param newUser the new user
+	 * @param newUser
+	 *            the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -78,7 +81,8 @@ public abstract class ShoppingCart {
 
 	/**
 	 * Returns products.
-	 * @return products 
+	 * 
+	 * @return products
 	 */
 	public HashSet<Product> getProducts() {
 		return this.products;

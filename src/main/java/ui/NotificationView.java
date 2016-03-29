@@ -19,9 +19,10 @@ public class NotificationView extends JPanel implements ActionListener {
 	/**
 	 * Instantiates a new notification view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public NotificationView (ViewController vc) {
+	public NotificationView(ViewController vc) {
 
 		this.viewController = vc;
 
@@ -29,11 +30,13 @@ public class NotificationView extends JPanel implements ActionListener {
 
 		new Menu(this, this.viewController);
 
-
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {

@@ -13,18 +13,17 @@ public abstract class ProductSet {
 	/**
 	 * Instantiates a new product set.
 	 */
-	public ProductSet ()
-	{
+	public ProductSet() {
 		this.tabProducts = new ArrayList<Product>();
 	}
 
 	/**
 	 * Adds the product.
 	 *
-	 * @param product the product
+	 * @param product
+	 *            the product
 	 */
-	public void addProduct(Product product)
-	{
+	public void addProduct(Product product) {
 		this.tabProducts.add(product);
 	}
 
@@ -39,28 +38,25 @@ public abstract class ProductSet {
 	/**
 	 * Gets the product by index.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the product by index
 	 */
-	public Product getProductByIndex(int index)
-	{
+	public Product getProductByIndex(int index) {
 		return this.tabProducts.get(index);
 	}
 
-	public Product getProductById(String id)
-	{
+	public Product getProductById(String id) {
 		int i = 0;
 		boolean find = false;
-		while(i < this.tabProducts.size() && !find)
-		{
-			if(this.tabProducts.get(i).getId().equals(id))
-			{
+		while (i < this.tabProducts.size() && !find) {
+			if (this.tabProducts.get(i).getId().equals(id)) {
 				find = true;
 			}
 			i++;
 		}
 
-		return this.tabProducts.get(i-1);
+		return this.tabProducts.get(i - 1);
 	}
 
 	/**
@@ -68,13 +64,11 @@ public abstract class ProductSet {
 	 *
 	 * @return the int
 	 */
-	public int size()
-	{
+	public int size() {
 		return this.tabProducts.size();
 	}
-	
-	public boolean isEmpty()
-	{
+
+	public boolean isEmpty() {
 		return this.tabProducts.size() == 0;
 	}
 

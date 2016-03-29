@@ -15,7 +15,7 @@ public class ShopCartRowSetJDBCTest extends TestCase {
 	public void tearDown() {
 	}
 
-	@Test	
+	@Test
 	public void testCreateEmptyShopCartRowSetJDBC() {
 
 		ShopCartRowSetJDBC shopCartRowSetJDBC = new ShopCartRowSetJDBC();
@@ -24,7 +24,7 @@ public class ShopCartRowSetJDBCTest extends TestCase {
 		assertEquals("A new shopCartRowSetJDBC has no element", 0, shopCartRowSetJDBC.size());
 	}
 
-	@Test	
+	@Test
 	public void testAdd() {
 
 		ShopCartRowSetJDBC shopCartRowSetJDBC = new ShopCartRowSetJDBC();

@@ -2,6 +2,9 @@ package ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Properties;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -10,9 +13,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
+
 import bl.core.ActivitySet;
 import bl.core.User;
 import exceptions.AlreadyExistsException;
+import util.DateLabelFormatter;
 
 public class CreateObjectiveView extends JPanel implements ActionListener {
 
@@ -32,11 +40,11 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 
 	private ActivitySet activitySet;
 
-	private JTextField deadlineField;
+	private UtilDateModel model = new UtilDateModel();
+	private JDatePanelImpl datePanel;
+	private JDatePickerImpl datePicker;
 
-
-	public CreateObjectiveView(ViewController vc)
-	{
+	public CreateObjectiveView(ViewController vc) {
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -87,15 +95,17 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 		this.descriptionField.setActionCommand("confirm");
 		this.add(descriptionField);
 
-		deadlineField = new JTextField();
-		deadlineField.setBounds(175, 335, 200, 20);
-		this.deadlineField.addActionListener(this);
-		this.deadlineField.setActionCommand("confirm");
-		this.add(deadlineField);
+		Properties p = new Properties();
+		p.put("text.today", "Today");
+		p.put("text.month", "Month");
+		p.put("text.year", "Year");
+		this.datePanel = new JDatePanelImpl(model, p);
+		this.datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+		datePicker.setBounds(175, 335, 200, 30);
+		this.add(datePicker);
 
 		cbActivities.setBounds(175, 415, 200, 20);
-		for(int i = 0; i < this.activitySet.size(); i++)
-		{
+		for (int i = 0; i < this.activitySet.size(); i++) {
 			this.cbActivities.addItem(this.activitySet.getActivityByIndex(i).getName());
 		}
 		this.add(cbActivities);
@@ -118,7 +128,11 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	 */
 
 	public String getNameActivity() {
-		return (String) cbActivities.getSelectedItem();
+		if (cbActivities.getItemCount() != 0) {
+			return (String) cbActivities.getSelectedItem();
+		} else {
+			return "";
+		}
 	}
 
 	/**
@@ -130,8 +144,8 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 		return descriptionField;
 	}
 
-	public JTextField getDeadlineField() {
-		return deadlineField;
+	public String getDeadlineText() {
+		return datePicker.getJFormattedTextField().getText();
 	}
 
 	/**
@@ -140,32 +154,35 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	 * @return true, if successful
 	 */
 
-	public boolean fieldsAreEmpty()
-	{
-		return getNameField().getText().equals("") || getNameActivity().equals("") || getDescriptionField().getText().equals("") || getDeadlineField().getText().equals("");
+	public boolean fieldsAreEmpty() {
+		return getNameField().getText().equals("") || getNameActivity().equals("")
+				|| getDescriptionField().getText().equals("") || getDeadlineText().isEmpty();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if(cmd.equals("back"))
-		{
+		if (cmd.equals("back")) {
 			this.viewController.showActivitiesPanel();
-		}
-		else if(cmd.equals("confirm"))
-		{
-			if(fieldsAreEmpty())
-			{
-				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure", JOptionPane.WARNING_MESSAGE);
-			}
-			else
-			{
+		} else if (cmd.equals("confirm")) {
+			if (fieldsAreEmpty()) {
+				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",
+						JOptionPane.WARNING_MESSAGE);
+			} else {
 				try {
-					this.viewController.getDiaryFacade().createObjective(getNameField().getText(), 
-							getDescriptionField().getText(), getDeadlineField().getText(), this.activitySet.getActivityByIndex(cbActivities.getSelectedIndex()));
+					java.util.Date date = (Date) datePicker.getModel().getValue();
+					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+					String stringDate = dateFormat.format(date);
+					java.sql.Date valideDate = java.sql.Date.valueOf(stringDate);
 
-					JOptionPane.showMessageDialog(null, "Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+					this.viewController.getDiaryFacade().createObjective(getNameField().getText(),
+							getDescriptionField().getText(), valideDate,
+							this.activitySet.getActivityByIndex(cbActivities.getSelectedIndex()));
+
+					JOptionPane.showMessageDialog(null,
+							"Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success",
+							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showDiaryPanel();
 				} catch (AlreadyExistsException e1) {
 					// TODO Auto-generated catch block

@@ -54,7 +54,8 @@ public abstract class WhishList {
 	// End of user code
 	/**
 	 * Returns ressources.
-	 * @return ressources 
+	 * 
+	 * @return ressources
 	 */
 	public HashSet<Ressource> getRessources() {
 		return this.ressources;
@@ -62,16 +63,18 @@ public abstract class WhishList {
 
 	/**
 	 * Returns user.
-	 * @return user 
+	 * 
+	 * @return user
 	 */
 	public User getUser() {
 		return this.user;
 	}
 
 	/**
-	 * Sets a value to attribute user. 
+	 * Sets a value to attribute user.
 	 *
-	 * @param newUser the new user
+	 * @param newUser
+	 *            the new user
 	 */
 	public void setUser(User newUser) {
 		this.user = newUser;
@@ -79,16 +82,18 @@ public abstract class WhishList {
 
 	/**
 	 * Returns name.
-	 * @return name 
+	 * 
+	 * @return name
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * Sets a value to attribute name. 
+	 * Sets a value to attribute name.
 	 *
-	 * @param newName the new name
+	 * @param newName
+	 *            the new name
 	 */
 	public void setName(String newName) {
 		this.name = newName;
@@ -96,7 +101,8 @@ public abstract class WhishList {
 
 	/**
 	 * Returns shoppingCarts.
-	 * @return shoppingCarts 
+	 * 
+	 * @return shoppingCarts
 	 */
 	public HashSet<ShoppingCart> getShoppingCarts() {
 		return this.shoppingCarts;

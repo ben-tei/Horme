@@ -1,5 +1,7 @@
 package persist.factoryjdbc;
 
+import java.sql.Date;
+
 import bl.core.Activity;
 import bl.core.ActivityCategorySet;
 import bl.core.ActivitySet;
@@ -30,66 +32,74 @@ import persist.jdbc.UserJDBC;
 /**
  * The Class FactoryJDBC.
  */
-public class FactoryJDBC extends Factory
-{
+public class FactoryJDBC extends Factory {
 
 	/**
 	 * Instantiates a new factory jdbc.
 	 */
-	public FactoryJDBC() { }
+	public FactoryJDBC() {
+	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see bl.factory.Factory#findUser(java.lang.String)
 	 */
 	@Override
-	public User findUser(String login) throws WrongLoginException
-	{
+	public User findUser(String login) throws WrongLoginException {
 		return new UserJDBC(login);
 	}
 
-	/* (non-Javadoc)
-	 * @see bl.factory.Factory#createUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#createUser(java.lang.String, java.lang.String,
+	 * java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+	 * java.lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override
 	public User createUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) throws AlreadyExistsException
-	{
+			String email, String login, String password) throws AlreadyExistsException {
 		return new UserJDBC(name, firstname, street, zipCode, city, phone, email, login, password);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see bl.factory.Factory#readProducts()
 	 */
 	@Override
-	public ProductSet readProducts() 
-	{
+	public ProductSet readProducts() {
 		return new ProductSetJDBC();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see bl.factory.Factory#searchProducts(java.lang.String)
 	 */
 	@Override
-	public ProductSet searchProducts(String searchString)
-	{
+	public ProductSet searchProducts(String searchString) {
 		return new ProductSetJDBC(searchString);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see bl.factory.Factory#readShopCart(bl.core.User)
 	 */
 	@Override
-	public ShopCartRowSet readShopCart(User user) 
-	{
+	public ShopCartRowSet readShopCart(User user) {
 		return new ShopCartRowSetJDBC(user);
 	}
 
-	public ShoppingCart getShopCart(User user) 
-	{
+	public ShoppingCart getShopCart(User user) {
 		return new ShoppingCartJDBC(user);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see bl.factory.Factory#readActivities(bl.core.User)
 	 */
 	public ActivitySet readActivities(User user) {
@@ -97,7 +107,9 @@ public class FactoryJDBC extends Factory
 		return new ActivitySetJDBC(user);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see bl.factory.Factory#readOrders(bl.core.User)
 	 */
 	@Override
@@ -118,7 +130,8 @@ public class FactoryJDBC extends Factory
 	}
 
 	@Override
-	public Activity createActivity(String name, String description, Category category, User user) throws AlreadyExistsException {
+	public Activity createActivity(String name, String description, Category category, User user)
+			throws AlreadyExistsException {
 		// TODO Auto-generated method stub
 		return new ActivityJDBC(name, description, category, user);
 	}
@@ -130,9 +143,10 @@ public class FactoryJDBC extends Factory
 	}
 
 	@Override
-	public Objective createObjective(String name, String description, String deadline, Activity activity) throws AlreadyExistsException {
+	public Objective createObjective(String name, String description, Date valideDate, Activity activity)
+			throws AlreadyExistsException {
 		// TODO Auto-generated method stub
-		return new ObjectiveJDBC(name, description, deadline, activity);
+		return new ObjectiveJDBC(name, description, valideDate, activity);
 	}
 
 }

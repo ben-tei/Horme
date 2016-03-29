@@ -9,29 +9,28 @@ public abstract class ActivityCategorySet {
 	/**
 	 * Instantiates a new shop cart row set.
 	 */
-	public ActivityCategorySet ()
-	{
+	public ActivityCategorySet() {
 		this.tabActivitiesCategories = new ArrayList<Category>();
 	}
 
 	/**
 	 * Adds the shop cart row.
 	 *
-	 * @param shop cart row the shop cart row
+	 * @param shop
+	 *            cart row the shop cart row
 	 */
-	public void addCategory(Category cat)
-	{
+	public void addCategory(Category cat) {
 		this.tabActivitiesCategories.add(cat);
 	}
 
 	/**
 	 * Gets the shop cart row by index.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the shop cart row by index
 	 */
-	public Category getCategoryByIndex(int index)
-	{
+	public Category getCategoryByIndex(int index) {
 		return this.tabActivitiesCategories.get(index);
 	}
 
@@ -40,8 +39,7 @@ public abstract class ActivityCategorySet {
 	 *
 	 * @return the int
 	 */
-	public int size()
-	{
+	public int size() {
 		return this.tabActivitiesCategories.size();
 	}
 

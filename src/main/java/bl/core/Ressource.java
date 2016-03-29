@@ -49,16 +49,18 @@ public abstract class Ressource {
 	// End of user code
 	/**
 	 * Returns nom.
-	 * @return nom 
+	 * 
+	 * @return nom
 	 */
 	public String getNom() {
 		return this.nom;
 	}
 
 	/**
-	 * Sets a value to attribute nom. 
+	 * Sets a value to attribute nom.
 	 *
-	 * @param newNom the new nom
+	 * @param newNom
+	 *            the new nom
 	 */
 	public void setNom(String newNom) {
 		this.nom = newNom;
@@ -66,7 +68,8 @@ public abstract class Ressource {
 
 	/**
 	 * Returns whishLists.
-	 * @return whishLists 
+	 * 
+	 * @return whishLists
 	 */
 	public HashSet<WhishList> getWhishLists() {
 		return this.whishLists;
@@ -74,7 +77,8 @@ public abstract class Ressource {
 
 	/**
 	 * Returns activitys.
-	 * @return activitys 
+	 * 
+	 * @return activitys
 	 */
 	public HashSet<Activity> getActivitys() {
 		return this.activitys;

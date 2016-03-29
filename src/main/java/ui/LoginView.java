@@ -18,8 +18,7 @@ import javax.swing.JButton;
 /**
  * The Class LoginView.
  */
-public class LoginView extends JPanel implements ActionListener
-{
+public class LoginView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -51,10 +50,10 @@ public class LoginView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new login view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public LoginView(ViewController vc)
-	{
+	public LoginView(ViewController vc) {
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -107,8 +106,7 @@ public class LoginView extends JPanel implements ActionListener
 	 *
 	 * @return the login field
 	 */
-	public JTextField getLoginField()
-	{
+	public JTextField getLoginField() {
 		return this.loginField;
 	}
 
@@ -117,8 +115,7 @@ public class LoginView extends JPanel implements ActionListener
 	 *
 	 * @return the password field
 	 */
-	public JPasswordField getPasswordField()
-	{
+	public JPasswordField getPasswordField() {
 		return this.passwordField;
 	}
 
@@ -127,8 +124,7 @@ public class LoginView extends JPanel implements ActionListener
 	 *
 	 * @return the btn login
 	 */
-	public JButton getBtnLogin()
-	{
+	public JButton getBtnLogin() {
 		return this.btnLogin;
 	}
 
@@ -137,9 +133,8 @@ public class LoginView extends JPanel implements ActionListener
 	 *
 	 * @return the login text
 	 */
-	public String getLoginText()
-	{
-		return this.loginField.getText(); 
+	public String getLoginText() {
+		return this.loginField.getText();
 	}
 
 	/**
@@ -147,40 +142,38 @@ public class LoginView extends JPanel implements ActionListener
 	 *
 	 * @return the passwd text
 	 */
-	public String getPasswdText()
-	{
+	public String getPasswdText() {
 		return new String(this.passwordField.getPassword());
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
-		if(cmd.equals("login"))
-		{
-			if((!getLoginText().equals("")) && (!getPasswdText().equals("")))
-			{
+		if (cmd.equals("login")) {
+			if ((!getLoginText().equals("")) && (!getPasswdText().equals(""))) {
 				try {
 					this.viewController.getUserFacade().login(getLoginText(), getPasswdText());
-					this.viewController.getUserFacade().getUser().setShoppingCart(this.viewController.getShopCartFacade().getShopCart(this.viewController.getUserFacade().getUser()));
+					this.viewController.getUserFacade().getUser().setShoppingCart(this.viewController
+							.getShopCartFacade().getShopCart(this.viewController.getUserFacade().getUser()));
 
-					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success",
+							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showIndexPanel();
 				} catch (WrongLoginException | WrongPasswordException e1) {
 					// TODO Auto-generated catch block
-					//e1.printStackTrace();
+					// e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
-				}			
+				}
 			}
-		}
-		else if(cmd.equals("signup"))
-		{
+		} else if (cmd.equals("signup")) {
 			this.viewController.showSignUpPanel();
 		}
 
 	}
 
 }
-

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * The Class ActivitySet.
  */
-public abstract  class ActivitySet {
+public abstract class ActivitySet {
 
 	/** The tab activities. */
 	private ArrayList<Activity> tabActivities;
@@ -13,29 +13,28 @@ public abstract  class ActivitySet {
 	/**
 	 * Instantiates a new activity set.
 	 */
-	public ActivitySet()
-	{
+	public ActivitySet() {
 		this.tabActivities = new ArrayList<Activity>();
 	}
 
 	/**
 	 * Adds the activity.
 	 *
-	 * @param activity the activity
+	 * @param activity
+	 *            the activity
 	 */
-	public void addActivity(Activity activity)
-	{
+	public void addActivity(Activity activity) {
 		this.tabActivities.add(activity);
 	}
 
 	/**
 	 * Gets the activity by index.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the activity by index
 	 */
-	public Activity getActivityByIndex(int index)
-	{
+	public Activity getActivityByIndex(int index) {
 		return this.tabActivities.get(index);
 	}
 
@@ -52,14 +51,12 @@ public abstract  class ActivitySet {
 	 *
 	 * @return the int
 	 */
-	public int size()
-	{
+	public int size() {
 		return this.tabActivities.size();
 	}
-	
-	public boolean isEmpty()
-	{
+
+	public boolean isEmpty() {
 		return this.tabActivities.size() == 0;
 	}
-	
+
 }

@@ -14,14 +14,13 @@ import java.util.Calendar;
  */
 public class ShoppingCartJDBC extends ShoppingCart {
 
-
 	/**
 	 * Instantiates a new shop cart row set jdbc.
 	 *
-	 * @param user the user
+	 * @param user
+	 *            the user
 	 */
-	public ShoppingCartJDBC (User user) 
-	{
+	public ShoppingCartJDBC(User user) {
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -40,7 +39,7 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 			rset = pstmt.executeQuery();
 
-			while(rset.next()) {
+			while (rset.next()) {
 				this.setUser(user);
 				this.setId(rset.getString("idShoppingCart"));
 			}
@@ -58,8 +57,7 @@ public class ShoppingCartJDBC extends ShoppingCart {
 		}
 	}
 
-	public void placeOrder(ShopCartRowSet shopCartRows) 
-	{
+	public void placeOrder(ShopCartRowSet shopCartRows) {
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -84,8 +82,7 @@ public class ShoppingCartJDBC extends ShoppingCart {
 			rset.next();
 			String orderNumber = rset.getString("orderNumber");
 
-			pstmt1 = conn.prepareStatement("INSERT INTO `Order` (date, number, idPerson) "
-					+ "VALUES (?, ?, ?)");
+			pstmt1 = conn.prepareStatement("INSERT INTO `Order` (date, number, idPerson) " + "VALUES (?, ?, ?)");
 
 			pstmt1.setString(1, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
 			pstmt1.setString(2, orderNumber);
@@ -98,10 +95,8 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 			rset = pstmt2.executeQuery();
 
-			if (rset.next())
-			{
-				for(int i = 0; i < shopCartRows.size(); i++)
-				{
+			if (rset.next()) {
+				for (int i = 0; i < shopCartRows.size(); i++) {
 					pstmt3 = conn.prepareStatement("INSERT INTO ConstituteOrder (idOrder, idProduct, price, quantity) "
 							+ "VALUES (?, ?, ?, ?)");
 
@@ -113,7 +108,6 @@ public class ShoppingCartJDBC extends ShoppingCart {
 					pstmt3.executeUpdate();
 				}
 			}
-
 
 		}
 

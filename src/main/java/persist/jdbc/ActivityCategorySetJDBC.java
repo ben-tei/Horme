@@ -29,7 +29,7 @@ public class ActivityCategorySetJDBC extends ActivityCategorySet {
 
 			rset = pstmt.executeQuery();
 
-			while(rset.next()) {
+			while (rset.next()) {
 				category = new CategoryJDBC();
 				category.setId(rset.getString("idCategory"));
 				category.setName(rset.getString("name"));

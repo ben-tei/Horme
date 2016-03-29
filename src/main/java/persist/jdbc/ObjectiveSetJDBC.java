@@ -10,8 +10,7 @@ import bl.core.User;
 
 public class ObjectiveSetJDBC extends ObjectiveSet {
 
-	public ObjectiveSetJDBC(User user) 
-	{
+	public ObjectiveSetJDBC(User user) {
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -28,14 +27,15 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 		try {
 			conn = jdbcconnection.openConnection();
 
-			pstmt = conn.prepareStatement("SELECT o.idObjective, o.name, o.description, o.deadline, a.name, a.idActivity FROM Activity a, Objective o WHERE o.idActivity"
-					+ " = a.idActivity AND a.idUser = ?");
+			pstmt = conn.prepareStatement(
+					"SELECT o.idObjective, o.name, o.description, o.deadline, a.name, a.idActivity FROM Activity a, Objective o WHERE o.idActivity"
+							+ " = a.idActivity AND a.idUser = ?");
 
 			pstmt.setString(1, user.getId());
 
 			rset = pstmt.executeQuery();
 
-			while(rset.next()) {
+			while (rset.next()) {
 				objectiveJDBC = new ObjectiveJDBC();
 				activityJDBC = new ActivityJDBC();
 				objectiveJDBC.setId(rset.getString("o.idObjective"));
@@ -54,7 +54,6 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 			JDBCConnection.ProcessSQLException(e);
 
 		} finally {
-
 
 			jdbcconnection.closeConnection();
 

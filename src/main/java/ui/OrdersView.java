@@ -26,9 +26,10 @@ public class OrdersView extends JPanel implements ActionListener {
 	/**
 	 * Instantiates a new orders view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public OrdersView (ViewController vc) {
+	public OrdersView(ViewController vc) {
 
 		this.viewController = vc;
 		this.orderFacade = new OrderFacade();
@@ -53,7 +54,7 @@ public class OrdersView extends JPanel implements ActionListener {
 
 		User user = this.viewController.getUserFacade().getUser();
 
-		for(int i = 0; i <= orderFacade.readOrders(user).size() - 1; i++) {
+		for (int i = 0; i <= orderFacade.readOrders(user).size() - 1; i++) {
 
 			JLabel Pdate = new JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getDate());
 			Pdate.setBounds(140, placement, 120, 14);
@@ -63,17 +64,23 @@ public class OrdersView extends JPanel implements ActionListener {
 			Pnumero.setBounds(334, placement, 120, 14);
 			this.add(Pnumero);
 
-			/*JLabel Pwebsite = new JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getTrader().getWebsite());
-			Pwebsite.setBounds(519, placement, 300, 14);
-			this.add(Pwebsite);*/
+			/*
+			 * JLabel Pwebsite = new
+			 * JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getTrader(
+			 * ).getWebsite()); Pwebsite.setBounds(519, placement, 300, 14);
+			 * this.add(Pwebsite);
+			 */
 
 			placement = placement + 32;
 		}
 
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

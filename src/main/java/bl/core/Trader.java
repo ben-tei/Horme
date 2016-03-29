@@ -57,11 +57,12 @@ public abstract class Trader extends Person {
 		super();
 		// End of user code
 	}
-	
+
 	/**
 	 * Instantiates a new trader.
 	 *
-	 * @param id the id
+	 * @param id
+	 *            the id
 	 */
 	public Trader(String id) {
 		this.id = id;
@@ -72,16 +73,18 @@ public abstract class Trader extends Person {
 	// End of user code
 	/**
 	 * Returns SIRET.
-	 * @return SIRET 
+	 * 
+	 * @return SIRET
 	 */
 	public String getSIRET() {
 		return this.SIRET;
 	}
 
 	/**
-	 * Sets a value to attribute SIRET. 
+	 * Sets a value to attribute SIRET.
 	 *
-	 * @param newSIRET the new siret
+	 * @param newSIRET
+	 *            the new siret
 	 */
 	public void setSIRET(String newSIRET) {
 		this.SIRET = newSIRET;
@@ -89,7 +92,8 @@ public abstract class Trader extends Person {
 
 	/**
 	 * Returns orders.
-	 * @return orders 
+	 * 
+	 * @return orders
 	 */
 	public HashSet<Order> getOrders() {
 		return this.orders;
@@ -97,16 +101,18 @@ public abstract class Trader extends Person {
 
 	/**
 	 * Returns website.
-	 * @return website 
+	 * 
+	 * @return website
 	 */
 	public String getWebsite() {
 		return this.website;
 	}
 
 	/**
-	 * Sets a value to attribute website. 
+	 * Sets a value to attribute website.
 	 *
-	 * @param newWebsite the new website
+	 * @param newWebsite
+	 *            the new website
 	 */
 	public void setWebsite(String newWebsite) {
 		this.website = newWebsite;
@@ -114,7 +120,8 @@ public abstract class Trader extends Person {
 
 	/**
 	 * Returns products.
-	 * @return products 
+	 * 
+	 * @return products
 	 */
 	public HashSet<Product> getProducts() {
 		return this.products;
@@ -122,7 +129,8 @@ public abstract class Trader extends Person {
 
 	/**
 	 * Returns estimates.
-	 * @return estimates 
+	 * 
+	 * @return estimates
 	 */
 	public HashSet<Estimate> getEstimates() {
 		return this.estimates;
@@ -140,11 +148,11 @@ public abstract class Trader extends Person {
 	/**
 	 * Sets the id.
 	 *
-	 * @param id the new id
+	 * @param id
+	 *            the new id
 	 */
 	public void setId(String id) {
 		this.id = id;
 	}
-
 
 }

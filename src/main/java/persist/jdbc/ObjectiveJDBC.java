@@ -1,6 +1,7 @@
 package persist.jdbc;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,8 @@ public class ObjectiveJDBC extends Objective {
 		super();
 	}
 
-	public ObjectiveJDBC(String name, String description, String deadline, Activity activity) throws AlreadyExistsException {
+	public ObjectiveJDBC(String name, String description, Date valideDate, Activity activity)
+			throws AlreadyExistsException {
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -38,21 +40,18 @@ public class ObjectiveJDBC extends Objective {
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next())
-			{
-				pstmt2 = conn.prepareStatement("INSERT INTO Objective (name, description, deadline, idActivity) "
-						+ "VALUES (?, ?, ?, ?)");
+			if (!rset.next()) {
+				pstmt2 = conn.prepareStatement(
+						"INSERT INTO Objective (name, description, deadline, idActivity) " + "VALUES (?, ?, ?, ?)");
 
 				pstmt2.setString(1, name);
 				pstmt2.setString(2, description);
-				pstmt2.setString(3, deadline);
+				pstmt2.setDate(3, valideDate);
 				pstmt2.setString(4, activity.getId());
 
 				pstmt2.executeUpdate();
 
-			}
-			else
-			{
+			} else {
 				throw new AlreadyExistsException("Objective already exists !");
 			}
 		}

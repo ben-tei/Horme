@@ -15,7 +15,7 @@ import exceptions.NotEnoughStockException;
 /**
  * The Class ProductView.
  */
-public class SearchView extends JPanel implements ActionListener{
+public class SearchView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -30,10 +30,10 @@ public class SearchView extends JPanel implements ActionListener{
 	/**
 	 * Instantiates a new product view.
 	 *
-	 * @param vc the vc
+	 * @param vc
+	 *            the vc
 	 */
-	public SearchView (ViewController vc, String searchString)
-	{
+	public SearchView(ViewController vc, String searchString) {
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -56,15 +56,13 @@ public class SearchView extends JPanel implements ActionListener{
 		quantity.setBounds(620, 175, 80, 14);
 		this.add(quantity);
 
-
 		int placement = 231;
 
 		productSet = this.viewController.getProductFacade().searchProducts(searchString);
 
-		for(int i = 0; i < productSet.size(); i++) {
+		for (int i = 0; i < productSet.size(); i++) {
 
-			if(productSet.getProductByIndex(i).getStockQuantity() > 0)
-			{
+			if (productSet.getProductByIndex(i).getStockQuantity() > 0) {
 
 				JLabel Pname = new JLabel(productSet.getProductByIndex(i).getName());
 				Pname.setBounds(65, placement, 120, 14);
@@ -79,9 +77,8 @@ public class SearchView extends JPanel implements ActionListener{
 				this.add(Pprice);
 
 				JComboBox<Integer> Pquantity = new JComboBox<Integer>();
-				for(int j = 0; j < productSet.getProductByIndex(i).getStockQuantity(); j++)
-				{
-					Pquantity.addItem(j+1);
+				for (int j = 0; j < productSet.getProductByIndex(i).getStockQuantity(); j++) {
+					Pquantity.addItem(j + 1);
 				}
 				Pquantity.setBounds(620, placement - 3, 50, 20);
 				this.add(Pquantity);
@@ -97,23 +94,27 @@ public class SearchView extends JPanel implements ActionListener{
 			}
 		}
 
-
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if(cmd.equals("add"))
-		{
-			int index = ((MyJButton)e.getSource()).getIndex();
+		if (cmd.equals("add")) {
+			int index = ((MyJButton) e.getSource()).getIndex();
 			try {
-				viewController.getProductFacade().updateQuantityInStock(index, (int) comboBoxList.get(index).getSelectedItem());
-				viewController.getShopCartFacade().addToShoppingCart(productSet.getProductByIndex(index), (int) comboBoxList.get(index).getSelectedItem());
-				JOptionPane.showMessageDialog(null, "The product has been added !", "Success", JOptionPane.INFORMATION_MESSAGE);
+				viewController.getProductFacade().updateQuantityInStock(index,
+						(int) comboBoxList.get(index).getSelectedItem());
+				viewController.getShopCartFacade().addToShoppingCart(productSet.getProductByIndex(index),
+						(int) comboBoxList.get(index).getSelectedItem());
+				JOptionPane.showMessageDialog(null, "The product has been added !", "Success",
+						JOptionPane.INFORMATION_MESSAGE);
 				viewController.showShopCartPanel();
 			} catch (NotEnoughStockException e1) {
 				// TODO Auto-generated catch block

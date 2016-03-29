@@ -18,7 +18,6 @@ public abstract class ShopCartRow {
 	/** The quantity. */
 	private int quantity;
 
-
 	/**
 	 * Instantiates a new shop cart row.
 	 */
@@ -30,36 +29,31 @@ public abstract class ShopCartRow {
 		return idProduct;
 	}
 
-
 	public void setIdProduct(String idProduct) {
 		this.idProduct = idProduct;
 	}
-
 
 	public String getIdShoppingCart() {
 		return idShoppingCart;
 	}
 
-
 	public void setIdShoppingCart(String idShoppingCart) {
 		this.idShoppingCart = idShoppingCart;
 	}
-
 
 	public String getName() {
 		return name;
 	}
 
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	/**
 	 * Sets the price.
 	 *
-	 * @param price the new price
+	 * @param price
+	 *            the new price
 	 */
 	public void setPrice(int price) {
 		this.price = price;
@@ -77,7 +71,8 @@ public abstract class ShopCartRow {
 	/**
 	 * Sets the quantity.
 	 *
-	 * @param quantity the new quantity
+	 * @param quantity
+	 *            the new quantity
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;

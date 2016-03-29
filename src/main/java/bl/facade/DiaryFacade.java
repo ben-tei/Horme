@@ -1,5 +1,7 @@
 package bl.facade;
 
+import java.sql.Date;
+
 import bl.core.Activity;
 import bl.core.Objective;
 import bl.core.ObjectiveSet;
@@ -14,8 +16,7 @@ public class DiaryFacade {
 	/**
 	 * Instantiates a new notification facade.
 	 */
-	public DiaryFacade() 
-	{
+	public DiaryFacade() {
 		this.diaryManager = new DiaryManager();
 	}
 
@@ -24,14 +25,14 @@ public class DiaryFacade {
 	 *
 	 * @return the notifications
 	 */
-	public ObjectiveSet readObjectives(User user)
-	{
+	public ObjectiveSet readObjectives(User user) {
 		return this.diaryManager.readObjectives(user);
 	}
 
-	public Objective createObjective(String name, String description, String deadline, Activity activity) throws AlreadyExistsException {
+	public Objective createObjective(String name, String description, Date valideDate, Activity activity)
+			throws AlreadyExistsException {
 		// TODO Auto-generated method stub
-		return this.diaryManager.createObjective(name, description, deadline, activity);
+		return this.diaryManager.createObjective(name, description, valideDate, activity);
 	}
 
 	public void removeFromMyObjectives(int index) {

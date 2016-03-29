@@ -68,8 +68,10 @@ public abstract class User extends Person {
 	/**
 	 * Instantiates a new user.
 	 *
-	 * @param login the login
-	 * @param password the password
+	 * @param login
+	 *            the login
+	 * @param password
+	 *            the password
 	 */
 	public User(String login, String password) {
 		super(login, password);
@@ -80,7 +82,8 @@ public abstract class User extends Person {
 	// End of user code
 	/**
 	 * Returns whishLists.
-	 * @return whishLists 
+	 * 
+	 * @return whishLists
 	 */
 	public HashSet<WhishList> getWhishLists() {
 		return this.whishLists;
@@ -96,7 +99,8 @@ public abstract class User extends Person {
 
 	/**
 	 * Returns entries.
-	 * @return entries 
+	 * 
+	 * @return entries
 	 */
 	public HashSet<DiaryEntry> getEntries() {
 		return this.entries;
@@ -104,7 +108,8 @@ public abstract class User extends Person {
 
 	/**
 	 * Returns estimates.
-	 * @return estimates 
+	 * 
+	 * @return estimates
 	 */
 	public HashSet<Estimate> getEstimates() {
 		return this.estimates;
@@ -112,7 +117,8 @@ public abstract class User extends Person {
 
 	/**
 	 * Returns orders.
-	 * @return orders 
+	 * 
+	 * @return orders
 	 */
 	public HashSet<Order> getOrders() {
 		return this.orders;
@@ -120,7 +126,8 @@ public abstract class User extends Person {
 
 	/**
 	 * Returns proposedActivities.
-	 * @return proposedActivities 
+	 * 
+	 * @return proposedActivities
 	 */
 	public HashSet<Activity> getProposedActivities() {
 		return this.proposedActivities;
@@ -138,7 +145,8 @@ public abstract class User extends Person {
 	/**
 	 * Sets the id.
 	 *
-	 * @param id the new id
+	 * @param id
+	 *            the new id
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -147,18 +155,16 @@ public abstract class User extends Person {
 	/**
 	 * Checks if is password ok.
 	 *
-	 * @param password the password
+	 * @param password
+	 *            the password
 	 * @return true, if is password ok
-	 * @throws WrongPasswordException the wrong password exception
+	 * @throws WrongPasswordException
+	 *             the wrong password exception
 	 */
-	public boolean isPasswordOK(String password) throws WrongPasswordException
-	{
-		if(this.getPassword().equals(password))
-		{
+	public boolean isPasswordOK(String password) throws WrongPasswordException {
+		if (this.getPassword().equals(password)) {
 			return true;
-		}
-		else
-		{
+		} else {
 			throw new WrongPasswordException("Wrong password !");
 		}
 	}
