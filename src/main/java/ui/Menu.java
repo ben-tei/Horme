@@ -71,10 +71,10 @@ public class Menu implements ActionListener {
 		lblUser.setBounds(15, 31, 180, 14);
 		jp.add(lblUser);
 
-		btnDisconnect = new JButton("Disconnect");
-		btnDisconnect.setBounds(200, 28, 100, 20);
+		btnDisconnect = new JButton("Logout");
+		btnDisconnect.setBounds(200, 28, 80, 20);
 		btnDisconnect.addActionListener(this);
-		btnDisconnect.setActionCommand("disconnect");
+		btnDisconnect.setActionCommand("logout");
 		btnDisconnect.setFocusPainted(false);
 		jp.add(btnDisconnect);
 
@@ -189,7 +189,7 @@ public class Menu implements ActionListener {
 			this.viewController.showSearchPanel(this.search.getText());
 		}
 
-		else if (cmd.equals("disconnect")) {
+		else if (cmd.equals("logout")) {
 			this.viewController.showLoginPanel();
 		}
 	}
