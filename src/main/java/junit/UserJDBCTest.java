@@ -7,6 +7,7 @@ import org.junit.Test;
 import exceptions.WrongLoginException;
 import junit.framework.TestCase;
 import persist.jdbc.UserJDBC;
+import util.HashText;
 
 public class UserJDBCTest extends TestCase {
 
@@ -14,7 +15,7 @@ public class UserJDBCTest extends TestCase {
 
 	@Before
 	public void setUp() throws WrongLoginException {
-		userJDBC = new UserJDBC("abc");
+		userJDBC = new UserJDBC();
 	}
 
 	@After
@@ -23,8 +24,19 @@ public class UserJDBCTest extends TestCase {
 
 	@Test
 	public void test() {
-		//fail("Not yet implemented");
-		assertEquals(userJDBC.getLogin(), "abc");
+		String login = "abc";
+		String password = "abc";
+
+		String encryptedPassword = "a9993e364706816aba3e25717850c26c9cd0d89d";
+		password = HashText.sha1(password);
+
+		userJDBC.setLogin(login);
+		userJDBC.setPassword(password);
+
+		assertNotNull(userJDBC);
+		assertEquals(login, userJDBC.getLogin());
+		assertEquals(encryptedPassword, userJDBC.getPassword());
+
 	}
 
 }

@@ -11,6 +11,11 @@ import exceptions.*;
 public class UserJDBC extends User
 {
 
+	public UserJDBC() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
 	/**
 	 * Instantiates a new user jdbc.
 	 *
