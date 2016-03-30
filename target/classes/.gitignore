@@ -1,3 +1,11 @@
+<<<<<<< Updated upstream
 /ui/
 /bl/
+=======
+/junit/
+/persist/
+/bl/
+/exceptions/
+/ui/
+>>>>>>> Stashed changes
 /util/

@@ -13,7 +13,7 @@ public class ObjectiveJDBCTest extends TestCase {
 	protected ObjectiveJDBC objectiveJDBC;
 
 	@Before
-	public void setUp() throws WrongLoginException {
+	public void setUp() {
 		objectiveJDBC = new ObjectiveJDBC();
 	}
 

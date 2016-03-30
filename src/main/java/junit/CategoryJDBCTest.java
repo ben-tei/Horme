@@ -14,7 +14,7 @@ public class CategoryJDBCTest extends TestCase {
 	protected CategoryJDBC categoryJDBC;
 
 	@Before
-	public void setUp() throws WrongLoginException {
+	public void setUp() {
 		categoryJDBC = new CategoryJDBC();
 	}
 
