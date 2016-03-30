@@ -10,6 +10,11 @@ import bl.core.User;
  */
 public class ActivitySetJDBC extends ActivitySet {
 
+	public ActivitySetJDBC() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
 	/**
 	 * Instantiates a new activity set jdbc.
 	 *
@@ -64,4 +69,5 @@ public class ActivitySetJDBC extends ActivitySet {
 
 		}
 	}
+	
 }

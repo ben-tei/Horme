@@ -8,20 +8,33 @@ import persist.jdbc.ProductSetJDBC;
 
 
 public class ProductSetJDBCTest extends TestCase {
+
 	@After
 	public void tearDown() {
 	}
 
+	@Test
+	public void testCreateEmptyProductSetJDBC() {
+
+		ProductSetJDBC productSetJDBC = new ProductSetJDBC();
+
+		assertNotNull(productSetJDBC);
+		assertFalse("A new productSetJDBC should be not empty", productSetJDBC.isEmpty());
+		assertTrue("A new productSetJDBC has elements", productSetJDBC.size() > 0);
+	}
 
 	@Test
 	public void testAdd() {
 
-		ProductSetJDBC productSetJDBC = new ProductSetJDBC(null);
+		ProductSetJDBC productSetJDBC = new ProductSetJDBC();
 		ProductJDBC productJDBC = new ProductJDBC();
 
 		productSetJDBC.addProduct(productJDBC);
 
-		assertFalse("The ProductSetJDBC must be not empty", productSetJDBC.isEmpty());
-		assertEquals("The ProductSetJDBC contains 1 item", 1, productSetJDBC.size());
+		assertNotNull(productSetJDBC);
+		assertNotNull(productJDBC);
+		assertFalse("The productSetJDBC must be not empty", productSetJDBC.isEmpty());
+		assertTrue("The productSetJDBC has elements", productSetJDBC.size() > 0);
 	}
+
 }

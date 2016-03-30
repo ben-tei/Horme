@@ -9,6 +9,7 @@ import junit.framework.TestCase;
 import persist.jdbc.ProductJDBC;
 
 public class ProductJDBCTest extends TestCase {
+
 	protected ProductJDBC productJDBC;
 
 	@Before
@@ -30,4 +31,5 @@ public class ProductJDBCTest extends TestCase {
 		assertEquals(name, productJDBC.getName());
 
 	}
+
 }

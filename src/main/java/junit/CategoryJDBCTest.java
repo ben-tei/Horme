@@ -10,7 +10,7 @@ import persist.jdbc.CategoryJDBC;
 
 
 public class CategoryJDBCTest extends TestCase {
-	
+
 	protected CategoryJDBC categoryJDBC;
 
 	@Before
@@ -24,7 +24,7 @@ public class CategoryJDBCTest extends TestCase {
 
 	@Test
 	public void test() {
-		String shortDescription = "Je suis un catégorie";
+		String shortDescription = "Je suis un categorie";
 
 		categoryJDBC.setShortDescription(shortDescription);
 

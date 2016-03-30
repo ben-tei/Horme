@@ -8,19 +8,30 @@ import persist.jdbc.ActivityJDBC;
 import persist.jdbc.ActivitySetJDBC;
 
 public class ActivitySetJDBCTest extends TestCase {
+
 	@After
 	public void tearDown() {
 	}
 
+	@Test
+	public void testCreateEmptyActivitySetJDBC() {
+
+		ActivitySetJDBC activitySetJDBC = new ActivitySetJDBC();
+
+		assertNotNull(activitySetJDBC);
+		assertTrue("A new activitySetJDBC should be empty", activitySetJDBC.isEmpty());
+		assertEquals("A new activitySetJDBC has no element", 0, activitySetJDBC.size());
+	}
 
 	@Test
 	public void testAdd() {
 
-		ActivitySetJDBC activitySetJDBC = new ActivitySetJDBC(null);
+		ActivitySetJDBC activitySetJDBC = new ActivitySetJDBC();
 		ActivityJDBC activityJDBC = new ActivityJDBC();
 
 		activitySetJDBC.addActivity(activityJDBC);
 
+		assertNotNull(activitySetJDBC);
 		assertFalse("The ActivitySetJDBC must be not empty", activitySetJDBC.isEmpty());
 		assertEquals("The ActivitySetJDBC contains 1 item", 1, activitySetJDBC.size());
 	}
