@@ -64,13 +64,6 @@ public class OrdersView extends JPanel implements ActionListener {
 			Pnumero.setBounds(334, placement, 120, 14);
 			this.add(Pnumero);
 
-			/*
-			 * JLabel Pwebsite = new
-			 * JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getTrader(
-			 * ).getWebsite()); Pwebsite.setBounds(519, placement, 300, 14);
-			 * this.add(Pwebsite);
-			 */
-
 			placement = placement + 32;
 		}
 
