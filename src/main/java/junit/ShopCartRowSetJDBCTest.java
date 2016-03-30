@@ -9,8 +9,6 @@ import persist.jdbc.ShopCartRowSetJDBC;
 
 public class ShopCartRowSetJDBCTest extends TestCase {
 
-	protected ShopCartRowSetJDBC shopCartRowSetJDBC;
-
 	@After
 	public void tearDown() {
 	}

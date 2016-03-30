@@ -66,13 +66,26 @@ public class Menu implements ActionListener {
 	public Menu(JPanel jp, ViewController vc) {
 		this.viewController = vc;
 
-		lblUser = new JLabel("Connected as : " + this.viewController.getUserFacade().getUser().getFirstName() + " "
-				+ this.viewController.getUserFacade().getUser().getName());
-		lblUser.setBounds(15, 31, 180, 14);
+		String firstname = this.viewController.getUserFacade().getUser().getFirstName();
+		String name = this.viewController.getUserFacade().getUser().getName();
+
+		lblUser = new JLabel(firstname + " " + name);
+		lblUser.setBounds(15, 31, 174, 14);
 		jp.add(lblUser);
+		
+		int x = 0;
+		
+		if(firstname.length() + name.length() > 174)
+		{
+			x = 194;
+		}
+		else
+		{
+			x = (firstname.length() + name.length() + 1) * 11;
+		}
 
 		btnDisconnect = new JButton("Logout");
-		btnDisconnect.setBounds(200, 28, 80, 20);
+		btnDisconnect.setBounds(x, 28, 80, 20);
 		btnDisconnect.addActionListener(this);
 		btnDisconnect.setActionCommand("logout");
 		btnDisconnect.setFocusPainted(false);
@@ -91,7 +104,7 @@ public class Menu implements ActionListener {
 		jp.add(btnProfile);
 
 		btnProducts = new JButton("Products");
-		btnProducts.setBounds(233, 70, 91, 23);
+		btnProducts.setBounds(236, 70, 91, 23);
 		btnProducts.addActionListener(this);
 		btnProducts.setActionCommand("products");
 		jp.add(btnProducts);

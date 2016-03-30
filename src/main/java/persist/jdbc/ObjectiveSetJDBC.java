@@ -10,6 +10,11 @@ import bl.core.User;
 
 public class ObjectiveSetJDBC extends ObjectiveSet {
 
+	public ObjectiveSetJDBC() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
 	public ObjectiveSetJDBC(User user) {
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
