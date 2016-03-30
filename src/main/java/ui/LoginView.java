@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import bl.core.User;
+
 import javax.swing.JButton;
 
 /**
@@ -157,9 +160,8 @@ public class LoginView extends JPanel implements ActionListener {
 		if (cmd.equals("login")) {
 			if ((!getLoginText().equals("")) && (!getPasswdText().equals(""))) {
 				try {
-					this.viewController.getUserFacade().login(getLoginText(), getPasswdText());
-					this.viewController.getUserFacade().getUser().setShoppingCart(this.viewController
-							.getShopCartFacade().getShopCart(this.viewController.getUserFacade().getUser()));
+					User u = this.viewController.getUserFacade().login(getLoginText(), getPasswdText());
+					u.setShoppingCart(this.viewController.getShopCartFacade().getShopCart(u));
 
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success",
 							JOptionPane.INFORMATION_MESSAGE);
