@@ -167,7 +167,7 @@ public class Menu implements ActionListener {
 		String cmd = e.getActionCommand();
 
 		if (cmd.equals("home")) {
-			this.viewController.showIndexPanel();
+			this.viewController.showHomePanel();
 		}
 
 		else if (cmd.equals("profil")) {

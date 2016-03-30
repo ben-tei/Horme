@@ -374,7 +374,7 @@ public class ProfileView extends JPanel implements ActionListener {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
 		if (cmd.equals("back")) {
-			this.viewController.showIndexPanel();
+			this.viewController.showHomePanel();
 		} else if (cmd.equals("confirm")) {
 			if (fieldsAreEmpty()) {
 				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",

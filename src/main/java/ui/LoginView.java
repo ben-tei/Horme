@@ -163,7 +163,7 @@ public class LoginView extends JPanel implements ActionListener {
 
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success",
 							JOptionPane.INFORMATION_MESSAGE);
-					this.viewController.showIndexPanel();
+					this.viewController.showHomePanel();
 				} catch (WrongLoginException | WrongPasswordException e1) {
 					// TODO Auto-generated catch block
 					// e1.printStackTrace();

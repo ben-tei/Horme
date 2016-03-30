@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * The Class IndexView.
  */
-public class IndexView extends JPanel implements ActionListener {
+public class HomeView extends JPanel implements ActionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class IndexView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public IndexView(ViewController vc) {
+	public HomeView(ViewController vc) {
 		this.viewController = vc;
 
 		this.setLayout(null);

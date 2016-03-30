@@ -90,9 +90,9 @@ public class ViewController {
 	/**
 	 * Show index panel.
 	 */
-	public void showIndexPanel() {
-		this.myWindow.setTitle("Horme - Welcome");
-		this.myJPanel = new IndexView(this);
+	public void showHomePanel() {
+		this.myWindow.setTitle("Horme - Home");
+		this.myJPanel = new HomeView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
