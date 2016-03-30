@@ -99,4 +99,9 @@ public class UserFacade {
 		return this.userManager.getUser();
 	}
 
+	public void sendMail(String login) throws WrongLoginException {
+		this.userManager.sendMail(login);
+
+	}
+
 }

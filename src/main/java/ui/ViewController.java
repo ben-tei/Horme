@@ -44,7 +44,7 @@ public class ViewController {
 	public ViewController() {
 		this.myWindow = new Window(600, 920);
 		try {
-			this.myWindow.setIconImage(ImageIO.read(new File("icon.png")));
+			this.myWindow.setIconImage(ImageIO.read(new File("assets/icon.png")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -168,7 +168,6 @@ public class ViewController {
 	 */
 	public void showActivityPanel() {
 		this.myWindow.setTitle("Horme - New Activity");
-		// this.myJDialog = new ActivityView(this);
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
@@ -270,6 +269,15 @@ public class ViewController {
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
+	}
+
+	public void showForgotPasswordPanel() {
+		this.myWindow.setTitle("Horme - Forgot Password");
+		this.myJPanel = new ForgotPasswordView(this);
+		this.myWindow.setContentPane(this.myJPanel);
+		this.myWindow.getContentPane().revalidate();
+		this.myWindow.getContentPane().repaint();
+		
 	}
 
 }

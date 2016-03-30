@@ -10,6 +10,8 @@ import exceptions.WrongPasswordException;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -101,6 +103,18 @@ public class LoginView extends JPanel implements ActionListener {
 		this.btnSignUp.setActionCommand("signup");
 		this.btnSignUp.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnSignUp);
+
+		JLabel forgotPswd = new JLabel("Forgot your password ?");
+		forgotPswd.setBounds(290, 380, 200, 20);
+		forgotPswd.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.add(forgotPswd);
+		forgotPswd.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				viewController.showForgotPasswordPanel();
+			}
+
+		});
 
 	}
 

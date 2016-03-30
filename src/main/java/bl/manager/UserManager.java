@@ -7,6 +7,7 @@ import exceptions.WrongLoginException;
 import exceptions.WrongPasswordException;
 import persist.factoryjdbc.FactoryJDBC;
 import util.HashText;
+import util.SendMailSSL;
 
 /**
  * The Class UserManager.
@@ -124,6 +125,11 @@ public class UserManager {
 	 */
 	public User getUser() {
 		return this.user;
+	}
+
+	public void sendMail(String login) throws WrongLoginException {
+		user = this.factory.findUser(login);
+		SendMailSSL.sendMail(user.getEmail());
 	}
 
 }
