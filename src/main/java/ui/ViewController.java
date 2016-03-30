@@ -1,5 +1,9 @@
 package ui;
 
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import bl.facade.ActivityFacade;
@@ -39,6 +43,12 @@ public class ViewController {
 	 */
 	public ViewController() {
 		this.myWindow = new Window(600, 920);
+		try {
+			this.myWindow.setIconImage(ImageIO.read(new File("icon.png")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.userFacade = new UserFacade();
 		this.shopCartFacade = new ShopCartFacade();
 		this.categoryFacade = new CategoryFacade();

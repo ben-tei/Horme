@@ -1,7 +1,9 @@
 package ui;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +30,11 @@ public class HomeView extends JPanel implements ActionListener {
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
+		
+		JLabel welcome = new JLabel("Welcome !");
+		welcome.setBounds(65, 175, 80, 14);
+		welcome.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		this.add(welcome);
 
 	}
 

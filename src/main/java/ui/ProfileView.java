@@ -93,25 +93,10 @@ public class ProfileView extends JPanel implements ActionListener {
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblEmail);
 
-		/*
-		 * JLabel lblPswd = new JLabel("Password"); lblPswd.setBounds(75, 430,
-		 * 81, 20); lblPswd.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		 * this.add(lblPswd);
-		 */
-
 		JLabel lblCity = new JLabel("City *");
 		lblCity.setBounds(75, 259, 41, 20);
 		lblCity.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblCity);
-
-		/*
-		 * JLabel lblSiret = new JLabel("SIRET");
-		 * sl_container.putConstraint(SpringLayout.NORTH, lblSiret, 34,
-		 * SpringLayout.SOUTH, lblPswd);
-		 * sl_container.putConstraint(SpringLayout.WEST, lblSiret, 0,
-		 * SpringLayout.WEST, lblName); lblSiret.setFont(new Font("Tahoma",
-		 * Font.PLAIN, 16)); this.add(lblSiret);
-		 */
 
 		JLabel lblFirstname = new JLabel("Firstname *");
 		lblFirstname.setBounds(450, 140, 83, 20);
@@ -132,22 +117,6 @@ public class ProfileView extends JPanel implements ActionListener {
 		lblEmailConfirm.setBounds(450, 312, 115, 20);
 		lblEmailConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		this.add(lblEmailConfirm);
-
-		/*
-		 * JLabel lblPswdConfirm = new JLabel("Confirm Password");
-		 * lblPswdConfirm.setBounds(450, 430, 143, 20);
-		 * lblPswdConfirm.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		 * this.add(lblPswdConfirm);
-		 */
-
-		/*
-		 * JLabel lblWebsite = new JLabel("Website");
-		 * sl_container.putConstraint(SpringLayout.NORTH, lblWebsite, 0,
-		 * SpringLayout.NORTH, lblSiret);
-		 * sl_container.putConstraint(SpringLayout.WEST, lblWebsite, 0,
-		 * SpringLayout.WEST, lblFirstname); lblWebsite.setFont(new
-		 * Font("Tahoma", Font.PLAIN, 16)); this.add(lblWebsite);
-		 */
 
 		JLabel lblFields = new JLabel("All fields with a * are mandatory fields");
 		lblFields.setBounds(75, 400, 206, 15);
@@ -185,21 +154,6 @@ public class ProfileView extends JPanel implements ActionListener {
 		emailField.setBounds(175, 312, 200, 20);
 		this.add(emailField);
 
-		/*
-		 * pswdField = new JPasswordField(); pswdField.setBounds(175, 430, 200,
-		 * 20); this.add(pswdField);
-		 */
-
-		/*
-		 * siretField = new JTextField();
-		 * sl_container.putConstraint(SpringLayout.WEST, siretField, 43,
-		 * SpringLayout.EAST, lblSiret);
-		 * sl_container.putConstraint(SpringLayout.SOUTH, siretField, 0,
-		 * SpringLayout.SOUTH, lblSiret);
-		 * sl_container.putConstraint(SpringLayout.EAST, siretField, 0,
-		 * SpringLayout.EAST, lblFields); this.add(siretField);
-		 */
-
 		firstnameField = new JTextField(this.viewController.getUserFacade().getUser().getFirstName());
 		firstnameField.setBounds(613, 140, 200, 20);
 		this.add(firstnameField);
@@ -215,22 +169,6 @@ public class ProfileView extends JPanel implements ActionListener {
 		emailConfirmField = new JTextField(this.viewController.getUserFacade().getUser().getEmail());
 		emailConfirmField.setBounds(613, 312, 200, 20);
 		this.add(emailConfirmField);
-
-		/*
-		 * pswdConfirmField = new JPasswordField();
-		 * pswdConfirmField.setBounds(613, 430, 200, 20);
-		 * this.add(pswdConfirmField);
-		 */
-
-		/*
-		 * websiteField = new JTextField();
-		 * sl_container.putConstraint(SpringLayout.NORTH, websiteField, 0,
-		 * SpringLayout.NORTH, lblSiret);
-		 * sl_container.putConstraint(SpringLayout.WEST, websiteField, 0,
-		 * SpringLayout.WEST, firstnameField);
-		 * sl_container.putConstraint(SpringLayout.EAST, websiteField, 0,
-		 * SpringLayout.EAST, firstnameField); this.add(websiteField);
-		 */
 
 	}
 
