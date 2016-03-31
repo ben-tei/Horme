@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Trader extends Person {
+public abstract class Trader extends Person
+{
 	/**
 	 * Description of the property id.
 	 */
@@ -52,7 +53,8 @@ public abstract class Trader extends Person {
 	/**
 	 * The constructor.
 	 */
-	public Trader() {
+	public Trader()
+	{
 		// Start of user code constructor for Trader)
 		super();
 		// End of user code
@@ -64,7 +66,8 @@ public abstract class Trader extends Person {
 	 * @param id
 	 *            the id
 	 */
-	public Trader(String id) {
+	public Trader(String id)
+	{
 		this.id = id;
 	}
 
@@ -76,7 +79,8 @@ public abstract class Trader extends Person {
 	 * 
 	 * @return SIRET
 	 */
-	public String getSIRET() {
+	public String getSIRET()
+	{
 		return this.SIRET;
 	}
 
@@ -86,7 +90,8 @@ public abstract class Trader extends Person {
 	 * @param newSIRET
 	 *            the new siret
 	 */
-	public void setSIRET(String newSIRET) {
+	public void setSIRET(String newSIRET)
+	{
 		this.SIRET = newSIRET;
 	}
 
@@ -95,7 +100,8 @@ public abstract class Trader extends Person {
 	 * 
 	 * @return orders
 	 */
-	public HashSet<Order> getOrders() {
+	public HashSet<Order> getOrders()
+	{
 		return this.orders;
 	}
 
@@ -104,7 +110,8 @@ public abstract class Trader extends Person {
 	 * 
 	 * @return website
 	 */
-	public String getWebsite() {
+	public String getWebsite()
+	{
 		return this.website;
 	}
 
@@ -114,7 +121,8 @@ public abstract class Trader extends Person {
 	 * @param newWebsite
 	 *            the new website
 	 */
-	public void setWebsite(String newWebsite) {
+	public void setWebsite(String newWebsite)
+	{
 		this.website = newWebsite;
 	}
 
@@ -123,7 +131,8 @@ public abstract class Trader extends Person {
 	 * 
 	 * @return products
 	 */
-	public HashSet<Product> getProducts() {
+	public HashSet<Product> getProducts()
+	{
 		return this.products;
 	}
 
@@ -132,7 +141,8 @@ public abstract class Trader extends Person {
 	 * 
 	 * @return estimates
 	 */
-	public HashSet<Estimate> getEstimates() {
+	public HashSet<Estimate> getEstimates()
+	{
 		return this.estimates;
 	}
 
@@ -141,7 +151,8 @@ public abstract class Trader extends Person {
 	 *
 	 * @return the id
 	 */
-	public String getId() {
+	public String getId()
+	{
 		return id;
 	}
 
@@ -151,7 +162,8 @@ public abstract class Trader extends Person {
 	 * @param id
 	 *            the new id
 	 */
-	public void setId(String id) {
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 

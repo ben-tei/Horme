@@ -32,12 +32,14 @@ import persist.jdbc.UserJDBC;
 /**
  * The Class FactoryJDBC.
  */
-public class FactoryJDBC extends Factory {
+public class FactoryJDBC extends Factory
+{
 
 	/**
 	 * Instantiates a new factory jdbc.
 	 */
-	public FactoryJDBC() {
+	public FactoryJDBC()
+	{
 	}
 
 	/*
@@ -46,7 +48,8 @@ public class FactoryJDBC extends Factory {
 	 * @see bl.factory.Factory#findUser(java.lang.String)
 	 */
 	@Override
-	public User findUser(String login) throws WrongLoginException {
+	public User findUser(String login) throws WrongLoginException
+	{
 		return new UserJDBC(login);
 	}
 
@@ -59,7 +62,8 @@ public class FactoryJDBC extends Factory {
 	 */
 	@Override
 	public User createUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) throws AlreadyExistsException {
+			String email, String login, String password) throws AlreadyExistsException
+	{
 		return new UserJDBC(name, firstname, street, zipCode, city, phone, email, login, password);
 	}
 
@@ -69,7 +73,8 @@ public class FactoryJDBC extends Factory {
 	 * @see bl.factory.Factory#readProducts()
 	 */
 	@Override
-	public ProductSet readProducts() {
+	public ProductSet readProducts()
+	{
 		return new ProductSetJDBC();
 	}
 
@@ -79,7 +84,8 @@ public class FactoryJDBC extends Factory {
 	 * @see bl.factory.Factory#searchProducts(java.lang.String)
 	 */
 	@Override
-	public ProductSet searchProducts(String searchString) {
+	public ProductSet searchProducts(String searchString)
+	{
 		return new ProductSetJDBC(searchString);
 	}
 
@@ -89,11 +95,18 @@ public class FactoryJDBC extends Factory {
 	 * @see bl.factory.Factory#readShopCart(bl.core.User)
 	 */
 	@Override
-	public ShopCartRowSet readShopCart(User user) {
+	public ShopCartRowSet readShopCart(User user)
+	{
 		return new ShopCartRowSetJDBC(user);
 	}
 
-	public ShoppingCart getShopCart(User user) {
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#getShopCart(bl.core.User)
+	 */
+	public ShoppingCart getShopCart(User user)
+	{
 		return new ShoppingCartJDBC(user);
 	}
 
@@ -102,7 +115,8 @@ public class FactoryJDBC extends Factory {
 	 * 
 	 * @see bl.factory.Factory#readActivities(bl.core.User)
 	 */
-	public ActivitySet readActivities(User user) {
+	public ActivitySet readActivities(User user)
+	{
 		// TODO Auto-generated method stub
 		return new ActivitySetJDBC(user);
 	}
@@ -113,38 +127,72 @@ public class FactoryJDBC extends Factory {
 	 * @see bl.factory.Factory#readOrders(bl.core.User)
 	 */
 	@Override
-	public OrderSet readOrders(User user) {
+	public OrderSet readOrders(User user)
+	{
 		return new OrderSetJDBC(user);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#createShopCartRow(bl.core.Product,
+	 * bl.core.ShoppingCart, int)
+	 */
 	@Override
-	public ShopCartRow createShopCartRow(Product p, ShoppingCart shopCart, int quantity) {
+	public ShopCartRow createShopCartRow(Product p, ShoppingCart shopCart, int quantity)
+	{
 		// TODO Auto-generated method stub
 		return new ShopCartRowJDBC(p, shopCart, quantity);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#getActivitiesCategories()
+	 */
 	@Override
-	public ActivityCategorySet getActivitiesCategories() {
+	public ActivityCategorySet getActivitiesCategories()
+	{
 		// TODO Auto-generated method stub
 		return new ActivityCategorySetJDBC();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#createActivity(java.lang.String,
+	 * java.lang.String, bl.core.Category, bl.core.User)
+	 */
 	@Override
 	public Activity createActivity(String name, String description, Category category, User user)
-			throws AlreadyExistsException {
+			throws AlreadyExistsException
+	{
 		// TODO Auto-generated method stub
 		return new ActivityJDBC(name, description, category, user);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#readObjectives(bl.core.User)
+	 */
 	@Override
-	public ObjectiveSet readObjectives(User user) {
+	public ObjectiveSet readObjectives(User user)
+	{
 		// TODO Auto-generated method stub
 		return new ObjectiveSetJDBC(user);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.factory.Factory#createObjective(java.lang.String,
+	 * java.lang.String, java.sql.Date, bl.core.Activity)
+	 */
 	@Override
 	public Objective createObjective(String name, String description, Date valideDate, Activity activity)
-			throws AlreadyExistsException {
+			throws AlreadyExistsException
+	{
 		// TODO Auto-generated method stub
 		return new ObjectiveJDBC(name, description, valideDate, activity);
 	}

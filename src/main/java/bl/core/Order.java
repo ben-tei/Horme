@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Order {
+public abstract class Order
+{
 	/**
 	 * Description of the property traders.
 	 */
@@ -48,7 +49,8 @@ public abstract class Order {
 	/**
 	 * The constructor.
 	 */
-	public Order() {
+	public Order()
+	{
 		// Start of user code constructor for Order)
 		super();
 		// End of user code
@@ -62,7 +64,8 @@ public abstract class Order {
 	 * 
 	 * @return traders
 	 */
-	public Trader getTrader() {
+	public Trader getTrader()
+	{
 		return this.trader;
 	}
 
@@ -71,7 +74,8 @@ public abstract class Order {
 	 * 
 	 * @return date
 	 */
-	public String getDate() {
+	public String getDate()
+	{
 		return this.date;
 	}
 
@@ -81,7 +85,8 @@ public abstract class Order {
 	 * @param newDate
 	 *            the new date
 	 */
-	public void setDate(String newDate) {
+	public void setDate(String newDate)
+	{
 		this.date = newDate;
 	}
 
@@ -90,7 +95,8 @@ public abstract class Order {
 	 * 
 	 * @return numero
 	 */
-	public String getNumero() {
+	public String getNumero()
+	{
 		return this.numero;
 	}
 
@@ -100,7 +106,8 @@ public abstract class Order {
 	 * @param newNumero
 	 *            the new numero
 	 */
-	public void setNumero(String newNumero) {
+	public void setNumero(String newNumero)
+	{
 		this.numero = newNumero;
 	}
 
@@ -109,7 +116,8 @@ public abstract class Order {
 	 * 
 	 * @return products
 	 */
-	public HashSet<Product> getProducts() {
+	public HashSet<Product> getProducts()
+	{
 		return this.products;
 	}
 
@@ -118,7 +126,8 @@ public abstract class Order {
 	 * 
 	 * @return user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
@@ -128,7 +137,8 @@ public abstract class Order {
 	 * @param newUser
 	 *            the new user
 	 */
-	public void setUser(User newUser) {
+	public void setUser(User newUser)
+	{
 		this.user = newUser;
 	}
 
@@ -138,7 +148,8 @@ public abstract class Order {
 	 * @param newTrader
 	 *            the new trader
 	 */
-	public void setTrader(Trader newTrader) {
+	public void setTrader(Trader newTrader)
+	{
 		this.trader = newTrader;
 
 	}

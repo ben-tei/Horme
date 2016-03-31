@@ -15,8 +15,10 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Category {
+public abstract class Category
+{
 
+	/** The id. */
 	private String id = "";
 	/**
 	 * Description of the property name.
@@ -60,7 +62,8 @@ public abstract class Category {
 	/**
 	 * The constructor.
 	 */
-	public Category() {
+	public Category()
+	{
 		// Start of user code constructor for Category)
 		super();
 		// End of user code
@@ -74,7 +77,8 @@ public abstract class Category {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -84,7 +88,8 @@ public abstract class Category {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -93,15 +98,29 @@ public abstract class Category {
 	 * 
 	 * @return shortDescription
 	 */
-	public String getShortDescription() {
+	public String getShortDescription()
+	{
 		return this.shortDescription;
 	}
 
-	public String getId() {
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public String getId()
+	{
 		return id;
 	}
 
-	public void setId(String id) {
+	/**
+	 * Sets the id.
+	 *
+	 * @param id
+	 *            the new id
+	 */
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 
@@ -111,7 +130,8 @@ public abstract class Category {
 	 * @param newShortDescription
 	 *            the new short description
 	 */
-	public void setShortDescription(String newShortDescription) {
+	public void setShortDescription(String newShortDescription)
+	{
 		this.shortDescription = newShortDescription;
 	}
 
@@ -120,7 +140,8 @@ public abstract class Category {
 	 * 
 	 * @return longDescription
 	 */
-	public String getLongDescription() {
+	public String getLongDescription()
+	{
 		return this.longDescription;
 	}
 
@@ -130,7 +151,8 @@ public abstract class Category {
 	 * @param newLongDescription
 	 *            the new long description
 	 */
-	public void setLongDescription(String newLongDescription) {
+	public void setLongDescription(String newLongDescription)
+	{
 		this.longDescription = newLongDescription;
 	}
 
@@ -139,7 +161,8 @@ public abstract class Category {
 	 * 
 	 * @return categories2
 	 */
-	public HashSet<Category> getCategories2() {
+	public HashSet<Category> getCategories2()
+	{
 		return this.categories2;
 	}
 
@@ -148,7 +171,8 @@ public abstract class Category {
 	 * 
 	 * @return activities
 	 */
-	public HashSet<Activity> getActivities() {
+	public HashSet<Activity> getActivities()
+	{
 		return this.activities;
 	}
 
@@ -157,7 +181,8 @@ public abstract class Category {
 	 * 
 	 * @return products
 	 */
-	public HashSet<Product> getProducts() {
+	public HashSet<Product> getProducts()
+	{
 		return this.products;
 	}
 
@@ -166,7 +191,8 @@ public abstract class Category {
 	 * 
 	 * @return categories1
 	 */
-	public HashSet<Category> getCategories1() {
+	public HashSet<Category> getCategories1()
+	{
 		return this.categories1;
 	}
 

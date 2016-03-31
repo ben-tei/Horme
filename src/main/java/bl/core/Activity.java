@@ -15,7 +15,10 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Activity {
+public abstract class Activity
+{
+
+	/** The id. */
 	private String id = "";
 	/**
 	 * Description of the property user.
@@ -59,7 +62,8 @@ public abstract class Activity {
 	/**
 	 * The constructor.
 	 */
-	public Activity() {
+	public Activity()
+	{
 		// Start of user code constructor for Activity)
 		super();
 		// End of user code
@@ -74,15 +78,29 @@ public abstract class Activity {
 	 * 
 	 * @return user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
-	public String getId() {
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public String getId()
+	{
 		return id;
 	}
 
-	public void setId(String id) {
+	/**
+	 * Sets the id.
+	 *
+	 * @param id
+	 *            the new id
+	 */
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 
@@ -92,7 +110,8 @@ public abstract class Activity {
 	 * @param newUser
 	 *            the new user
 	 */
-	public void setUser(User newUser) {
+	public void setUser(User newUser)
+	{
 		this.user = newUser;
 	}
 
@@ -101,7 +120,8 @@ public abstract class Activity {
 	 * 
 	 * @return ressources
 	 */
-	public HashSet<Ressource> getRessources() {
+	public HashSet<Ressource> getRessources()
+	{
 		return this.ressources;
 	}
 
@@ -110,7 +130,8 @@ public abstract class Activity {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -120,7 +141,8 @@ public abstract class Activity {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -129,7 +151,8 @@ public abstract class Activity {
 	 * 
 	 * @return category
 	 */
-	public Category getCategory() {
+	public Category getCategory()
+	{
 		return this.category;
 	}
 
@@ -139,7 +162,8 @@ public abstract class Activity {
 	 * @param newCategory
 	 *            the new category
 	 */
-	public void setCategory(Category newCategory) {
+	public void setCategory(Category newCategory)
+	{
 		this.category = newCategory;
 	}
 
@@ -148,7 +172,8 @@ public abstract class Activity {
 	 * 
 	 * @return entries
 	 */
-	public HashSet<DiaryEntry> getEntries() {
+	public HashSet<DiaryEntry> getEntries()
+	{
 		return this.entries;
 	}
 
@@ -157,7 +182,8 @@ public abstract class Activity {
 	 * 
 	 * @return objectives
 	 */
-	public HashSet<Objective> getObjectives() {
+	public HashSet<Objective> getObjectives()
+	{
 		return this.objectives;
 	}
 
@@ -166,7 +192,8 @@ public abstract class Activity {
 	 *
 	 * @return the description
 	 */
-	public String getDescription() {
+	public String getDescription()
+	{
 		return description;
 	}
 
@@ -176,10 +203,14 @@ public abstract class Activity {
 	 * @param description
 	 *            the new description
 	 */
-	public void setDescription(String description) {
+	public void setDescription(String description)
+	{
 		this.description = description;
 	}
 
+	/**
+	 * Removes the.
+	 */
 	public abstract void remove();
 
 }

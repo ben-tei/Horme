@@ -8,21 +8,42 @@ import exceptions.WrongLoginException;
 import junit.framework.TestCase;
 import persist.jdbc.ProductJDBC;
 
-public class ProductJDBCTest extends TestCase {
+/**
+ * The Class ProductJDBCTest.
+ */
+public class ProductJDBCTest extends TestCase
+{
 
+	/** The product jdbc. */
 	protected ProductJDBC productJDBC;
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#setUp()
+	 */
 	@Before
-	public void setUp() throws WrongLoginException {
+	public void setUp() throws WrongLoginException
+	{
 		productJDBC = new ProductJDBC();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test.
+	 */
 	@Test
-	public void test() {
+	public void test()
+	{
 		String name = "My name is product";
 
 		productJDBC.setName(name);

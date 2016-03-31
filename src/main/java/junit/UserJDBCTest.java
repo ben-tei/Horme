@@ -9,21 +9,42 @@ import junit.framework.TestCase;
 import persist.jdbc.UserJDBC;
 import util.HashText;
 
-public class UserJDBCTest extends TestCase {
+/**
+ * The Class UserJDBCTest.
+ */
+public class UserJDBCTest extends TestCase
+{
 
+	/** The user jdbc. */
 	protected UserJDBC userJDBC;
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#setUp()
+	 */
 	@Before
-	public void setUp() throws WrongLoginException {
+	public void setUp() throws WrongLoginException
+	{
 		userJDBC = new UserJDBC();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test.
+	 */
 	@Test
-	public void test() {
+	public void test()
+	{
 		String login = "abc";
 		String password = "abc";
 

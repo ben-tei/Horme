@@ -8,7 +8,8 @@ import persist.factoryjdbc.FactoryJDBC;
 /**
  * The Class ProductManager.
  */
-public class ProductManager {
+public class ProductManager
+{
 
 	/** The factory. */
 	private Factory factory;
@@ -19,7 +20,8 @@ public class ProductManager {
 	/**
 	 * Instantiates a new product manager.
 	 */
-	public ProductManager() {
+	public ProductManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
@@ -28,7 +30,8 @@ public class ProductManager {
 	 *
 	 * @return the product set
 	 */
-	public ProductSet readProducts() {
+	public ProductSet readProducts()
+	{
 		products = factory.readProducts();
 		return products;
 	}
@@ -40,27 +43,56 @@ public class ProductManager {
 	 *            the search string
 	 * @return the product set
 	 */
-	public ProductSet searchProducts(String searchString) {
+	public ProductSet searchProducts(String searchString)
+	{
 		products = factory.searchProducts(searchString);
 		return products;
 	}
 
-	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException {
+	/**
+	 * Update quantity in stock.
+	 *
+	 * @param index
+	 *            the index
+	 * @param quantity
+	 *            the quantity
+	 * @throws NotEnoughStockException
+	 *             the not enough stock exception
+	 */
+	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException
+	{
 		int quantityInStock = this.products.getProductByIndex(index).getStockQuantity();
-		if (quantityInStock < quantity) {
+		if (quantityInStock < quantity)
+		{
 			throw new NotEnoughStockException("Not enough stock !");
-		} else {
+		} else
+		{
 			this.products.getProductByIndex(index).setStockQuantity(quantityInStock - quantity);
 			this.products.getProductByIndex(index).save();
 		}
 	}
 
-	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException {
+	/**
+	 * Update quantity in stock.
+	 *
+	 * @param idProduct
+	 *            the id product
+	 * @param quantity
+	 *            the quantity
+	 * @param oldQuantity
+	 *            the old quantity
+	 * @throws NotEnoughStockException
+	 *             the not enough stock exception
+	 */
+	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
+	{
 		int quantityInStock = this.products.getProductById(idProduct).getStockQuantity();
 
-		if (quantityInStock + oldQuantity - quantity < 0) {
+		if (quantityInStock + oldQuantity - quantity < 0)
+		{
 			throw new NotEnoughStockException("Not enough stock !");
-		} else {
+		} else
+		{
 			this.products.getProductById(idProduct).setStockQuantity(quantityInStock + oldQuantity - quantity);
 			this.products.getProductById(idProduct).save();
 		}

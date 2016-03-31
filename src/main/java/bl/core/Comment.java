@@ -13,7 +13,8 @@ package bl.core;
  * 
  * @author Meche
  */
-public abstract class Comment {
+public abstract class Comment
+{
 	/**
 	 * Description of the property person.
 	 */
@@ -36,7 +37,8 @@ public abstract class Comment {
 	/**
 	 * The constructor.
 	 */
-	public Comment() {
+	public Comment()
+	{
 		// Start of user code constructor for Comment)
 		super();
 		// End of user code
@@ -50,7 +52,8 @@ public abstract class Comment {
 	 * 
 	 * @return person
 	 */
-	public Person getPerson() {
+	public Person getPerson()
+	{
 		return this.person;
 	}
 
@@ -60,7 +63,8 @@ public abstract class Comment {
 	 * @param newPerson
 	 *            the new person
 	 */
-	public void setPerson(Person newPerson) {
+	public void setPerson(Person newPerson)
+	{
 		this.person = newPerson;
 	}
 
@@ -69,7 +73,8 @@ public abstract class Comment {
 	 * 
 	 * @return content
 	 */
-	public String getContent() {
+	public String getContent()
+	{
 		return this.content;
 	}
 
@@ -79,7 +84,8 @@ public abstract class Comment {
 	 * @param newContent
 	 *            the new content
 	 */
-	public void setContent(String newContent) {
+	public void setContent(String newContent)
+	{
 		this.content = newContent;
 	}
 
@@ -88,7 +94,8 @@ public abstract class Comment {
 	 * 
 	 * @return diaryEntry
 	 */
-	public DiaryEntry getDiaryEntry() {
+	public DiaryEntry getDiaryEntry()
+	{
 		return this.diaryEntry;
 	}
 
@@ -98,7 +105,8 @@ public abstract class Comment {
 	 * @param newDiaryEntry
 	 *            the new diary entry
 	 */
-	public void setDiaryEntry(DiaryEntry newDiaryEntry) {
+	public void setDiaryEntry(DiaryEntry newDiaryEntry)
+	{
 		this.diaryEntry = newDiaryEntry;
 	}
 

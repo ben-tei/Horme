@@ -13,7 +13,8 @@ import java.awt.event.ActionListener;
 /**
  * The Class ActivitiesView.
  */
-public class ActivitiesView extends JPanel implements ActionListener {
+public class ActivitiesView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -30,7 +31,8 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public ActivitiesView(ViewController vc) {
+	public ActivitiesView(ViewController vc)
+	{
 
 		this.viewController = vc;
 
@@ -60,7 +62,8 @@ public class ActivitiesView extends JPanel implements ActionListener {
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
 
-		for (int i = 0; i <= this.viewController.getActivityFacade().readActivities(user).size() - 1; i++) {
+		for (int i = 0; i <= this.viewController.getActivityFacade().readActivities(user).size() - 1; i++)
+		{
 
 			JLabel Aname = new JLabel(
 					this.viewController.getActivityFacade().readActivities(user).getActivityByIndex(i).getName());
@@ -94,12 +97,15 @@ public class ActivitiesView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("addActivity")) {
+		if (cmd.equals("addActivity"))
+		{
 			this.viewController.showCreateActivityPanel();
-		} else if (cmd.equals("delete")) {
+		} else if (cmd.equals("delete"))
+		{
 			int index = ((MyJButton) e.getSource()).getIndex();
 			viewController.getActivityFacade().removeFromMyActivities(index);
 			viewController.showActivitiesPanel();

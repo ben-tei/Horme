@@ -9,7 +9,8 @@ import bl.manager.ShopCartManager;
 /**
  * The Class ShopCartFacade.
  */
-public class ShopCartFacade {
+public class ShopCartFacade
+{
 
 	/** The shop cart manager. */
 	private ShopCartManager shopCartManager;
@@ -17,7 +18,8 @@ public class ShopCartFacade {
 	/**
 	 * Instantiates a new shop cart facade.
 	 */
-	public ShopCartFacade() {
+	public ShopCartFacade()
+	{
 		this.shopCartManager = new ShopCartManager();
 	}
 
@@ -28,27 +30,66 @@ public class ShopCartFacade {
 	 *            the user
 	 * @return the shop cart row set
 	 */
-	public ShopCartRowSet readShopCart(User user) {
+	public ShopCartRowSet readShopCart(User user)
+	{
 		return this.shopCartManager.readShopCart(user);
 	}
 
-	public ShoppingCart getShopCart(User user) {
+	/**
+	 * Gets the shop cart.
+	 *
+	 * @param user
+	 *            the user
+	 * @return the shop cart
+	 */
+	public ShoppingCart getShopCart(User user)
+	{
 		return this.shopCartManager.getShopCart(user);
 	}
 
-	public void placeOrder() {
+	/**
+	 * Place order.
+	 */
+	public void placeOrder()
+	{
 		this.shopCartManager.placeOrder();
 	}
 
-	public void addToShoppingCart(Product p, int quantity) {
+	/**
+	 * Adds the to shopping cart.
+	 *
+	 * @param p
+	 *            the p
+	 * @param quantity
+	 *            the quantity
+	 */
+	public void addToShoppingCart(Product p, int quantity)
+	{
 		this.shopCartManager.addToShoppingCart(p, quantity);
 	}
 
-	public void removeFromShoppingCart(int index, int quantity) {
+	/**
+	 * Removes the from shopping cart.
+	 *
+	 * @param index
+	 *            the index
+	 * @param quantity
+	 *            the quantity
+	 */
+	public void removeFromShoppingCart(int index, int quantity)
+	{
 		this.shopCartManager.removeFromShoppingCart(index, quantity);
 	}
 
-	public int getQuantity(String idProduct) {
+	/**
+	 * Gets the quantity.
+	 *
+	 * @param idProduct
+	 *            the id product
+	 * @return the quantity
+	 */
+	public int getQuantity(String idProduct)
+	{
 		return this.shopCartManager.getQuantity(idProduct);
 	}
 }

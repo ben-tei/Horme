@@ -6,17 +6,28 @@ import java.sql.SQLException;
 
 import bl.core.Product;
 
-public class ProductJDBC extends Product {
+/**
+ * The Class ProductJDBC.
+ */
+public class ProductJDBC extends Product
+{
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.core.Product#save()
+	 */
 	@Override
-	public void save() {
+	public void save()
+	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
 
 		PreparedStatement pstmt = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -33,11 +44,13 @@ public class ProductJDBC extends Product {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 

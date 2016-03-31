@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Notification {
+public abstract class Notification
+{
 	/**
 	 * Description of the property name.
 	 */
@@ -43,7 +44,8 @@ public abstract class Notification {
 	/**
 	 * The constructor.
 	 */
-	public Notification() {
+	public Notification()
+	{
 		// Start of user code constructor for Notification)
 		super();
 		// End of user code
@@ -57,7 +59,8 @@ public abstract class Notification {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -67,7 +70,8 @@ public abstract class Notification {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -76,7 +80,8 @@ public abstract class Notification {
 	 * 
 	 * @return persons
 	 */
-	public HashSet<Person> getPersons() {
+	public HashSet<Person> getPersons()
+	{
 		return this.persons;
 	}
 
@@ -85,7 +90,8 @@ public abstract class Notification {
 	 * 
 	 * @return content
 	 */
-	public String getContent() {
+	public String getContent()
+	{
 		return this.content;
 	}
 
@@ -95,7 +101,8 @@ public abstract class Notification {
 	 * @param newContent
 	 *            the new content
 	 */
-	public void setContent(String newContent) {
+	public void setContent(String newContent)
+	{
 		this.content = newContent;
 	}
 
@@ -104,7 +111,8 @@ public abstract class Notification {
 	 * 
 	 * @return date
 	 */
-	public String getDate() {
+	public String getDate()
+	{
 		return this.date;
 	}
 
@@ -114,7 +122,8 @@ public abstract class Notification {
 	 * @param newDate
 	 *            the new date
 	 */
-	public void setDate(String newDate) {
+	public void setDate(String newDate)
+	{
 		this.date = newDate;
 	}
 

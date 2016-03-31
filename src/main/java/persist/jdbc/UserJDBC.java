@@ -8,9 +8,14 @@ import exceptions.*;
 /**
  * The Class UserJDBC.
  */
-public class UserJDBC extends User {
+public class UserJDBC extends User
+{
 
-	public UserJDBC() {
+	/**
+	 * Instantiates a new user jdbc.
+	 */
+	public UserJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}
@@ -23,7 +28,8 @@ public class UserJDBC extends User {
 	 * @throws WrongLoginException
 	 *             the wrong login exception
 	 */
-	public UserJDBC(String login) throws WrongLoginException {
+	public UserJDBC(String login) throws WrongLoginException
+	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -32,7 +38,8 @@ public class UserJDBC extends User {
 
 		ResultSet rset = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -42,7 +49,8 @@ public class UserJDBC extends User {
 
 			rset = pstmt.executeQuery();
 
-			if (rset.next()) {
+			if (rset.next())
+			{
 				this.setId(rset.getString("idPerson"));
 				this.setName(rset.getString("name"));
 				this.setFirstName(rset.getString("firstname"));
@@ -53,16 +61,19 @@ public class UserJDBC extends User {
 				this.setEmail(rset.getString("email"));
 				this.setLogin(rset.getString("login"));
 				this.setPassword(rset.getString("password"));
-			} else {
+			} else
+			{
 				throw new WrongLoginException("Wrong login !");
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 
@@ -96,7 +107,8 @@ public class UserJDBC extends User {
 	 *             the already exists exception
 	 */
 	public UserJDBC(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) throws AlreadyExistsException {
+			String email, String login, String password) throws AlreadyExistsException
+	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -115,7 +127,8 @@ public class UserJDBC extends User {
 
 		ResultSet rset2 = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -125,7 +138,8 @@ public class UserJDBC extends User {
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next()) {
+			if (!rset.next())
+			{
 				pstmt2 = conn.prepareStatement(
 						"INSERT INTO Person (name, firstname, street, zipCode, city, phone, email, login, password) "
 								+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -146,7 +160,8 @@ public class UserJDBC extends User {
 
 				rset2 = pstmt3.executeQuery();
 
-				if (rset2.next()) {
+				if (rset2.next())
+				{
 
 					pstmt4 = conn.prepareStatement("INSERT INTO ShoppingCart (idPerson) VALUES (?)");
 
@@ -160,16 +175,19 @@ public class UserJDBC extends User {
 
 					pstmt5.executeUpdate();
 				}
-			} else {
+			} else
+			{
 				throw new AlreadyExistsException("Login already exists !");
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 
@@ -188,30 +206,17 @@ public class UserJDBC extends User {
 
 	/**
 	 * Update user.
-	 *
-	 * @param name
-	 *            the name
-	 * @param firstname
-	 *            the firstname
-	 * @param street
-	 *            the street
-	 * @param zipCode
-	 *            the zip code
-	 * @param city
-	 *            the city
-	 * @param phone
-	 *            the phone
-	 * @param email
-	 *            the email
 	 */
-	public void save() {
+	public void save()
+	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
 
 		PreparedStatement pstmt = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -231,11 +236,13 @@ public class UserJDBC extends User {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 

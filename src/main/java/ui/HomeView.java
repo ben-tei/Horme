@@ -10,7 +10,8 @@ import java.awt.event.ActionListener;
 /**
  * The Class IndexView.
  */
-public class HomeView extends JPanel implements ActionListener {
+public class HomeView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -24,13 +25,14 @@ public class HomeView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public HomeView(ViewController vc) {
+	public HomeView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
 
 		new Menu(this, this.viewController);
-		
+
 		JLabel welcome = new JLabel("Welcome !");
 		welcome.setBounds(65, 175, 80, 14);
 		welcome.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -45,7 +47,8 @@ public class HomeView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 
 	}

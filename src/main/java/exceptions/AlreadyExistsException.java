@@ -3,7 +3,8 @@ package exceptions;
 /**
  * The Class AlreadyExistsException.
  */
-public class AlreadyExistsException extends Exception {
+public class AlreadyExistsException extends Exception
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -14,7 +15,8 @@ public class AlreadyExistsException extends Exception {
 	 * @param message
 	 *            the message
 	 */
-	public AlreadyExistsException(String message) {
+	public AlreadyExistsException(String message)
+	{
 		super(message);
 	}
 

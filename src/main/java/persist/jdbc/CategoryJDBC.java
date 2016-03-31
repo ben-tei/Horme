@@ -2,9 +2,17 @@ package persist.jdbc;
 
 import bl.core.Category;
 
-public class CategoryJDBC extends Category {
+/**
+ * The Class CategoryJDBC.
+ */
+public class CategoryJDBC extends Category
+{
 
-	public CategoryJDBC() {
+	/**
+	 * Instantiates a new category jdbc.
+	 */
+	public CategoryJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}

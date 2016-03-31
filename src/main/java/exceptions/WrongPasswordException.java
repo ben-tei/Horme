@@ -3,7 +3,8 @@ package exceptions;
 /**
  * The Class WrongPasswordException.
  */
-public class WrongPasswordException extends Exception {
+public class WrongPasswordException extends Exception
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -14,7 +15,8 @@ public class WrongPasswordException extends Exception {
 	 * @param message
 	 *            the message
 	 */
-	public WrongPasswordException(String message) {
+	public WrongPasswordException(String message)
+	{
 		super(message);
 	}
 

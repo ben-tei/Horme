@@ -18,7 +18,8 @@ import java.awt.Color;
 /**
  * The Class ProfileView.
  */
-public class ProfileView extends JPanel implements ActionListener {
+public class ProfileView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -71,7 +72,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public ProfileView(ViewController vc) {
+	public ProfileView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -177,7 +179,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the name field
 	 */
-	public JTextField getNameField() {
+	public JTextField getNameField()
+	{
 		return nameField;
 	}
 
@@ -186,7 +189,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the street field
 	 */
-	public JTextField getStreetField() {
+	public JTextField getStreetField()
+	{
 		return streetField;
 	}
 
@@ -195,7 +199,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the city field
 	 */
-	public JTextField getCityField() {
+	public JTextField getCityField()
+	{
 		return cityField;
 	}
 
@@ -204,7 +209,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the email field
 	 */
-	public JTextField getEmailField() {
+	public JTextField getEmailField()
+	{
 		return emailField;
 	}
 
@@ -213,7 +219,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the login field
 	 */
-	public JTextField getLoginField() {
+	public JTextField getLoginField()
+	{
 		return loginField;
 	}
 
@@ -222,7 +229,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the pswd field
 	 */
-	public JPasswordField getPswdField() {
+	public JPasswordField getPswdField()
+	{
 		return pswdField;
 	}
 
@@ -231,7 +239,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the siret field
 	 */
-	public JTextField getSiretField() {
+	public JTextField getSiretField()
+	{
 		return siretField;
 	}
 
@@ -240,7 +249,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the firstname field
 	 */
-	public JTextField getFirstnameField() {
+	public JTextField getFirstnameField()
+	{
 		return firstnameField;
 	}
 
@@ -249,7 +259,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the zip field
 	 */
-	public JTextField getZipField() {
+	public JTextField getZipField()
+	{
 		return zipField;
 	}
 
@@ -258,7 +269,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the phone field
 	 */
-	public JTextField getPhoneField() {
+	public JTextField getPhoneField()
+	{
 		return phoneField;
 	}
 
@@ -267,7 +279,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the pswd confirm
 	 */
-	public JPasswordField getPswdConfirm() {
+	public JPasswordField getPswdConfirm()
+	{
 		return pswdConfirmField;
 	}
 
@@ -276,7 +289,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the email confirm
 	 */
-	public JTextField getEmailConfirm() {
+	public JTextField getEmailConfirm()
+	{
 		return emailConfirmField;
 	}
 
@@ -285,7 +299,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return the website field
 	 */
-	public JTextField getWebsiteField() {
+	public JTextField getWebsiteField()
+	{
 		return websiteField;
 	}
 
@@ -294,7 +309,8 @@ public class ProfileView extends JPanel implements ActionListener {
 	 *
 	 * @return true, if successful
 	 */
-	public boolean fieldsAreEmpty() {
+	public boolean fieldsAreEmpty()
+	{
 		return getNameField().getText().equals("") || getStreetField().getText().equals("")
 				|| getCityField().getText().equals("") || getEmailField().getText().equals("")
 				|| getFirstnameField().getText().equals("") || getZipField().getText().equals("")
@@ -308,23 +324,30 @@ public class ProfileView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("back")) {
+		if (cmd.equals("back"))
+		{
 			this.viewController.showHomePanel();
-		} else if (cmd.equals("confirm")) {
-			if (fieldsAreEmpty()) {
+		} else if (cmd.equals("confirm"))
+		{
+			if (fieldsAreEmpty())
+			{
 				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else if (!getEmailConfirm().getText().equals(getEmailField().getText())) {
+			} else if (!getEmailConfirm().getText().equals(getEmailField().getText()))
+			{
 				JOptionPane.showMessageDialog(null, "The two email address do not match !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
 			} else if (!EmailValidator.validate(getEmailConfirm().getText())
-					|| !EmailValidator.validate(getEmailField().getText())) {
+					|| !EmailValidator.validate(getEmailField().getText()))
+			{
 				JOptionPane.showMessageDialog(null, "Email address not valid !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else {
+			} else
+			{
 				this.viewController.getUserFacade().editProfile(getNameField().getText(), getFirstnameField().getText(),
 						getStreetField().getText(), getZipField().getText(), getCityField().getText(),
 						getPhoneField().getText(), getEmailField().getText());

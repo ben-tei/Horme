@@ -8,22 +8,42 @@ import exceptions.WrongLoginException;
 import junit.framework.TestCase;
 import persist.jdbc.CategoryJDBC;
 
+/**
+ * The Class CategoryJDBCTest.
+ */
+public class CategoryJDBCTest extends TestCase
+{
 
-public class CategoryJDBCTest extends TestCase {
-
+	/** The category jdbc. */
 	protected CategoryJDBC categoryJDBC;
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#setUp()
+	 */
 	@Before
-	public void setUp() {
+	public void setUp()
+	{
 		categoryJDBC = new CategoryJDBC();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test.
+	 */
 	@Test
-	public void test() {
+	public void test()
+	{
 		String shortDescription = "Je suis un categorie";
 
 		categoryJDBC.setShortDescription(shortDescription);
@@ -34,4 +54,3 @@ public class CategoryJDBCTest extends TestCase {
 	}
 
 }
-

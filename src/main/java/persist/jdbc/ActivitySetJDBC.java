@@ -8,9 +8,14 @@ import bl.core.User;
 /**
  * The Class ActivitySetJDBC.
  */
-public class ActivitySetJDBC extends ActivitySet {
+public class ActivitySetJDBC extends ActivitySet
+{
 
-	public ActivitySetJDBC() {
+	/**
+	 * Instantiates a new activity set jdbc.
+	 */
+	public ActivitySetJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}
@@ -21,7 +26,8 @@ public class ActivitySetJDBC extends ActivitySet {
 	 * @param user
 	 *            the user
 	 */
-	public ActivitySetJDBC(User user) {
+	public ActivitySetJDBC(User user)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -35,7 +41,8 @@ public class ActivitySetJDBC extends ActivitySet {
 
 		CategoryJDBC category;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement(
@@ -46,7 +53,8 @@ public class ActivitySetJDBC extends ActivitySet {
 
 			rsetActivity = pstmt.executeQuery();
 
-			while (rsetActivity.next()) {
+			while (rsetActivity.next())
+			{
 				activity = new ActivityJDBC();
 				category = new CategoryJDBC();
 				activity.setId(rsetActivity.getString("a.idActivity"));
@@ -59,15 +67,17 @@ public class ActivitySetJDBC extends ActivitySet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.closeConnection();
 
 		}
 	}
-	
+
 }

@@ -12,15 +12,29 @@ import javax.swing.JTextField;
 
 import exceptions.WrongLoginException;
 
-public class ForgotPasswordView extends JPanel implements ActionListener {
+/**
+ * The Class ForgotPasswordView.
+ */
+public class ForgotPasswordView extends JPanel implements ActionListener
+{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The view controller. */
 	private ViewController viewController;
 
+	/** The login field. */
 	private JTextField loginField;
 
-	public ForgotPasswordView(ViewController vc) {
+	/**
+	 * Instantiates a new forgot password view.
+	 *
+	 * @param vc
+	 *            the vc
+	 */
+	public ForgotPasswordView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -56,25 +70,34 @@ public class ForgotPasswordView extends JPanel implements ActionListener {
 		this.add(btnBack);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		String cmd = e.getActionCommand();
-		if (cmd.equals("back")) {
+		if (cmd.equals("back"))
+		{
 			this.viewController.showLoginPanel();
-		}
-		else if (cmd.equals("confirm")) {
-			if(this.loginField.getText().equals(""))
+		} else if (cmd.equals("confirm"))
+		{
+			if (this.loginField.getText().equals(""))
 			{
 				JOptionPane.showMessageDialog(null, "Login is required !", "Failure", JOptionPane.WARNING_MESSAGE);
-			}
-			else
+			} else
 			{
-				try {
+				try
+				{
 					this.viewController.getUserFacade().sendMail(this.loginField.getText());
 					JOptionPane.showMessageDialog(null, "You will receive an email !", "Success",
 							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showLoginPanel();
-				} catch (WrongLoginException e1) {
+				} catch (WrongLoginException e1)
+				{
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 				}

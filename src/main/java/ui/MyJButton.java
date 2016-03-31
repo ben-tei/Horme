@@ -2,17 +2,39 @@ package ui;
 
 import javax.swing.JButton;
 
-public class MyJButton extends JButton {
+/**
+ * The Class MyJButton.
+ */
+public class MyJButton extends JButton
+{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+
+	/** The index. */
 	private int index;
 
-	public MyJButton(String name, int index) {
+	/**
+	 * Instantiates a new my j button.
+	 *
+	 * @param name
+	 *            the name
+	 * @param index
+	 *            the index
+	 */
+	public MyJButton(String name, int index)
+	{
 		super(name);
 		this.index = index;
 	}
 
-	public int getIndex() {
+	/**
+	 * Gets the index.
+	 *
+	 * @return the index
+	 */
+	public int getIndex()
+	{
 		return this.index;
 	}
 

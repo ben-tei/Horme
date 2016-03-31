@@ -11,7 +11,8 @@ import persist.factoryjdbc.FactoryJDBC;
 /**
  * The Class ActivityManager.
  */
-public class ActivityManager {
+public class ActivityManager
+{
 
 	/** The factory. */
 	private Factory factory;
@@ -25,7 +26,8 @@ public class ActivityManager {
 	/**
 	 * Instantiates a new activity manager.
 	 */
-	public ActivityManager() {
+	public ActivityManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
@@ -36,7 +38,8 @@ public class ActivityManager {
 	 *            the user
 	 * @return the activity set
 	 */
-	public ActivitySet readActivities(User user) {
+	public ActivitySet readActivities(User user)
+	{
 		activities = factory.readActivities(user);
 		return activities;
 	}
@@ -44,20 +47,35 @@ public class ActivityManager {
 	/**
 	 * Create activity.
 	 *
+	 * @param name
+	 *            the name
+	 * @param description
+	 *            the description
+	 * @param category
+	 *            the category
 	 * @param user
 	 *            the user
 	 * @return the activity set
 	 * @throws AlreadyExistsException
+	 *             the already exists exception
 	 */
 
 	public Activity createActivity(String name, String description, Category category, User user)
-			throws AlreadyExistsException {
+			throws AlreadyExistsException
+	{
 		// TODO Auto-generated method stub
 		activity = this.factory.createActivity(name, description, category, user);
 		return activity;
 	}
 
-	public void removeFromMyActivities(int index) {
+	/**
+	 * Removes the from my activities.
+	 *
+	 * @param index
+	 *            the index
+	 */
+	public void removeFromMyActivities(int index)
+	{
 		// TODO Auto-generated method stub
 		this.activities.getActivityByIndex(index).remove();
 		this.activities.getTabActivities().remove(index);

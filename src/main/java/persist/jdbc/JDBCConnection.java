@@ -7,7 +7,8 @@ import java.sql.*;
 /**
  * The Class JDBCConnection.
  */
-public class JDBCConnection {
+public class JDBCConnection
+{
 
 	/** The conn. */
 	private Connection conn;
@@ -15,7 +16,8 @@ public class JDBCConnection {
 	/**
 	 * Instantiates a new JDBC connection.
 	 */
-	public JDBCConnection() {
+	public JDBCConnection()
+	{
 
 	}
 
@@ -26,12 +28,15 @@ public class JDBCConnection {
 	 * @throws SQLException
 	 *             the SQL exception
 	 */
-	public Connection openConnection() throws SQLException {
-		try {
+	public Connection openConnection() throws SQLException
+	{
+		try
+		{
 
 			Class.forName(DRIVER).newInstance();
 
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 
 			throw new SQLException(e.getMessage());
 
@@ -47,13 +52,17 @@ public class JDBCConnection {
 	/**
 	 * Close connection.
 	 */
-	public void closeConnection() {
-		if (this.conn != null) {
-			try {
+	public void closeConnection()
+	{
+		if (this.conn != null)
+		{
+			try
+			{
 				this.conn.close();
 			}
 
-			catch (SQLException e) {
+			catch (SQLException e)
+			{
 				ProcessSQLException(e);
 			}
 		}
@@ -64,7 +73,8 @@ public class JDBCConnection {
 	 *
 	 * @return the connection
 	 */
-	public Connection getConnection() {
+	public Connection getConnection()
+	{
 		return this.conn;
 	}
 
@@ -74,8 +84,10 @@ public class JDBCConnection {
 	 * @param e
 	 *            the e
 	 */
-	public static void ProcessSQLException(SQLException e) {
-		while (e != null) {
+	public static void ProcessSQLException(SQLException e)
+	{
+		while (e != null)
+		{
 
 			System.err.println(e.getErrorCode());
 
@@ -91,13 +103,17 @@ public class JDBCConnection {
 	 * @param pstmt
 	 *            the pstmt
 	 */
-	public void close(PreparedStatement pstmt) {
-		if (pstmt != null) {
-			try {
+	public void close(PreparedStatement pstmt)
+	{
+		if (pstmt != null)
+		{
+			try
+			{
 				pstmt.close();
 			}
 
-			catch (SQLException e) {
+			catch (SQLException e)
+			{
 				ProcessSQLException(e);
 			}
 		}

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * The Class ActivitySet.
  */
-public abstract class ActivitySet {
+public abstract class ActivitySet
+{
 
 	/** The tab activities. */
 	private ArrayList<Activity> tabActivities;
@@ -13,7 +14,8 @@ public abstract class ActivitySet {
 	/**
 	 * Instantiates a new activity set.
 	 */
-	public ActivitySet() {
+	public ActivitySet()
+	{
 		this.tabActivities = new ArrayList<Activity>();
 	}
 
@@ -23,7 +25,8 @@ public abstract class ActivitySet {
 	 * @param activity
 	 *            the activity
 	 */
-	public void addActivity(Activity activity) {
+	public void addActivity(Activity activity)
+	{
 		this.tabActivities.add(activity);
 	}
 
@@ -34,15 +37,29 @@ public abstract class ActivitySet {
 	 *            the index
 	 * @return the activity by index
 	 */
-	public Activity getActivityByIndex(int index) {
+	public Activity getActivityByIndex(int index)
+	{
 		return this.tabActivities.get(index);
 	}
 
-	public ArrayList<Activity> getTabActivities() {
+	/**
+	 * Gets the tab activities.
+	 *
+	 * @return the tab activities
+	 */
+	public ArrayList<Activity> getTabActivities()
+	{
 		return tabActivities;
 	}
 
-	public void setTabActivities(ArrayList<Activity> tabActivities) {
+	/**
+	 * Sets the tab activities.
+	 *
+	 * @param tabActivities
+	 *            the new tab activities
+	 */
+	public void setTabActivities(ArrayList<Activity> tabActivities)
+	{
 		this.tabActivities = tabActivities;
 	}
 
@@ -51,11 +68,18 @@ public abstract class ActivitySet {
 	 *
 	 * @return the int
 	 */
-	public int size() {
+	public int size()
+	{
 		return this.tabActivities.size();
 	}
 
-	public boolean isEmpty() {
+	/**
+	 * Checks if is empty.
+	 *
+	 * @return true, if is empty
+	 */
+	public boolean isEmpty()
+	{
 		return this.tabActivities.size() == 0;
 	}
 

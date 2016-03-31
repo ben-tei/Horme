@@ -12,7 +12,8 @@ import javax.swing.JTextField;
 /**
  * The Class Menu.
  */
-public class Menu implements ActionListener {
+public class Menu implements ActionListener
+{
 
 	/** The search. */
 	private JTextField search;
@@ -47,6 +48,7 @@ public class Menu implements ActionListener {
 	/** The btn shopping cart. */
 	private JButton btnShoppingCart;
 
+	/** The btn disconnect. */
 	private JButton btnDisconnect;
 
 	/** The lbl search. */
@@ -63,7 +65,8 @@ public class Menu implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public Menu(JPanel jp, ViewController vc) {
+	public Menu(JPanel jp, ViewController vc)
+	{
 		this.viewController = vc;
 
 		String firstname = this.viewController.getUserFacade().getUser().getFirstName();
@@ -72,14 +75,13 @@ public class Menu implements ActionListener {
 		lblUser = new JLabel(firstname + " " + name);
 		lblUser.setBounds(15, 31, 174, 14);
 		jp.add(lblUser);
-		
+
 		int x = 0;
-		
-		if(firstname.length() + name.length() > 174)
+
+		if (firstname.length() + name.length() > 174)
 		{
 			x = 194;
-		}
-		else
+		} else
 		{
 			x = (firstname.length() + name.length() + 1) * 11;
 		}
@@ -162,47 +164,58 @@ public class Menu implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
 
-		if (cmd.equals("home")) {
+		if (cmd.equals("home"))
+		{
 			this.viewController.showHomePanel();
 		}
 
-		else if (cmd.equals("profil")) {
+		else if (cmd.equals("profil"))
+		{
 			this.viewController.showProfilePanel();
 		}
 
-		else if (cmd.equals("products")) {
+		else if (cmd.equals("products"))
+		{
 			this.viewController.showProductsPanel();
 		}
 
-		else if (cmd.equals("activities")) {
+		else if (cmd.equals("activities"))
+		{
 			this.viewController.showActivitiesPanel();
 		}
 
-		else if (cmd.equals("diary")) {
+		else if (cmd.equals("diary"))
+		{
 			this.viewController.showDiaryPanel();
 		}
 
-		else if (cmd.equals("wishlist")) {
+		else if (cmd.equals("wishlist"))
+		{
 			this.viewController.showWishlistPanel();
 		}
 
-		else if (cmd.equals("orders")) {
+		else if (cmd.equals("orders"))
+		{
 			this.viewController.showOrdersPanel();
 		}
 
-		else if (cmd.equals("cart")) {
+		else if (cmd.equals("cart"))
+		{
 			this.viewController.showShopCartPanel();
 		}
 
-		else if (cmd.equals("search")) {
+		else if (cmd.equals("search"))
+		{
 			this.viewController.showSearchPanel(this.search.getText());
 		}
 
-		else if (cmd.equals("logout")) {
+		else if (cmd.equals("logout"))
+		{
 			this.viewController.showLoginPanel();
 		}
 	}

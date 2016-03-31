@@ -10,9 +10,17 @@ import bl.core.Category;
 import bl.core.User;
 import exceptions.AlreadyExistsException;
 
-public class ActivityJDBC extends Activity {
+/**
+ * The Class ActivityJDBC.
+ */
+public class ActivityJDBC extends Activity
+{
 
-	public ActivityJDBC() {
+	/**
+	 * Instantiates a new activity jdbc.
+	 */
+	public ActivityJDBC()
+	{
 		super();
 	}
 
@@ -21,13 +29,17 @@ public class ActivityJDBC extends Activity {
 	 *
 	 * @param name
 	 *            the name
+	 * @param description
+	 *            the description
 	 * @param category
 	 *            the category
-	 * @param descritption
-	 *            the description
+	 * @param user
+	 *            the user
 	 * @throws AlreadyExistsException
+	 *             the already exists exception
 	 */
-	public ActivityJDBC(String name, String description, Category category, User user) throws AlreadyExistsException {
+	public ActivityJDBC(String name, String description, Category category, User user) throws AlreadyExistsException
+	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -38,7 +50,8 @@ public class ActivityJDBC extends Activity {
 
 		ResultSet rset = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -48,7 +61,8 @@ public class ActivityJDBC extends Activity {
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next()) {
+			if (!rset.next())
+			{
 				pstmt2 = conn.prepareStatement(
 						"INSERT INTO Activity (name, description, idCategory, idUser) " + "VALUES (?, ?, ?, ?)");
 
@@ -59,16 +73,19 @@ public class ActivityJDBC extends Activity {
 
 				pstmt2.executeUpdate();
 
-			} else {
+			} else
+			{
 				throw new AlreadyExistsException("Activity already exists !");
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 
@@ -79,8 +96,14 @@ public class ActivityJDBC extends Activity {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.core.Activity#remove()
+	 */
 	@Override
-	public void remove() {
+	public void remove()
+	{
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -90,7 +113,8 @@ public class ActivityJDBC extends Activity {
 
 		PreparedStatement pstmt2 = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -108,11 +132,13 @@ public class ActivityJDBC extends Activity {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 

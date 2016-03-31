@@ -8,14 +8,29 @@ import java.sql.SQLException;
 import bl.core.ObjectiveSet;
 import bl.core.User;
 
-public class ObjectiveSetJDBC extends ObjectiveSet {
+/**
+ * The Class ObjectiveSetJDBC.
+ */
+public class ObjectiveSetJDBC extends ObjectiveSet
+{
 
-	public ObjectiveSetJDBC() {
+	/**
+	 * Instantiates a new objective set jdbc.
+	 */
+	public ObjectiveSetJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}
 
-	public ObjectiveSetJDBC(User user) {
+	/**
+	 * Instantiates a new objective set jdbc.
+	 *
+	 * @param user
+	 *            the user
+	 */
+	public ObjectiveSetJDBC(User user)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -29,7 +44,8 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 
 		ActivityJDBC activityJDBC;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement(
@@ -40,7 +56,8 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 
 			rset = pstmt.executeQuery();
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 				objectiveJDBC = new ObjectiveJDBC();
 				activityJDBC = new ActivityJDBC();
 				objectiveJDBC.setId(rset.getString("o.idObjective"));
@@ -54,11 +71,13 @@ public class ObjectiveSetJDBC extends ObjectiveSet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.closeConnection();
 

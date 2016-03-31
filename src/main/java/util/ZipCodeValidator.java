@@ -3,16 +3,18 @@ package util;
 /**
  * The Class EmailValidator.
  */
-public class ZipCodeValidator {
+public class ZipCodeValidator
+{
 
 	/**
 	 * Validate.
 	 *
-	 * @param email
-	 *            the email
+	 * @param zip
+	 *            the zip
 	 * @return true, if successful
 	 */
-	public static boolean validate(String zip) {
+	public static boolean validate(String zip)
+	{
 		String regex = "^([0-9]{5})$";
 		return zip.matches(regex);
 	}

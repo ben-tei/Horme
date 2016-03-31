@@ -2,24 +2,31 @@ package bl.core;
 
 import java.util.ArrayList;
 
-public abstract class ActivityCategorySet {
+/**
+ * The Class ActivityCategorySet.
+ */
+public abstract class ActivityCategorySet
+{
 
+	/** The tab activities categories. */
 	private ArrayList<Category> tabActivitiesCategories;
 
 	/**
 	 * Instantiates a new shop cart row set.
 	 */
-	public ActivityCategorySet() {
+	public ActivityCategorySet()
+	{
 		this.tabActivitiesCategories = new ArrayList<Category>();
 	}
 
 	/**
 	 * Adds the shop cart row.
 	 *
-	 * @param shop
-	 *            cart row the shop cart row
+	 * @param cat
+	 *            the cat
 	 */
-	public void addCategory(Category cat) {
+	public void addCategory(Category cat)
+	{
 		this.tabActivitiesCategories.add(cat);
 	}
 
@@ -30,7 +37,8 @@ public abstract class ActivityCategorySet {
 	 *            the index
 	 * @return the shop cart row by index
 	 */
-	public Category getCategoryByIndex(int index) {
+	public Category getCategoryByIndex(int index)
+	{
 		return this.tabActivitiesCategories.get(index);
 	}
 
@@ -39,11 +47,18 @@ public abstract class ActivityCategorySet {
 	 *
 	 * @return the int
 	 */
-	public int size() {
+	public int size()
+	{
 		return this.tabActivitiesCategories.size();
 	}
 
-	public ArrayList<Category> getTabActivitiesCategories() {
+	/**
+	 * Gets the tab activities categories.
+	 *
+	 * @return the tab activities categories
+	 */
+	public ArrayList<Category> getTabActivitiesCategories()
+	{
 		return tabActivitiesCategories;
 	}
 

@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class WhishList {
+public abstract class WhishList
+{
 	/**
 	 * Description of the property ressources.
 	 */
@@ -43,7 +44,8 @@ public abstract class WhishList {
 	/**
 	 * The constructor.
 	 */
-	public WhishList() {
+	public WhishList()
+	{
 		// Start of user code constructor for WhishList)
 		super();
 		// End of user code
@@ -57,7 +59,8 @@ public abstract class WhishList {
 	 * 
 	 * @return ressources
 	 */
-	public HashSet<Ressource> getRessources() {
+	public HashSet<Ressource> getRessources()
+	{
 		return this.ressources;
 	}
 
@@ -66,7 +69,8 @@ public abstract class WhishList {
 	 * 
 	 * @return user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
@@ -76,7 +80,8 @@ public abstract class WhishList {
 	 * @param newUser
 	 *            the new user
 	 */
-	public void setUser(User newUser) {
+	public void setUser(User newUser)
+	{
 		this.user = newUser;
 	}
 
@@ -85,7 +90,8 @@ public abstract class WhishList {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -95,7 +101,8 @@ public abstract class WhishList {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -104,7 +111,8 @@ public abstract class WhishList {
 	 * 
 	 * @return shoppingCarts
 	 */
-	public HashSet<ShoppingCart> getShoppingCarts() {
+	public HashSet<ShoppingCart> getShoppingCarts()
+	{
 		return this.shoppingCarts;
 	}
 

@@ -8,9 +8,17 @@ import java.sql.SQLException;
 import bl.core.ActivityCategorySet;
 import bl.core.Category;
 
-public class ActivityCategorySetJDBC extends ActivityCategorySet {
+/**
+ * The Class ActivityCategorySetJDBC.
+ */
+public class ActivityCategorySetJDBC extends ActivityCategorySet
+{
 
-	public ActivityCategorySetJDBC() {
+	/**
+	 * Instantiates a new activity category set jdbc.
+	 */
+	public ActivityCategorySetJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -22,14 +30,16 @@ public class ActivityCategorySetJDBC extends ActivityCategorySet {
 
 		Category category = new CategoryJDBC();
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT * FROM Category");
 
 			rset = pstmt.executeQuery();
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 				category = new CategoryJDBC();
 				category.setId(rset.getString("idCategory"));
 				category.setName(rset.getString("name"));
@@ -39,11 +49,13 @@ public class ActivityCategorySetJDBC extends ActivityCategorySet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 			jdbcconnection.closeConnection();

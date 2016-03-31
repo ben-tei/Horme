@@ -23,7 +23,8 @@ import javax.swing.JButton;
 /**
  * The Class LoginView.
  */
-public class LoginView extends JPanel implements ActionListener {
+public class LoginView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -58,7 +59,8 @@ public class LoginView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public LoginView(ViewController vc) {
+	public LoginView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -108,9 +110,11 @@ public class LoginView extends JPanel implements ActionListener {
 		forgotPswd.setBounds(290, 380, 200, 20);
 		forgotPswd.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(forgotPswd);
-		forgotPswd.addMouseListener(new MouseAdapter() {
+		forgotPswd.addMouseListener(new MouseAdapter()
+		{
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mouseClicked(MouseEvent e)
+			{
 				viewController.showForgotPasswordPanel();
 			}
 
@@ -123,7 +127,8 @@ public class LoginView extends JPanel implements ActionListener {
 	 *
 	 * @return the login field
 	 */
-	public JTextField getLoginField() {
+	public JTextField getLoginField()
+	{
 		return this.loginField;
 	}
 
@@ -132,7 +137,8 @@ public class LoginView extends JPanel implements ActionListener {
 	 *
 	 * @return the password field
 	 */
-	public JPasswordField getPasswordField() {
+	public JPasswordField getPasswordField()
+	{
 		return this.passwordField;
 	}
 
@@ -141,7 +147,8 @@ public class LoginView extends JPanel implements ActionListener {
 	 *
 	 * @return the btn login
 	 */
-	public JButton getBtnLogin() {
+	public JButton getBtnLogin()
+	{
 		return this.btnLogin;
 	}
 
@@ -150,7 +157,8 @@ public class LoginView extends JPanel implements ActionListener {
 	 *
 	 * @return the login text
 	 */
-	public String getLoginText() {
+	public String getLoginText()
+	{
 		return this.loginField.getText();
 	}
 
@@ -159,7 +167,8 @@ public class LoginView extends JPanel implements ActionListener {
 	 *
 	 * @return the passwd text
 	 */
-	public String getPasswdText() {
+	public String getPasswdText()
+	{
 		return new String(this.passwordField.getPassword());
 	}
 
@@ -169,24 +178,30 @@ public class LoginView extends JPanel implements ActionListener {
 	 * @see
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		String cmd = e.getActionCommand();
-		if (cmd.equals("login")) {
-			if ((!getLoginText().equals("")) && (!getPasswdText().equals(""))) {
-				try {
+		if (cmd.equals("login"))
+		{
+			if ((!getLoginText().equals("")) && (!getPasswdText().equals("")))
+			{
+				try
+				{
 					User u = this.viewController.getUserFacade().login(getLoginText(), getPasswdText());
 					u.setShoppingCart(this.viewController.getShopCartFacade().getShopCart(u));
 
 					JOptionPane.showMessageDialog(null, "Welcome on Horme, " + this.getLoginText() + " !", "Success",
 							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showHomePanel();
-				} catch (WrongLoginException | WrongPasswordException e1) {
+				} catch (WrongLoginException | WrongPasswordException e1)
+				{
 					// TODO Auto-generated catch block
 					// e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 				}
 			}
-		} else if (cmd.equals("signup")) {
+		} else if (cmd.equals("signup"))
+		{
 			this.viewController.showSignUpPanel();
 		}
 

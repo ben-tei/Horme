@@ -9,7 +9,8 @@ package bl.core;
  * 
  * @author Meche
  */
-public abstract class Administrator extends Person {
+public abstract class Administrator extends Person
+{
 	// Start of user code (user defined attributes for Administrator)
 
 	// End of user code
@@ -17,7 +18,8 @@ public abstract class Administrator extends Person {
 	/**
 	 * The constructor.
 	 */
-	public Administrator() {
+	public Administrator()
+	{
 		// Start of user code constructor for Administrator)
 		super();
 		// End of user code

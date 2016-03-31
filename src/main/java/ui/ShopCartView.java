@@ -17,7 +17,8 @@ import java.util.ArrayList;
 /**
  * The Class ShopCartView.
  */
-public class ShopCartView extends JPanel implements ActionListener {
+public class ShopCartView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -28,10 +29,13 @@ public class ShopCartView extends JPanel implements ActionListener {
 	/** The btn validate. */
 	private JButton btnValidate;
 
+	/** The combo box list. */
 	private ArrayList<JComboBox<Integer>> comboBoxList = new ArrayList<JComboBox<Integer>>();
 
+	/** The shop cart row set. */
 	private ShopCartRowSet shopCartRowSet;
 
+	/** The product set. */
 	private ProductSet productSet;
 
 	/**
@@ -40,7 +44,8 @@ public class ShopCartView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public ShopCartView(ViewController vc) {
+	public ShopCartView(ViewController vc)
+	{
 
 		this.viewController = vc;
 
@@ -66,7 +71,8 @@ public class ShopCartView extends JPanel implements ActionListener {
 				.readShopCart(this.viewController.getUserFacade().getUser());
 		this.productSet = this.viewController.getProductFacade().readProducts();
 
-		for (int i = 0; i <= this.shopCartRowSet.size() - 1; i++) {
+		for (int i = 0; i <= this.shopCartRowSet.size() - 1; i++)
+		{
 
 			JLabel Pname = new JLabel(this.shopCartRowSet.getShopCartRowByIndex(i).getName());
 			Pname.setBounds(140, placement, 120, 14);
@@ -76,7 +82,8 @@ public class ShopCartView extends JPanel implements ActionListener {
 
 			for (int j = 0; j < this.productSet
 					.getProductById(this.shopCartRowSet.getShopCartRowByIndex(i).getIdProduct()).getStockQuantity()
-					+ this.shopCartRowSet.getShopCartRowByIndex(i).getQuantity() + 1; j++) {
+					+ this.shopCartRowSet.getShopCartRowByIndex(i).getQuantity() + 1; j++)
+			{
 				Pquantity.addItem(j);
 			}
 			Pquantity.setSelectedIndex(this.shopCartRowSet.getShopCartRowByIndex(i).getQuantity());
@@ -97,7 +104,8 @@ public class ShopCartView extends JPanel implements ActionListener {
 			placement = placement + 50;
 		}
 
-		if (this.shopCartRowSet.size() > 0) {
+		if (this.shopCartRowSet.size() > 0)
+		{
 
 			btnValidate = new JButton("Validate the cart");
 			btnValidate.setBounds(135, placement + 50, 140, 23);
@@ -115,20 +123,24 @@ public class ShopCartView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
 
-		if (cmd.equals("validate")) {
+		if (cmd.equals("validate"))
+		{
 			this.viewController.getShopCartFacade().placeOrder();
 			JOptionPane.showMessageDialog(null, "Your order has been successfully added", "Order Confirmation",
 					JOptionPane.INFORMATION_MESSAGE);
 			this.viewController.showOrdersPanel();
-		} else if (cmd.equals("update")) {
+		} else if (cmd.equals("update"))
+		{
 			int index = ((MyJButton) e.getSource()).getIndex();
 			int oldQuantity = viewController.getShopCartFacade()
 					.getQuantity(this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct());
-			try {
+			try
+			{
 				viewController.getProductFacade().updateQuantityInStock(
 						this.shopCartRowSet.getShopCartRowByIndex(index).getIdProduct(),
 						(int) comboBoxList.get(index).getSelectedItem(), oldQuantity);
@@ -137,7 +149,8 @@ public class ShopCartView extends JPanel implements ActionListener {
 				JOptionPane.showMessageDialog(null, "The product has been updated !", "Success",
 						JOptionPane.INFORMATION_MESSAGE);
 				viewController.showShopCartPanel();
-			} catch (NotEnoughStockException e1) {
+			} catch (NotEnoughStockException e1)
+			{
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 			}

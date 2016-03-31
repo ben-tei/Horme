@@ -7,28 +7,30 @@ import persist.factoryjdbc.FactoryJDBC;
 /**
  * The Class NotificationManager.
  */
-public class CategoryManager {
+public class CategoryManager
+{
 
 	/** The factory. */
 	private Factory factory;
 
+	/** The activities categories. */
 	private ActivityCategorySet activitiesCategories;
 
 	/**
 	 * Instantiates a new notification manager.
 	 */
-	public CategoryManager() {
+	public CategoryManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
 	/**
 	 * Gets the notifications.
-	 * 
-	 * @return
 	 *
 	 * @return the notifications
 	 */
-	public ActivityCategorySet getActivitiesCategories() {
+	public ActivityCategorySet getActivitiesCategories()
+	{
 		this.activitiesCategories = this.factory.getActivitiesCategories();
 		return this.activitiesCategories;
 	}

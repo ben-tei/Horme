@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Product {
+public abstract class Product
+{
 	/**
 	 * Description of the id.
 	 */
@@ -72,7 +73,8 @@ public abstract class Product {
 	/**
 	 * The constructor.
 	 */
-	public Product() {
+	public Product()
+	{
 		// Start of user code constructor for Product)
 		super();
 		// End of user code
@@ -86,7 +88,8 @@ public abstract class Product {
 	 * 
 	 * @return orders
 	 */
-	public HashSet<Order> getOrders() {
+	public HashSet<Order> getOrders()
+	{
 		return this.orders;
 	}
 
@@ -95,7 +98,8 @@ public abstract class Product {
 	 * 
 	 * @return shoppingCarts
 	 */
-	public HashSet<ShoppingCart> getShoppingCarts() {
+	public HashSet<ShoppingCart> getShoppingCarts()
+	{
 		return this.shoppingCarts;
 	}
 
@@ -104,7 +108,8 @@ public abstract class Product {
 	 * 
 	 * @return traders
 	 */
-	public Trader getTrader() {
+	public Trader getTrader()
+	{
 		return this.trader;
 	}
 
@@ -113,7 +118,8 @@ public abstract class Product {
 	 * 
 	 * @return reference
 	 */
-	public String getReference() {
+	public String getReference()
+	{
 		return this.reference;
 	}
 
@@ -123,7 +129,8 @@ public abstract class Product {
 	 * @param newReference
 	 *            the new reference
 	 */
-	public void setReference(String newReference) {
+	public void setReference(String newReference)
+	{
 		this.reference = newReference;
 	}
 
@@ -132,7 +139,8 @@ public abstract class Product {
 	 * 
 	 * @return estimates
 	 */
-	public HashSet<Estimate> getEstimates() {
+	public HashSet<Estimate> getEstimates()
+	{
 		return this.estimates;
 	}
 
@@ -141,7 +149,8 @@ public abstract class Product {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -151,7 +160,8 @@ public abstract class Product {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -160,7 +170,8 @@ public abstract class Product {
 	 * 
 	 * @return stockQuantity
 	 */
-	public Integer getStockQuantity() {
+	public Integer getStockQuantity()
+	{
 		return this.stockQuantity;
 	}
 
@@ -170,7 +181,8 @@ public abstract class Product {
 	 * @param newStockQuantity
 	 *            the new stock quantity
 	 */
-	public void setStockQuantity(Integer newStockQuantity) {
+	public void setStockQuantity(Integer newStockQuantity)
+	{
 		this.stockQuantity = newStockQuantity;
 	}
 
@@ -179,7 +191,8 @@ public abstract class Product {
 	 * 
 	 * @return category
 	 */
-	public Category getCategory() {
+	public Category getCategory()
+	{
 		return this.category;
 	}
 
@@ -189,7 +202,8 @@ public abstract class Product {
 	 * @param newCategory
 	 *            the new category
 	 */
-	public void setCategory(Category newCategory) {
+	public void setCategory(Category newCategory)
+	{
 		this.category = newCategory;
 	}
 
@@ -198,7 +212,8 @@ public abstract class Product {
 	 * 
 	 * @return price
 	 */
-	public Integer getPrice() {
+	public Integer getPrice()
+	{
 		return this.price;
 	}
 
@@ -208,18 +223,35 @@ public abstract class Product {
 	 * @param newPrice
 	 *            the new price
 	 */
-	public void setPrice(Integer newPrice) {
+	public void setPrice(Integer newPrice)
+	{
 		this.price = newPrice;
 	}
 
-	public String getId() {
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public String getId()
+	{
 		return id;
 	}
 
-	public void setId(String id) {
+	/**
+	 * Sets the id.
+	 *
+	 * @param id
+	 *            the new id
+	 */
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 
+	/**
+	 * Save.
+	 */
 	public abstract void save();
 
 }

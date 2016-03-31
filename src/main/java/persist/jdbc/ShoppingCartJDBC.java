@@ -12,7 +12,8 @@ import java.util.Calendar;
 /**
  * The Class ShopCartRowSetJDBC.
  */
-public class ShoppingCartJDBC extends ShoppingCart {
+public class ShoppingCartJDBC extends ShoppingCart
+{
 
 	/**
 	 * Instantiates a new shop cart row set jdbc.
@@ -20,7 +21,8 @@ public class ShoppingCartJDBC extends ShoppingCart {
 	 * @param user
 	 *            the user
 	 */
-	public ShoppingCartJDBC(User user) {
+	public ShoppingCartJDBC(User user)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -30,7 +32,8 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 		PreparedStatement pstmt = null;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT * FROM ShoppingCart sc WHERE sc.idPerson = ?");
@@ -39,17 +42,20 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 			rset = pstmt.executeQuery();
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 				this.setUser(user);
 				this.setId(rset.getString("idShoppingCart"));
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 			jdbcconnection.closeConnection();
@@ -57,7 +63,13 @@ public class ShoppingCartJDBC extends ShoppingCart {
 		}
 	}
 
-	public void placeOrder(ShopCartRowSet shopCartRows) {
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.core.ShoppingCart#placeOrder(bl.core.ShopCartRowSet)
+	 */
+	public void placeOrder(ShopCartRowSet shopCartRows)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -73,7 +85,8 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 		PreparedStatement pstmt3 = null;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT COUNT(*) + 1 AS orderNumber FROM `Order`");
@@ -95,8 +108,10 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 			rset = pstmt2.executeQuery();
 
-			if (rset.next()) {
-				for (int i = 0; i < shopCartRows.size(); i++) {
+			if (rset.next())
+			{
+				for (int i = 0; i < shopCartRows.size(); i++)
+				{
 					pstmt3 = conn.prepareStatement("INSERT INTO ConstituteOrder (idOrder, idProduct, price, quantity) "
 							+ "VALUES (?, ?, ?, ?)");
 
@@ -111,11 +126,13 @@ public class ShoppingCartJDBC extends ShoppingCart {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 			jdbcconnection.close(pstmt1);

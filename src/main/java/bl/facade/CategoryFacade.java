@@ -6,7 +6,8 @@ import bl.manager.CategoryManager;
 /**
  * The Class NotificationFacade.
  */
-public class CategoryFacade {
+public class CategoryFacade
+{
 
 	/** The notification manager. */
 	private CategoryManager categoryManager;
@@ -14,7 +15,8 @@ public class CategoryFacade {
 	/**
 	 * Instantiates a new notification facade.
 	 */
-	public CategoryFacade() {
+	public CategoryFacade()
+	{
 		this.categoryManager = new CategoryManager();
 	}
 
@@ -23,7 +25,8 @@ public class CategoryFacade {
 	 *
 	 * @return the notifications
 	 */
-	public ActivityCategorySet getActivitiesCategories() {
+	public ActivityCategorySet getActivitiesCategories()
+	{
 		return this.categoryManager.getActivitiesCategories();
 	}
 }

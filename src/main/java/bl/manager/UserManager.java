@@ -12,7 +12,8 @@ import util.SendMailSSL;
 /**
  * The Class UserManager.
  */
-public class UserManager {
+public class UserManager
+{
 
 	/** The factory. */
 	private Factory factory;
@@ -23,7 +24,8 @@ public class UserManager {
 	/**
 	 * Instantiates a new user manager.
 	 */
-	public UserManager() {
+	public UserManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
@@ -40,7 +42,8 @@ public class UserManager {
 	 * @throws WrongPasswordException
 	 *             the wrong password exception
 	 */
-	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException {
+	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException
+	{
 		user = this.factory.findUser(login);
 		user.isPasswordOK(HashText.sha1(password));
 		return user;
@@ -72,7 +75,8 @@ public class UserManager {
 	 *             the already exists exception
 	 */
 	public User createUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) throws AlreadyExistsException {
+			String email, String login, String password) throws AlreadyExistsException
+	{
 		name = name.toUpperCase();
 		firstname = firstname.substring(0, 1).toUpperCase() + firstname.substring(1);
 		city = city.substring(0, 1).toUpperCase() + city.substring(1);
@@ -102,7 +106,8 @@ public class UserManager {
 	 * @return the user
 	 */
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email) {
+			String email)
+	{
 		name = name.toUpperCase();
 		firstname = firstname.substring(0, 1).toUpperCase() + firstname.substring(1);
 		city = city.substring(0, 1).toUpperCase() + city.substring(1);
@@ -123,11 +128,21 @@ public class UserManager {
 	 *
 	 * @return the user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
-	public void sendMail(String login) throws WrongLoginException {
+	/**
+	 * Send mail.
+	 *
+	 * @param login
+	 *            the login
+	 * @throws WrongLoginException
+	 *             the wrong login exception
+	 */
+	public void sendMail(String login) throws WrongLoginException
+	{
 		user = this.factory.findUser(login);
 		SendMailSSL.sendMail(user.getEmail());
 	}

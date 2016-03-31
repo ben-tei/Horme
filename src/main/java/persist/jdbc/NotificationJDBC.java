@@ -5,12 +5,14 @@ import bl.core.Notification;
 /**
  * The Class NotificationJDBC.
  */
-public class NotificationJDBC extends Notification {
+public class NotificationJDBC extends Notification
+{
 
 	/**
 	 * Instantiates a new notification jdbc.
 	 */
-	public NotificationJDBC() {
+	public NotificationJDBC()
+	{
 		super();
 	}
 
@@ -19,7 +21,8 @@ public class NotificationJDBC extends Notification {
 	 *
 	 * @return the notifications
 	 */
-	public void getNotifications() {
+	public void getNotifications()
+	{
 
 	}
 }

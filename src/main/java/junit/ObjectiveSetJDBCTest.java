@@ -7,14 +7,28 @@ import junit.framework.TestCase;
 import persist.jdbc.ObjectiveJDBC;
 import persist.jdbc.ObjectiveSetJDBC;
 
-public class ObjectiveSetJDBCTest extends TestCase {
+/**
+ * The Class ObjectiveSetJDBCTest.
+ */
+public class ObjectiveSetJDBCTest extends TestCase
+{
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test create empty objective set jdbc.
+	 */
 	@Test
-	public void testCreateEmptyObjectiveSetJDBC() {
+	public void testCreateEmptyObjectiveSetJDBC()
+	{
 
 		ObjectiveSetJDBC objectiveSetJDBC = new ObjectiveSetJDBC();
 
@@ -23,8 +37,12 @@ public class ObjectiveSetJDBCTest extends TestCase {
 		assertEquals("A new objectiveSetJDBC has no element", 0, objectiveSetJDBC.size());
 	}
 
+	/**
+	 * Test add.
+	 */
 	@Test
-	public void testAdd() {
+	public void testAdd()
+	{
 
 		ObjectiveSetJDBC objectiveSetJDBC = new ObjectiveSetJDBC();
 		ObjectiveJDBC objectiveJDBC = new ObjectiveJDBC();

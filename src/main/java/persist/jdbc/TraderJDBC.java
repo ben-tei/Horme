@@ -2,9 +2,17 @@ package persist.jdbc;
 
 import bl.core.Trader;
 
-public class TraderJDBC extends Trader {
+/**
+ * The Class TraderJDBC.
+ */
+public class TraderJDBC extends Trader
+{
 
-	public TraderJDBC() {
+	/**
+	 * Instantiates a new trader jdbc.
+	 */
+	public TraderJDBC()
+	{
 		// TODO Auto-generated constructor stub
 	}
 

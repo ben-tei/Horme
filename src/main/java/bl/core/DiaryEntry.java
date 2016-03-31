@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class DiaryEntry {
+public abstract class DiaryEntry
+{
 	/**
 	 * Description of the property position.
 	 */
@@ -58,7 +59,8 @@ public abstract class DiaryEntry {
 	/**
 	 * The constructor.
 	 */
-	public DiaryEntry() {
+	public DiaryEntry()
+	{
 		// Start of user code constructor for DiaryEntry)
 		super();
 		// End of user code
@@ -72,7 +74,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return position
 	 */
-	public String getPosition() {
+	public String getPosition()
+	{
 		return this.position;
 	}
 
@@ -82,7 +85,8 @@ public abstract class DiaryEntry {
 	 * @param newPosition
 	 *            the new position
 	 */
-	public void setPosition(String newPosition) {
+	public void setPosition(String newPosition)
+	{
 		this.position = newPosition;
 	}
 
@@ -91,7 +95,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -101,7 +106,8 @@ public abstract class DiaryEntry {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -110,7 +116,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return date
 	 */
-	public String getDate() {
+	public String getDate()
+	{
 		return this.date;
 	}
 
@@ -120,7 +127,8 @@ public abstract class DiaryEntry {
 	 * @param newDate
 	 *            the new date
 	 */
-	public void setDate(String newDate) {
+	public void setDate(String newDate)
+	{
 		this.date = newDate;
 	}
 
@@ -129,7 +137,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
@@ -139,7 +148,8 @@ public abstract class DiaryEntry {
 	 * @param newUser
 	 *            the new user
 	 */
-	public void setUser(User newUser) {
+	public void setUser(User newUser)
+	{
 		this.user = newUser;
 	}
 
@@ -148,7 +158,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return activity
 	 */
-	public Activity getActivity() {
+	public Activity getActivity()
+	{
 		return this.activity;
 	}
 
@@ -158,7 +169,8 @@ public abstract class DiaryEntry {
 	 * @param newActivity
 	 *            the new activity
 	 */
-	public void setActivity(Activity newActivity) {
+	public void setActivity(Activity newActivity)
+	{
 		this.activity = newActivity;
 	}
 
@@ -167,7 +179,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return content
 	 */
-	public String getContent() {
+	public String getContent()
+	{
 		return this.content;
 	}
 
@@ -177,7 +190,8 @@ public abstract class DiaryEntry {
 	 * @param newContent
 	 *            the new content
 	 */
-	public void setContent(String newContent) {
+	public void setContent(String newContent)
+	{
 		this.content = newContent;
 	}
 
@@ -186,7 +200,8 @@ public abstract class DiaryEntry {
 	 * 
 	 * @return comments
 	 */
-	public HashSet<Comment> getComments() {
+	public HashSet<Comment> getComments()
+	{
 		return this.comments;
 	}
 

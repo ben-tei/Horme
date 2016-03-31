@@ -8,7 +8,8 @@ import java.awt.event.ActionListener;
 /**
  * The Class NotificationView.
  */
-public class NotificationView extends JPanel implements ActionListener {
+public class NotificationView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -22,7 +23,8 @@ public class NotificationView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public NotificationView(ViewController vc) {
+	public NotificationView(ViewController vc)
+	{
 
 		this.viewController = vc;
 
@@ -39,7 +41,8 @@ public class NotificationView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent arg0)
+	{
 		// TODO Auto-generated method stub
 
 	}

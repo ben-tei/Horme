@@ -7,14 +7,28 @@ import junit.framework.TestCase;
 import persist.jdbc.ActivityJDBC;
 import persist.jdbc.ActivitySetJDBC;
 
-public class ActivitySetJDBCTest extends TestCase {
+/**
+ * The Class ActivitySetJDBCTest.
+ */
+public class ActivitySetJDBCTest extends TestCase
+{
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test create empty activity set jdbc.
+	 */
 	@Test
-	public void testCreateEmptyActivitySetJDBC() {
+	public void testCreateEmptyActivitySetJDBC()
+	{
 
 		ActivitySetJDBC activitySetJDBC = new ActivitySetJDBC();
 
@@ -23,8 +37,12 @@ public class ActivitySetJDBCTest extends TestCase {
 		assertEquals("A new activitySetJDBC has no element", 0, activitySetJDBC.size());
 	}
 
+	/**
+	 * Test add.
+	 */
 	@Test
-	public void testAdd() {
+	public void testAdd()
+	{
 
 		ActivitySetJDBC activitySetJDBC = new ActivitySetJDBC();
 		ActivityJDBC activityJDBC = new ActivityJDBC();
@@ -37,4 +55,3 @@ public class ActivitySetJDBCTest extends TestCase {
 	}
 
 }
-

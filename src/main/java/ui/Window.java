@@ -5,7 +5,8 @@ import javax.swing.JFrame;
 /**
  * The Class Window.
  */
-public class Window extends JFrame {
+public class Window extends JFrame
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -18,7 +19,8 @@ public class Window extends JFrame {
 	 * @param width
 	 *            the width
 	 */
-	public Window(int height, int width) {
+	public Window(int height, int width)
+	{
 		this.setTitle("Horme");
 
 		this.setSize(width, height);

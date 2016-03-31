@@ -8,9 +8,14 @@ import bl.core.User;
 /**
  * The Class ShopCartRowSetJDBC.
  */
-public class ShopCartRowSetJDBC extends ShopCartRowSet {
+public class ShopCartRowSetJDBC extends ShopCartRowSet
+{
 
-	public ShopCartRowSetJDBC() {
+	/**
+	 * Instantiates a new shop cart row set jdbc.
+	 */
+	public ShopCartRowSetJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}
@@ -21,7 +26,8 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 	 * @param user
 	 *            the user
 	 */
-	public ShopCartRowSetJDBC(User user) {
+	public ShopCartRowSetJDBC(User user)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -33,7 +39,8 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 		ShopCartRowJDBC rowCart = null;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement(
@@ -45,7 +52,8 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 
 			rset = pstmt.executeQuery();
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 				rowCart = new ShopCartRowJDBC();
 				rowCart.setIdProduct(rset.getString("idProduct"));
 				rowCart.setIdShoppingCart(rset.getString("idShoppingCart"));
@@ -56,11 +64,13 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.closeConnection();
 

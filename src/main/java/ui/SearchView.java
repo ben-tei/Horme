@@ -15,7 +15,8 @@ import exceptions.NotEnoughStockException;
 /**
  * The Class ProductView.
  */
-public class SearchView extends JPanel implements ActionListener {
+public class SearchView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -23,8 +24,10 @@ public class SearchView extends JPanel implements ActionListener {
 	/** The view controller. */
 	private ViewController viewController;
 
+	/** The product set. */
 	private ProductSet productSet;
 
+	/** The combo box list. */
 	private ArrayList<JComboBox<Integer>> comboBoxList = new ArrayList<JComboBox<Integer>>();
 
 	/**
@@ -32,8 +35,11 @@ public class SearchView extends JPanel implements ActionListener {
 	 *
 	 * @param vc
 	 *            the vc
+	 * @param searchString
+	 *            the search string
 	 */
-	public SearchView(ViewController vc, String searchString) {
+	public SearchView(ViewController vc, String searchString)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -60,9 +66,11 @@ public class SearchView extends JPanel implements ActionListener {
 
 		productSet = this.viewController.getProductFacade().searchProducts(searchString);
 
-		for (int i = 0; i < productSet.size(); i++) {
+		for (int i = 0; i < productSet.size(); i++)
+		{
 
-			if (productSet.getProductByIndex(i).getStockQuantity() > 0) {
+			if (productSet.getProductByIndex(i).getStockQuantity() > 0)
+			{
 
 				JLabel Pname = new JLabel(productSet.getProductByIndex(i).getName());
 				Pname.setBounds(65, placement, 120, 14);
@@ -77,7 +85,8 @@ public class SearchView extends JPanel implements ActionListener {
 				this.add(Pprice);
 
 				JComboBox<Integer> Pquantity = new JComboBox<Integer>();
-				for (int j = 0; j < productSet.getProductByIndex(i).getStockQuantity(); j++) {
+				for (int j = 0; j < productSet.getProductByIndex(i).getStockQuantity(); j++)
+				{
 					Pquantity.addItem(j + 1);
 				}
 				Pquantity.setBounds(620, placement - 3, 50, 20);
@@ -103,12 +112,15 @@ public class SearchView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("add")) {
+		if (cmd.equals("add"))
+		{
 			int index = ((MyJButton) e.getSource()).getIndex();
-			try {
+			try
+			{
 				viewController.getProductFacade().updateQuantityInStock(index,
 						(int) comboBoxList.get(index).getSelectedItem());
 				viewController.getShopCartFacade().addToShoppingCart(productSet.getProductByIndex(index),
@@ -116,7 +128,8 @@ public class SearchView extends JPanel implements ActionListener {
 				JOptionPane.showMessageDialog(null, "The product has been added !", "Success",
 						JOptionPane.INFORMATION_MESSAGE);
 				viewController.showShopCartPanel();
-			} catch (NotEnoughStockException e1) {
+			} catch (NotEnoughStockException e1)
+			{
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 			}

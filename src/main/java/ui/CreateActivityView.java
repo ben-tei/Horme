@@ -13,7 +13,11 @@ import javax.swing.JTextField;
 import bl.core.ActivityCategorySet;
 import exceptions.AlreadyExistsException;
 
-public class CreateActivityView extends JPanel implements ActionListener {
+/**
+ * The Class CreateActivityView.
+ */
+public class CreateActivityView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -24,14 +28,23 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	/** The name field. */
 	private JTextField nameField;
 
+	/** The cb categories. */
 	private JComboBox<String> cbCategories = new JComboBox<String>();
 
 	/** The description field. */
 	private JTextField descriptionField;
 
+	/** The activity category set. */
 	private ActivityCategorySet activityCategorySet;
 
-	public CreateActivityView(ViewController vc) {
+	/**
+	 * Instantiates a new creates the activity view.
+	 *
+	 * @param vc
+	 *            the vc
+	 */
+	public CreateActivityView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -71,7 +84,8 @@ public class CreateActivityView extends JPanel implements ActionListener {
 		this.add(nameField);
 
 		cbCategories.setBounds(175, 255, 200, 20);
-		for (int i = 0; i < this.activityCategorySet.size(); i++) {
+		for (int i = 0; i < this.activityCategorySet.size(); i++)
+		{
 			this.cbCategories.addItem(this.activityCategorySet.getCategoryByIndex(i).getName());
 		}
 		this.add(cbCategories);
@@ -89,7 +103,8 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	 *
 	 * @return the name field
 	 */
-	public JTextField getNameField() {
+	public JTextField getNameField()
+	{
 		return nameField;
 	}
 
@@ -99,10 +114,13 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	 * @return the category choice
 	 */
 
-	public String getNameCategory() {
-		if (cbCategories.getItemCount() != 0) {
+	public String getNameCategory()
+	{
+		if (cbCategories.getItemCount() != 0)
+		{
 			return (String) cbCategories.getSelectedItem();
-		} else {
+		} else
+		{
 			return "";
 		}
 
@@ -113,7 +131,8 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	 *
 	 * @return the description field
 	 */
-	public JTextField getDescriptionField() {
+	public JTextField getDescriptionField()
+	{
 		return descriptionField;
 	}
 
@@ -123,23 +142,36 @@ public class CreateActivityView extends JPanel implements ActionListener {
 	 * @return true, if successful
 	 */
 
-	public boolean fieldsAreEmpty() {
+	public boolean fieldsAreEmpty()
+	{
 		return getNameField().getText().equals("") || getNameCategory().equals("")
 				|| getDescriptionField().getText().equals("");
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("back")) {
+		if (cmd.equals("back"))
+		{
 			this.viewController.showActivitiesPanel();
-		} else if (cmd.equals("confirm")) {
-			if (fieldsAreEmpty()) {
+		} else if (cmd.equals("confirm"))
+		{
+			if (fieldsAreEmpty())
+			{
 				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else {
-				try {
+			} else
+			{
+				try
+				{
 					this.viewController.getActivityFacade().createActivity(getNameField().getText(),
 							getDescriptionField().getText(),
 							this.activityCategorySet.getCategoryByIndex(cbCategories.getSelectedIndex()),
@@ -149,7 +181,8 @@ public class CreateActivityView extends JPanel implements ActionListener {
 							"Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success",
 							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showActivitiesPanel();
-				} catch (AlreadyExistsException e1) {
+				} catch (AlreadyExistsException e1)
+				{
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 				}

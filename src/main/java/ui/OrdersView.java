@@ -12,7 +12,8 @@ import bl.facade.OrderFacade;
 /**
  * The Class OrdersView.
  */
-public class OrdersView extends JPanel implements ActionListener {
+public class OrdersView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -29,7 +30,8 @@ public class OrdersView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public OrdersView(ViewController vc) {
+	public OrdersView(ViewController vc)
+	{
 
 		this.viewController = vc;
 		this.orderFacade = new OrderFacade();
@@ -54,7 +56,8 @@ public class OrdersView extends JPanel implements ActionListener {
 
 		User user = this.viewController.getUserFacade().getUser();
 
-		for (int i = 0; i <= orderFacade.readOrders(user).size() - 1; i++) {
+		for (int i = 0; i <= orderFacade.readOrders(user).size() - 1; i++)
+		{
 
 			JLabel Pdate = new JLabel(orderFacade.readOrders(user).getOrderByIndex(i).getDate());
 			Pdate.setBounds(140, placement, 120, 14);
@@ -76,7 +79,8 @@ public class OrdersView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 
 	}

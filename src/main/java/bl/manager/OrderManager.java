@@ -8,7 +8,8 @@ import persist.factoryjdbc.FactoryJDBC;
 /**
  * The Class OrderManager.
  */
-public class OrderManager {
+public class OrderManager
+{
 
 	/** The factory. */
 	private Factory factory;
@@ -19,16 +20,20 @@ public class OrderManager {
 	/**
 	 * Instantiates a new order manager.
 	 */
-	public OrderManager() {
+	public OrderManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
 	/**
 	 * Read orders.
 	 *
+	 * @param user
+	 *            the user
 	 * @return the order set
 	 */
-	public OrderSet readOrders(User user) {
+	public OrderSet readOrders(User user)
+	{
 		orders = factory.readOrders(user);
 		return orders;
 	}

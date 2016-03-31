@@ -8,12 +8,17 @@ import bl.core.User;
 /**
  * The Class OrderSetJDBC.
  */
-public class OrderSetJDBC extends OrderSet {
+public class OrderSetJDBC extends OrderSet
+{
 
 	/**
 	 * Instantiates a new order set jdbc.
+	 *
+	 * @param user
+	 *            the user
 	 */
-	public OrderSetJDBC(User user) {
+	public OrderSetJDBC(User user)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -25,7 +30,8 @@ public class OrderSetJDBC extends OrderSet {
 
 		OrderJDBC order = null;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT `date`, `number` FROM `Order` WHERE `Order`.`idPerson`= ?");
@@ -34,7 +40,8 @@ public class OrderSetJDBC extends OrderSet {
 
 			rset = pstmt.executeQuery();
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 
 				order = new OrderJDBC();
 				order.setDate(rset.getString("date"));
@@ -43,11 +50,13 @@ public class OrderSetJDBC extends OrderSet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.closeConnection();
 

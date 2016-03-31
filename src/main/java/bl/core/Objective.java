@@ -13,7 +13,10 @@ package bl.core;
  * 
  * @author Meche
  */
-public abstract class Objective {
+public abstract class Objective
+{
+
+	/** The id. */
 	private String id = "";
 	/**
 	 * Description of the property deadline.
@@ -42,7 +45,8 @@ public abstract class Objective {
 	/**
 	 * The constructor.
 	 */
-	public Objective() {
+	public Objective()
+	{
 		// Start of user code constructor for Objective)
 		super();
 		// End of user code
@@ -57,15 +61,29 @@ public abstract class Objective {
 	 * 
 	 * @return deadline
 	 */
-	public String getDeadline() {
+	public String getDeadline()
+	{
 		return this.deadline;
 	}
 
-	public String getId() {
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public String getId()
+	{
 		return id;
 	}
 
-	public void setId(String id) {
+	/**
+	 * Sets the id.
+	 *
+	 * @param id
+	 *            the new id
+	 */
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 
@@ -75,7 +93,8 @@ public abstract class Objective {
 	 * @param newDeadline
 	 *            the new deadline
 	 */
-	public void setDeadline(String newDeadline) {
+	public void setDeadline(String newDeadline)
+	{
 		this.deadline = newDeadline;
 	}
 
@@ -84,7 +103,8 @@ public abstract class Objective {
 	 * 
 	 * @return description
 	 */
-	public String getDescription() {
+	public String getDescription()
+	{
 		return this.description;
 	}
 
@@ -94,7 +114,8 @@ public abstract class Objective {
 	 * @param newDescription
 	 *            the new description
 	 */
-	public void setDescription(String newDescription) {
+	public void setDescription(String newDescription)
+	{
 		this.description = newDescription;
 	}
 
@@ -103,7 +124,8 @@ public abstract class Objective {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -113,7 +135,8 @@ public abstract class Objective {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -122,7 +145,8 @@ public abstract class Objective {
 	 * 
 	 * @return activity
 	 */
-	public Activity getActivity() {
+	public Activity getActivity()
+	{
 		return this.activity;
 	}
 
@@ -132,10 +156,14 @@ public abstract class Objective {
 	 * @param newActivity
 	 *            the new activity
 	 */
-	public void setActivity(Activity newActivity) {
+	public void setActivity(Activity newActivity)
+	{
 		this.activity = newActivity;
 	}
 
+	/**
+	 * Removes the.
+	 */
 	public abstract void remove();
 
 }

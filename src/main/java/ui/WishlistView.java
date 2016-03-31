@@ -8,7 +8,8 @@ import java.awt.event.ActionListener;
 /**
  * The Class WishlistView.
  */
-public class WishlistView extends JPanel implements ActionListener {
+public class WishlistView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -22,7 +23,8 @@ public class WishlistView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public WishlistView(ViewController vc) {
+	public WishlistView(ViewController vc)
+	{
 
 		this.viewController = vc;
 
@@ -39,7 +41,8 @@ public class WishlistView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 
 	}

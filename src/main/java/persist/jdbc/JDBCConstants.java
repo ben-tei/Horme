@@ -3,12 +3,14 @@ package persist.jdbc;
 /**
  * The Class JDBCConstants.
  */
-public final class JDBCConstants {
+public final class JDBCConstants
+{
 
 	/**
 	 * Instantiates a new JDBC constants.
 	 */
-	private JDBCConstants() {
+	private JDBCConstants()
+	{
 	}
 
 	/** The Constant DRIVER. */

@@ -9,14 +9,33 @@ import bl.core.Product;
 import bl.core.ShopCartRow;
 import bl.core.ShoppingCart;
 
-public class ShopCartRowJDBC extends ShopCartRow {
+/**
+ * The Class ShopCartRowJDBC.
+ */
+public class ShopCartRowJDBC extends ShopCartRow
+{
 
-	public ShopCartRowJDBC() {
+	/**
+	 * Instantiates a new shop cart row jdbc.
+	 */
+	public ShopCartRowJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}
 
-	public ShopCartRowJDBC(Product p, ShoppingCart shopCart, int quantity) {
+	/**
+	 * Instantiates a new shop cart row jdbc.
+	 *
+	 * @param p
+	 *            the p
+	 * @param shopCart
+	 *            the shop cart
+	 * @param quantity
+	 *            the quantity
+	 */
+	public ShopCartRowJDBC(Product p, ShoppingCart shopCart, int quantity)
+	{
 		// TODO Auto-generated constructor stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -28,7 +47,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 		ResultSet rset = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -40,7 +60,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next()) {
+			if (!rset.next())
+			{
 				pstmt2 = conn.prepareStatement("INSERT INTO ConstituteShoppingCart VALUES (?, ?, ?, ?)");
 
 				pstmt2.setString(1, Integer.toString(quantity));
@@ -50,7 +71,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 				pstmt2.executeUpdate();
 
-			} else {
+			} else
+			{
 
 				pstmt2 = conn.prepareStatement(
 						"UPDATE ConstituteShoppingCart SET quantity = quantity + ?, price = ? WHERE idShoppingCart = ? AND idProduct = ?");
@@ -70,11 +92,13 @@ public class ShopCartRowJDBC extends ShopCartRow {
 			this.setQuantity(quantity);
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 
@@ -85,8 +109,14 @@ public class ShopCartRowJDBC extends ShopCartRow {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.core.ShopCartRow#save()
+	 */
 	@Override
-	public void save() {
+	public void save()
+	{
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -94,7 +124,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 		PreparedStatement pstmt = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -110,11 +141,13 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 
@@ -123,8 +156,14 @@ public class ShopCartRowJDBC extends ShopCartRow {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.core.ShopCartRow#remove()
+	 */
 	@Override
-	public void remove() {
+	public void remove()
+	{
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -132,7 +171,8 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 		PreparedStatement pstmt = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -146,11 +186,13 @@ public class ShopCartRowJDBC extends ShopCartRow {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 

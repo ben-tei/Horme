@@ -10,7 +10,8 @@ import exceptions.AlreadyExistsException;
 /**
  * The Class ActivityFacade.
  */
-public class ActivityFacade {
+public class ActivityFacade
+{
 
 	/** The activity manager. */
 	private ActivityManager activityManager;
@@ -18,7 +19,8 @@ public class ActivityFacade {
 	/**
 	 * Instantiates a new activity facade.
 	 */
-	public ActivityFacade() {
+	public ActivityFacade()
+	{
 		this.activityManager = new ActivityManager();
 	}
 
@@ -29,7 +31,8 @@ public class ActivityFacade {
 	 *            the user
 	 * @return the activity set
 	 */
-	public ActivitySet readActivities(User user) {
+	public ActivitySet readActivities(User user)
+	{
 		return this.activityManager.readActivities(user);
 	}
 
@@ -38,20 +41,32 @@ public class ActivityFacade {
 	 *
 	 * @param name
 	 *            the name
-	 * @param category
-	 *            the category
 	 * @param description
 	 *            the description
+	 * @param category
+	 *            the category
+	 * @param user
+	 *            the user
+	 * @return the activity
 	 * @throws AlreadyExistsException
+	 *             the already exists exception
 	 */
 
 	public Activity createActivity(String name, String description, Category category, User user)
-			throws AlreadyExistsException {
+			throws AlreadyExistsException
+	{
 		// TODO Auto-generated method stub
 		return this.activityManager.createActivity(name, description, category, user);
 	}
 
-	public void removeFromMyActivities(int index) {
+	/**
+	 * Removes the from my activities.
+	 *
+	 * @param index
+	 *            the index
+	 */
+	public void removeFromMyActivities(int index)
+	{
 		// TODO Auto-generated method stub
 		this.activityManager.removeFromMyActivities(index);
 	}

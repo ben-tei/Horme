@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Estimate {
+public abstract class Estimate
+{
 	/**
 	 * Description of the property products.
 	 */
@@ -38,7 +39,8 @@ public abstract class Estimate {
 	/**
 	 * The constructor.
 	 */
-	public Estimate() {
+	public Estimate()
+	{
 		// Start of user code constructor for Estimate)
 		super();
 		// End of user code
@@ -52,7 +54,8 @@ public abstract class Estimate {
 	 * 
 	 * @return products
 	 */
-	public HashSet<Product> getProducts() {
+	public HashSet<Product> getProducts()
+	{
 		return this.products;
 	}
 
@@ -61,7 +64,8 @@ public abstract class Estimate {
 	 * 
 	 * @return trader
 	 */
-	public Trader getTrader() {
+	public Trader getTrader()
+	{
 		return this.trader;
 	}
 
@@ -71,7 +75,8 @@ public abstract class Estimate {
 	 * @param newTrader
 	 *            the new trader
 	 */
-	public void setTrader(Trader newTrader) {
+	public void setTrader(Trader newTrader)
+	{
 		this.trader = newTrader;
 	}
 
@@ -80,7 +85,8 @@ public abstract class Estimate {
 	 * 
 	 * @return user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
@@ -90,7 +96,8 @@ public abstract class Estimate {
 	 * @param newUser
 	 *            the new user
 	 */
-	public void setUser(User newUser) {
+	public void setUser(User newUser)
+	{
 		this.user = newUser;
 	}
 

@@ -13,7 +13,8 @@ import java.awt.event.ActionListener;
 /**
  * The Class DiaryView.
  */
-public class DiaryView extends JPanel implements ActionListener {
+public class DiaryView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -21,6 +22,7 @@ public class DiaryView extends JPanel implements ActionListener {
 	/** The view controller. */
 	private ViewController viewController;
 
+	/** The btn add objective. */
 	private JButton btnAddObjective;
 
 	/**
@@ -29,7 +31,8 @@ public class DiaryView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public DiaryView(ViewController vc) {
+	public DiaryView(ViewController vc)
+	{
 
 		this.viewController = vc;
 
@@ -63,7 +66,8 @@ public class DiaryView extends JPanel implements ActionListener {
 		int placement = 231;
 		User user = this.viewController.getUserFacade().getUser();
 
-		for (int i = 0; i <= this.viewController.getDiaryFacade().readObjectives(user).size() - 1; i++) {
+		for (int i = 0; i <= this.viewController.getDiaryFacade().readObjectives(user).size() - 1; i++)
+		{
 
 			JLabel Oname = new JLabel(
 					this.viewController.getDiaryFacade().readObjectives(user).getObjectiveByIndex(i).getName());
@@ -103,12 +107,15 @@ public class DiaryView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("addObjective")) {
+		if (cmd.equals("addObjective"))
+		{
 			this.viewController.showCreateObjectivePanel();
-		} else if (cmd.equals("delete")) {
+		} else if (cmd.equals("delete"))
+		{
 			int index = ((MyJButton) e.getSource()).getIndex();
 			viewController.getDiaryFacade().removeFromMyObjectives(index);
 			viewController.showDiaryPanel();

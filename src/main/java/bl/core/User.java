@@ -17,7 +17,8 @@ import exceptions.WrongPasswordException;
  * 
  * @author Meche
  */
-public abstract class User extends Person {
+public abstract class User extends Person
+{
 	/**
 	 * Description of the property id.
 	 */
@@ -59,7 +60,8 @@ public abstract class User extends Person {
 	/**
 	 * The constructor.
 	 */
-	public User() {
+	public User()
+	{
 		// Start of user code constructor for User)
 		super();
 		// End of user code
@@ -73,7 +75,8 @@ public abstract class User extends Person {
 	 * @param password
 	 *            the password
 	 */
-	public User(String login, String password) {
+	public User(String login, String password)
+	{
 		super(login, password);
 	}
 
@@ -85,15 +88,29 @@ public abstract class User extends Person {
 	 * 
 	 * @return whishLists
 	 */
-	public HashSet<WhishList> getWhishLists() {
+	public HashSet<WhishList> getWhishLists()
+	{
 		return this.whishLists;
 	}
 
-	public ShoppingCart getShoppingCart() {
+	/**
+	 * Gets the shopping cart.
+	 *
+	 * @return the shopping cart
+	 */
+	public ShoppingCart getShoppingCart()
+	{
 		return shoppingCart;
 	}
 
-	public void setShoppingCart(ShoppingCart shoppingCart) {
+	/**
+	 * Sets the shopping cart.
+	 *
+	 * @param shoppingCart
+	 *            the new shopping cart
+	 */
+	public void setShoppingCart(ShoppingCart shoppingCart)
+	{
 		this.shoppingCart = shoppingCart;
 	}
 
@@ -102,7 +119,8 @@ public abstract class User extends Person {
 	 * 
 	 * @return entries
 	 */
-	public HashSet<DiaryEntry> getEntries() {
+	public HashSet<DiaryEntry> getEntries()
+	{
 		return this.entries;
 	}
 
@@ -111,7 +129,8 @@ public abstract class User extends Person {
 	 * 
 	 * @return estimates
 	 */
-	public HashSet<Estimate> getEstimates() {
+	public HashSet<Estimate> getEstimates()
+	{
 		return this.estimates;
 	}
 
@@ -120,7 +139,8 @@ public abstract class User extends Person {
 	 * 
 	 * @return orders
 	 */
-	public HashSet<Order> getOrders() {
+	public HashSet<Order> getOrders()
+	{
 		return this.orders;
 	}
 
@@ -129,7 +149,8 @@ public abstract class User extends Person {
 	 * 
 	 * @return proposedActivities
 	 */
-	public HashSet<Activity> getProposedActivities() {
+	public HashSet<Activity> getProposedActivities()
+	{
 		return this.proposedActivities;
 	}
 
@@ -138,7 +159,8 @@ public abstract class User extends Person {
 	 *
 	 * @return the id
 	 */
-	public String getId() {
+	public String getId()
+	{
 		return id;
 	}
 
@@ -148,7 +170,8 @@ public abstract class User extends Person {
 	 * @param id
 	 *            the new id
 	 */
-	public void setId(String id) {
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 
@@ -161,14 +184,20 @@ public abstract class User extends Person {
 	 * @throws WrongPasswordException
 	 *             the wrong password exception
 	 */
-	public boolean isPasswordOK(String password) throws WrongPasswordException {
-		if (this.getPassword().equals(password)) {
+	public boolean isPasswordOK(String password) throws WrongPasswordException
+	{
+		if (this.getPassword().equals(password))
+		{
 			return true;
-		} else {
+		} else
+		{
 			throw new WrongPasswordException("Wrong password !");
 		}
 	}
 
+	/**
+	 * Save.
+	 */
 	public abstract void save();
 
 }

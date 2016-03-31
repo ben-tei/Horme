@@ -2,7 +2,11 @@ package bl.core;
 
 import java.util.ArrayList;
 
-public abstract class ObjectiveSet {
+/**
+ * The Class ObjectiveSet.
+ */
+public abstract class ObjectiveSet
+{
 
 	/** The tab orders. */
 	private ArrayList<Objective> tabObjectives;
@@ -10,25 +14,40 @@ public abstract class ObjectiveSet {
 	/**
 	 * Instantiates a new order set.
 	 */
-	public ObjectiveSet() {
+	public ObjectiveSet()
+	{
 		this.tabObjectives = new ArrayList<Objective>();
 	}
 
 	/**
 	 * Adds the order.
 	 *
-	 * @param order
-	 *            the order
+	 * @param o
+	 *            the o
 	 */
-	public void addObjective(Objective o) {
+	public void addObjective(Objective o)
+	{
 		this.tabObjectives.add(o);
 	}
 
-	public ArrayList<Objective> getTabObjectives() {
+	/**
+	 * Gets the tab objectives.
+	 *
+	 * @return the tab objectives
+	 */
+	public ArrayList<Objective> getTabObjectives()
+	{
 		return tabObjectives;
 	}
 
-	public void setTabObjectives(ArrayList<Objective> tabObjectives) {
+	/**
+	 * Sets the tab objectives.
+	 *
+	 * @param tabObjectives
+	 *            the new tab objectives
+	 */
+	public void setTabObjectives(ArrayList<Objective> tabObjectives)
+	{
 		this.tabObjectives = tabObjectives;
 	}
 
@@ -39,7 +58,8 @@ public abstract class ObjectiveSet {
 	 *            the index
 	 * @return the order by index
 	 */
-	public Objective getObjectiveByIndex(int index) {
+	public Objective getObjectiveByIndex(int index)
+	{
 		return this.tabObjectives.get(index);
 	}
 
@@ -48,11 +68,18 @@ public abstract class ObjectiveSet {
 	 *
 	 * @return the int
 	 */
-	public int size() {
+	public int size()
+	{
 		return this.tabObjectives.size();
 	}
 
-	public boolean isEmpty() {
+	/**
+	 * Checks if is empty.
+	 *
+	 * @return true, if is empty
+	 */
+	public boolean isEmpty()
+	{
 		return this.tabObjectives.size() == 0;
 	}
 

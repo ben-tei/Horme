@@ -22,7 +22,11 @@ import bl.core.User;
 import exceptions.AlreadyExistsException;
 import util.DateLabelFormatter;
 
-public class CreateObjectiveView extends JPanel implements ActionListener {
+/**
+ * The Class CreateObjectiveView.
+ */
+public class CreateObjectiveView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -33,18 +37,32 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	/** The name field. */
 	private JTextField nameField;
 
+	/** The cb activities. */
 	private JComboBox<String> cbActivities = new JComboBox<String>();
 
 	/** The description field. */
 	private JTextField descriptionField;
 
+	/** The activity set. */
 	private ActivitySet activitySet;
 
+	/** The model. */
 	private UtilDateModel model = new UtilDateModel();
+
+	/** The date panel. */
 	private JDatePanelImpl datePanel;
+
+	/** The date picker. */
 	private JDatePickerImpl datePicker;
 
-	public CreateObjectiveView(ViewController vc) {
+	/**
+	 * Instantiates a new creates the objective view.
+	 *
+	 * @param vc
+	 *            the vc
+	 */
+	public CreateObjectiveView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -105,7 +123,8 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 		this.add(datePicker);
 
 		cbActivities.setBounds(175, 415, 200, 20);
-		for (int i = 0; i < this.activitySet.size(); i++) {
+		for (int i = 0; i < this.activitySet.size(); i++)
+		{
 			this.cbActivities.addItem(this.activitySet.getActivityByIndex(i).getName());
 		}
 		this.add(cbActivities);
@@ -117,7 +136,8 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	 *
 	 * @return the name field
 	 */
-	public JTextField getNameField() {
+	public JTextField getNameField()
+	{
 		return nameField;
 	}
 
@@ -127,10 +147,13 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	 * @return the category choice
 	 */
 
-	public String getNameActivity() {
-		if (cbActivities.getItemCount() != 0) {
+	public String getNameActivity()
+	{
+		if (cbActivities.getItemCount() != 0)
+		{
 			return (String) cbActivities.getSelectedItem();
-		} else {
+		} else
+		{
 			return "";
 		}
 	}
@@ -140,11 +163,18 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	 *
 	 * @return the description field
 	 */
-	public JTextField getDescriptionField() {
+	public JTextField getDescriptionField()
+	{
 		return descriptionField;
 	}
 
-	public String getDeadlineText() {
+	/**
+	 * Gets the deadline text.
+	 *
+	 * @return the deadline text
+	 */
+	public String getDeadlineText()
+	{
 		return datePicker.getJFormattedTextField().getText();
 	}
 
@@ -154,23 +184,36 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 	 * @return true, if successful
 	 */
 
-	public boolean fieldsAreEmpty() {
+	public boolean fieldsAreEmpty()
+	{
 		return getNameField().getText().equals("") || getNameActivity().equals("")
 				|| getDescriptionField().getText().equals("") || getDeadlineText().isEmpty();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("back")) {
+		if (cmd.equals("back"))
+		{
 			this.viewController.showActivitiesPanel();
-		} else if (cmd.equals("confirm")) {
-			if (fieldsAreEmpty()) {
+		} else if (cmd.equals("confirm"))
+		{
+			if (fieldsAreEmpty())
+			{
 				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else {
-				try {
+			} else
+			{
+				try
+				{
 					java.util.Date date = (Date) datePicker.getModel().getValue();
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 					String stringDate = dateFormat.format(date);
@@ -184,7 +227,8 @@ public class CreateObjectiveView extends JPanel implements ActionListener {
 							"Activity \"" + getNameField().getText() + "\" successfully added" + " !", "Success",
 							JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showDiaryPanel();
-				} catch (AlreadyExistsException e1) {
+				} catch (AlreadyExistsException e1)
+				{
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);
 				}

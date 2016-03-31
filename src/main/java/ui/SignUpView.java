@@ -22,7 +22,8 @@ import java.awt.Color;
 /**
  * The Class SignUpView.
  */
-public class SignUpView extends JPanel implements ActionListener {
+public class SignUpView extends JPanel implements ActionListener
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -75,7 +76,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 * @param vc
 	 *            the vc
 	 */
-	public SignUpView(ViewController vc) {
+	public SignUpView(ViewController vc)
+	{
 		this.viewController = vc;
 
 		this.setLayout(null);
@@ -211,7 +213,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the name field
 	 */
-	public JTextField getNameField() {
+	public JTextField getNameField()
+	{
 		return nameField;
 	}
 
@@ -220,7 +223,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the street field
 	 */
-	public JTextField getStreetField() {
+	public JTextField getStreetField()
+	{
 		return streetField;
 	}
 
@@ -229,7 +233,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the city field
 	 */
-	public JTextField getCityField() {
+	public JTextField getCityField()
+	{
 		return cityField;
 	}
 
@@ -238,7 +243,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the email field
 	 */
-	public JTextField getEmailField() {
+	public JTextField getEmailField()
+	{
 		return emailField;
 	}
 
@@ -247,7 +253,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the login field
 	 */
-	public JTextField getLoginField() {
+	public JTextField getLoginField()
+	{
 		return loginField;
 	}
 
@@ -256,7 +263,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the pswd field
 	 */
-	public JPasswordField getPswdField() {
+	public JPasswordField getPswdField()
+	{
 		return pswdField;
 	}
 
@@ -265,7 +273,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the siret field
 	 */
-	public JTextField getSiretField() {
+	public JTextField getSiretField()
+	{
 		return siretField;
 	}
 
@@ -274,7 +283,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the firstname field
 	 */
-	public JTextField getFirstnameField() {
+	public JTextField getFirstnameField()
+	{
 		return firstnameField;
 	}
 
@@ -283,7 +293,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the zip field
 	 */
-	public JTextField getZipField() {
+	public JTextField getZipField()
+	{
 		return zipField;
 	}
 
@@ -292,7 +303,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the phone field
 	 */
-	public JTextField getPhoneField() {
+	public JTextField getPhoneField()
+	{
 		return phoneField;
 	}
 
@@ -301,7 +313,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the pswd confirm
 	 */
-	public JPasswordField getPswdConfirm() {
+	public JPasswordField getPswdConfirm()
+	{
 		return pswdConfirmField;
 	}
 
@@ -310,7 +323,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the email confirm
 	 */
-	public JTextField getEmailConfirm() {
+	public JTextField getEmailConfirm()
+	{
 		return emailConfirmField;
 	}
 
@@ -319,7 +333,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return the website field
 	 */
-	public JTextField getWebsiteField() {
+	public JTextField getWebsiteField()
+	{
 		return websiteField;
 	}
 
@@ -328,7 +343,8 @@ public class SignUpView extends JPanel implements ActionListener {
 	 *
 	 * @return true, if successful
 	 */
-	public boolean fieldsAreEmpty() {
+	public boolean fieldsAreEmpty()
+	{
 		return getNameField().getText().equals("") || getStreetField().getText().equals("")
 				|| getCityField().getText().equals("") || getEmailField().getText().equals("")
 				|| getLoginField().getText().equals("") || new String(getPswdField().getPassword()).equals("")
@@ -344,31 +360,42 @@ public class SignUpView extends JPanel implements ActionListener {
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
-		if (cmd.equals("back")) {
+		if (cmd.equals("back"))
+		{
 			this.viewController.showLoginPanel();
-		} else if (cmd.equals("confirm")) {
-			if (fieldsAreEmpty()) {
+		} else if (cmd.equals("confirm"))
+		{
+			if (fieldsAreEmpty())
+			{
 				JOptionPane.showMessageDialog(null, "All fields with a * are mandatory fields !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else if (!Arrays.equals(getPswdField().getPassword(), getPswdConfirm().getPassword())) {
+			} else if (!Arrays.equals(getPswdField().getPassword(), getPswdConfirm().getPassword()))
+			{
 				JOptionPane.showMessageDialog(null, "The two passwords do not match !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else if (!getEmailConfirm().getText().equals(getEmailField().getText())) {
+			} else if (!getEmailConfirm().getText().equals(getEmailField().getText()))
+			{
 				JOptionPane.showMessageDialog(null, "The two email address do not match !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
 			} else if (!EmailValidator.validate(getEmailConfirm().getText())
-					|| !EmailValidator.validate(getEmailField().getText())) {
+					|| !EmailValidator.validate(getEmailField().getText()))
+			{
 				JOptionPane.showMessageDialog(null, "Email address not valid !", "Failure",
 						JOptionPane.WARNING_MESSAGE);
-			} else if (!PhoneValidator.validate(getPhoneField().getText())) {
+			} else if (!PhoneValidator.validate(getPhoneField().getText()))
+			{
 				JOptionPane.showMessageDialog(null, "Phone number not valid !", "Failure", JOptionPane.WARNING_MESSAGE);
-			} else if (!ZipCodeValidator.validate(getZipField().getText())) {
+			} else if (!ZipCodeValidator.validate(getZipField().getText()))
+			{
 				JOptionPane.showMessageDialog(null, "Zip Code not valid !", "Failure", JOptionPane.WARNING_MESSAGE);
-			} else {
-				try {
+			} else
+			{
+				try
+				{
 					this.viewController.getUserFacade().signUp(getNameField().getText(), getFirstnameField().getText(),
 							getStreetField().getText(), getZipField().getText(), getCityField().getText(),
 							getPhoneField().getText(), getEmailField().getText(), getLoginField().getText(),
@@ -377,7 +404,8 @@ public class SignUpView extends JPanel implements ActionListener {
 					JOptionPane.showMessageDialog(null, "You are now registered " + getLoginField().getText() + " !",
 							"Success", JOptionPane.INFORMATION_MESSAGE);
 					this.viewController.showLoginPanel();
-				} catch (AlreadyExistsException e1) {
+				} catch (AlreadyExistsException e1)
+				{
 					// TODO Auto-generated catch block
 					// e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Failure", JOptionPane.WARNING_MESSAGE);

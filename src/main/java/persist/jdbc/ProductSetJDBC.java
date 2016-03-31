@@ -7,12 +7,14 @@ import bl.core.ProductSet;
 /**
  * The Class ProductSetJDBC.
  */
-public class ProductSetJDBC extends ProductSet {
+public class ProductSetJDBC extends ProductSet
+{
 
 	/**
 	 * Instantiates a new product set jdbc.
 	 */
-	public ProductSetJDBC() {
+	public ProductSetJDBC()
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -22,14 +24,16 @@ public class ProductSetJDBC extends ProductSet {
 
 		ProductJDBC product = null;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			Statement state = conn.createStatement();
 
 			rset = state.executeQuery("SELECT * FROM Product");
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 				product = new ProductJDBC();
 				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
@@ -40,11 +44,13 @@ public class ProductSetJDBC extends ProductSet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.closeConnection();
 
@@ -57,7 +63,8 @@ public class ProductSetJDBC extends ProductSet {
 	 * @param searchString
 	 *            the search string
 	 */
-	public ProductSetJDBC(String searchString) {
+	public ProductSetJDBC(String searchString)
+	{
 
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -69,7 +76,8 @@ public class ProductSetJDBC extends ProductSet {
 
 		ProductJDBC product = null;
 
-		try {
+		try
+		{
 			conn = jdbcconnection.openConnection();
 
 			pstmt = conn.prepareStatement("SELECT * FROM Product WHERE name LIKE ? OR reference LIKE ?");
@@ -79,7 +87,8 @@ public class ProductSetJDBC extends ProductSet {
 
 			rset = pstmt.executeQuery();
 
-			while (rset.next()) {
+			while (rset.next())
+			{
 				product = new ProductJDBC();
 				product.setId(rset.getString("idProduct"));
 				product.setName(rset.getString("name"));
@@ -90,11 +99,13 @@ public class ProductSetJDBC extends ProductSet {
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.closeConnection();
 

@@ -7,7 +7,8 @@ import exceptions.NotEnoughStockException;
 /**
  * The Class ProductFacade.
  */
-public class ProductFacade {
+public class ProductFacade
+{
 
 	/** The product manager. */
 	private ProductManager productManager;
@@ -15,7 +16,8 @@ public class ProductFacade {
 	/**
 	 * Instantiates a new product facade.
 	 */
-	public ProductFacade() {
+	public ProductFacade()
+	{
 		this.productManager = new ProductManager();
 	}
 
@@ -24,7 +26,8 @@ public class ProductFacade {
 	 *
 	 * @return the product set
 	 */
-	public ProductSet readProducts() {
+	public ProductSet readProducts()
+	{
 		return this.productManager.readProducts();
 	}
 
@@ -35,15 +38,40 @@ public class ProductFacade {
 	 *            the search string
 	 * @return the product set
 	 */
-	public ProductSet searchProducts(String searchString) {
+	public ProductSet searchProducts(String searchString)
+	{
 		return this.productManager.searchProducts(searchString);
 	}
 
-	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException {
+	/**
+	 * Update quantity in stock.
+	 *
+	 * @param index
+	 *            the index
+	 * @param quantity
+	 *            the quantity
+	 * @throws NotEnoughStockException
+	 *             the not enough stock exception
+	 */
+	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException
+	{
 		this.productManager.updateQuantityInStock(index, quantity);
 	}
 
-	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException {
+	/**
+	 * Update quantity in stock.
+	 *
+	 * @param idProduct
+	 *            the id product
+	 * @param quantity
+	 *            the quantity
+	 * @param oldQuantity
+	 *            the old quantity
+	 * @throws NotEnoughStockException
+	 *             the not enough stock exception
+	 */
+	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
+	{
 		this.productManager.updateQuantityInStock(idProduct, quantity, oldQuantity);
 	}
 

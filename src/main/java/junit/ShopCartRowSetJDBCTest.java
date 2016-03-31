@@ -7,14 +7,28 @@ import junit.framework.TestCase;
 import persist.jdbc.ShopCartRowJDBC;
 import persist.jdbc.ShopCartRowSetJDBC;
 
-public class ShopCartRowSetJDBCTest extends TestCase {
+/**
+ * The Class ShopCartRowSetJDBCTest.
+ */
+public class ShopCartRowSetJDBCTest extends TestCase
+{
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test create empty shop cart row set jdbc.
+	 */
 	@Test
-	public void testCreateEmptyShopCartRowSetJDBC() {
+	public void testCreateEmptyShopCartRowSetJDBC()
+	{
 
 		ShopCartRowSetJDBC shopCartRowSetJDBC = new ShopCartRowSetJDBC();
 
@@ -22,8 +36,12 @@ public class ShopCartRowSetJDBCTest extends TestCase {
 		assertEquals("A new shopCartRowSetJDBC has no element", 0, shopCartRowSetJDBC.size());
 	}
 
+	/**
+	 * Test add.
+	 */
 	@Test
-	public void testAdd() {
+	public void testAdd()
+	{
 
 		ShopCartRowSetJDBC shopCartRowSetJDBC = new ShopCartRowSetJDBC();
 		ShopCartRowJDBC shopCartRowJDBC = new ShopCartRowJDBC();

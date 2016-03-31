@@ -10,15 +10,38 @@ import bl.core.Activity;
 import bl.core.Objective;
 import exceptions.AlreadyExistsException;
 
-public class ObjectiveJDBC extends Objective {
+/**
+ * The Class ObjectiveJDBC.
+ */
+public class ObjectiveJDBC extends Objective
+{
 
-	public ObjectiveJDBC() {
+	/**
+	 * Instantiates a new objective jdbc.
+	 */
+	public ObjectiveJDBC()
+	{
 		// TODO Auto-generated constructor stub
 		super();
 	}
 
+	/**
+	 * Instantiates a new objective jdbc.
+	 *
+	 * @param name
+	 *            the name
+	 * @param description
+	 *            the description
+	 * @param valideDate
+	 *            the valide date
+	 * @param activity
+	 *            the activity
+	 * @throws AlreadyExistsException
+	 *             the already exists exception
+	 */
 	public ObjectiveJDBC(String name, String description, Date valideDate, Activity activity)
-			throws AlreadyExistsException {
+			throws AlreadyExistsException
+	{
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
 		Connection conn = null;
@@ -29,7 +52,8 @@ public class ObjectiveJDBC extends Objective {
 
 		ResultSet rset = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -40,7 +64,8 @@ public class ObjectiveJDBC extends Objective {
 
 			rset = pstmt.executeQuery();
 
-			if (!rset.next()) {
+			if (!rset.next())
+			{
 				pstmt2 = conn.prepareStatement(
 						"INSERT INTO Objective (name, description, deadline, idActivity) " + "VALUES (?, ?, ?, ?)");
 
@@ -51,16 +76,19 @@ public class ObjectiveJDBC extends Objective {
 
 				pstmt2.executeUpdate();
 
-			} else {
+			} else
+			{
 				throw new AlreadyExistsException("Objective already exists !");
 			}
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 
@@ -71,8 +99,14 @@ public class ObjectiveJDBC extends Objective {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see bl.core.Objective#remove()
+	 */
 	@Override
-	public void remove() {
+	public void remove()
+	{
 		// TODO Auto-generated method stub
 		JDBCConnection jdbcconnection = new JDBCConnection();
 
@@ -80,7 +114,8 @@ public class ObjectiveJDBC extends Objective {
 
 		PreparedStatement pstmt = null;
 
-		try {
+		try
+		{
 
 			conn = jdbcconnection.openConnection();
 
@@ -92,11 +127,13 @@ public class ObjectiveJDBC extends Objective {
 
 		}
 
-		catch (SQLException e) {
+		catch (SQLException e)
+		{
 
 			JDBCConnection.ProcessSQLException(e);
 
-		} finally {
+		} finally
+		{
 
 			jdbcconnection.close(pstmt);
 

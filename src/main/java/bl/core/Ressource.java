@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Ressource {
+public abstract class Ressource
+{
 	/**
 	 * Description of the property nom.
 	 */
@@ -38,7 +39,8 @@ public abstract class Ressource {
 	/**
 	 * The constructor.
 	 */
-	public Ressource() {
+	public Ressource()
+	{
 		// Start of user code constructor for Ressource)
 		super();
 		// End of user code
@@ -52,7 +54,8 @@ public abstract class Ressource {
 	 * 
 	 * @return nom
 	 */
-	public String getNom() {
+	public String getNom()
+	{
 		return this.nom;
 	}
 
@@ -62,7 +65,8 @@ public abstract class Ressource {
 	 * @param newNom
 	 *            the new nom
 	 */
-	public void setNom(String newNom) {
+	public void setNom(String newNom)
+	{
 		this.nom = newNom;
 	}
 
@@ -71,7 +75,8 @@ public abstract class Ressource {
 	 * 
 	 * @return whishLists
 	 */
-	public HashSet<WhishList> getWhishLists() {
+	public HashSet<WhishList> getWhishLists()
+	{
 		return this.whishLists;
 	}
 
@@ -80,7 +85,8 @@ public abstract class Ressource {
 	 * 
 	 * @return activitys
 	 */
-	public HashSet<Activity> getActivitys() {
+	public HashSet<Activity> getActivitys()
+	{
 		return this.activitys;
 	}
 

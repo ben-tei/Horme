@@ -10,7 +10,11 @@ import bl.factory.Factory;
 import exceptions.AlreadyExistsException;
 import persist.factoryjdbc.FactoryJDBC;
 
-public class DiaryManager {
+/**
+ * The Class DiaryManager.
+ */
+public class DiaryManager
+{
 
 	/** The factory. */
 	private Factory factory;
@@ -18,12 +22,14 @@ public class DiaryManager {
 	/** The activities. */
 	private ObjectiveSet objectives;
 
+	/** The objective. */
 	private Objective objective;
 
 	/**
 	 * Instantiates a new activity manager.
 	 */
-	public DiaryManager() {
+	public DiaryManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
@@ -34,19 +40,43 @@ public class DiaryManager {
 	 *            the user
 	 * @return the activity set
 	 */
-	public ObjectiveSet readObjectives(User user) {
+	public ObjectiveSet readObjectives(User user)
+	{
 		objectives = factory.readObjectives(user);
 		return objectives;
 	}
 
+	/**
+	 * Creates the objective.
+	 *
+	 * @param name
+	 *            the name
+	 * @param description
+	 *            the description
+	 * @param valideDate
+	 *            the valide date
+	 * @param activity
+	 *            the activity
+	 * @return the objective
+	 * @throws AlreadyExistsException
+	 *             the already exists exception
+	 */
 	public Objective createObjective(String name, String description, Date valideDate, Activity activity)
-			throws AlreadyExistsException {
+			throws AlreadyExistsException
+	{
 		// TODO Auto-generated method stub
 		objective = this.factory.createObjective(name, description, valideDate, activity);
 		return objective;
 	}
 
-	public void removeFromMyObjectives(int index) {
+	/**
+	 * Removes the from my objectives.
+	 *
+	 * @param index
+	 *            the index
+	 */
+	public void removeFromMyObjectives(int index)
+	{
 		// TODO Auto-generated method stub
 		this.objectives.getObjectiveByIndex(index).remove();
 		this.objectives.getTabObjectives().remove(index);

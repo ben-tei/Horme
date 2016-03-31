@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * The Class ProductSet.
  */
-public abstract class ProductSet {
+public abstract class ProductSet
+{
 
 	/** The tab products. */
 	private ArrayList<Product> tabProducts;
@@ -13,7 +14,8 @@ public abstract class ProductSet {
 	/**
 	 * Instantiates a new product set.
 	 */
-	public ProductSet() {
+	public ProductSet()
+	{
 		this.tabProducts = new ArrayList<Product>();
 	}
 
@@ -23,15 +25,29 @@ public abstract class ProductSet {
 	 * @param product
 	 *            the product
 	 */
-	public void addProduct(Product product) {
+	public void addProduct(Product product)
+	{
 		this.tabProducts.add(product);
 	}
 
-	public ArrayList<Product> getTabProducts() {
+	/**
+	 * Gets the tab products.
+	 *
+	 * @return the tab products
+	 */
+	public ArrayList<Product> getTabProducts()
+	{
 		return tabProducts;
 	}
 
-	public void setTabProducts(ArrayList<Product> tabProducts) {
+	/**
+	 * Sets the tab products.
+	 *
+	 * @param tabProducts
+	 *            the new tab products
+	 */
+	public void setTabProducts(ArrayList<Product> tabProducts)
+	{
 		this.tabProducts = tabProducts;
 	}
 
@@ -42,15 +58,26 @@ public abstract class ProductSet {
 	 *            the index
 	 * @return the product by index
 	 */
-	public Product getProductByIndex(int index) {
+	public Product getProductByIndex(int index)
+	{
 		return this.tabProducts.get(index);
 	}
 
-	public Product getProductById(String id) {
+	/**
+	 * Gets the product by id.
+	 *
+	 * @param id
+	 *            the id
+	 * @return the product by id
+	 */
+	public Product getProductById(String id)
+	{
 		int i = 0;
 		boolean find = false;
-		while (i < this.tabProducts.size() && !find) {
-			if (this.tabProducts.get(i).getId().equals(id)) {
+		while (i < this.tabProducts.size() && !find)
+		{
+			if (this.tabProducts.get(i).getId().equals(id))
+			{
 				find = true;
 			}
 			i++;
@@ -64,11 +91,18 @@ public abstract class ProductSet {
 	 *
 	 * @return the int
 	 */
-	public int size() {
+	public int size()
+	{
 		return this.tabProducts.size();
 	}
 
-	public boolean isEmpty() {
+	/**
+	 * Checks if is empty.
+	 *
+	 * @return true, if is empty
+	 */
+	public boolean isEmpty()
+	{
 		return this.tabProducts.size() == 0;
 	}
 

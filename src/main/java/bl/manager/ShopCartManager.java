@@ -11,22 +11,26 @@ import persist.factoryjdbc.FactoryJDBC;
 /**
  * The Class ShopCartManager.
  */
-public class ShopCartManager {
+public class ShopCartManager
+{
 
 	/** The factory. */
 	private Factory factory;
 
+	/** The shop cart row. */
 	private ShopCartRow shopCartRow;
 
 	/** The shop cart rows. */
 	private ShopCartRowSet shopCartRows;
 
+	/** The shop cart. */
 	private ShoppingCart shopCart;
 
 	/**
 	 * Instantiates a new shop cart manager.
 	 */
-	public ShopCartManager() {
+	public ShopCartManager()
+	{
 		this.factory = new FactoryJDBC();
 	}
 
@@ -37,31 +41,55 @@ public class ShopCartManager {
 	 *            the user
 	 * @return the shop cart row set
 	 */
-	public ShopCartRowSet readShopCart(User user) {
+	public ShopCartRowSet readShopCart(User user)
+	{
 		return shopCartRows;
 	}
 
-	public ShoppingCart getShopCart(User user) {
+	/**
+	 * Gets the shop cart.
+	 *
+	 * @param user
+	 *            the user
+	 * @return the shop cart
+	 */
+	public ShoppingCart getShopCart(User user)
+	{
 		shopCart = factory.getShopCart(user);
 		shopCartRows = factory.readShopCart(user);
 		return shopCart;
 	}
 
-	public void placeOrder() {
+	/**
+	 * Place order.
+	 */
+	public void placeOrder()
+	{
 		this.shopCart.placeOrder(shopCartRows);
-		for (int i = 0; i < this.shopCartRows.size(); i++) {
+		for (int i = 0; i < this.shopCartRows.size(); i++)
+		{
 			this.shopCartRows.getShopCartRowByIndex(i).remove();
 		}
 
 		this.shopCartRows.getTabShopCart().clear();
 	}
 
-	public int getQuantity(String idProduct) {
+	/**
+	 * Gets the quantity.
+	 *
+	 * @param idProduct
+	 *            the id product
+	 * @return the quantity
+	 */
+	public int getQuantity(String idProduct)
+	{
 		int quantity = 0;
 		boolean find = false;
 		int i = 0;
-		while (i < this.shopCartRows.size() && !find) {
-			if (this.shopCartRows.getShopCartRowByIndex(i).getIdProduct().equals(idProduct)) {
+		while (i < this.shopCartRows.size() && !find)
+		{
+			if (this.shopCartRows.getShopCartRowByIndex(i).getIdProduct().equals(idProduct))
+			{
 				quantity = this.shopCartRows.getShopCartRowByIndex(i).getQuantity();
 				find = true;
 			}
@@ -71,32 +99,56 @@ public class ShopCartManager {
 		return quantity;
 	}
 
-	public void addToShoppingCart(Product p, int quantity) {
+	/**
+	 * Adds the to shopping cart.
+	 *
+	 * @param p
+	 *            the p
+	 * @param quantity
+	 *            the quantity
+	 */
+	public void addToShoppingCart(Product p, int quantity)
+	{
 		this.shopCartRow = factory.createShopCartRow(p, this.shopCart, quantity);
 		boolean find = false;
 		int i = 0;
-		while (i < this.shopCartRows.size() && !find) {
+		while (i < this.shopCartRows.size() && !find)
+		{
 			if (this.shopCartRows.getShopCartRowByIndex(i).getIdProduct().equals(p.getId())
-					&& this.shopCartRows.getShopCartRowByIndex(i).getIdShoppingCart().equals(this.shopCart.getId())) {
+					&& this.shopCartRows.getShopCartRowByIndex(i).getIdShoppingCart().equals(this.shopCart.getId()))
+			{
 				find = true;
 			}
 			i++;
 		}
 
-		if (!find) {
+		if (!find)
+		{
 			this.shopCartRows.addShopCartRow(this.shopCartRow);
-		} else {
+		} else
+		{
 			this.shopCartRows.getShopCartRowByIndex(i - 1)
 					.setQuantity(quantity + this.shopCartRows.getShopCartRowByIndex(i - 1).getQuantity());
 		}
 
 	}
 
-	public void removeFromShoppingCart(int index, int quantity) {
-		if (quantity == 0) {
+	/**
+	 * Removes the from shopping cart.
+	 *
+	 * @param index
+	 *            the index
+	 * @param quantity
+	 *            the quantity
+	 */
+	public void removeFromShoppingCart(int index, int quantity)
+	{
+		if (quantity == 0)
+		{
 			this.shopCartRows.getShopCartRowByIndex(index).remove();
 			this.shopCartRows.getTabShopCart().remove(index);
-		} else {
+		} else
+		{
 			this.shopCartRows.getShopCartRowByIndex(index).setQuantity(quantity);
 			this.shopCartRows.getShopCartRowByIndex(index).save();
 		}

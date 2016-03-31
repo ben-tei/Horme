@@ -6,15 +6,28 @@ import junit.framework.TestCase;
 import persist.jdbc.ProductJDBC;
 import persist.jdbc.ProductSetJDBC;
 
+/**
+ * The Class ProductSetJDBCTest.
+ */
+public class ProductSetJDBCTest extends TestCase
+{
 
-public class ProductSetJDBCTest extends TestCase {
-
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 */
 	@After
-	public void tearDown() {
+	public void tearDown()
+	{
 	}
 
+	/**
+	 * Test create empty product set jdbc.
+	 */
 	@Test
-	public void testCreateEmptyProductSetJDBC() {
+	public void testCreateEmptyProductSetJDBC()
+	{
 
 		ProductSetJDBC productSetJDBC = new ProductSetJDBC();
 
@@ -23,8 +36,12 @@ public class ProductSetJDBCTest extends TestCase {
 		assertTrue("A new productSetJDBC has elements", productSetJDBC.size() > 0);
 	}
 
+	/**
+	 * Test add.
+	 */
 	@Test
-	public void testAdd() {
+	public void testAdd()
+	{
 
 		ProductSetJDBC productSetJDBC = new ProductSetJDBC();
 		ProductJDBC productJDBC = new ProductJDBC();

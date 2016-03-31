@@ -7,7 +7,8 @@ import exceptions.*;
 /**
  * The Class UserFacade.
  */
-public class UserFacade {
+public class UserFacade
+{
 
 	/** The user manager. */
 	private UserManager userManager;
@@ -15,7 +16,8 @@ public class UserFacade {
 	/**
 	 * Instantiates a new user facade.
 	 */
-	public UserFacade() {
+	public UserFacade()
+	{
 		this.userManager = new UserManager();
 	}
 
@@ -32,7 +34,8 @@ public class UserFacade {
 	 * @throws WrongPasswordException
 	 *             the wrong password exception
 	 */
-	public User login(String login, String password) throws WrongLoginException, WrongPasswordException {
+	public User login(String login, String password) throws WrongLoginException, WrongPasswordException
+	{
 		return this.userManager.findUser(login, password);
 	}
 
@@ -62,7 +65,8 @@ public class UserFacade {
 	 *             the already exists exception
 	 */
 	public User signUp(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email, String login, String password) throws AlreadyExistsException {
+			String email, String login, String password) throws AlreadyExistsException
+	{
 		return this.userManager.createUser(name, firstname, street, zipCode, city, phone, email, login, password);
 	}
 
@@ -86,7 +90,8 @@ public class UserFacade {
 	 * @return the user
 	 */
 	public User editProfile(String name, String firstname, String street, String zipCode, String city, String phone,
-			String email) {
+			String email)
+	{
 		return this.userManager.updateUser(name, firstname, street, zipCode, city, phone, email);
 	}
 
@@ -95,11 +100,21 @@ public class UserFacade {
 	 *
 	 * @return the user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.userManager.getUser();
 	}
 
-	public void sendMail(String login) throws WrongLoginException {
+	/**
+	 * Send mail.
+	 *
+	 * @param login
+	 *            the login
+	 * @throws WrongLoginException
+	 *             the wrong login exception
+	 */
+	public void sendMail(String login) throws WrongLoginException
+	{
 		this.userManager.sendMail(login);
 
 	}

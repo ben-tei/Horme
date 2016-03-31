@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class ShoppingCart {
+public abstract class ShoppingCart
+{
 	/**
 	 * Description of the property id.
 	 */
@@ -42,7 +43,8 @@ public abstract class ShoppingCart {
 	/**
 	 * The constructor.
 	 */
-	public ShoppingCart() {
+	public ShoppingCart()
+	{
 		// Start of user code constructor for ShoppingCart)
 		super();
 		// End of user code
@@ -56,7 +58,8 @@ public abstract class ShoppingCart {
 	 * 
 	 * @return whishLists
 	 */
-	public HashSet<WhishList> getWhishLists() {
+	public HashSet<WhishList> getWhishLists()
+	{
 		return this.whishLists;
 	}
 
@@ -65,7 +68,8 @@ public abstract class ShoppingCart {
 	 * 
 	 * @return user
 	 */
-	public User getUser() {
+	public User getUser()
+	{
 		return this.user;
 	}
 
@@ -75,7 +79,8 @@ public abstract class ShoppingCart {
 	 * @param newUser
 	 *            the new user
 	 */
-	public void setUser(User newUser) {
+	public void setUser(User newUser)
+	{
 		this.user = newUser;
 	}
 
@@ -84,18 +89,38 @@ public abstract class ShoppingCart {
 	 * 
 	 * @return products
 	 */
-	public HashSet<Product> getProducts() {
+	public HashSet<Product> getProducts()
+	{
 		return this.products;
 	}
 
-	public String getId() {
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public String getId()
+	{
 		return id;
 	}
 
-	public void setId(String id) {
+	/**
+	 * Sets the id.
+	 *
+	 * @param id
+	 *            the new id
+	 */
+	public void setId(String id)
+	{
 		this.id = id;
 	}
 
+	/**
+	 * Place order.
+	 *
+	 * @param shopCartRows
+	 *            the shop cart rows
+	 */
 	public abstract void placeOrder(ShopCartRowSet shopCartRows);
 
 }

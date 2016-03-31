@@ -15,7 +15,8 @@ import java.util.HashSet;
  * 
  * @author Meche
  */
-public abstract class Person {
+public abstract class Person
+{
 	/**
 	 * Description of the property firstName.
 	 */
@@ -78,7 +79,8 @@ public abstract class Person {
 	/**
 	 * The constructor.
 	 */
-	public Person() {
+	public Person()
+	{
 		// Start of user code constructor for Person)
 		super();
 		// End of user code
@@ -92,7 +94,8 @@ public abstract class Person {
 	 * @param password
 	 *            the password
 	 */
-	public Person(String login, String password) {
+	public Person(String login, String password)
+	{
 		this.login = login;
 		this.password = password;
 	}
@@ -105,7 +108,8 @@ public abstract class Person {
 	 * 
 	 * @return firstName
 	 */
-	public String getFirstName() {
+	public String getFirstName()
+	{
 		return this.firstName;
 	}
 
@@ -115,7 +119,8 @@ public abstract class Person {
 	 * @param newFirstName
 	 *            the new first name
 	 */
-	public void setFirstName(String newFirstName) {
+	public void setFirstName(String newFirstName)
+	{
 		this.firstName = newFirstName;
 	}
 
@@ -124,7 +129,8 @@ public abstract class Person {
 	 * 
 	 * @return comments
 	 */
-	public HashSet<Comment> getComments() {
+	public HashSet<Comment> getComments()
+	{
 		return this.comments;
 	}
 
@@ -133,7 +139,8 @@ public abstract class Person {
 	 * 
 	 * @return notifications
 	 */
-	public HashSet<Notification> getNotifications() {
+	public HashSet<Notification> getNotifications()
+	{
 		return this.notifications;
 	}
 
@@ -142,7 +149,8 @@ public abstract class Person {
 	 * 
 	 * @return password
 	 */
-	public String getPassword() {
+	public String getPassword()
+	{
 		return this.password;
 	}
 
@@ -152,7 +160,8 @@ public abstract class Person {
 	 * @param newPassword
 	 *            the new password
 	 */
-	public void setPassword(String newPassword) {
+	public void setPassword(String newPassword)
+	{
 		this.password = newPassword;
 	}
 
@@ -161,7 +170,8 @@ public abstract class Person {
 	 * 
 	 * @return name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -171,7 +181,8 @@ public abstract class Person {
 	 * @param newName
 	 *            the new name
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		this.name = newName;
 	}
 
@@ -180,7 +191,8 @@ public abstract class Person {
 	 * 
 	 * @return zipCode
 	 */
-	public String getZipCode() {
+	public String getZipCode()
+	{
 		return this.zipCode;
 	}
 
@@ -190,7 +202,8 @@ public abstract class Person {
 	 * @param newZipCode
 	 *            the new zip code
 	 */
-	public void setZipCode(String newZipCode) {
+	public void setZipCode(String newZipCode)
+	{
 		this.zipCode = newZipCode;
 	}
 
@@ -199,7 +212,8 @@ public abstract class Person {
 	 * 
 	 * @return phone
 	 */
-	public String getPhone() {
+	public String getPhone()
+	{
 		return this.phone;
 	}
 
@@ -209,7 +223,8 @@ public abstract class Person {
 	 * @param newPhone
 	 *            the new phone
 	 */
-	public void setPhone(String newPhone) {
+	public void setPhone(String newPhone)
+	{
 		this.phone = newPhone;
 	}
 
@@ -218,7 +233,8 @@ public abstract class Person {
 	 * 
 	 * @return city
 	 */
-	public String getCity() {
+	public String getCity()
+	{
 		return this.city;
 	}
 
@@ -228,7 +244,8 @@ public abstract class Person {
 	 * @param newCity
 	 *            the new city
 	 */
-	public void setCity(String newCity) {
+	public void setCity(String newCity)
+	{
 		this.city = newCity;
 	}
 
@@ -237,7 +254,8 @@ public abstract class Person {
 	 * 
 	 * @return email
 	 */
-	public String getEmail() {
+	public String getEmail()
+	{
 		return this.email;
 	}
 
@@ -247,7 +265,8 @@ public abstract class Person {
 	 * @param newEmail
 	 *            the new email
 	 */
-	public void setEmail(String newEmail) {
+	public void setEmail(String newEmail)
+	{
 		this.email = newEmail;
 	}
 
@@ -256,7 +275,8 @@ public abstract class Person {
 	 * 
 	 * @return login
 	 */
-	public String getLogin() {
+	public String getLogin()
+	{
 		return this.login;
 	}
 
@@ -266,7 +286,8 @@ public abstract class Person {
 	 * @param newLogin
 	 *            the new login
 	 */
-	public void setLogin(String newLogin) {
+	public void setLogin(String newLogin)
+	{
 		this.login = newLogin;
 	}
 
@@ -275,7 +296,8 @@ public abstract class Person {
 	 * 
 	 * @return street
 	 */
-	public String getStreet() {
+	public String getStreet()
+	{
 		return this.street;
 	}
 
@@ -285,7 +307,8 @@ public abstract class Person {
 	 * @param newStreet
 	 *            the new street
 	 */
-	public void setStreet(String newStreet) {
+	public void setStreet(String newStreet)
+	{
 		this.street = newStreet;
 	}
 
