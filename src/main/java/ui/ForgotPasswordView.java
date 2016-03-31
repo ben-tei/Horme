@@ -69,6 +69,11 @@ public class ForgotPasswordView extends JPanel implements ActionListener
 		this.add(btnBack);
 	}
 
+	public JTextField getLoginField()
+	{
+		return loginField;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

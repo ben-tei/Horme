@@ -331,6 +331,7 @@ public class ViewController
 		this.myWindow.setContentPane(this.myJPanel);
 		this.myWindow.getContentPane().revalidate();
 		this.myWindow.getContentPane().repaint();
+		((ForgotPasswordView) this.myJPanel).getLoginField().requestFocusInWindow();
 
 	}
 
