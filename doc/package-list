@@ -1,0 +1,11 @@
+bl.core
+bl.facade
+bl.factory
+bl.manager
+exceptions
+horme
+junit
+persist.factoryjdbc
+persist.jdbc
+ui
+util
