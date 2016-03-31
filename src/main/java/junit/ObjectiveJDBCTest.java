@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import exceptions.WrongLoginException;
 import junit.framework.TestCase;
 import persist.jdbc.ObjectiveJDBC;
 
