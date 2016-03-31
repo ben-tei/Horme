@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public abstract class ObjectiveSet
 {
 
-	/** The tab orders. */
+	/** The tab objectives. */
 	private ArrayList<Objective> tabObjectives;
 
 	/**
-	 * Instantiates a new order set.
+	 * Instantiates a new objective set.
 	 */
 	public ObjectiveSet()
 	{
@@ -20,9 +20,9 @@ public abstract class ObjectiveSet
 	}
 
 	/**
-	 * Adds the order.
+	 * Adds the objective.
 	 *
-	 * @param o the o
+	 * @param o the objective
 	 */
 	public void addObjective(Objective o)
 	{
@@ -50,10 +50,10 @@ public abstract class ObjectiveSet
 	}
 
 	/**
-	 * Gets the order by index.
+	 * Gets the objective by index.
 	 *
 	 * @param index the index
-	 * @return the order by index
+	 * @return the objective by index
 	 */
 	public Objective getObjectiveByIndex(int index)
 	{

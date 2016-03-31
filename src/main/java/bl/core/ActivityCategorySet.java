@@ -12,7 +12,7 @@ public abstract class ActivityCategorySet
 	private ArrayList<Category> tabActivitiesCategories;
 
 	/**
-	 * Instantiates a new shop cart row set.
+	 * Instantiates a new a activity category set.
 	 */
 	public ActivityCategorySet()
 	{
@@ -20,9 +20,9 @@ public abstract class ActivityCategorySet
 	}
 
 	/**
-	 * Adds the shop cart row.
+	 * Adds the category
 	 *
-	 * @param cat the cat
+	 * @param cat the category
 	 */
 	public void addCategory(Category cat)
 	{
@@ -30,10 +30,10 @@ public abstract class ActivityCategorySet
 	}
 
 	/**
-	 * Gets the shop cart row by index.
+	 * Gets the category by index.
 	 *
 	 * @param index the index
-	 * @return the shop cart row by index
+	 * @return the category by index
 	 */
 	public Category getCategoryByIndex(int index)
 	{
