@@ -76,10 +76,11 @@ public class Menu implements ActionListener
 
 		int x = 0;
 
-		if (firstname.length() + name.length() > 174)
+		if (firstname.length() + name.length() > 23)
 		{
 			x = 194;
-		} else
+		}
+		else
 		{
 			x = (firstname.length() + name.length() + 1) * 11;
 		}

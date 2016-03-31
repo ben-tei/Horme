@@ -64,7 +64,7 @@ public class ForgotPasswordView extends JPanel implements ActionListener
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this);
 		btnBack.setActionCommand("back");
-		btnBack.setBounds(500, 300, 68, 23);
+		btnBack.setBounds(530, 300, 68, 23);
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		this.add(btnBack);
 	}
