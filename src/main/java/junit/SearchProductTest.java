@@ -15,11 +15,6 @@ public class SearchProductTest extends TestCase
 	/** The product set. */
 	ProductSetJDBC productSet;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

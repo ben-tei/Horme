@@ -16,22 +16,12 @@ public class ObjectiveJDBCTest extends TestCase
 	/** The objective jdbc. */
 	protected ObjectiveJDBC objectiveJDBC;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#setUp()
-	 */
 	@Before
 	public void setUp()
 	{
 		objectiveJDBC = new ObjectiveJDBC();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

@@ -58,7 +58,7 @@ public class CreateObjectiveView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new creates the objective view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public CreateObjectiveView(ViewController vc)
 	{
@@ -178,7 +178,7 @@ public class CreateObjectiveView extends JPanel implements ActionListener
 	}
 
 	/**
-	 * Fields are empty.
+	 * check if fields are empty.
 	 *
 	 * @return true, if successful
 	 */
@@ -189,12 +189,6 @@ public class CreateObjectiveView extends JPanel implements ActionListener
 				|| getDescriptionField().getText().equals("") || getDeadlineText().isEmpty();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

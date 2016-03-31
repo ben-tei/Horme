@@ -27,7 +27,7 @@ public class OrdersView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new orders view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public OrdersView(ViewController vc)
 	{
@@ -71,12 +71,6 @@ public class OrdersView extends JPanel implements ActionListener
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

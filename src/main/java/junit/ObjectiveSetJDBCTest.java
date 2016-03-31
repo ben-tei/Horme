@@ -13,11 +13,6 @@ import persist.jdbc.ObjectiveSetJDBC;
 public class ObjectiveSetJDBCTest extends TestCase
 {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

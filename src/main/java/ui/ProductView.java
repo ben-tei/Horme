@@ -33,7 +33,7 @@ public class ProductView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new product view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public ProductView(ViewController vc)
 	{
@@ -102,12 +102,6 @@ public class ProductView extends JPanel implements ActionListener
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

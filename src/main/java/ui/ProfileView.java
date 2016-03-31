@@ -69,7 +69,7 @@ public class ProfileView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new profile view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public ProfileView(ViewController vc)
 	{
@@ -316,12 +316,6 @@ public class ProfileView extends JPanel implements ActionListener
 				|| getPhoneField().getText().equals("") || getEmailConfirm().getText().equals("");
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

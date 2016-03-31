@@ -13,11 +13,6 @@ import persist.jdbc.ActivitySetJDBC;
 public class ActivitySetJDBCTest extends TestCase
 {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

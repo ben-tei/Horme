@@ -22,13 +22,13 @@ public class ActivitiesView extends JPanel implements ActionListener
 	/** The view controller. */
 	private ViewController viewController;
 
-	/** The btn add activity. */
+	/** The button add activity. */
 	private JButton btnAddActivity;
 
 	/**
 	 * Instantiates a new activities view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public ActivitiesView(ViewController vc)
 	{
@@ -89,12 +89,6 @@ public class ActivitiesView extends JPanel implements ActionListener
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

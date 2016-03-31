@@ -40,7 +40,7 @@ public class CreateActivityView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new creates the activity view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public CreateActivityView(ViewController vc)
 	{
@@ -136,7 +136,7 @@ public class CreateActivityView extends JPanel implements ActionListener
 	}
 
 	/**
-	 * Fields are empty.
+	 * check if fields are empty.
 	 *
 	 * @return true, if successful
 	 */
@@ -147,12 +147,6 @@ public class CreateActivityView extends JPanel implements ActionListener
 				|| getDescriptionField().getText().equals("");
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

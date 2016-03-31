@@ -14,6 +14,7 @@ public class TraderJDBC extends Trader
 	public TraderJDBC()
 	{
 		// TODO Auto-generated constructor stub
+		super();
 	}
 
 }

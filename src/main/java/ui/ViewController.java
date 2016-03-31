@@ -19,10 +19,10 @@ import bl.facade.UserFacade;
 public class ViewController
 {
 
-	/** The my window. */
+	/** The window. */
 	private Window myWindow;
 
-	/** The my j panel. */
+	/** The jpanel. */
 	private JPanel myJPanel;
 
 	/** The user facade. */
@@ -128,9 +128,9 @@ public class ViewController
 	}
 
 	/**
-	 * Gets the my window.
+	 * Gets the window.
 	 *
-	 * @return the my window
+	 * @return the window
 	 */
 	public Window getMyWindow()
 	{
@@ -138,7 +138,7 @@ public class ViewController
 	}
 
 	/**
-	 * Show index panel.
+	 * Show home panel.
 	 */
 	public void showHomePanel()
 	{

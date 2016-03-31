@@ -15,7 +15,7 @@ public class MyJButton extends JButton
 	private int index;
 
 	/**
-	 * Instantiates a new my j button.
+	 * Instantiates a new myJButton.
 	 *
 	 * @param name the name
 	 * @param index the index

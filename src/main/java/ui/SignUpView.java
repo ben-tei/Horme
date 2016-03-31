@@ -73,7 +73,7 @@ public class SignUpView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new sign up view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public SignUpView(ViewController vc)
 	{
@@ -338,7 +338,7 @@ public class SignUpView extends JPanel implements ActionListener
 	}
 
 	/**
-	 * Fields are empty.
+	 * check if fields are empty.
 	 *
 	 * @return true, if successful
 	 */
@@ -352,12 +352,6 @@ public class SignUpView extends JPanel implements ActionListener
 				|| getEmailConfirm().getText().equals("");
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

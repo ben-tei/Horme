@@ -10,7 +10,7 @@ public class EmailValidator
 {
 
 	/**
-	 * Validate.
+	 * Validate the email.
 	 *
 	 * @param email the email
 	 * @return true, if successful

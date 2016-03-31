@@ -33,7 +33,7 @@ public class SearchView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new product view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 * @param searchString the search string
 	 */
 	public SearchView(ViewController vc, String searchString)
@@ -103,12 +103,6 @@ public class SearchView extends JPanel implements ActionListener
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

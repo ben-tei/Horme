@@ -30,7 +30,7 @@ public class ForgotPasswordView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new forgot password view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public ForgotPasswordView(ViewController vc)
 	{
@@ -69,12 +69,6 @@ public class ForgotPasswordView extends JPanel implements ActionListener
 		this.add(btnBack);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

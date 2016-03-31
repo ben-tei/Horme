@@ -35,19 +35,19 @@ public class LoginView extends JPanel implements ActionListener
 	/** The login field. */
 	private JTextField loginField;
 
-	/** The lbl connexion. */
+	/** The label connexion. */
 	private JLabel lblConnexion;
 
-	/** The lbl login. */
+	/** The label login. */
 	private JLabel lblLogin;
 
-	/** The lbl password. */
+	/** The label password. */
 	private JLabel lblPassword;
 
-	/** The btn login. */
+	/** The button login. */
 	private JButton btnLogin;
 
-	/** The btn sign up. */
+	/** The button sign up. */
 	private JButton btnSignUp;
 
 	/** The view controller. */
@@ -56,7 +56,7 @@ public class LoginView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new login view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public LoginView(ViewController vc)
 	{
@@ -142,9 +142,9 @@ public class LoginView extends JPanel implements ActionListener
 	}
 
 	/**
-	 * Gets the btn login.
+	 * Gets the button login.
 	 *
-	 * @return the btn login
+	 * @return the button login
 	 */
 	public JButton getBtnLogin()
 	{
@@ -171,12 +171,6 @@ public class LoginView extends JPanel implements ActionListener
 		return new String(this.passwordField.getPassword());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	public void actionPerformed(ActionEvent e)
 	{
 		String cmd = e.getActionCommand();

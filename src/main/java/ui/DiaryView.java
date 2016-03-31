@@ -22,13 +22,13 @@ public class DiaryView extends JPanel implements ActionListener
 	/** The view controller. */
 	private ViewController viewController;
 
-	/** The btn add objective. */
+	/** The button add objective. */
 	private JButton btnAddObjective;
 
 	/**
 	 * Instantiates a new diary view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public DiaryView(ViewController vc)
 	{
@@ -99,12 +99,6 @@ public class DiaryView extends JPanel implements ActionListener
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

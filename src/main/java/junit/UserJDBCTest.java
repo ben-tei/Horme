@@ -18,22 +18,12 @@ public class UserJDBCTest extends TestCase
 	/** The user jdbc. */
 	protected UserJDBC userJDBC;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#setUp()
-	 */
 	@Before
 	public void setUp() throws WrongLoginException
 	{
 		userJDBC = new UserJDBC();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

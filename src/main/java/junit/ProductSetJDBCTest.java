@@ -12,11 +12,6 @@ import persist.jdbc.ProductSetJDBC;
 public class ProductSetJDBCTest extends TestCase
 {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

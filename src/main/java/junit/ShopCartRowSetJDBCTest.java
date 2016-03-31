@@ -13,11 +13,6 @@ import persist.jdbc.ShopCartRowSetJDBC;
 public class ShopCartRowSetJDBCTest extends TestCase
 {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

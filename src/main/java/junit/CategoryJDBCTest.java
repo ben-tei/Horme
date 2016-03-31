@@ -16,22 +16,12 @@ public class CategoryJDBCTest extends TestCase
 	/** The category jdbc. */
 	protected CategoryJDBC categoryJDBC;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#setUp()
-	 */
 	@Before
 	public void setUp()
 	{
 		categoryJDBC = new CategoryJDBC();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see junit.framework.TestCase#tearDown()
-	 */
 	@After
 	public void tearDown()
 	{

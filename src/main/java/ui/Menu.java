@@ -21,47 +21,47 @@ public class Menu implements ActionListener
 	/** The view controller. */
 	private ViewController viewController;
 
-	/** The lbl user. */
+	/** The label user. */
 	private JLabel lblUser;
 
-	/** The btn notifications. */
+	/** The button notifications. */
 	private JButton btnHome;
 
-	/** The btn profile. */
+	/** The button profile. */
 	private JButton btnProfile;
 
-	/** The btn products. */
+	/** The button products. */
 	private JButton btnProducts;
 
-	/** The btn my activities. */
+	/** The button my activities. */
 	private JButton btnMyActivities;
 
-	/** The btn my diary. */
+	/** The button my diary. */
 	private JButton btnMyDiary;
 
-	/** The btn my wishlist. */
+	/** The button my wishlist. */
 	private JButton btnMyWishlist;
 
-	/** The btn my orders. */
+	/** The button my orders. */
 	private JButton btnMyOrders;
 
-	/** The btn shopping cart. */
+	/** The button shopping cart. */
 	private JButton btnShoppingCart;
 
-	/** The btn disconnect. */
+	/** The button disconnect. */
 	private JButton btnDisconnect;
 
-	/** The lbl search. */
+	/** The label search. */
 	private JLabel lblSearch;
 
-	/** The lbl horme. */
+	/** The label horme. */
 	private JLabel lblHorme;
 
 	/**
 	 * Instantiates a new menu.
 	 *
-	 * @param jp the jp
-	 * @param vc the vc
+	 * @param jp the JPanel
+	 * @param vc the ViewController
 	 */
 	public Menu(JPanel jp, ViewController vc)
 	{
@@ -155,12 +155,6 @@ public class Menu implements ActionListener
 		jp.add(lblHorme);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

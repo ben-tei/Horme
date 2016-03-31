@@ -26,7 +26,7 @@ public class ShopCartView extends JPanel implements ActionListener
 	/** The view controller. */
 	private ViewController viewController;
 
-	/** The btn validate. */
+	/** The button validate. */
 	private JButton btnValidate;
 
 	/** The combo box list. */
@@ -41,7 +41,7 @@ public class ShopCartView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new shop cart view.
 	 *
-	 * @param vc the vc
+	 * @param vc the ViewController
 	 */
 	public ShopCartView(ViewController vc)
 	{
@@ -115,12 +115,6 @@ public class ShopCartView extends JPanel implements ActionListener
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

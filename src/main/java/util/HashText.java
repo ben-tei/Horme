@@ -13,7 +13,7 @@ public class HashText
 	 * Sha1.
 	 *
 	 * @param input the input
-	 * @return the string
+	 * @return the hashed string
 	 */
 	public static String sha1(String input)
 	{
