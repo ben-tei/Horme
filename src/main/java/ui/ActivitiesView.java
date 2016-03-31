@@ -28,8 +28,7 @@ public class ActivitiesView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new activities view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public ActivitiesView(ViewController vc)
 	{

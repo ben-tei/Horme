@@ -73,8 +73,7 @@ public class SignUpView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new sign up view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public SignUpView(ViewController vc)
 	{

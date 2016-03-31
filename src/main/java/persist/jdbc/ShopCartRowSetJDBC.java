@@ -23,8 +23,7 @@ public class ShopCartRowSetJDBC extends ShopCartRowSet
 	/**
 	 * Instantiates a new shop cart row set jdbc.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 */
 	public ShopCartRowSetJDBC(User user)
 	{

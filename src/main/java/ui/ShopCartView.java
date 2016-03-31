@@ -41,8 +41,7 @@ public class ShopCartView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new shop cart view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public ShopCartView(ViewController vc)
 	{

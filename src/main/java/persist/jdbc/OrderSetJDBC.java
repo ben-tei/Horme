@@ -14,8 +14,7 @@ public class OrderSetJDBC extends OrderSet
 	/**
 	 * Instantiates a new order set jdbc.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 */
 	public OrderSetJDBC(User user)
 	{

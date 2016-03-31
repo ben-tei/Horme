@@ -40,8 +40,7 @@ public class CreateActivityView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new creates the activity view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public CreateActivityView(ViewController vc)
 	{

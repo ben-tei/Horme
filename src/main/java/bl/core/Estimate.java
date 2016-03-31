@@ -72,8 +72,7 @@ public abstract class Estimate
 	/**
 	 * Sets a value to attribute trader.
 	 *
-	 * @param newTrader
-	 *            the new trader
+	 * @param newTrader the new trader
 	 */
 	public void setTrader(Trader newTrader)
 	{
@@ -93,8 +92,7 @@ public abstract class Estimate
 	/**
 	 * Sets a value to attribute user.
 	 *
-	 * @param newUser
-	 *            the new user
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser)
 	{

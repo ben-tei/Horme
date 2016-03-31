@@ -27,12 +27,9 @@ public class ShopCartRowJDBC extends ShopCartRow
 	/**
 	 * Instantiates a new shop cart row jdbc.
 	 *
-	 * @param p
-	 *            the p
-	 * @param shopCart
-	 *            the shop cart
-	 * @param quantity
-	 *            the quantity
+	 * @param p the p
+	 * @param shopCart the shop cart
+	 * @param quantity the quantity
 	 */
 	public ShopCartRowJDBC(Product p, ShoppingCart shopCart, int quantity)
 	{

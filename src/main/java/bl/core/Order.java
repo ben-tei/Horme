@@ -82,8 +82,7 @@ public abstract class Order
 	/**
 	 * Sets a value to attribute date.
 	 *
-	 * @param newDate
-	 *            the new date
+	 * @param newDate the new date
 	 */
 	public void setDate(String newDate)
 	{
@@ -103,8 +102,7 @@ public abstract class Order
 	/**
 	 * Sets a value to attribute numero.
 	 *
-	 * @param newNumero
-	 *            the new numero
+	 * @param newNumero the new numero
 	 */
 	public void setNumero(String newNumero)
 	{
@@ -134,8 +132,7 @@ public abstract class Order
 	/**
 	 * Sets a value to attribute user.
 	 *
-	 * @param newUser
-	 *            the new user
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser)
 	{
@@ -145,8 +142,7 @@ public abstract class Order
 	/**
 	 * Sets the trader.
 	 *
-	 * @param newTrader
-	 *            the new trader
+	 * @param newTrader the new trader
 	 */
 	public void setTrader(Trader newTrader)
 	{

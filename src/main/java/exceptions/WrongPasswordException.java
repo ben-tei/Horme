@@ -12,8 +12,7 @@ public class WrongPasswordException extends Exception
 	/**
 	 * Instantiates a new wrong password exception.
 	 *
-	 * @param message
-	 *            the message
+	 * @param message the message
 	 */
 	public WrongPasswordException(String message)
 	{

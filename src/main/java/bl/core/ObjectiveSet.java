@@ -22,8 +22,7 @@ public abstract class ObjectiveSet
 	/**
 	 * Adds the order.
 	 *
-	 * @param o
-	 *            the o
+	 * @param o the o
 	 */
 	public void addObjective(Objective o)
 	{
@@ -43,8 +42,7 @@ public abstract class ObjectiveSet
 	/**
 	 * Sets the tab objectives.
 	 *
-	 * @param tabObjectives
-	 *            the new tab objectives
+	 * @param tabObjectives the new tab objectives
 	 */
 	public void setTabObjectives(ArrayList<Objective> tabObjectives)
 	{
@@ -54,8 +52,7 @@ public abstract class ObjectiveSet
 	/**
 	 * Gets the order by index.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 * @return the order by index
 	 */
 	public Objective getObjectiveByIndex(int index)

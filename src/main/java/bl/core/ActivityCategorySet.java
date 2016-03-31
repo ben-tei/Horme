@@ -22,8 +22,7 @@ public abstract class ActivityCategorySet
 	/**
 	 * Adds the shop cart row.
 	 *
-	 * @param cat
-	 *            the cat
+	 * @param cat the cat
 	 */
 	public void addCategory(Category cat)
 	{
@@ -33,8 +32,7 @@ public abstract class ActivityCategorySet
 	/**
 	 * Gets the shop cart row by index.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 * @return the shop cart row by index
 	 */
 	public Category getCategoryByIndex(int index)

@@ -70,10 +70,8 @@ public abstract class User extends Person
 	/**
 	 * Instantiates a new user.
 	 *
-	 * @param login
-	 *            the login
-	 * @param password
-	 *            the password
+	 * @param login the login
+	 * @param password the password
 	 */
 	public User(String login, String password)
 	{
@@ -106,8 +104,7 @@ public abstract class User extends Person
 	/**
 	 * Sets the shopping cart.
 	 *
-	 * @param shoppingCart
-	 *            the new shopping cart
+	 * @param shoppingCart the new shopping cart
 	 */
 	public void setShoppingCart(ShoppingCart shoppingCart)
 	{
@@ -167,8 +164,7 @@ public abstract class User extends Person
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{
@@ -178,11 +174,9 @@ public abstract class User extends Person
 	/**
 	 * Checks if is password ok.
 	 *
-	 * @param password
-	 *            the password
+	 * @param password the password
 	 * @return true, if is password ok
-	 * @throws WrongPasswordException
-	 *             the wrong password exception
+	 * @throws WrongPasswordException the wrong password exception
 	 */
 	public boolean isPasswordOK(String password) throws WrongPasswordException
 	{

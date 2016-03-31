@@ -12,8 +12,7 @@ public class WrongLoginException extends Exception
 	/**
 	 * Instantiates a new wrong login exception.
 	 *
-	 * @param message
-	 *            the message
+	 * @param message the message
 	 */
 	public WrongLoginException(String message)
 	{

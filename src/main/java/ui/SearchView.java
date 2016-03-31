@@ -33,10 +33,8 @@ public class SearchView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new product view.
 	 *
-	 * @param vc
-	 *            the vc
-	 * @param searchString
-	 *            the search string
+	 * @param vc the vc
+	 * @param searchString the search string
 	 */
 	public SearchView(ViewController vc, String searchString)
 	{

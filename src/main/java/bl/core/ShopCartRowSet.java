@@ -22,8 +22,7 @@ public abstract class ShopCartRowSet
 	/**
 	 * Adds the shop cart row.
 	 *
-	 * @param rowCart
-	 *            the row cart
+	 * @param rowCart the row cart
 	 */
 	public void addShopCartRow(ShopCartRow rowCart)
 	{
@@ -33,8 +32,7 @@ public abstract class ShopCartRowSet
 	/**
 	 * Gets the shop cart row by index.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 * @return the shop cart row by index
 	 */
 	public ShopCartRow getShopCartRowByIndex(int index)

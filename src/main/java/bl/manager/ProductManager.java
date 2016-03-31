@@ -39,8 +39,7 @@ public class ProductManager
 	/**
 	 * Search products.
 	 *
-	 * @param searchString
-	 *            the search string
+	 * @param searchString the search string
 	 * @return the product set
 	 */
 	public ProductSet searchProducts(String searchString)
@@ -52,12 +51,9 @@ public class ProductManager
 	/**
 	 * Update quantity in stock.
 	 *
-	 * @param index
-	 *            the index
-	 * @param quantity
-	 *            the quantity
-	 * @throws NotEnoughStockException
-	 *             the not enough stock exception
+	 * @param index the index
+	 * @param quantity the quantity
+	 * @throws NotEnoughStockException the not enough stock exception
 	 */
 	public void updateQuantityInStock(int index, int quantity) throws NotEnoughStockException
 	{
@@ -75,14 +71,10 @@ public class ProductManager
 	/**
 	 * Update quantity in stock.
 	 *
-	 * @param idProduct
-	 *            the id product
-	 * @param quantity
-	 *            the quantity
-	 * @param oldQuantity
-	 *            the old quantity
-	 * @throws NotEnoughStockException
-	 *             the not enough stock exception
+	 * @param idProduct the id product
+	 * @param quantity the quantity
+	 * @param oldQuantity the old quantity
+	 * @throws NotEnoughStockException the not enough stock exception
 	 */
 	public void updateQuantityInStock(String idProduct, int quantity, int oldQuantity) throws NotEnoughStockException
 	{

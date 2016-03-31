@@ -320,8 +320,7 @@ public class ViewController
 	/**
 	 * Show search panel.
 	 *
-	 * @param searchString
-	 *            the search string
+	 * @param searchString the search string
 	 */
 	public void showSearchPanel(String searchString)
 	{

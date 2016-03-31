@@ -22,8 +22,7 @@ public abstract class OrderSet
 	/**
 	 * Adds the order.
 	 *
-	 * @param order
-	 *            the order
+	 * @param order the order
 	 */
 	public void addOrder(Order order)
 	{
@@ -43,8 +42,7 @@ public abstract class OrderSet
 	/**
 	 * Sets the tab orders.
 	 *
-	 * @param tabOrders
-	 *            the new tab orders
+	 * @param tabOrders the new tab orders
 	 */
 	public void setTabOrders(ArrayList<Order> tabOrders)
 	{
@@ -54,8 +52,7 @@ public abstract class OrderSet
 	/**
 	 * Gets the order by index.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 * @return the order by index
 	 */
 	public Order getOrderByIndex(int index)

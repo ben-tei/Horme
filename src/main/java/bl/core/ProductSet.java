@@ -22,8 +22,7 @@ public abstract class ProductSet
 	/**
 	 * Adds the product.
 	 *
-	 * @param product
-	 *            the product
+	 * @param product the product
 	 */
 	public void addProduct(Product product)
 	{
@@ -43,8 +42,7 @@ public abstract class ProductSet
 	/**
 	 * Sets the tab products.
 	 *
-	 * @param tabProducts
-	 *            the new tab products
+	 * @param tabProducts the new tab products
 	 */
 	public void setTabProducts(ArrayList<Product> tabProducts)
 	{
@@ -54,8 +52,7 @@ public abstract class ProductSet
 	/**
 	 * Gets the product by index.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 * @return the product by index
 	 */
 	public Product getProductByIndex(int index)
@@ -66,8 +63,7 @@ public abstract class ProductSet
 	/**
 	 * Gets the product by id.
 	 *
-	 * @param id
-	 *            the id
+	 * @param id the id
 	 * @return the product by id
 	 */
 	public Product getProductById(String id)

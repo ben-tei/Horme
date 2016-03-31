@@ -60,10 +60,8 @@ public class Menu implements ActionListener
 	/**
 	 * Instantiates a new menu.
 	 *
-	 * @param jp
-	 *            the jp
-	 * @param vc
-	 *            the vc
+	 * @param jp the jp
+	 * @param vc the vc
 	 */
 	public Menu(JPanel jp, ViewController vc)
 	{

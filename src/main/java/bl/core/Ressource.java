@@ -62,8 +62,7 @@ public abstract class Ressource
 	/**
 	 * Sets a value to attribute nom.
 	 *
-	 * @param newNom
-	 *            the new nom
+	 * @param newNom the new nom
 	 */
 	public void setNom(String newNom)
 	{

@@ -89,10 +89,8 @@ public abstract class Person
 	/**
 	 * Instantiates a new person.
 	 *
-	 * @param login
-	 *            the login
-	 * @param password
-	 *            the password
+	 * @param login the login
+	 * @param password the password
 	 */
 	public Person(String login, String password)
 	{
@@ -116,8 +114,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute firstName.
 	 *
-	 * @param newFirstName
-	 *            the new first name
+	 * @param newFirstName the new first name
 	 */
 	public void setFirstName(String newFirstName)
 	{
@@ -157,8 +154,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute password.
 	 *
-	 * @param newPassword
-	 *            the new password
+	 * @param newPassword the new password
 	 */
 	public void setPassword(String newPassword)
 	{
@@ -178,8 +174,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -199,8 +194,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute zipCode.
 	 *
-	 * @param newZipCode
-	 *            the new zip code
+	 * @param newZipCode the new zip code
 	 */
 	public void setZipCode(String newZipCode)
 	{
@@ -220,8 +214,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute phone.
 	 *
-	 * @param newPhone
-	 *            the new phone
+	 * @param newPhone the new phone
 	 */
 	public void setPhone(String newPhone)
 	{
@@ -241,8 +234,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute city.
 	 *
-	 * @param newCity
-	 *            the new city
+	 * @param newCity the new city
 	 */
 	public void setCity(String newCity)
 	{
@@ -262,8 +254,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute email.
 	 *
-	 * @param newEmail
-	 *            the new email
+	 * @param newEmail the new email
 	 */
 	public void setEmail(String newEmail)
 	{
@@ -283,8 +274,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute login.
 	 *
-	 * @param newLogin
-	 *            the new login
+	 * @param newLogin the new login
 	 */
 	public void setLogin(String newLogin)
 	{
@@ -304,8 +294,7 @@ public abstract class Person
 	/**
 	 * Sets a value to attribute street.
 	 *
-	 * @param newStreet
-	 *            the new street
+	 * @param newStreet the new street
 	 */
 	public void setStreet(String newStreet)
 	{

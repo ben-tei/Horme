@@ -32,15 +32,11 @@ public class UserManager
 	/**
 	 * Find user.
 	 *
-	 * @param login
-	 *            the login
-	 * @param password
-	 *            the password
+	 * @param login the login
+	 * @param password the password
 	 * @return the user
-	 * @throws WrongLoginException
-	 *             the wrong login exception
-	 * @throws WrongPasswordException
-	 *             the wrong password exception
+	 * @throws WrongLoginException the wrong login exception
+	 * @throws WrongPasswordException the wrong password exception
 	 */
 	public User findUser(String login, String password) throws WrongLoginException, WrongPasswordException
 	{
@@ -52,27 +48,17 @@ public class UserManager
 	/**
 	 * Creates the user.
 	 *
-	 * @param name
-	 *            the name
-	 * @param firstname
-	 *            the firstname
-	 * @param street
-	 *            the street
-	 * @param zipCode
-	 *            the zip code
-	 * @param city
-	 *            the city
-	 * @param phone
-	 *            the phone
-	 * @param email
-	 *            the email
-	 * @param login
-	 *            the login
-	 * @param password
-	 *            the password
+	 * @param name the name
+	 * @param firstname the firstname
+	 * @param street the street
+	 * @param zipCode the zip code
+	 * @param city the city
+	 * @param phone the phone
+	 * @param email the email
+	 * @param login the login
+	 * @param password the password
 	 * @return the user
-	 * @throws AlreadyExistsException
-	 *             the already exists exception
+	 * @throws AlreadyExistsException the already exists exception
 	 */
 	public User createUser(String name, String firstname, String street, String zipCode, String city, String phone,
 			String email, String login, String password) throws AlreadyExistsException
@@ -89,20 +75,13 @@ public class UserManager
 	/**
 	 * Update user.
 	 *
-	 * @param name
-	 *            the name
-	 * @param firstname
-	 *            the firstname
-	 * @param street
-	 *            the street
-	 * @param zipCode
-	 *            the zip code
-	 * @param city
-	 *            the city
-	 * @param phone
-	 *            the phone
-	 * @param email
-	 *            the email
+	 * @param name the name
+	 * @param firstname the firstname
+	 * @param street the street
+	 * @param zipCode the zip code
+	 * @param city the city
+	 * @param phone the phone
+	 * @param email the email
 	 * @return the user
 	 */
 	public User updateUser(String name, String firstname, String street, String zipCode, String city, String phone,
@@ -136,10 +115,8 @@ public class UserManager
 	/**
 	 * Send mail.
 	 *
-	 * @param login
-	 *            the login
-	 * @throws WrongLoginException
-	 *             the wrong login exception
+	 * @param login the login
+	 * @throws WrongLoginException the wrong login exception
 	 */
 	public void sendMail(String login) throws WrongLoginException
 	{

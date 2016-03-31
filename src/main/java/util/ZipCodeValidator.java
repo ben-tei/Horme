@@ -9,8 +9,7 @@ public class ZipCodeValidator
 	/**
 	 * Validate.
 	 *
-	 * @param zip
-	 *            the zip
+	 * @param zip the zip
 	 * @return true, if successful
 	 */
 	public static boolean validate(String zip)

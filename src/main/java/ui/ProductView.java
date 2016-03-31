@@ -33,8 +33,7 @@ public class ProductView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new product view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public ProductView(ViewController vc)
 	{

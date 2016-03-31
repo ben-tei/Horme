@@ -82,8 +82,7 @@ public abstract class DiaryEntry
 	/**
 	 * Sets a value to attribute position.
 	 *
-	 * @param newPosition
-	 *            the new position
+	 * @param newPosition the new position
 	 */
 	public void setPosition(String newPosition)
 	{
@@ -103,8 +102,7 @@ public abstract class DiaryEntry
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -124,8 +122,7 @@ public abstract class DiaryEntry
 	/**
 	 * Sets a value to attribute date.
 	 *
-	 * @param newDate
-	 *            the new date
+	 * @param newDate the new date
 	 */
 	public void setDate(String newDate)
 	{
@@ -145,8 +142,7 @@ public abstract class DiaryEntry
 	/**
 	 * Sets a value to attribute user.
 	 *
-	 * @param newUser
-	 *            the new user
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser)
 	{
@@ -166,8 +162,7 @@ public abstract class DiaryEntry
 	/**
 	 * Sets a value to attribute activity.
 	 *
-	 * @param newActivity
-	 *            the new activity
+	 * @param newActivity the new activity
 	 */
 	public void setActivity(Activity newActivity)
 	{
@@ -187,8 +182,7 @@ public abstract class DiaryEntry
 	/**
 	 * Sets a value to attribute content.
 	 *
-	 * @param newContent
-	 *            the new content
+	 * @param newContent the new content
 	 */
 	public void setContent(String newContent)
 	{

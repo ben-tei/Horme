@@ -96,8 +96,7 @@ public abstract class Activity
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{
@@ -107,8 +106,7 @@ public abstract class Activity
 	/**
 	 * Sets a value to attribute user.
 	 *
-	 * @param newUser
-	 *            the new user
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser)
 	{
@@ -138,8 +136,7 @@ public abstract class Activity
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -159,8 +156,7 @@ public abstract class Activity
 	/**
 	 * Sets a value to attribute category.
 	 *
-	 * @param newCategory
-	 *            the new category
+	 * @param newCategory the new category
 	 */
 	public void setCategory(Category newCategory)
 	{
@@ -200,8 +196,7 @@ public abstract class Activity
 	/**
 	 * Sets the description.
 	 *
-	 * @param description
-	 *            the new description
+	 * @param description the new description
 	 */
 	public void setDescription(String description)
 	{

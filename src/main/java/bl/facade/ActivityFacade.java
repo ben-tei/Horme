@@ -27,8 +27,7 @@ public class ActivityFacade
 	/**
 	 * Read activities.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 * @return the activity set
 	 */
 	public ActivitySet readActivities(User user)
@@ -39,17 +38,12 @@ public class ActivityFacade
 	/**
 	 * Create activity.
 	 *
-	 * @param name
-	 *            the name
-	 * @param description
-	 *            the description
-	 * @param category
-	 *            the category
-	 * @param user
-	 *            the user
+	 * @param name the name
+	 * @param description the description
+	 * @param category the category
+	 * @param user the user
 	 * @return the activity
-	 * @throws AlreadyExistsException
-	 *             the already exists exception
+	 * @throws AlreadyExistsException the already exists exception
 	 */
 
 	public Activity createActivity(String name, String description, Category category, User user)
@@ -62,8 +56,7 @@ public class ActivityFacade
 	/**
 	 * Removes the from my activities.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 */
 	public void removeFromMyActivities(int index)
 	{

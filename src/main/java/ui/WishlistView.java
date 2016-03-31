@@ -20,8 +20,7 @@ public class WishlistView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new wishlist view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public WishlistView(ViewController vc)
 	{

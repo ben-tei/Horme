@@ -22,8 +22,7 @@ public abstract class ActivitySet
 	/**
 	 * Adds the activity.
 	 *
-	 * @param activity
-	 *            the activity
+	 * @param activity the activity
 	 */
 	public void addActivity(Activity activity)
 	{
@@ -33,8 +32,7 @@ public abstract class ActivitySet
 	/**
 	 * Gets the activity by index.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 * @return the activity by index
 	 */
 	public Activity getActivityByIndex(int index)
@@ -55,8 +53,7 @@ public abstract class ActivitySet
 	/**
 	 * Sets the tab activities.
 	 *
-	 * @param tabActivities
-	 *            the new tab activities
+	 * @param tabActivities the new tab activities
 	 */
 	public void setTabActivities(ArrayList<Activity> tabActivities)
 	{

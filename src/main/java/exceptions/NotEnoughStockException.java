@@ -12,8 +12,7 @@ public class NotEnoughStockException extends Exception
 	/**
 	 * Instantiates a new already exists exception.
 	 *
-	 * @param message
-	 *            the message
+	 * @param message the message
 	 */
 	public NotEnoughStockException(String message)
 	{

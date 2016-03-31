@@ -27,16 +27,11 @@ public class ActivityJDBC extends Activity
 	/**
 	 * Instantiates a new activity jdbc.
 	 *
-	 * @param name
-	 *            the name
-	 * @param description
-	 *            the description
-	 * @param category
-	 *            the category
-	 * @param user
-	 *            the user
-	 * @throws AlreadyExistsException
-	 *             the already exists exception
+	 * @param name the name
+	 * @param description the description
+	 * @param category the category
+	 * @param user the user
+	 * @throws AlreadyExistsException the already exists exception
 	 */
 	public ActivityJDBC(String name, String description, Category category, User user) throws AlreadyExistsException
 	{

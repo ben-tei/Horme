@@ -23,10 +23,8 @@ public class UserJDBC extends User
 	/**
 	 * Instantiates a new user jdbc.
 	 *
-	 * @param login
-	 *            the login
-	 * @throws WrongLoginException
-	 *             the wrong login exception
+	 * @param login the login
+	 * @throws WrongLoginException the wrong login exception
 	 */
 	public UserJDBC(String login) throws WrongLoginException
 	{
@@ -85,26 +83,16 @@ public class UserJDBC extends User
 	/**
 	 * Instantiates a new user jdbc.
 	 *
-	 * @param name
-	 *            the name
-	 * @param firstname
-	 *            the firstname
-	 * @param street
-	 *            the street
-	 * @param zipCode
-	 *            the zip code
-	 * @param city
-	 *            the city
-	 * @param phone
-	 *            the phone
-	 * @param email
-	 *            the email
-	 * @param login
-	 *            the login
-	 * @param password
-	 *            the password
-	 * @throws AlreadyExistsException
-	 *             the already exists exception
+	 * @param name the name
+	 * @param firstname the firstname
+	 * @param street the street
+	 * @param zipCode the zip code
+	 * @param city the city
+	 * @param phone the phone
+	 * @param email the email
+	 * @param login the login
+	 * @param password the password
+	 * @throws AlreadyExistsException the already exists exception
 	 */
 	public UserJDBC(String name, String firstname, String street, String zipCode, String city, String phone,
 			String email, String login, String password) throws AlreadyExistsException

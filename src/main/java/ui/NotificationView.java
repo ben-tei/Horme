@@ -20,8 +20,7 @@ public class NotificationView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new notification view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public NotificationView(ViewController vc)
 	{

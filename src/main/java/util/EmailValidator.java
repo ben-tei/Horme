@@ -12,8 +12,7 @@ public class EmailValidator
 	/**
 	 * Validate.
 	 *
-	 * @param email
-	 *            the email
+	 * @param email the email
 	 * @return true, if successful
 	 */
 	public static boolean validate(String email)

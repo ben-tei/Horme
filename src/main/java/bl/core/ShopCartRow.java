@@ -42,8 +42,7 @@ public abstract class ShopCartRow
 	/**
 	 * Sets the id product.
 	 *
-	 * @param idProduct
-	 *            the new id product
+	 * @param idProduct the new id product
 	 */
 	public void setIdProduct(String idProduct)
 	{
@@ -63,8 +62,7 @@ public abstract class ShopCartRow
 	/**
 	 * Sets the id shopping cart.
 	 *
-	 * @param idShoppingCart
-	 *            the new id shopping cart
+	 * @param idShoppingCart the new id shopping cart
 	 */
 	public void setIdShoppingCart(String idShoppingCart)
 	{
@@ -84,8 +82,7 @@ public abstract class ShopCartRow
 	/**
 	 * Sets the name.
 	 *
-	 * @param name
-	 *            the new name
+	 * @param name the new name
 	 */
 	public void setName(String name)
 	{
@@ -95,8 +92,7 @@ public abstract class ShopCartRow
 	/**
 	 * Sets the price.
 	 *
-	 * @param price
-	 *            the new price
+	 * @param price the new price
 	 */
 	public void setPrice(int price)
 	{
@@ -116,8 +112,7 @@ public abstract class ShopCartRow
 	/**
 	 * Sets the quantity.
 	 *
-	 * @param quantity
-	 *            the new quantity
+	 * @param quantity the new quantity
 	 */
 	public void setQuantity(int quantity)
 	{

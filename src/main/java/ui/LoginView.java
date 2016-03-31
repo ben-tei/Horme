@@ -56,8 +56,7 @@ public class LoginView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new login view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public LoginView(ViewController vc)
 	{

@@ -58,8 +58,7 @@ public class CreateObjectiveView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new creates the objective view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public CreateObjectiveView(ViewController vc)
 	{

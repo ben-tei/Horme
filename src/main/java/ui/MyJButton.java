@@ -17,10 +17,8 @@ public class MyJButton extends JButton
 	/**
 	 * Instantiates a new my j button.
 	 *
-	 * @param name
-	 *            the name
-	 * @param index
-	 *            the index
+	 * @param name the name
+	 * @param index the index
 	 */
 	public MyJButton(String name, int index)
 	{

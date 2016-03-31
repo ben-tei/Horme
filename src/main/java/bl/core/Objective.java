@@ -79,8 +79,7 @@ public abstract class Objective
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{
@@ -90,8 +89,7 @@ public abstract class Objective
 	/**
 	 * Sets a value to attribute deadline.
 	 *
-	 * @param newDeadline
-	 *            the new deadline
+	 * @param newDeadline the new deadline
 	 */
 	public void setDeadline(String newDeadline)
 	{
@@ -111,8 +109,7 @@ public abstract class Objective
 	/**
 	 * Sets a value to attribute description.
 	 *
-	 * @param newDescription
-	 *            the new description
+	 * @param newDescription the new description
 	 */
 	public void setDescription(String newDescription)
 	{
@@ -132,8 +129,7 @@ public abstract class Objective
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -153,8 +149,7 @@ public abstract class Objective
 	/**
 	 * Sets a value to attribute activity.
 	 *
-	 * @param newActivity
-	 *            the new activity
+	 * @param newActivity the new activity
 	 */
 	public void setActivity(Activity newActivity)
 	{

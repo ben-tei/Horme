@@ -67,8 +67,7 @@ public abstract class Notification
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -98,8 +97,7 @@ public abstract class Notification
 	/**
 	 * Sets a value to attribute content.
 	 *
-	 * @param newContent
-	 *            the new content
+	 * @param newContent the new content
 	 */
 	public void setContent(String newContent)
 	{
@@ -119,8 +117,7 @@ public abstract class Notification
 	/**
 	 * Sets a value to attribute date.
 	 *
-	 * @param newDate
-	 *            the new date
+	 * @param newDate the new date
 	 */
 	public void setDate(String newDate)
 	{

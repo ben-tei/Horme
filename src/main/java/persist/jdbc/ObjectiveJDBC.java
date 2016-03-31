@@ -28,16 +28,11 @@ public class ObjectiveJDBC extends Objective
 	/**
 	 * Instantiates a new objective jdbc.
 	 *
-	 * @param name
-	 *            the name
-	 * @param description
-	 *            the description
-	 * @param valideDate
-	 *            the valide date
-	 * @param activity
-	 *            the activity
-	 * @throws AlreadyExistsException
-	 *             the already exists exception
+	 * @param name the name
+	 * @param description the description
+	 * @param valideDate the valide date
+	 * @param activity the activity
+	 * @throws AlreadyExistsException the already exists exception
 	 */
 	public ObjectiveJDBC(String name, String description, Date valideDate, Activity activity)
 			throws AlreadyExistsException

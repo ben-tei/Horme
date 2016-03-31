@@ -9,8 +9,7 @@ public class PhoneValidator
 	/**
 	 * Validate.
 	 *
-	 * @param phone
-	 *            the phone
+	 * @param phone the phone
 	 * @return true, if successful
 	 */
 	public static boolean validate(String phone)

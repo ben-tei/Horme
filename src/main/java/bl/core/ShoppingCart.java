@@ -76,8 +76,7 @@ public abstract class ShoppingCart
 	/**
 	 * Sets a value to attribute user.
 	 *
-	 * @param newUser
-	 *            the new user
+	 * @param newUser the new user
 	 */
 	public void setUser(User newUser)
 	{
@@ -107,8 +106,7 @@ public abstract class ShoppingCart
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{
@@ -118,8 +116,7 @@ public abstract class ShoppingCart
 	/**
 	 * Place order.
 	 *
-	 * @param shopCartRows
-	 *            the shop cart rows
+	 * @param shopCartRows the shop cart rows
 	 */
 	public abstract void placeOrder(ShopCartRowSet shopCartRows);
 

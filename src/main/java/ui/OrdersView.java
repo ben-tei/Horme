@@ -27,8 +27,7 @@ public class OrdersView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new orders view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public OrdersView(ViewController vc)
 	{

@@ -23,8 +23,7 @@ public class ActivitySetJDBC extends ActivitySet
 	/**
 	 * Instantiates a new activity set jdbc.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 */
 	public ActivitySetJDBC(User user)
 	{

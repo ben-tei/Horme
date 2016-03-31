@@ -25,8 +25,7 @@ public class JDBCConnection
 	 * Open connection.
 	 *
 	 * @return the connection
-	 * @throws SQLException
-	 *             the SQL exception
+	 * @throws SQLException the SQL exception
 	 */
 	public Connection openConnection() throws SQLException
 	{
@@ -81,8 +80,7 @@ public class JDBCConnection
 	/**
 	 * Process sql exception.
 	 *
-	 * @param e
-	 *            the e
+	 * @param e the e
 	 */
 	public static void ProcessSQLException(SQLException e)
 	{
@@ -100,8 +98,7 @@ public class JDBCConnection
 	/**
 	 * Close.
 	 *
-	 * @param pstmt
-	 *            the pstmt
+	 * @param pstmt the pstmt
 	 */
 	public void close(PreparedStatement pstmt)
 	{

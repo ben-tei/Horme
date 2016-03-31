@@ -69,8 +69,7 @@ public class ProfileView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new profile view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public ProfileView(ViewController vc)
 	{

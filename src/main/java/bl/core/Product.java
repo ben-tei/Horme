@@ -126,8 +126,7 @@ public abstract class Product
 	/**
 	 * Sets a value to attribute reference.
 	 *
-	 * @param newReference
-	 *            the new reference
+	 * @param newReference the new reference
 	 */
 	public void setReference(String newReference)
 	{
@@ -157,8 +156,7 @@ public abstract class Product
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -178,8 +176,7 @@ public abstract class Product
 	/**
 	 * Sets a value to attribute stockQuantity.
 	 *
-	 * @param newStockQuantity
-	 *            the new stock quantity
+	 * @param newStockQuantity the new stock quantity
 	 */
 	public void setStockQuantity(Integer newStockQuantity)
 	{
@@ -199,8 +196,7 @@ public abstract class Product
 	/**
 	 * Sets a value to attribute category.
 	 *
-	 * @param newCategory
-	 *            the new category
+	 * @param newCategory the new category
 	 */
 	public void setCategory(Category newCategory)
 	{
@@ -220,8 +216,7 @@ public abstract class Product
 	/**
 	 * Sets a value to attribute price.
 	 *
-	 * @param newPrice
-	 *            the new price
+	 * @param newPrice the new price
 	 */
 	public void setPrice(Integer newPrice)
 	{
@@ -241,8 +236,7 @@ public abstract class Product
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{

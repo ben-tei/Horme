@@ -60,8 +60,7 @@ public abstract class Comment
 	/**
 	 * Sets a value to attribute person.
 	 *
-	 * @param newPerson
-	 *            the new person
+	 * @param newPerson the new person
 	 */
 	public void setPerson(Person newPerson)
 	{
@@ -81,8 +80,7 @@ public abstract class Comment
 	/**
 	 * Sets a value to attribute content.
 	 *
-	 * @param newContent
-	 *            the new content
+	 * @param newContent the new content
 	 */
 	public void setContent(String newContent)
 	{
@@ -102,8 +100,7 @@ public abstract class Comment
 	/**
 	 * Sets a value to attribute diaryEntry.
 	 *
-	 * @param newDiaryEntry
-	 *            the new diary entry
+	 * @param newDiaryEntry the new diary entry
 	 */
 	public void setDiaryEntry(DiaryEntry newDiaryEntry)
 	{

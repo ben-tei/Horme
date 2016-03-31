@@ -26,8 +26,7 @@ public class ObjectiveSetJDBC extends ObjectiveSet
 	/**
 	 * Instantiates a new objective set jdbc.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 */
 	public ObjectiveSetJDBC(User user)
 	{

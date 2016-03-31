@@ -24,8 +24,7 @@ public class OrderFacade
 	/**
 	 * Read orders.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 * @return the order set
 	 */
 	public OrderSet readOrders(User user)

@@ -14,10 +14,8 @@ public class Window extends JFrame
 	/**
 	 * Instantiates a new window.
 	 *
-	 * @param height
-	 *            the height
-	 * @param width
-	 *            the width
+	 * @param height the height
+	 * @param width the width
 	 */
 	public Window(int height, int width)
 	{

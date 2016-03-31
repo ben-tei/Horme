@@ -85,8 +85,7 @@ public abstract class Category
 	/**
 	 * Sets a value to attribute name.
 	 *
-	 * @param newName
-	 *            the new name
+	 * @param newName the new name
 	 */
 	public void setName(String newName)
 	{
@@ -116,8 +115,7 @@ public abstract class Category
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{
@@ -127,8 +125,7 @@ public abstract class Category
 	/**
 	 * Sets a value to attribute shortDescription.
 	 *
-	 * @param newShortDescription
-	 *            the new short description
+	 * @param newShortDescription the new short description
 	 */
 	public void setShortDescription(String newShortDescription)
 	{
@@ -148,8 +145,7 @@ public abstract class Category
 	/**
 	 * Sets a value to attribute longDescription.
 	 *
-	 * @param newLongDescription
-	 *            the new long description
+	 * @param newLongDescription the new long description
 	 */
 	public void setLongDescription(String newLongDescription)
 	{

@@ -22,8 +22,7 @@ public class HomeView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new index view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public HomeView(ViewController vc)
 	{

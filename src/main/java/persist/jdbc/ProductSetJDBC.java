@@ -60,8 +60,7 @@ public class ProductSetJDBC extends ProductSet
 	/**
 	 * Instantiates a new product set jdbc.
 	 *
-	 * @param searchString
-	 *            the search string
+	 * @param searchString the search string
 	 */
 	public ProductSetJDBC(String searchString)
 	{

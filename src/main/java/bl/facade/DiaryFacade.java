@@ -29,8 +29,7 @@ public class DiaryFacade
 	/**
 	 * Gets the notifications.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 * @return the notifications
 	 */
 	public ObjectiveSet readObjectives(User user)
@@ -41,17 +40,12 @@ public class DiaryFacade
 	/**
 	 * Creates the objective.
 	 *
-	 * @param name
-	 *            the name
-	 * @param description
-	 *            the description
-	 * @param valideDate
-	 *            the valide date
-	 * @param activity
-	 *            the activity
+	 * @param name the name
+	 * @param description the description
+	 * @param valideDate the valide date
+	 * @param activity the activity
 	 * @return the objective
-	 * @throws AlreadyExistsException
-	 *             the already exists exception
+	 * @throws AlreadyExistsException the already exists exception
 	 */
 	public Objective createObjective(String name, String description, Date valideDate, Activity activity)
 			throws AlreadyExistsException
@@ -63,8 +57,7 @@ public class DiaryFacade
 	/**
 	 * Removes the from my objectives.
 	 *
-	 * @param index
-	 *            the index
+	 * @param index the index
 	 */
 	public void removeFromMyObjectives(int index)
 	{

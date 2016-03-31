@@ -63,8 +63,7 @@ public abstract class Trader extends Person
 	/**
 	 * Instantiates a new trader.
 	 *
-	 * @param id
-	 *            the id
+	 * @param id the id
 	 */
 	public Trader(String id)
 	{
@@ -87,8 +86,7 @@ public abstract class Trader extends Person
 	/**
 	 * Sets a value to attribute SIRET.
 	 *
-	 * @param newSIRET
-	 *            the new siret
+	 * @param newSIRET the new siret
 	 */
 	public void setSIRET(String newSIRET)
 	{
@@ -118,8 +116,7 @@ public abstract class Trader extends Person
 	/**
 	 * Sets a value to attribute website.
 	 *
-	 * @param newWebsite
-	 *            the new website
+	 * @param newWebsite the new website
 	 */
 	public void setWebsite(String newWebsite)
 	{
@@ -159,8 +156,7 @@ public abstract class Trader extends Person
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(String id)
 	{

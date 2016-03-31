@@ -18,8 +18,7 @@ public class SendMailSSL
 	/**
 	 * Send mail.
 	 *
-	 * @param email
-	 *            the email
+	 * @param email the email
 	 */
 	public static void sendMail(String email)
 	{

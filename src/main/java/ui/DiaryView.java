@@ -28,8 +28,7 @@ public class DiaryView extends JPanel implements ActionListener
 	/**
 	 * Instantiates a new diary view.
 	 *
-	 * @param vc
-	 *            the vc
+	 * @param vc the vc
 	 */
 	public DiaryView(ViewController vc)
 	{

@@ -37,8 +37,7 @@ public class ShopCartManager
 	/**
 	 * Read shop cart.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 * @return the shop cart row set
 	 */
 	public ShopCartRowSet readShopCart(User user)
@@ -49,8 +48,7 @@ public class ShopCartManager
 	/**
 	 * Gets the shop cart.
 	 *
-	 * @param user
-	 *            the user
+	 * @param user the user
 	 * @return the shop cart
 	 */
 	public ShoppingCart getShopCart(User user)
@@ -77,8 +75,7 @@ public class ShopCartManager
 	/**
 	 * Gets the quantity.
 	 *
-	 * @param idProduct
-	 *            the id product
+	 * @param idProduct the id product
 	 * @return the quantity
 	 */
 	public int getQuantity(String idProduct)
@@ -102,10 +99,8 @@ public class ShopCartManager
 	/**
 	 * Adds the to shopping cart.
 	 *
-	 * @param p
-	 *            the p
-	 * @param quantity
-	 *            the quantity
+	 * @param p the p
+	 * @param quantity the quantity
 	 */
 	public void addToShoppingCart(Product p, int quantity)
 	{
@@ -136,10 +131,8 @@ public class ShopCartManager
 	/**
 	 * Removes the from shopping cart.
 	 *
-	 * @param index
-	 *            the index
-	 * @param quantity
-	 *            the quantity
+	 * @param index the index
+	 * @param quantity the quantity
 	 */
 	public void removeFromShoppingCart(int index, int quantity)
 	{
